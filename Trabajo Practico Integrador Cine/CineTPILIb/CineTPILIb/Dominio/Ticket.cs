@@ -15,6 +15,7 @@ namespace CineTPILIb.Dominio
         public int Id_promocion { get; set; }
         public double Total { get; set; }
         public bool Estado { get; set; }
+        public int Id_forma_pago { get; set; }
         public List<DetallesTicket> DetallesTicket { get; set; }
 
         public Ticket()

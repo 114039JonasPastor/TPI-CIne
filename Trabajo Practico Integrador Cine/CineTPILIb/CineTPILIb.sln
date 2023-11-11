@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineTPILIb", "CineTPILIb\CineTPILIb.csproj", "{1B793670-C700-4273-96E7-7F60CEB849BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineApi", "CineApi\CineApi.csproj", "{564536CA-ECEA-406A-B7C3-6F3B0AC31A86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CineApi", "CineApi\CineApi.csproj", "{564536CA-ECEA-406A-B7C3-6F3B0AC31A86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineFront", "CineFront\CineFront.csproj", "{230D0C89-550A-471A-B756-708422E9AE32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{564536CA-ECEA-406A-B7C3-6F3B0AC31A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{564536CA-ECEA-406A-B7C3-6F3B0AC31A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{564536CA-ECEA-406A-B7C3-6F3B0AC31A86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{230D0C89-550A-471A-B756-708422E9AE32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{230D0C89-550A-471A-B756-708422E9AE32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{230D0C89-550A-471A-B756-708422E9AE32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{230D0C89-550A-471A-B756-708422E9AE32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

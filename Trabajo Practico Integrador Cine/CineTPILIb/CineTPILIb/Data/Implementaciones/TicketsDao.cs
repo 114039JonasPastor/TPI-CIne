@@ -67,6 +67,7 @@ namespace CineTPILIb.Data.Implementaciones
                 cmdMaestro.Parameters.AddWithValue("@id_medio_pedido", nuevo.Id_medio_pedido);
                 cmdMaestro.Parameters.AddWithValue("@id_promocion", nuevo.Id_promocion);
                 cmdMaestro.Parameters.AddWithValue("@total", nuevo.Total);
+                cmdMaestro.Parameters.AddWithValue("@id_forma_pago", nuevo.Id_forma_pago);
 
                 SqlParameter pOUT = new SqlParameter();
                 pOUT.ParameterName = "@nuevo_id_ticket";

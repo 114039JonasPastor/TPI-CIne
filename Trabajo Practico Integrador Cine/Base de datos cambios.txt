@@ -416,3 +416,48 @@ create proc SP_BAJA_TICKET
 as
 update TICKETS set estado = 0 where id_ticket = @id_ticket
 
+create proc SP_COMBO_FUNCIONES
+as
+select titulo Titulo, duracion Duracion ,sinopsis Sinopsis, idioma Idioma, ge.genero Genero ,clasificacion Clasificacion, Horarios, nro_sala Sala
+from PELICULAS p join GENEROS g on p.id_genero = g.id_genero
+join CLASIFICACIONES cl on cl.id_clasificacion = p.id_clasificacion
+join IDIOMAS i on i.id_idioma = p.id_idioma
+join GENEROS ge on ge.id_genero = p.id_genero
+join FUNCIONES f on f.id_pelicula = p.id_pelicula
+join SALAS s on s.id_sala = f.id_sala
+
+create table Horarios
+(
+id_horario int identity(1,1),
+horario varchar(200)
+constraint pk_horarios primary key (id_horario)
+)
+
+alter table funciones drop column horarios
+alter table funciones add id_horario int
+alter table funciones add constraint fk_horarios foreign key(id_horario) references horarios(id_horario)
+
+alter table tickets add id_forma_pago int
+alter table tickets add constraint fk_formas_pago foreign key(id_forma_pago) references formas_pago(id_forma_pago)
+
+ALTER proc [dbo].[SP_INSERTAR_FUNCIONES]
+@id_sala int,
+@id_pelicula int,
+@precio money,
+@fecha_desde datetime,
+@fecha_hasta datetime,
+@id_horario int
+as
+insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, id_horario) values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@id_horario)
+
+ALTER proc [dbo].[SP_INSERTAR_TICKET]
+@nuevo_id_ticket int output,
+@fecha datetime,
+@id_cliente int,
+@id_medio_pedido int,
+@id_promocion int,
+@total money,
+@id_forma_pago int
+as
+insert into TICKETS(fecha,id_cliente,id_medio_pedido,id_promocion,total,estado, id_forma_pago) values (@fecha,@id_cliente,@id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
+	set @nuevo_id_ticket = SCOPE_IDENTITY()

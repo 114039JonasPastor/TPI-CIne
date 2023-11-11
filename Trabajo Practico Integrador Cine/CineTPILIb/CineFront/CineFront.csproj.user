@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Diseño\FrmBajaTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\FrmConsultarFunciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\FrmNuevaFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\FrmNuevoTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\FrmSeleccionarFuncion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

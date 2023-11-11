@@ -33,7 +33,7 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@precio",funcion.precio);
                 comando.Parameters.AddWithValue("@fecha_desde",funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta",funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@horarios", funcion.Horarios);
+                comando.Parameters.AddWithValue("@id_horario", funcion.Id_horario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();
@@ -107,9 +107,9 @@ namespace CineTPILIb.Data.Implementaciones
                 double precio = Convert.ToDouble(fila["precio"]);
                 DateTime fechaDesde = Convert.ToDateTime(fila["fecha_desde"]);
                 DateTime fechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
-                string horarios = fila["horarios"].ToString();
+                int id_horario = Convert.ToInt32(fila["id_horario"]);
 
-                Funcion f = new Funcion(id_funcion,id_sala,estado,id_pelicula,precio,fechaDesde,fechaHasta,horarios);
+                Funcion f = new Funcion(id_funcion,id_sala,estado,id_pelicula,precio,fechaDesde,fechaHasta,id_horario);
 
                 lFunciones.Add(f);
             }
@@ -135,7 +135,7 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@precio", funcion.precio);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@horarios", funcion.Horarios);
+                comando.Parameters.AddWithValue("@id_horario", funcion.Id_horario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();
