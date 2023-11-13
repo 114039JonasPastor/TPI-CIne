@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CineFront.Diseño;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace CineFront
 
         public static FrmMenu ObtenerInstancia()
         {
-            if(instancia == null)
+            if (instancia == null)
             {
                 instancia = new FrmMenu();
             }
@@ -29,21 +30,42 @@ namespace CineFront
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea cerrar la sesion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
-                FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
+                Login frmLogin = Login.ObtenerInstancia();
+                this.Dispose();
+                frmLogin.Dispose();
+            }
+        }
+
+        private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cerrar la sesion?", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+
+                Login frmLogin = Login.ObtenerInstancia();
                 frmLogin.Show();
                 this.Hide();
             }
         }
 
-        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void consultarPeliculasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Esta seguro que desea salir?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+            FrmConsultaPelicula consultaPelicula = new FrmConsultaPelicula();
+            consultaPelicula.ShowDialog();
+        }
+
+        private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Login frmLogin = Login.ObtenerInstancia();
+            frmLogin.Dispose();
+        }
+
+        private void nuevaPelículaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
+            frmAltaPelicula.ShowDialog();
         }
     }
 }

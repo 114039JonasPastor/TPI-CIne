@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jonás\\Documents\\GitHub\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {}
+    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jonás\\Documents\\GitHub\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
+    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jonás\\Documents\\GitHub\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+        "projectUniqueName": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
         "projectName": "CineTPILIb",
-        "projectPath": "C:\\Users\\Jonás\\Documents\\GitHub\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
-        "packagesPath": "C:\\Users\\Jonás\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jonás\\Documents\\GitHub\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\obj\\",
+        "projectPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+        "packagesPath": "C:\\Users\\lucho\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jonás\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucho\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -22,3 +22,15 @@ C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineT
 C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
 C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
 C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.deps.json
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.pdb
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.AssemblyReference.cache
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfoInputs.cache
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfo.cs
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.CoreCompileInputs.cache
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll

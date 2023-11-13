@@ -1,7 +1,7 @@
-CREATE DATABASE CINE
+CREATE DATABASE CineNuevo
 GO
 
-USE CINE
+USE CineNuevo
 GO
 
 CREATE TABLE CARGOS
@@ -93,13 +93,16 @@ CREATE TABLE FORMAS_PAGO
 	CONSTRAINT PK_FORMAS_PAGO PRIMARY KEY (id_forma_pago)
 );
 
+
 CREATE TABLE TICKETS/**/
 (
 	id_ticket int identity(1,1),
 	fecha date,
 	id_cliente int,
+	id_empleado int,
 	id_medio_pedido int,
 	id_promocion int,
+	id_forma_pago int,
 	total decimal,
 	estado bit
 
@@ -107,29 +110,35 @@ CREATE TABLE TICKETS/**/
 	
 	CONSTRAINT FK_TICKETS_CLIENTES FOREIGN KEY (id_cliente)
 		REFERENCES CLIENTES(id_cliente),
+
+	CONSTRAINT FK_TICKETS_EMPLEADOS FOREIGN KEY (id_empleado)
+		REFERENCES EMPLEADOS(id_empleado),
 	
 	CONSTRAINT FK_TICKETS_MEDIOS_PEDIDO FOREIGN KEY (id_medio_pedido)
 		REFERENCES MEDIOS_PEDIDO(id_medio_pedido),
 
 	CONSTRAINT FK_TICKETS_PROMOCIONES FOREIGN KEY (id_promocion)
-		REFERENCES PROMOCIONES(id_promocion)
-);
+		REFERENCES PROMOCIONES(id_promocion),
 
-CREATE TABLE TICKETS_FORMASP
-(
-	id_ticket_forma int identity(1,1),
-	id_ticket int,
-	id_forma_pago int,
-	monto_recargo int,
-
-	CONSTRAINT PK_TICKETS_FORMASP PRIMARY KEY (id_ticket_forma),
-
-	CONSTRAINT FK_TICKETS_FORMASP_TICKETS FOREIGN KEY (id_ticket)
-		REFERENCES TICKETS(id_ticket),
-	
-	CONSTRAINT FK_TICKETS_FORMASP_FORMAS_PAGO FOREIGN KEY (id_forma_pago)
+	CONSTRAINT FK_TICKETS_FORMASP FOREIGN KEY (id_forma_pago)
 		REFERENCES FORMAS_PAGO(id_forma_pago)
 );
+
+--CREATE TABLE TICKETS_FORMASP
+--(
+--	id_ticket_forma int identity(1,1),
+--	id_ticket int,
+--	id_forma_pago int,
+--	monto_recargo int,
+
+--	CONSTRAINT PK_TICKETS_FORMASP PRIMARY KEY (id_ticket_forma),
+
+--	CONSTRAINT FK_TICKETS_FORMASP_TICKETS FOREIGN KEY (id_ticket)
+--		REFERENCES TICKETS(id_ticket),
+	
+--	CONSTRAINT FK_TICKETS_FORMASP_FORMAS_PAGO FOREIGN KEY (id_forma_pago)
+--		REFERENCES FORMAS_PAGO(id_forma_pago)
+--);
 
 CREATE TABLE NACIONALIDADES
 (
@@ -262,22 +271,21 @@ CREATE TABLE SALAS
 		REFERENCES TIPOS_SALAS(id_tipo_sala)
 );
 
-CREATE TABLE ESTADOS
-(
-	id_estado int identity(1,1),
-	estado varchar(50),
+--CREATE TABLE ESTADOS
+--(
+--	id_estado int identity(1,1),
+--	estado varchar(50),
 
-	CONSTRAINT PK_ESTADOS PRIMARY KEY (id_estado)
-);
+--	CONSTRAINT PK_ESTADOS PRIMARY KEY (id_estado)
+--);
 
-CREATE TABLE HORARIOS
-(
-	id_horario int identity(1,1),
-	hora_inicio datetime,
-	hora_fin datetime,
+--CREATE TABLE HORARIOS
+--(
+--	id_horario int identity(1,1),
+--	horario datetime
 
-	CONSTRAINT PK_HORARIOS PRIMARY KEY (id_horario)
-);
+--	CONSTRAINT PK_HORARIOS PRIMARY KEY (id_horario)
+--);
 
 create table FORMATOS/**/
 (
@@ -291,13 +299,15 @@ CREATE TABLE FUNCIONES/**/
 (
 	id_funcion int identity(1,1),
 	id_sala int,
-	id_horario int,
+	--id_horario int,
+	horario datetime,
 	id_formato int,
 	estado bit,
 	id_pelicula int,
 	precio decimal,
-	fecha datetime,
-
+	fecha_desde datetime,
+	fecha_hasta datetime,
+	
 	CONSTRAINT PK_FUNCIONES PRIMARY KEY (id_funcion),
 
 	constraint fk_formato foreign key(id_formato)
@@ -306,8 +316,8 @@ CREATE TABLE FUNCIONES/**/
 	CONSTRAINT FK_FUNCIONES_SALAS FOREIGN KEY (id_sala)
 		REFERENCES SALAS(id_sala),
 	
-	CONSTRAINT FK_FUNCIONES_HORARIOS FOREIGN KEY (id_horario)
-		REFERENCES HORARIOS(id_horario),
+	--CONSTRAINT FK_FUNCIONES_HORARIOS FOREIGN KEY (id_horario)
+	--	REFERENCES HORARIOS(id_horario),
 
 	CONSTRAINT FK_FUNCIONES_PELICULAS FOREIGN KEY (id_pelicula)
 		REFERENCES PELICULAS(id_pelicula)
@@ -356,14 +366,7 @@ constraint fk_funcion foreign key (id_funcion)
 )
 
 
-drop table FORMATOS
-alter table funciones drop constraint fk_formato
-alter table funciones drop column id_formato
-
-alter table funciones drop constraint FK_FUNCIONES_HORARIOS
-drop table HORARIOS
-alter table funciones add Horarios varchar(200)
-alter table funciones drop column id_horario
+----------------------------OK
 
 
 create proc SP_INSERTAR_TICKET
@@ -372,34 +375,41 @@ create proc SP_INSERTAR_TICKET
 @id_cliente int,
 @id_medio_pedido int,
 @id_promocion int,
-@total money
+@total money,
+@id_forma_pago int
 as
-insert into TICKETS(fecha,id_cliente,id_medio_pedido,id_promocion,total,estado) values (@fecha,@id_cliente,@id_medio_pedido,@id_promocion,@total,1);
+begin
+insert into TICKETS(fecha,id_cliente,id_medio_pedido,id_promocion,total,estado, id_forma_pago) 
+values (@fecha,@id_cliente,@id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
 	set @nuevo_id_ticket = SCOPE_IDENTITY()
+end;
 
-create proc SP_INSERTAR_DETALLES
+create procedure SP_INSERTAR_DETALLE
 @id_ticket int,
 @id_funcion int,
 @id_butaca int,
 @precio_venta money
 as
-insert into DETALLES_TICKET(id_ticket,id_funcion,id_butaca,precio_venta) values(@id_ticket,@id_funcion,@id_butaca,@precio_venta)
+begin
+insert into DETALLES_TICKET(id_ticket,id_funcion,id_butaca,precio_venta) 
+values(@id_ticket,@id_funcion,@id_butaca,@precio_venta);
+end;
 
-alter table funciones add fecha_hasta datetime
-alter table funciones drop column fecha
-alter table funciones add fecha_desde datetime
-
-Create proc [dbo].[SP_SELECCIONAR_FUNCIONES]
+Create procedure SP_CONSULTAR_FUNCIONES
 as
+begin
 select * from FUNCIONES where estado = 1
+end;
 
 create proc SP_BAJA_FUNCION
 @id_funcion int 
 as
+begin
 update funciones set estado = 0
 where id_funcion = @id_funcion
+end;
 
-create proc SP_UPDATE_FUNCIONES
+create proc SP_UPDATE_FUNCION
 @id_funcion int,
 @id_sala int,
 @id_pelicula int,
@@ -408,56 +418,41 @@ create proc SP_UPDATE_FUNCIONES
 @fecha_hasta datetime,
 @horarios varchar(200)
 as
-update funciones set id_sala = @id_sala, id_pelicula = @id_pelicula, precio = @precio, fecha_desde = @fecha_desde, fecha_hasta = fecha_hasta, Horarios = @horarios
+begin
+update funciones set id_sala = @id_sala, id_pelicula = @id_pelicula, precio = @precio, fecha_desde = @fecha_desde, fecha_hasta = fecha_hasta, Horario = @horarios
 where id_funcion = @id_funcion
+end;
 
 create proc SP_BAJA_TICKET
 @id_ticket int
 as
+begin
 update TICKETS set estado = 0 where id_ticket = @id_ticket
+end;
 
 create proc SP_COMBO_FUNCIONES
 as
-select titulo Titulo, duracion Duracion ,sinopsis Sinopsis, idioma Idioma, ge.genero Genero ,clasificacion Clasificacion, Horarios, nro_sala Sala
+begin
+select titulo Titulo, duracion Duracion ,sinopsis Sinopsis, idioma Idioma, 
+	ge.genero Genero, clasificacion Clasificacion, Horario, nro_sala Sala
 from PELICULAS p join GENEROS g on p.id_genero = g.id_genero
 join CLASIFICACIONES cl on cl.id_clasificacion = p.id_clasificacion
 join IDIOMAS i on i.id_idioma = p.id_idioma
 join GENEROS ge on ge.id_genero = p.id_genero
 join FUNCIONES f on f.id_pelicula = p.id_pelicula
 join SALAS s on s.id_sala = f.id_sala
+end;
 
-create table Horarios
-(
-id_horario int identity(1,1),
-horario varchar(200)
-constraint pk_horarios primary key (id_horario)
-)
-
-alter table funciones drop column horarios
-alter table funciones add id_horario int
-alter table funciones add constraint fk_horarios foreign key(id_horario) references horarios(id_horario)
-
-alter table tickets add id_forma_pago int
-alter table tickets add constraint fk_formas_pago foreign key(id_forma_pago) references formas_pago(id_forma_pago)
-
-ALTER proc [dbo].[SP_INSERTAR_FUNCIONES]
+CREATE proc [dbo].[SP_INSERTAR_FUNCION]
 @id_sala int,
 @id_pelicula int,
 @precio money,
 @fecha_desde datetime,
 @fecha_hasta datetime,
-@id_horario int
+@horario datetime
 as
-insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, id_horario) values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@id_horario)
+begin
+insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, horario) 
+values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@horario)
+end;
 
-ALTER proc [dbo].[SP_INSERTAR_TICKET]
-@nuevo_id_ticket int output,
-@fecha datetime,
-@id_cliente int,
-@id_medio_pedido int,
-@id_promocion int,
-@total money,
-@id_forma_pago int
-as
-insert into TICKETS(fecha,id_cliente,id_medio_pedido,id_promocion,total,estado, id_forma_pago) values (@fecha,@id_cliente,@id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
-	set @nuevo_id_ticket = SCOPE_IDENTITY()

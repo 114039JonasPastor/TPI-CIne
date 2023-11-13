@@ -1,16 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Diseño\FrmBajaTicket.cs">
+    <Compile Update="Diseño\FrmAltaFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Diseño\FrmConsultarFunciones.cs">
+    <Compile Update="Diseño\FrmAltaPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Diseño\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Diseño\FrmNuevaFuncion.cs">
+    <Compile Update="Diseño\FrmConsultaPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Diseño\FrmNuevoTicket.cs">
@@ -20,6 +17,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Diseño\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\Login.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

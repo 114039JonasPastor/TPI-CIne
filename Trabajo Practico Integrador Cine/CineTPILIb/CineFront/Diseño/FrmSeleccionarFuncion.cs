@@ -26,5 +26,10 @@ namespace CineFront.Diseño
         {
             MessageBox.Show("Su seleccion: " + cboPelicula.Text + " - " + cboIdioma.Text + " \n" + "Fecha " + cboHorario.Text);
         }
+
+        private void FrmSeleccionarFuncion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

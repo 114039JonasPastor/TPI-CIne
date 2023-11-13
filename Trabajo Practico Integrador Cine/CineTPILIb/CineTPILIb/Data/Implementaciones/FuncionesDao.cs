@@ -1,12 +1,7 @@
 ﻿using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineTPILIb.Data.Implementaciones
 {
@@ -29,18 +24,18 @@ namespace CineTPILIb.Data.Implementaciones
                 SqlCommand comando = new SqlCommand("SP_INSERTAR_FUNCIONES", conexion, t);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@id_sala", funcion.Id_funcion);
-                comando.Parameters.AddWithValue("@id_pelicula",funcion.Id_pelicula);
-                comando.Parameters.AddWithValue("@precio",funcion.precio);
-                comando.Parameters.AddWithValue("@fecha_desde",funcion.FechaDesde);
-                comando.Parameters.AddWithValue("@fecha_hasta",funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@id_horario", funcion.Id_horario);
+                comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
+                comando.Parameters.AddWithValue("@precio", funcion.Precio);
+                comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
+                comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
+                comando.Parameters.AddWithValue("@id_horario", funcion.Horario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();
             }
             catch
             {
-                if(t!= null)
+                if (t != null)
                 {
                     t.Rollback();
                     resultado = false;
@@ -96,25 +91,28 @@ namespace CineTPILIb.Data.Implementaciones
         {
             List<Funcion> lFunciones = new List<Funcion>();
 
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_SELECCIONAR_FUNCIONES");
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_FUNCIONES");
 
-            foreach(DataRow fila in tabla.Rows)
+            foreach (DataRow fila in tabla.Rows)
             {
-                int id_funcion = Convert.ToInt32(fila["id_funcion"]);
-                int id_sala = Convert.ToInt32(fila["id_sala"]);
-                bool estado = Convert.ToBoolean(fila["estado"]);
-                int id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
-                double precio = Convert.ToDouble(fila["precio"]);
-                DateTime fechaDesde = Convert.ToDateTime(fila["fecha_desde"]);
-                DateTime fechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
-                int id_horario = Convert.ToInt32(fila["id_horario"]);
-
-                Funcion f = new Funcion(id_funcion,id_sala,estado,id_pelicula,precio,fechaDesde,fechaHasta,id_horario);
+                Funcion f = new Funcion();
+                f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
+                f.Id_sala = Convert.ToInt32(fila["id_sala"]);
+                f.Horario = Convert.ToDateTime(fila["horario"]);
+                f.IdFormato = Convert.ToInt32(fila["id_formato"]);
+                f.Estado = Convert.ToBoolean(fila["estado"]);
+                f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
+                f.Precio = Convert.ToDouble(fila["precio"]);
+                f.FechaDesde = Convert.ToDateTime(fila["fecha_desde"]);
+                f.FechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
 
                 lFunciones.Add(f);
             }
             return lFunciones;
         }
+
+
+
 
         public bool ModificarFuncion(Funcion funcion)
         {
@@ -127,15 +125,15 @@ namespace CineTPILIb.Data.Implementaciones
                 conexion.Open();
                 t = conexion.BeginTransaction();
 
-                SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCIONES", conexion,t);
+                SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCIONES", conexion, t);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id_funcion",funcion.Id_funcion);
-                comando.Parameters.AddWithValue("@id_sala",funcion.Id_sala);
+                comando.Parameters.AddWithValue("@id_funcion", funcion.Id_funcion);
+                comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
                 comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
-                comando.Parameters.AddWithValue("@precio", funcion.precio);
+                comando.Parameters.AddWithValue("@precio", funcion.Precio);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@id_horario", funcion.Id_horario);
+                comando.Parameters.AddWithValue("@id_horario", funcion.Horario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();

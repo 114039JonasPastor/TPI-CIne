@@ -22,18 +22,20 @@ namespace CineApi.Controllers
         [HttpGet]
         public IActionResult GetFunciones()
         {
-            List<Funcion> list = null;
-
             try
             {
-                list = app.ObtenerFunciones();
-                return Ok(list);
+                return Ok(app.ObtenerFunciones());
             }
             catch(Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.ToString());
             }
         }
+
+
+
+
+
 
         // GET api/<FuncionesController>/5
         [HttpGet("{id}")]

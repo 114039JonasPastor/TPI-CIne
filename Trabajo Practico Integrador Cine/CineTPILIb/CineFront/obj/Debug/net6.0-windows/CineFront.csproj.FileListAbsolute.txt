@@ -16,3 +16,26 @@ C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineT
 C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.pdb
 C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.genruntimeconfig.cache
 C:\Users\Jonás\Documents\GitHub\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\ref\CineFront.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\bin\Debug\net6.0-windows\CineFront.exe
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\bin\Debug\net6.0-windows\CineFront.deps.json
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\bin\Debug\net6.0-windows\CineFront.runtimeconfig.json
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\bin\Debug\net6.0-windows\CineFront.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\bin\Debug\net6.0-windows\CineFront.pdb
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.FrmMenu.resources
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmNuevoTicket.resources
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmSeleccionarFuncion.resources
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.csproj.GenerateResource.cache
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.AssemblyInfoInputs.cache
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.AssemblyInfo.cs
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.csproj.CoreCompileInputs.cache
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\refint\CineFront.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.pdb
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.genruntimeconfig.cache
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\ref\CineFront.dll
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.Login.resources
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmAltaFuncion.resources
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmAltaPelicula.resources
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmConsultaPelicula.resources
+C:\Users\lucho\OneDrive\Escritorio\TPICine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Properties.Resources.resources
