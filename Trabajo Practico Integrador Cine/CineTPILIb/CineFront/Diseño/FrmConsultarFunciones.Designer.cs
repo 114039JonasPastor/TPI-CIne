@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(571, 349);
             this.Name = "FrmConsultarFunciones";
             this.Text = "ConsultarFuncionesFrm";
+            this.Load += new System.EventHandler(this.FrmConsultarFunciones_Load);
             this.ResumeLayout(false);
 
         }
