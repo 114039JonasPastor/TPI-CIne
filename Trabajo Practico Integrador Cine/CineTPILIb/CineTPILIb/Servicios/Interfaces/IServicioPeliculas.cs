@@ -1,4 +1,5 @@
 ﻿using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace CineTPILIb.Servicios.Interfaces
 {
     public interface IServicioPeliculas
     {
-        List<Pelicula> GetPeliculas(string titulo, int duracion, int id_genero, int id_idioma);
+        List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma);
         bool AltaPelicula(Pelicula nueva);
         bool ModificarPelicula(Pelicula pelicula);
+        public List<PeliculaDTO> GetPeliculas();
     }
 }

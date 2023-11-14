@@ -1,5 +1,6 @@
 ﻿using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +13,7 @@ namespace CineTPILIb.Data.Implementaciones
 {
     public class PeliculasDao : IPeliculasDao
     {
-        private SqlConnection conexion;
+        private SqlConnection conexion = null;
         public bool AltaPelicula(Pelicula nueva)
         {
             bool resultado = true;
@@ -56,25 +57,46 @@ namespace CineTPILIb.Data.Implementaciones
             return resultado;
         }
 
-        public List<Pelicula> GetPeliculas(string titulo, int duracion, int id_genero, int id_idioma)
+        public List<PeliculaDTO> GetPeliculas()
         {
-            List<Pelicula> lPeliculas = new List<Pelicula>();
+            List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();
+
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS_SIN_FILTRO");
+
+            foreach(DataRow row in tabla.Rows)
+            {
+                PeliculaDTO p = new PeliculaDTO();
+                p.Titulo = row["titulo"].ToString();
+                p.Duracion = Convert.ToInt32(row["duracion"].ToString());
+                p.Clasificacion = row["clasificacion"].ToString();
+                p.Genero = row["genero"].ToString();
+                p.Idioma = row["idioma"].ToString();
+
+                lPeliculas.Add(p);
+            }
+            return lPeliculas;
+        }
+
+        public List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma)
+        {
+            List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();
 
             List<Parametro> lParametros = new List<Parametro>();
             lParametros.Add(new Parametro("@titulo",titulo));
             lParametros.Add(new Parametro("@duracion", duracion));
-            lParametros.Add(new Parametro("@genero", id_genero));
-            lParametros.Add(new Parametro("@idioma", id_idioma));
+            lParametros.Add(new Parametro("@id_genero", id_genero));
+            lParametros.Add(new Parametro("@id_idioma", id_idioma));
 
             DataTable tabla = HelperDB.ObtenerInstancia().ConsultarConParametros("SP_CONSULTAR_PELICULAS",lParametros);
 
             foreach (DataRow row in tabla.Rows)
             {
-                Pelicula pelicula = new Pelicula();
+                PeliculaDTO pelicula = new PeliculaDTO();
                 pelicula.Titulo = row["titulo"].ToString();
                 pelicula.Duracion = Convert.ToInt32(row["duracion"].ToString());
-                pelicula.Id_genero = Convert.ToInt32(row["id_genero"].ToString());
-                pelicula.Id_idioma = Convert.ToInt32(row["id_idioma"].ToString());
+                pelicula.Clasificacion = row["clasificacion"].ToString();
+                pelicula.Genero = row["genero"].ToString();
+                pelicula.Idioma = row["idioma"].ToString();
 
                 lPeliculas.Add(pelicula);
             }

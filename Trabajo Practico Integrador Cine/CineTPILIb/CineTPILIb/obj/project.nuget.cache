@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Vfpyn7Z8Je3Mni7u6YhYZ3iE82rzPhsGksDn7EQqNjLQBonQv/P4+EQW2DV/tWy4KF4QrYgb2SOkMad5dYRrrQ==",
+  "dgSpecHash": "JWZuvfBAbwzg82A3gUdshZ4jomHzQAz2Wa7k2k1wa5lbF3eE0tqVDiVzQJqEwFKCPqnJENn8o0MoEBXb+ZBHkg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Jonás\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Jonás\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Jonás\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Jonás\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

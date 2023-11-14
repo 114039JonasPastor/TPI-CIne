@@ -16,5 +16,10 @@ namespace CineFront.Diseño
         {
             InitializeComponent();
         }
+
+        private void lblSala_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

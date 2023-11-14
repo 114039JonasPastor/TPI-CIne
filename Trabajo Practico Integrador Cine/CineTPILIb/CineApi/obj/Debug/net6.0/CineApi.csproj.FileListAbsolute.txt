@@ -143,3 +143,4 @@ C:\Users\Jonás\Desktop\Branch TP Manzanelli\TPI-CIne\Trabajo Practico Integrado
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.pdb
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.genruntimeconfig.cache
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\ref\CineApi.dll
+C:\Users\Jonás\Desktop\Branch TP Manzanelli\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\bin\Debug\net6.0\Newtonsoft.Json.dll

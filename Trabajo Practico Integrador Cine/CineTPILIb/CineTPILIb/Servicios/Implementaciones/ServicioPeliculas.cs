@@ -1,6 +1,7 @@
 ﻿using CineTPILIb.Data.Implementaciones;
 using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,15 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.AltaPelicula(nueva);
         }
 
-        public List<Pelicula> GetPeliculas(string titulo, int duracion, int id_genero, int id_idioma)
+
+        public List<PeliculaDTO> GetPeliculas()
         {
-            return dao.GetPeliculas(titulo, duracion, id_genero, id_idioma);
+            return dao.GetPeliculas();
+        }
+
+        public List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma)
+        {
+            return dao.GetPeliculasConFiltro(titulo, duracion, id_genero, id_idioma);
         }
 
         public bool ModificarPelicula(Pelicula pelicula)

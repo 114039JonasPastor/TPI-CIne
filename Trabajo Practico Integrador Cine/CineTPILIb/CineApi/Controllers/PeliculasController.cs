@@ -1,4 +1,5 @@
 ﻿using CineTPILIb.Dominio;
+using CineTPILIb.Servicios.Implementaciones;
 using CineTPILIb.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,20 +13,32 @@ namespace CineApi.Controllers
     {
         private IServicioPeliculas app;
 
+        public PeliculasController()
+        {
+            app = new ServicioPeliculas();
+        }
+
         // GET: api/<PeliculasController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetPeliculas()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(app.GetPeliculas());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         // GET api/<PeliculasController>/5
         [HttpGet("{titulo},{duracion},{id_genero},{id_idioma}")]
-        public IActionResult GetPeliculas(string titulo, int duracion, int id_genero, int id_idioma)
+        public IActionResult GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma)
         {
             try
             {
-                return Ok(app.GetPeliculas(titulo, duracion, id_genero, id_idioma));
+                return Ok(app.GetPeliculasConFiltro(titulo, duracion, id_genero, id_idioma));
             }
             catch (Exception ex)
             {
@@ -72,10 +85,10 @@ namespace CineApi.Controllers
             }
         }
 
-        // DELETE api/<PeliculasController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //// DELETE api/<PeliculasController>/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }
