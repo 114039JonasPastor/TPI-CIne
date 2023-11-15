@@ -456,3 +456,49 @@ insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_h
 values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@horario)
 end;
 
+create proc SP_CONSULTAR_PELICULAS
+@titulo varchar(200),
+@duracion int,
+@id_genero int,
+@id_idioma int
+as
+select titulo Titulo, duracion Duracion,clasificacion Clasificacion, genero Genero, idioma Idioma 
+from PELICULAS p
+join GENEROS g on g.id_genero = p.id_genero
+join IDIOMAS i on i.id_idioma = p.id_idioma
+join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+where titulo = @titulo or duracion = @duracion or @id_genero = @id_genero or @id_idioma = @id_idioma
+
+
+create proc SP_NUEVA_PELICULA
+@titulo varchar(200),
+@duracion int,
+@sinopsis varchar(400),
+@id_clasificacion int,
+@id_genero int,
+@id_idioma int
+as
+insert into PELICULAS(titulo,duracion,sinopsis,id_clasificacion,id_genero,id_idioma) values (@titulo, @duracion, @sinopsis, @id_clasificacion, @id_genero, @id_idioma)
+
+
+create proc SP_MODIFICAR_PELICULA
+@id_pelicula int,
+@titulo varchar(200),
+@duracion int,
+@sinopsis varchar(400),
+@id_clasificacion int,
+@id_genero int,
+@id_idioma int
+as
+update PELICULAS set titulo = @titulo, duracion = @duracion, sinopsis = @sinopsis, id_clasificacion = @id_clasificacion, id_genero = @id_genero, id_idioma = @id_idioma
+where id_pelicula = @id_pelicula
+
+create proc SP_CONSULTAR_PELICULAS_SIN_FILTRO
+as
+select titulo Titulo, duracion Duracion,clasificacion Clasificacion, genero Genero, idioma Idioma 
+from PELICULAS p
+join GENEROS g on g.id_genero = p.id_genero
+join IDIOMAS i on i.id_idioma = p.id_idioma
+join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+
+

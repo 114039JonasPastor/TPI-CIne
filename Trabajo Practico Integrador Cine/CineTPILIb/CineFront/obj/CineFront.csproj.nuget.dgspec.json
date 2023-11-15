@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineFront\\CineFront.csproj": {}
+    "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineFront\\CineFront.csproj": {
+    "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineFront\\CineFront.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
         "projectName": "CineFront",
-        "projectPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineFront\\CineFront.csproj",
-        "packagesPath": "C:\\Users\\lucho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineFront\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lucho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,7 +27,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
+                "projectPath": "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -39,6 +43,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +68,72 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+        "projectName": "CineTPILIb",
+        "projectPath": "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\Desktop\\TPCine\\114039\\TPI-CIne-114039\\TPI-CIne-114039\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
