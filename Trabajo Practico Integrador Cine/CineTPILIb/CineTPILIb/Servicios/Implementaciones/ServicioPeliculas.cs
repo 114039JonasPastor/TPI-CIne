@@ -25,6 +25,20 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.AltaPelicula(nueva);
         }
 
+        public List<Clasificacion> GetClasificaciones()
+        {
+            return dao.GetClasificaciones();
+        }
+
+        public List<Genero> GetGeneros()
+        {
+            return dao.GetGeneros();
+        }
+
+        public List<Idioma> GetIdiomas()
+        {
+            return dao.GetIdiomas();
+        }
 
         public List<PeliculaDTO> GetPeliculas()
         {

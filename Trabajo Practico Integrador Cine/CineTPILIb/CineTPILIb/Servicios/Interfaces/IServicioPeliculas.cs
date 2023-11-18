@@ -10,6 +10,10 @@ namespace CineTPILIb.Servicios.Interfaces
 {
     public interface IServicioPeliculas
     {
+        List<Clasificacion> GetClasificaciones();
+        List<Idioma> GetIdiomas();
+        List<Genero> GetGeneros();
+
         List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma);
         bool AltaPelicula(Pelicula nueva);
         bool ModificarPelicula(Pelicula pelicula);

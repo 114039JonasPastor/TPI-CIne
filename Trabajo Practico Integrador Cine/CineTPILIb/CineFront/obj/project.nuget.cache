@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5p/mjO0ICtqDAjDkmJd0paC2Yw9lrrseRVSpbfYPjnrQv51cxBVox87oGkyysP6WKv88L6zYnOVLjpj1bqektg==",
+  "dgSpecHash": "jBWz3NfB4nWy+aTAv4/oE4q2IDd9+ynRCpKMBSNtcbSdyM73xM+hI85oALQeFWFlpQli5uDnjWmplHFoEFlvCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
+  "projectFilePath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

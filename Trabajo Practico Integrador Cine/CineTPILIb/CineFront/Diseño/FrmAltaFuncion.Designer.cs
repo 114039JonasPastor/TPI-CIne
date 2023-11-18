@@ -37,17 +37,12 @@
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvFunciones = new System.Windows.Forms.DataGridView();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblFormato = new System.Windows.Forms.Label();
             this.cboFormato = new System.Windows.Forms.ComboBox();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.cboPelicula = new System.Windows.Forms.ComboBox();
             this.lblHorario = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.dgvFunciones = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +52,11 @@
             this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.dtpHorarios = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.SuspendLayout();
@@ -130,11 +130,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpHorarios);
             this.groupBox1.Controls.Add(this.txtPrecio);
             this.groupBox1.Controls.Add(this.lblFormato);
             this.groupBox1.Controls.Add(this.cboFormato);
             this.groupBox1.Controls.Add(this.lblPrecio);
-            this.groupBox1.Controls.Add(this.cboPelicula);
             this.groupBox1.Controls.Add(this.lblHorario);
             this.groupBox1.Controls.Add(this.lblSala);
             this.groupBox1.Controls.Add(this.dtpHasta);
@@ -149,28 +149,6 @@
             this.groupBox1.Size = new System.Drawing.Size(844, 158);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            // 
-            // dgvFunciones
-            // 
-            this.dgvFunciones.AllowUserToAddRows = false;
-            this.dgvFunciones.AllowUserToDeleteRows = false;
-            this.dgvFunciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFunciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColID,
-            this.ColPelicula,
-            this.ColSala,
-            this.ColHorario,
-            this.ColFormato,
-            this.ColFecDesde,
-            this.ColFecHasta,
-            this.ColPrecio,
-            this.ColAccion});
-            this.dgvFunciones.Location = new System.Drawing.Point(12, 205);
-            this.dgvFunciones.Name = "dgvFunciones";
-            this.dgvFunciones.ReadOnly = true;
-            this.dgvFunciones.RowTemplate.Height = 25;
-            this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
-            this.dgvFunciones.TabIndex = 15;
             // 
             // txtPrecio
             // 
@@ -205,14 +183,6 @@
             this.lblPrecio.TabIndex = 15;
             this.lblPrecio.Text = "Precio";
             // 
-            // cboPelicula
-            // 
-            this.cboPelicula.FormattingEnabled = true;
-            this.cboPelicula.Location = new System.Drawing.Point(507, 107);
-            this.cboPelicula.Name = "cboPelicula";
-            this.cboPelicula.Size = new System.Drawing.Size(137, 23);
-            this.cboPelicula.TabIndex = 17;
-            // 
             // lblHorario
             // 
             this.lblHorario.AutoSize = true;
@@ -222,41 +192,27 @@
             this.lblHorario.TabIndex = 13;
             this.lblHorario.Text = "Horario";
             // 
-            // btnAgregar
+            // dgvFunciones
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(739, 176);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(117, 23);
-            this.btnAgregar.TabIndex = 16;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 361);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(93, 23);
-            this.btnConfirmar.TabIndex = 17;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(662, 361);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(93, 23);
-            this.btnCancelar.TabIndex = 18;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(761, 361);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(95, 23);
-            this.btnSalir.TabIndex = 19;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.dgvFunciones.AllowUserToAddRows = false;
+            this.dgvFunciones.AllowUserToDeleteRows = false;
+            this.dgvFunciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFunciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColID,
+            this.ColPelicula,
+            this.ColSala,
+            this.ColHorario,
+            this.ColFormato,
+            this.ColFecDesde,
+            this.ColFecHasta,
+            this.ColPrecio,
+            this.ColAccion});
+            this.dgvFunciones.Location = new System.Drawing.Point(12, 205);
+            this.dgvFunciones.Name = "dgvFunciones";
+            this.dgvFunciones.ReadOnly = true;
+            this.dgvFunciones.RowTemplate.Height = 25;
+            this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
+            this.dgvFunciones.TabIndex = 15;
             // 
             // ColID
             // 
@@ -313,6 +269,49 @@
             this.ColAccion.Name = "ColAccion";
             this.ColAccion.ReadOnly = true;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(739, 176);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(117, 23);
+            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 361);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(93, 23);
+            this.btnConfirmar.TabIndex = 17;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(662, 361);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(93, 23);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(761, 361);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(95, 23);
+            this.btnSalir.TabIndex = 19;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // dtpHorarios
+            // 
+            this.dtpHorarios.Location = new System.Drawing.Point(507, 107);
+            this.dtpHorarios.Name = "dtpHorarios";
+            this.dtpHorarios.Size = new System.Drawing.Size(229, 23);
+            this.dtpHorarios.TabIndex = 19;
+            // 
             // FrmAltaFuncion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -326,6 +325,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAltaFuncion";
             this.Text = "NuevaFuncionFrm";
+            this.Load += new System.EventHandler(this.FrmAltaFuncion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).EndInit();
@@ -348,7 +348,6 @@
         private Label lblFormato;
         private ComboBox cboFormato;
         private Label lblPrecio;
-        private ComboBox cboPelicula;
         private Label lblHorario;
         private DataGridView dgvFunciones;
         private Button btnAgregar;
@@ -364,5 +363,6 @@
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewButtonColumn ColAccion;
+        private DateTimePicker dtpHorarios;
     }
 }

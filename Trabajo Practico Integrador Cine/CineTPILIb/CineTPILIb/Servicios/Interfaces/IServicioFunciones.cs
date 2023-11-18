@@ -12,6 +12,6 @@ namespace CineTPILIb.Servicios.Interfaces
         List<Funcion> ObtenerFunciones();
         bool AltaFuncion(Funcion funcion);
         bool BajaFuncion(int id);
-        bool ModificarFuncion(Funcion funcion);
+        bool ModificarFuncion(int id,Funcion funcion);
     }
 }

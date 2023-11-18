@@ -502,3 +502,57 @@ join IDIOMAS i on i.id_idioma = p.id_idioma
 join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
 
 
+create proc SP_CONSULTAR_CLASIFICACIONES
+as
+select * from CLASIFICACIONES
+
+create proc SP_CONSULTAR_IDIOMAS
+as
+select * from IDIOMAS
+
+create proc SP_CONSULTAR_GENEROS
+as
+select * from GENEROS
+
+ALTER proc [dbo].[SP_CONSULTAR_PELICULAS]
+@titulo varchar(200),
+@duracion int,
+@id_genero int,
+@id_idioma int
+as
+select titulo Titulo, duracion Duracion,clasificacion Clasificacion, genero Genero, idioma Idioma 
+from PELICULAS p
+join GENEROS g on g.id_genero = p.id_genero
+join IDIOMAS i on i.id_idioma = p.id_idioma
+join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+where titulo = @titulo or duracion = @duracion or g.id_genero = @id_genero or i.id_idioma = @id_idioma
+
+ALTER proc [dbo].[SP_INSERTAR_FUNCION]
+@id_sala int,
+@id_pelicula int,
+@precio money,
+@id_formato int,
+@fecha_desde datetime,
+@fecha_hasta datetime,
+@horario datetime
+as
+begin
+insert into funciones(id_sala, estado, id_pelicula, id_formato,precio, fecha_desde, fecha_hasta, horario) 
+values (@id_sala,1,@id_pelicula,@id_formato ,@precio,@fecha_desde,@fecha_hasta,@horario)
+end;
+
+ALTER proc [dbo].[SP_UPDATE_FUNCION]
+@id_funcion int,
+@id_sala int,
+@id_pelicula int,
+@precio money,
+@fecha_desde datetime,
+@fecha_hasta datetime,
+@horarios datetime
+as
+begin
+update funciones set id_sala = @id_sala, id_pelicula = @id_pelicula, precio = @precio, fecha_desde = @fecha_desde, fecha_hasta = @fecha_hasta, Horario = @horarios
+where id_funcion = @id_funcion
+end;
+
+

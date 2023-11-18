@@ -57,6 +57,67 @@ namespace CineTPILIb.Data.Implementaciones
             return resultado;
         }
 
+        public List<Clasificacion> GetClasificaciones()
+        {
+            List<Clasificacion> lst = new List<Clasificacion>();
+
+            string sp = "SP_CONSULTAR_CLASIFICACIONES";
+            DataTable t = HelperDB.ObtenerInstancia().Consultar(sp);
+
+            foreach (DataRow dr in t.Rows)
+            {
+                //Mapear un registro a un objeto del modelo de dominio
+                Clasificacion aux = new Clasificacion();
+
+                aux.IdClasificacion = Convert.ToInt32(dr["id_clasificacion"]);
+                aux.ClasificacionName = Convert.ToString(dr["clasificacion"]);
+
+                lst.Add(aux);
+            }
+            return lst;
+        }
+
+        public List<Genero> GetGeneros()
+        {
+            List<Genero> lst = new List<Genero>();
+
+            string sp = "SP_CONSULTAR_GENEROS";
+            DataTable t = HelperDB.ObtenerInstancia().Consultar(sp);
+
+            foreach (DataRow dr in t.Rows)
+            {
+                //Mapear un registro a un objeto del modelo de dominio
+                Genero aux = new Genero();
+
+                aux.IdGenero = Convert.ToInt32(dr["id_genero"]);
+                aux.GeneroName = Convert.ToString(dr["genero"]);
+
+                lst.Add(aux);
+            }
+            return lst;
+
+        }
+
+        public List<Idioma> GetIdiomas()
+        {
+            List<Idioma> lst = new List<Idioma>();
+
+            string sp = "SP_CONSULTAR_IDIOMAS";
+            DataTable t = HelperDB.ObtenerInstancia().Consultar(sp);
+
+            foreach (DataRow dr in t.Rows)
+            {
+                //Mapear un registro a un objeto del modelo de dominio
+                Idioma aux = new Idioma();
+
+                aux.IdIdioma = Convert.ToInt32(dr["id_idioma"]);
+                aux.IdiomaName = Convert.ToString(dr["idioma"]);
+
+                lst.Add(aux);
+            }
+            return lst;
+        }
+
         public List<PeliculaDTO> GetPeliculas()
         {
             List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();

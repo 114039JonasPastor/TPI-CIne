@@ -18,6 +18,49 @@ namespace CineApi.Controllers
             app = new ServicioPeliculas();
         }
 
+        [HttpGet("/clasificaciones")]
+        public IActionResult GetClasificaciones()
+        {
+            try
+            {
+                return Ok(app.GetClasificaciones());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/idiomas")]
+        public IActionResult GetIdiomas()
+        {
+            try
+            {
+                return Ok(app.GetIdiomas());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/generos")]
+        public IActionResult GetGeneros()
+        {
+            try
+            {
+                return Ok(app.GetGeneros());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+
         // GET: api/<PeliculasController>
         [HttpGet]
         public IActionResult GetPeliculas()

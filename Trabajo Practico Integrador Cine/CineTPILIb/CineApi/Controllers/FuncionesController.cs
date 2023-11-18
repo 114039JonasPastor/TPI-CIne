@@ -74,7 +74,7 @@ namespace CineApi.Controllers
                 }
                 else
                 {
-                    return Ok(app.ModificarFuncion(funcion));
+                    return Ok(app.ModificarFuncion(id, funcion));
                 }
             }
             catch(Exception ex)

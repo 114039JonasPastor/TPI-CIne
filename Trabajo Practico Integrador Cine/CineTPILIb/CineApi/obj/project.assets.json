@@ -715,11 +715,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\CineApi.csproj",
+      "projectUniqueName": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\CineApi.csproj",
       "projectName": "CineApi",
-      "projectPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\CineApi.csproj",
+      "projectPath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\CineApi.csproj",
       "packagesPath": "C:\\Users\\Jonás\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\obj\\",
+      "outputPath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jonás\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -736,8 +736,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
-              "projectPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj"
+            "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
+              "projectPath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj"
             }
           }
         }

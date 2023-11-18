@@ -10,6 +10,10 @@ namespace CineTPILIb.Data.Interfaces
 {
     public interface IPeliculasDao
     {
+        List<Clasificacion> GetClasificaciones();
+        List<Idioma> GetIdiomas();
+        List<Genero> GetGeneros();
+
         List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma);
         List<PeliculaDTO> GetPeliculas();
         bool AltaPelicula(Pelicula nueva);

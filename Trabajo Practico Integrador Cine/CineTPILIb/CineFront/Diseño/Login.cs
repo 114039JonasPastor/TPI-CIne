@@ -65,5 +65,10 @@ namespace CineFront.Diseño
         {
             this.Dispose();
         }
+
+        private void Login_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

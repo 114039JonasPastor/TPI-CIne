@@ -67,5 +67,23 @@ namespace CineFront
             FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
             frmAltaPelicula.ShowDialog();
         }
+
+        private void consultarPeliculasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmConsultaPelicula consultaPelicula = new FrmConsultaPelicula();
+            consultaPelicula.ShowDialog();
+        }
+
+        private void nuevaPelículaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
+            frmAltaPelicula.ShowDialog();
+        }
+
+        private void agregarFuncionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAltaFuncion frmAltaFuncion = new FrmAltaFuncion();
+            frmAltaFuncion.ShowDialog();
+        }
     }
 }

@@ -21,14 +21,15 @@ namespace CineTPILIb.Data.Implementaciones
                 t = conexion.BeginTransaction();
 
 
-                SqlCommand comando = new SqlCommand("SP_INSERTAR_FUNCIONES", conexion, t);
+                SqlCommand comando = new SqlCommand("SP_INSERTAR_FUNCION", conexion, t);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id_sala", funcion.Id_funcion);
+                comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
                 comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
                 comando.Parameters.AddWithValue("@precio", funcion.Precio);
+                comando.Parameters.AddWithValue("@id_formato", funcion.IdFormato);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@id_horario", funcion.Horario);
+                comando.Parameters.AddWithValue("@horario", funcion.Horario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();
@@ -114,7 +115,7 @@ namespace CineTPILIb.Data.Implementaciones
 
 
 
-        public bool ModificarFuncion(Funcion funcion)
+        public bool ModificarFuncion(int id, Funcion funcion)
         {
             bool resultado = true;
             SqlTransaction t = null;
@@ -125,15 +126,17 @@ namespace CineTPILIb.Data.Implementaciones
                 conexion.Open();
                 t = conexion.BeginTransaction();
 
-                SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCIONES", conexion, t);
+                id = funcion.Id_funcion;
+
+                SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCION", conexion, t);
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id_funcion", funcion.Id_funcion);
+                comando.Parameters.AddWithValue("@id_funcion", id);
                 comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
                 comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
                 comando.Parameters.AddWithValue("@precio", funcion.Precio);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@id_horario", funcion.Horario);
+                comando.Parameters.AddWithValue("@horarios", funcion.Horario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();

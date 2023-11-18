@@ -33,9 +33,9 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.BajaFuncion(id);
         }
 
-        public bool ModificarFuncion(Funcion funcion)
+        public bool ModificarFuncion(int id, Funcion funcion)
         {
-            return dao.ModificarFuncion(funcion);
+            return dao.ModificarFuncion(id, funcion);
         }
 
     }
