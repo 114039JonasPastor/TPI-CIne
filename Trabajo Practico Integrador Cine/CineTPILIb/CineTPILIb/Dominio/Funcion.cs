@@ -10,8 +10,7 @@ namespace CineTPILIb.Dominio
     {
         public int Id_funcion { get; set; }
         public int Id_sala { get; set; }
-        public DateTime Horario { get; set; }
-        public int IdFormato {  get; set; }
+        public int Id_horarios { get; set; }
         public bool Estado { get; set; }
         public int Id_pelicula { get; set; }
         public double Precio { get; set; }
@@ -23,14 +22,13 @@ namespace CineTPILIb.Dominio
             
         }
 
-        public Funcion(int id_funcion, int id_sala, DateTime horario, bool estado, int id_pelicula, double precio, 
-                        DateTime fechaDesde, DateTime fechaHasta, int id_formato)
+        public Funcion(int id_funcion, int id_sala, int id_horarios, bool estado, int id_pelicula, double precio, 
+                        DateTime fechaDesde, DateTime fechaHasta)
         {
             Id_funcion = id_funcion;
             Id_sala = id_sala;
-            Horario = horario;
+            Id_horarios = id_horarios;
             Estado = estado;
-            IdFormato = id_formato;
             Id_pelicula = id_pelicula;
             Precio = precio;
             FechaDesde = fechaDesde;

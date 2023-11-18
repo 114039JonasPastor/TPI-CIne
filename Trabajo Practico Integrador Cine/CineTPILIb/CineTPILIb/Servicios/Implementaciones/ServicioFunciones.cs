@@ -38,5 +38,19 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.ModificarFuncion(id, funcion);
         }
 
+        public List<Pelicula> GetPeliculaList()
+        {
+            return dao.GetPeliculaList();
+        }
+
+        public List<Horario> GetHorarios()
+        {
+            return dao.GetHorarios();
+        }
+
+        public List<Sala> GetSalas()
+        {
+            return dao.GetSalas();
+        }
     }
 }

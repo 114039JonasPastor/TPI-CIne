@@ -556,3 +556,72 @@ where id_funcion = @id_funcion
 end;
 
 
+alter table funciones drop constraint fk_formato
+alter table funciones drop column id_formato -- Ya esta en tipo de salas 
+alter table funciones drop column horario
+
+create table Horarios
+(
+id_horarios int identity(1,1),
+horario varchar(200)
+
+constraint pk_horario primary key(id_horarios)
+)
+
+alter table funciones add id_horarios int
+alter table funciones add constraint fk_horarios foreign key(id_horarios) references horarios(id_horarios)
+
+create proc SP_COMBO_PELICULA
+as
+select * from PELICULAS
+
+create proc SP_COMBO_HORARIO
+as
+select * from Horarios
+
+create proc SP_COMBO_SALAS
+as
+select * from SALAS
+
+ALTER proc [dbo].[SP_UPDATE_FUNCION]
+@id_funcion int,
+@id_sala int,
+@id_pelicula int,
+@precio money,
+@fecha_desde datetime,
+@fecha_hasta datetime,
+@id_horario int
+as
+begin
+update funciones set id_sala = @id_sala, id_pelicula = @id_pelicula, precio = @precio, fecha_desde = @fecha_desde, fecha_hasta = fecha_hasta, id_horarios = @id_horario
+where id_funcion = @id_funcion
+end;
+
+ALTER proc [dbo].[SP_INSERTAR_FUNCION]
+@id_sala int,
+@id_pelicula int,
+@precio money,
+@fecha_desde datetime,
+@fecha_hasta datetime,
+@id_horarios int
+as
+begin
+insert into funciones(id_sala, estado, id_pelicula,precio, fecha_desde, fecha_hasta, id_horarios) 
+values (@id_sala,1,@id_pelicula ,@precio,@fecha_desde,@fecha_hasta,@id_horarios)
+end;
+
+create proc SP_CONSULTAR_FUNCIONES_FILTROS
+@nro_funcion int,
+@desde datetime,
+@hasta datetime
+as
+select id_funcion 'Numero de funcion', titulo Pelicula, nro_sala Sala, horario Horario, fecha_desde 'Fecha desde', fecha_hasta 'Fecha hasta', precio Precio
+from FUNCIONES f join PELICULAS p on p.id_pelicula = f.id_pelicula
+join SALAS s on s.id_sala = f.id_sala
+join Horarios h on h.id_horarios = f.id_horarios
+where id_funcion = @nro_funcion or fecha_desde = @desde and fecha_hasta = @hasta
+
+
+
+insert into horarios(horario) values('19:00')
+insert into horarios(horario) values('22:00')

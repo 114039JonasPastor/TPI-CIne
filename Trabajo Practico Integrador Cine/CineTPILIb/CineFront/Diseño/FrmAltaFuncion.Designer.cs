@@ -30,33 +30,30 @@
         {
             this.cboSala = new System.Windows.Forms.ComboBox();
             this.lblSala = new System.Windows.Forms.Label();
-            this.cboHorario = new System.Windows.Forms.ComboBox();
+            this.cboPelicula = new System.Windows.Forms.ComboBox();
             this.lblPelicula = new System.Windows.Forms.Label();
             this.lblFecDesde = new System.Windows.Forms.Label();
             this.lblFecHasta = new System.Windows.Forms.Label();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboHorarios = new System.Windows.Forms.ComboBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.lblFormato = new System.Windows.Forms.Label();
-            this.cboFormato = new System.Windows.Forms.ComboBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblHorario = new System.Windows.Forms.Label();
             this.dgvFunciones = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFormato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dtpHorarios = new System.Windows.Forms.DateTimePicker();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.SuspendLayout();
@@ -79,13 +76,13 @@
             this.lblSala.Text = "Sala";
             this.lblSala.Click += new System.EventHandler(this.lblSala_Click);
             // 
-            // cboHorario
+            // cboPelicula
             // 
-            this.cboHorario.FormattingEnabled = true;
-            this.cboHorario.Location = new System.Drawing.Point(64, 16);
-            this.cboHorario.Name = "cboHorario";
-            this.cboHorario.Size = new System.Drawing.Size(672, 23);
-            this.cboHorario.TabIndex = 2;
+            this.cboPelicula.FormattingEnabled = true;
+            this.cboPelicula.Location = new System.Drawing.Point(64, 16);
+            this.cboPelicula.Name = "cboPelicula";
+            this.cboPelicula.Size = new System.Drawing.Size(672, 23);
+            this.cboPelicula.TabIndex = 2;
             // 
             // lblPelicula
             // 
@@ -130,10 +127,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpHorarios);
+            this.groupBox1.Controls.Add(this.cboHorarios);
             this.groupBox1.Controls.Add(this.txtPrecio);
-            this.groupBox1.Controls.Add(this.lblFormato);
-            this.groupBox1.Controls.Add(this.cboFormato);
             this.groupBox1.Controls.Add(this.lblPrecio);
             this.groupBox1.Controls.Add(this.lblHorario);
             this.groupBox1.Controls.Add(this.lblSala);
@@ -142,7 +137,7 @@
             this.groupBox1.Controls.Add(this.lblFecHasta);
             this.groupBox1.Controls.Add(this.dtpDesde);
             this.groupBox1.Controls.Add(this.lblPelicula);
-            this.groupBox1.Controls.Add(this.cboHorario);
+            this.groupBox1.Controls.Add(this.cboPelicula);
             this.groupBox1.Controls.Add(this.lblFecDesde);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -150,34 +145,25 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
+            // cboHorarios
+            // 
+            this.cboHorarios.FormattingEnabled = true;
+            this.cboHorarios.Location = new System.Drawing.Point(507, 107);
+            this.cboHorarios.Name = "cboHorarios";
+            this.cboHorarios.Size = new System.Drawing.Size(229, 23);
+            this.cboHorarios.TabIndex = 19;
+            // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(64, 110);
+            this.txtPrecio.Location = new System.Drawing.Point(64, 112);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
             this.txtPrecio.TabIndex = 18;
             // 
-            // lblFormato
-            // 
-            this.lblFormato.AutoSize = true;
-            this.lblFormato.Location = new System.Drawing.Point(0, 84);
-            this.lblFormato.Name = "lblFormato";
-            this.lblFormato.Size = new System.Drawing.Size(52, 15);
-            this.lblFormato.TabIndex = 14;
-            this.lblFormato.Text = "Formato";
-            // 
-            // cboFormato
-            // 
-            this.cboFormato.FormattingEnabled = true;
-            this.cboFormato.Location = new System.Drawing.Point(64, 81);
-            this.cboFormato.Name = "cboFormato";
-            this.cboFormato.Size = new System.Drawing.Size(100, 23);
-            this.cboFormato.TabIndex = 16;
-            // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(0, 113);
+            this.lblPrecio.Location = new System.Drawing.Point(0, 115);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 15);
             this.lblPrecio.TabIndex = 15;
@@ -202,7 +188,6 @@
             this.ColPelicula,
             this.ColSala,
             this.ColHorario,
-            this.ColFormato,
             this.ColFecDesde,
             this.ColFecHasta,
             this.ColPrecio,
@@ -213,6 +198,44 @@
             this.dgvFunciones.RowTemplate.Height = 25;
             this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
             this.dgvFunciones.TabIndex = 15;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(739, 176);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(117, 23);
+            this.btnAgregar.TabIndex = 16;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 361);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(93, 23);
+            this.btnConfirmar.TabIndex = 17;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(662, 361);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(93, 23);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(761, 361);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(95, 23);
+            this.btnSalir.TabIndex = 19;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // ColID
             // 
@@ -226,6 +249,7 @@
             this.ColPelicula.HeaderText = "Pelicula";
             this.ColPelicula.Name = "ColPelicula";
             this.ColPelicula.ReadOnly = true;
+            this.ColPelicula.Width = 200;
             // 
             // ColSala
             // 
@@ -238,12 +262,6 @@
             this.ColHorario.HeaderText = "Horario";
             this.ColHorario.Name = "ColHorario";
             this.ColHorario.ReadOnly = true;
-            // 
-            // ColFormato
-            // 
-            this.ColFormato.HeaderText = "Formato";
-            this.ColFormato.Name = "ColFormato";
-            this.ColFormato.ReadOnly = true;
             // 
             // ColFecDesde
             // 
@@ -268,49 +286,6 @@
             this.ColAccion.HeaderText = "Accion";
             this.ColAccion.Name = "ColAccion";
             this.ColAccion.ReadOnly = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(739, 176);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(117, 23);
-            this.btnAgregar.TabIndex = 16;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 361);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(93, 23);
-            this.btnConfirmar.TabIndex = 17;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(662, 361);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(93, 23);
-            this.btnCancelar.TabIndex = 18;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(761, 361);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(95, 23);
-            this.btnSalir.TabIndex = 19;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // dtpHorarios
-            // 
-            this.dtpHorarios.Location = new System.Drawing.Point(507, 107);
-            this.dtpHorarios.Name = "dtpHorarios";
-            this.dtpHorarios.Size = new System.Drawing.Size(229, 23);
-            this.dtpHorarios.TabIndex = 19;
             // 
             // FrmAltaFuncion
             // 
@@ -337,7 +312,7 @@
 
         private ComboBox cboSala;
         private Label lblSala;
-        private ComboBox cboHorario;
+        private ComboBox cboPelicula;
         private Label lblPelicula;
         private Label lblFecDesde;
         private Label lblFecHasta;
@@ -345,8 +320,6 @@
         private DateTimePicker dtpHasta;
         private GroupBox groupBox1;
         private TextBox txtPrecio;
-        private Label lblFormato;
-        private ComboBox cboFormato;
         private Label lblPrecio;
         private Label lblHorario;
         private DataGridView dgvFunciones;
@@ -354,15 +327,14 @@
         private Button btnConfirmar;
         private Button btnCancelar;
         private Button btnSalir;
+        private ComboBox cboHorarios;
         private DataGridViewTextBoxColumn ColID;
         private DataGridViewTextBoxColumn ColPelicula;
         private DataGridViewTextBoxColumn ColSala;
         private DataGridViewTextBoxColumn ColHorario;
-        private DataGridViewTextBoxColumn ColFormato;
         private DataGridViewTextBoxColumn ColFecDesde;
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewButtonColumn ColAccion;
-        private DateTimePicker dtpHorarios;
     }
 }

@@ -137,7 +137,6 @@ C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\Ci
 C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmConsultaPelicula.resources
 C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmConsultarFunciones.resources
 C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.FrmMenu.resources
-C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmNuevaFuncion.resources
 C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmNuevoTicket.resources
 C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmSeleccionarFuncion.resources
 C:\Users\Jonás\Desktop\TPI-CIne-JonasPastor\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.Login.resources

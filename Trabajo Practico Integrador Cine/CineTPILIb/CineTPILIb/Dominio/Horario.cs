@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CineTPILIb.Dominio
 {
-    public class Sala
+    public class Horario
     {
-        public int IdSala { get; set; }
-        public int NroSala { get; set; }
-        public int IdTipoSala { get; set; }
+        public int IdHorario { get; set; }
+        public string Horarios { get; set; }
     }
 }
