@@ -15,7 +15,7 @@ namespace CineTPILIb.Data
 
         private HelperDB()
         {
-            conexion = new SqlConnection(@"Data Source=DESKTOP-DLVQNHV\SQLEXPRESS;Initial Catalog=CineNuevo;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=CineNuevo0;Integrated Security=True");
         }
         public static HelperDB ObtenerInstancia()
         {
@@ -45,6 +45,8 @@ namespace CineTPILIb.Data
             return tabla;
         }
 
+
+
         public DataTable ConsultarConParametros(string NombreSP, List<Parametro> parametros)
         {
             DataTable tabla = new DataTable();
@@ -64,6 +66,8 @@ namespace CineTPILIb.Data
 
             return tabla;
         }
+
+
         public int ConsultarEscalar(string NombreSP, string NombreParametroOut)
         {
             conexion.Open();

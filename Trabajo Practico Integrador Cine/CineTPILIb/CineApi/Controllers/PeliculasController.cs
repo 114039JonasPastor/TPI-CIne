@@ -2,6 +2,7 @@
 using CineTPILIb.Servicios.Implementaciones;
 using CineTPILIb.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -89,6 +90,8 @@ namespace CineApi.Controllers
             }
         }
 
+
+
         // POST api/<PeliculasController>
         [HttpPost]
         public IActionResult GuardarPelicula([FromBody] Pelicula  nueva)
@@ -106,6 +109,7 @@ namespace CineApi.Controllers
                 return BadRequest();
             }
         }
+
 
         // PUT api/<PeliculasController>/5
         [HttpPut("{id}")]
@@ -128,10 +132,18 @@ namespace CineApi.Controllers
             }
         }
 
-        //// DELETE api/<PeliculasController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        // DELETE api/<PeliculasController>/5
+        [HttpDelete("{id}")]
+        public IActionResult BorrarPelicula(int id)
+        {
+            try
+            {
+                return Ok(app.BajaPelicula(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
     }
 }

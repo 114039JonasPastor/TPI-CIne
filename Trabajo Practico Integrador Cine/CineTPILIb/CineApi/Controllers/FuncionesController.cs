@@ -26,23 +26,28 @@ namespace CineApi.Controllers
             {
                 return Ok(app.ObtenerFunciones());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
         }
 
 
-
-
-
-
         // GET api/<FuncionesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("/funciones/{id}")]
+        public IActionResult GetFuncionesPorId(int id)
         {
-            return "value";
+            try
+            {
+                return Ok(app.GetFuncionesPorId(id));
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
         }
+
 
         // POST api/<FuncionesController>
         [HttpPost]
@@ -50,17 +55,18 @@ namespace CineApi.Controllers
         {
             try
             {
-                if(funcion == null)
+                if (funcion == null)
                 {
                     return BadRequest();
                 }
                 return Ok(app.AltaFuncion(funcion));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }
         }
+
 
         // PUT api/<FuncionesController>/5
         [HttpPut("{id}")]
@@ -68,7 +74,7 @@ namespace CineApi.Controllers
         {
             try
             {
-                if(funcion == null)
+                if (funcion == null)
                 {
                     return BadRequest();
                 }
@@ -77,11 +83,12 @@ namespace CineApi.Controllers
                     return Ok(app.ModificarFuncion(funcion));
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }
         }
+
 
         // DELETE api/<FuncionesController>/5
         [HttpDelete("{id}")]
@@ -91,7 +98,7 @@ namespace CineApi.Controllers
             {
                 return Ok(app.BajaFuncion(id));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }

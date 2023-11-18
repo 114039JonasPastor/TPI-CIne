@@ -18,5 +18,6 @@ namespace CineTPILIb.Servicios.Interfaces
         bool AltaPelicula(Pelicula nueva);
         bool ModificarPelicula(Pelicula pelicula);
         public List<PeliculaDTO> GetPeliculas();
+        bool BajaPelicula(int id);
     }
 }

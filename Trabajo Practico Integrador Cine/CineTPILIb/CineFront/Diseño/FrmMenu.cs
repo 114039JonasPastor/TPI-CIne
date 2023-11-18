@@ -33,7 +33,7 @@ namespace CineFront
             if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
-                Login frmLogin = Login.ObtenerInstancia();
+                FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
                 this.Dispose();
                 frmLogin.Dispose();
             }
@@ -44,7 +44,7 @@ namespace CineFront
             if (MessageBox.Show("¿Desea cerrar la sesion?", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
-                Login frmLogin = Login.ObtenerInstancia();
+                FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
                 frmLogin.Show();
                 this.Hide();
             }
@@ -58,7 +58,7 @@ namespace CineFront
 
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Login frmLogin = Login.ObtenerInstancia();
+            FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
             frmLogin.Dispose();
         }
 

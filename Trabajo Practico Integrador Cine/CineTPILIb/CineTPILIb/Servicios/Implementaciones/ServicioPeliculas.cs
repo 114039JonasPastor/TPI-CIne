@@ -25,6 +25,11 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.AltaPelicula(nueva);
         }
 
+        public bool BajaPelicula(int id)
+        {
+            return dao.BajaPelicula(id);
+        }
+
         public List<Clasificacion> GetClasificaciones()
         {
             return dao.GetClasificaciones();

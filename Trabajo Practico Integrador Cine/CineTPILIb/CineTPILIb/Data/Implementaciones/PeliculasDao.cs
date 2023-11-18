@@ -14,48 +14,9 @@ namespace CineTPILIb.Data.Implementaciones
     public class PeliculasDao : IPeliculasDao
     {
         private SqlConnection conexion = null;
-        public bool AltaPelicula(Pelicula nueva)
-        {
-            bool resultado = true;
-            SqlTransaction t = null;
-            conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
 
-            try
-            {
-                conexion.Open();
-                t = conexion.BeginTransaction();
 
-                SqlCommand comando = new SqlCommand("SP_NUEVA_PELICULA", conexion, t);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@titulo",nueva.Titulo);
-                comando.Parameters.AddWithValue("@duracion",nueva.Duracion);
-                comando.Parameters.AddWithValue("@sinopsis",nueva.Sinopsis);
-                comando.Parameters.AddWithValue("@id_clasificacion",nueva.Id_clasificacion);
-                comando.Parameters.AddWithValue("@id_genero",nueva.Id_genero);
-                comando.Parameters.AddWithValue("@id_idioma",nueva.Id_idioma);
-
-                comando.ExecuteNonQuery();
-
-                t.Commit();
-            }
-            catch
-            {
-                if (t != null)
-                {
-                    t.Rollback();
-                    resultado = false;
-                }
-            }
-            finally
-            {
-                if (conexion != null && conexion.State == ConnectionState.Open)
-                {
-                    conexion.Close();
-                }
-            }
-
-            return resultado;
-        }
+        
 
         public List<Clasificacion> GetClasificaciones()
         {
@@ -118,6 +79,7 @@ namespace CineTPILIb.Data.Implementaciones
             return lst;
         }
 
+
         public List<PeliculaDTO> GetPeliculas()
         {
             List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();
@@ -163,6 +125,49 @@ namespace CineTPILIb.Data.Implementaciones
             }
             return lPeliculas;
         }
+        
+        public bool AltaPelicula(Pelicula nueva)
+        {
+            bool resultado = true;
+            SqlTransaction t = null;
+            conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
+
+            try
+            {
+                conexion.Open();
+                t = conexion.BeginTransaction();
+
+                SqlCommand comando = new SqlCommand("SP_NUEVA_PELICULA", conexion, t);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@titulo",nueva.Titulo);
+                comando.Parameters.AddWithValue("@duracion",nueva.Duracion);
+                comando.Parameters.AddWithValue("@sinopsis",nueva.Sinopsis);
+                comando.Parameters.AddWithValue("@id_clasificacion",nueva.Id_clasificacion);
+                comando.Parameters.AddWithValue("@id_genero",nueva.Id_genero);
+                comando.Parameters.AddWithValue("@id_idioma",nueva.Id_idioma);
+
+                comando.ExecuteNonQuery();
+
+                t.Commit();
+            }
+            catch
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    resultado = false;
+                }
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+            return resultado;
+        }
 
         public bool ModificarPelicula(Pelicula pelicula)
         {
@@ -205,6 +210,42 @@ namespace CineTPILIb.Data.Implementaciones
                 }
             }
 
+            return resultado;
+        }
+        
+        public bool BajaPelicula(int id)
+        {
+            bool resultado = true;
+            SqlTransaction t = null;
+            conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
+
+            try
+            {
+                conexion.Open();
+                t = conexion.BeginTransaction();
+
+                SqlCommand comando = new SqlCommand("SP_BAJA_PELICULA", conexion, t);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_pelicula", id);
+
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    resultado = false;
+                }
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
             return resultado;
         }
     }

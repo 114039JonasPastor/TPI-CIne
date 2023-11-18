@@ -38,5 +38,9 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.ModificarFuncion(funcion);
         }
 
+        public Funcion GetFuncionesPorId(int nro)
+        {
+            return dao.ObtenerFuncionPorId(nro);
+        }
     }
 }

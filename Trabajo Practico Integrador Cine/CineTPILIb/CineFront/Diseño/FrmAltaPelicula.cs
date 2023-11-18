@@ -87,7 +87,7 @@ namespace CineFront.Diseño
             nuevoDTO.Genero = cboGenero.Text;
             nuevoDTO.Idioma = cboIdioma.Text;
 
-            dgvAltaPelicula.Rows.Add(new object[] { nuevoDTO.Titulo, nuevoDTO.Duracion, nuevoDTO.Clasificacion, nuevoDTO.Genero, nuevoDTO.Idioma });
+            dgvAltaPelicula.Rows.Add(new object[] { nuevo.Id_pelicula, nuevoDTO.Titulo, nuevoDTO.Duracion, nuevoDTO.Clasificacion, nuevoDTO.Genero, nuevoDTO.Idioma });
 
             await GuardarPeliculaAsync();
         }
