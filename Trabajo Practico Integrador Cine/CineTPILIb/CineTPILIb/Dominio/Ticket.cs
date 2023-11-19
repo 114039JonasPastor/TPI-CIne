@@ -13,21 +13,27 @@ namespace CineTPILIb.Dominio
         public int Id_cliente { get; set; }
         public int Id_medio_pedido { get; set; }
         public int Id_promocion { get; set; }
-        public double Total { get; set; }
+        public decimal Total { get; set; }
         public bool Estado { get; set; }
         public int Id_forma_pago { get; set; }
-        public List<DetallesTicket> DetallesTicket { get; set; }
+        public List<DetalleTicket> DetallesTicket { get; set; }
+
+        public Empleado Empleado { get; set; }
+        public Cliente Cliente { get; set; }
+        public Pelicula Pelicula { get; set; }
+
+
 
         public Ticket()
         {
-            DetallesTicket = new List<DetallesTicket>();
+            DetallesTicket = new List<DetalleTicket>();
         }
 
-        public void AgregarDetalles(DetallesTicket detalle)
+        public void AgregarDetalle(DetalleTicket detalle)
         {
             DetallesTicket.Add(detalle);
         }
-        public void RemoverDetalles(int id)
+        public void RemoverDetalle(int id)
         {
             DetallesTicket.RemoveAt(id);
         }

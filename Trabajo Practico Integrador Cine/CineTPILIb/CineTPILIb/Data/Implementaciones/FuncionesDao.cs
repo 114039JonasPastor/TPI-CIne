@@ -20,7 +20,7 @@ namespace CineTPILIb.Data.Implementaciones
                 Funcion f = new Funcion();
                 f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
                 f.Id_sala = Convert.ToInt32(fila["id_sala"]);
-                f.Horario = Convert.ToDateTime(fila["horario"]);
+                f.IdHorario = Convert.ToInt32(fila["id_horario"]);
                 f.IdFormato = Convert.ToInt32(fila["id_formato"]);
                 f.Estado = Convert.ToBoolean(fila["estado"]);
                 f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
@@ -47,7 +47,7 @@ namespace CineTPILIb.Data.Implementaciones
             {
                 f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
                 f.Id_sala = Convert.ToInt32(fila["id_sala"]);
-                f.Horario = Convert.ToDateTime(fila["horario"]);
+                f.IdHorario = Convert.ToInt32(fila["id_horario"]);
                 f.IdFormato = Convert.ToInt32(fila["id_formato"]);
                 f.Estado = Convert.ToBoolean(fila["estado"]);
                 f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
@@ -81,7 +81,7 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@precio", funcion.Precio);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@horario", funcion.Horario);
+                comando.Parameters.AddWithValue("@id_horario", funcion.IdHorario);
                 comando.Parameters.AddWithValue("@id_formato", funcion.IdFormato);
 
                 comando.ExecuteNonQuery();
@@ -125,7 +125,7 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@precio", funcion.Precio);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@horario", funcion.Horario);
+                comando.Parameters.AddWithValue("@id_horario", funcion.IdHorario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();

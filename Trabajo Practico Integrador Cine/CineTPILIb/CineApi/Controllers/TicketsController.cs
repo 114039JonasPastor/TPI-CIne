@@ -17,20 +17,50 @@ namespace CineApi.Controllers
         {
             app = new ServicioTickets();
         }
+        
 
-        //// GET: api/<TicketsController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        
+        [HttpGet("/Tickets")]
+        public IActionResult GetTickets(DateTime desde, DateTime hasta, string? cliente = null, 
+                                        string? empleado= null, string? pelicula = null)
+        {
+            List<Ticket> lst = null;
+            try
+            {
+                //Si el parámetro cliente no se envía entonces cliente es igual a null
+                //Para evitar un error de parámetro requerido se inicializa con una cadena vacía
+                cliente = cliente != null ? cliente : String.Empty;
+                empleado = empleado != null ? empleado : String.Empty;
+                pelicula = pelicula != null ? pelicula : String.Empty;
+                lst = app.GetTicket(desde, hasta, cliente, empleado, pelicula);
+                return Ok(lst);
 
-        //// GET api/<TicketsController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+
+
+        [HttpGet("/Tickets/{id}")]
+        public IActionResult GetTicketsById(int id)
+        {
+            try
+            {
+                Ticket ticket = app.GetTicketById(id);
+                if (ticket != null)
+                    return Ok(ticket);
+                else
+                    return NotFound("Presupuesto Nro: " + id + " NO encontrado!");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
 
         // POST api/<TicketsController>
         [HttpPost]
@@ -50,11 +80,7 @@ namespace CineApi.Controllers
             }
         }
 
-        //// PUT api/<TicketsController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+
 
         // DELETE api/<TicketsController>/5
         [HttpDelete("{id}")]

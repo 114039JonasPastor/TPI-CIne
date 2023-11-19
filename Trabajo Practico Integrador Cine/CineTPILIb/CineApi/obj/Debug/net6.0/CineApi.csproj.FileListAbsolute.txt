@@ -205,7 +205,6 @@ C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\Cin
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.AssemblyInfoInputs.cache
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.AssemblyInfo.cs
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.csproj.CoreCompileInputs.cache
-C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\staticwebassets\msbuild.CineApi.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\staticwebassets\msbuild.build.CineApi.props
