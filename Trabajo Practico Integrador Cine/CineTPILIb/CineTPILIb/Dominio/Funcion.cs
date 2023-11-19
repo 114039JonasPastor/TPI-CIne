@@ -1,34 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineTPILIb.Dominio
+﻿namespace CineTPILIb.Dominio
 {
     public class Funcion
     {
         public int Id_funcion { get; set; }
         public int Id_sala { get; set; }
-        public DateTime Horario { get; set; }
-        public int IdFormato {  get; set; }
+        public int IdHorario { get; set; }
+        public int IdFormato { get; set; }
         public bool Estado { get; set; }
         public int Id_pelicula { get; set; }
         public double Precio { get; set; }
         public DateTime FechaDesde { get; set; }
-        public DateTime FechaHasta{ get; set; }
+        public DateTime FechaHasta { get; set; }
+
+        public Sala Sala { get; set; }
+        public Horario Horario { get; set; }
 
         public Funcion()
         {
-            
+
         }
 
-        public Funcion(int id_funcion, int id_sala, DateTime horario, bool estado, int id_pelicula, double precio, 
+        public Funcion(int id_funcion, int id_sala, int id_horario, bool estado, int id_pelicula, double precio,
                         DateTime fechaDesde, DateTime fechaHasta, int id_formato)
         {
             Id_funcion = id_funcion;
             Id_sala = id_sala;
-            Horario = horario;
+            IdHorario = id_horario;
             Estado = estado;
             IdFormato = id_formato;
             Id_pelicula = id_pelicula;
@@ -36,6 +33,13 @@ namespace CineTPILIb.Dominio
             FechaDesde = fechaDesde;
             FechaHasta = fechaHasta;
 
+        }
+
+        public Funcion(int id_funcion, Sala sala, Horario horario)
+        {
+            Id_funcion = id_funcion;
+            Sala = sala;
+            Horario = horario;
         }
     }
 }

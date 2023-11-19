@@ -7,20 +7,34 @@
     <Compile Update="Diseño\FrmAltaPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Diseño\FrmBajaTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Diseño\FrmConsultaPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\FrmConsultarFunciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Diseño\FrmNuevaFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Diseño\FrmNuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Diseño\FrmSeleccionarFuncion.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Diseño\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Diseño\Login.cs">
+    <Compile Update="Diseño\FrmSeleccionarFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Diseño\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Diseño\FrmAltaFuncion.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

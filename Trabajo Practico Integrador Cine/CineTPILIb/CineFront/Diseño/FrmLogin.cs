@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace CineFront.Diseño
 {
-    public partial class Login : Form
+    public partial class FrmLogin : Form
     {
-        public Login()
+        public FrmLogin()
         {
             InitializeComponent();
         }
-        private static Login instancia;
+        private static FrmLogin instancia;
 
-        public static Login ObtenerInstancia()
+        public static FrmLogin ObtenerInstancia()
         {
             if (instancia == null)
             {
-                instancia = new Login();
+                instancia = new FrmLogin();
             }
             return instancia;
         }

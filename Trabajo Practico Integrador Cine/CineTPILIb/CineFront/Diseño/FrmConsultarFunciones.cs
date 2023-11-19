@@ -16,5 +16,10 @@ namespace CineFront.Diseño
         {
             InitializeComponent();
         }
+
+        private void FrmConsultarFunciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

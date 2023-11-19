@@ -52,7 +52,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, funcionesToolStripMenuItem, peliculasToolStripMenuItem, ticketsToolStripMenuItem, reportesToolStripMenuItem, soporteToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(659, 24);
+            menuStrip1.Size = new Size(715, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -68,14 +68,12 @@
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             salirToolStripMenuItem.Size = new Size(143, 22);
             salirToolStripMenuItem.Text = "Cerrar Sesion";
-            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click_1;
             // 
             // salirToolStripMenuItem1
             // 
             salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
             salirToolStripMenuItem1.Size = new Size(143, 22);
             salirToolStripMenuItem1.Text = "Salir";
-            salirToolStripMenuItem1.Click += salirToolStripMenuItem_Click;
             // 
             // funcionesToolStripMenuItem
             // 
@@ -106,16 +104,16 @@
             // consultarPeliculasToolStripMenuItem
             // 
             consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            consultarPeliculasToolStripMenuItem.Size = new Size(180, 22);
+            consultarPeliculasToolStripMenuItem.Size = new Size(174, 22);
             consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
-            consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click;
+            consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click_1;
             // 
             // nuevaPelículaToolStripMenuItem
             // 
             nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            nuevaPelículaToolStripMenuItem.Size = new Size(180, 22);
+            nuevaPelículaToolStripMenuItem.Size = new Size(174, 22);
             nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
-            nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click;
+            nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
             // 
             // ticketsToolStripMenuItem
             // 
@@ -159,13 +157,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(659, 353);
+            BackgroundImage = Properties.Resources.cine1;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(715, 426);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
-            FormClosed += FrmMenu_FormClosed;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

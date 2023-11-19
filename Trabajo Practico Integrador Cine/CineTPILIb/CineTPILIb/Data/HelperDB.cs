@@ -15,7 +15,7 @@ namespace CineTPILIb.Data
 
         private HelperDB()
         {
-            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=CineNuevo;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=CineNuevo0;Integrated Security=True");
         }
         public static HelperDB ObtenerInstancia()
         {
@@ -45,27 +45,29 @@ namespace CineTPILIb.Data
             return tabla;
         }
 
+
+
         public DataTable ConsultarConParametros(string NombreSP, List<Parametro> parametros)
         {
-            conexion.Open();
-
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexion;
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.CommandText = NombreSP;
-
-            comando.Parameters.Clear();
-            foreach (Parametro p in parametros)
-            {
-                comando.Parameters.Add(p.Nombre, (SqlDbType)p.Valor);
-            }
-
             DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
 
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand(NombreSP, conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            if (parametros != null)
+            {
+                foreach (Parametro oParametro in parametros)
+                {
+                    cmd.Parameters.AddWithValue(oParametro.Nombre, oParametro.Valor);
+                }
+            }
+            tabla.Load(cmd.ExecuteReader());
             conexion.Close();
+
             return tabla;
         }
+
+
         public int ConsultarEscalar(string NombreSP, string NombreParametroOut)
         {
             conexion.Open();

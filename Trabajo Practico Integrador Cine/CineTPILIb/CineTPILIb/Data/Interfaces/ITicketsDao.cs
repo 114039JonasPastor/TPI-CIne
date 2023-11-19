@@ -9,6 +9,9 @@ namespace CineTPILIb.Data.Interfaces
 {
     public interface ITicketsDao
     {
+        List<Ticket> ObtenerTicketsPorFiltros(DateTime desde, DateTime hasta, string cliente, string pelicula, string empleado);
+        Ticket ObtenerTicketById(int id);
+        
         bool NuevoTicket(Ticket nuevo);
         bool BajaTicket(int id);
     }

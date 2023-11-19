@@ -2,11 +2,6 @@
 using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
 using CineTPILIb.Servicios.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineTPILIb.Servicios.Implementaciones
 {
@@ -18,14 +13,26 @@ namespace CineTPILIb.Servicios.Implementaciones
         {
             dao = new TicketsDao();
         }
-        public bool BajaTicket(int id)
+
+        public List<Ticket> GetTicket(DateTime desde, DateTime hasta, string cliente, string empleado, string pelicula)
         {
-            return dao.BajaTicket(id);
+            return dao.ObtenerTicketsPorFiltros(desde, hasta, cliente, pelicula, empleado);
+        }
+
+        public Ticket GetTicketById(int id)
+        {
+            return dao.ObtenerTicketById(id);
         }
 
         public bool NuevoTicket(Ticket nuevo)
         {
             return dao.NuevoTicket(nuevo);
         }
+
+        public bool BajaTicket(int id)
+        {
+            return dao.BajaTicket(id);
+        }
+
     }
 }

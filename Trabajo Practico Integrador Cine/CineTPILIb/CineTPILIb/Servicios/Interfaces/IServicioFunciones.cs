@@ -10,8 +10,9 @@ namespace CineTPILIb.Servicios.Interfaces
     public interface IServicioFunciones
     {
         List<Funcion> ObtenerFunciones();
+        Funcion GetFuncionesPorId(int nro);
         bool AltaFuncion(Funcion funcion);
-        bool BajaFuncion(int id);
         bool ModificarFuncion(Funcion funcion);
+        bool BajaFuncion(int id);
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {}
+    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
+    "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+        "projectUniqueName": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
         "projectName": "CineTPILIb",
-        "projectPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+        "projectPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
         "packagesPath": "C:\\Users\\lucho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPICine\\CineTPILIb\\CineTPILIb\\obj\\",
+        "outputPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucho\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
