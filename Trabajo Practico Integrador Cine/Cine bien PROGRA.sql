@@ -124,21 +124,6 @@ CREATE TABLE TICKETS/**/
 		REFERENCES FORMAS_PAGO(id_forma_pago)
 );
 
---CREATE TABLE TICKETS_FORMASP
---(
---	id_ticket_forma int identity(1,1),
---	id_ticket int,
---	id_forma_pago int,
---	monto_recargo int,
-
---	CONSTRAINT PK_TICKETS_FORMASP PRIMARY KEY (id_ticket_forma),
-
---	CONSTRAINT FK_TICKETS_FORMASP_TICKETS FOREIGN KEY (id_ticket)
---		REFERENCES TICKETS(id_ticket),
-	
---	CONSTRAINT FK_TICKETS_FORMASP_FORMAS_PAGO FOREIGN KEY (id_forma_pago)
---		REFERENCES FORMAS_PAGO(id_forma_pago)
---);
 
 CREATE TABLE NACIONALIDADES
 (
@@ -272,27 +257,20 @@ CREATE TABLE SALAS
 		REFERENCES TIPOS_SALAS(id_tipo_sala)
 );
 
---CREATE TABLE ESTADOS
---(
---	id_estado int identity(1,1),
---	estado varchar(50),
+CREATE TABLE HORARIOS
+(
+	id_horario int identity(1,1),
+	horario datetime
 
---	CONSTRAINT PK_ESTADOS PRIMARY KEY (id_estado)
---);
-
---CREATE TABLE HORARIOS
---(
---	id_horario int identity(1,1),
---	horario datetime
-
---	CONSTRAINT PK_HORARIOS PRIMARY KEY (id_horario)
---);
+	CONSTRAINT PK_HORARIOS PRIMARY KEY (id_horario)
+);
 
 create table FORMATOS/**/
 (
-id_formato int identity(1,1),
-formato varchar(200)
-constraint pk_formato primary key(id_formato)
+	id_formato int identity(1,1),
+	formato varchar(200)
+	
+	constraint pk_formato primary key(id_formato)
 )
 
 
@@ -300,8 +278,7 @@ CREATE TABLE FUNCIONES/**/
 (
 	id_funcion int identity(1,1),
 	id_sala int,
-	--id_horario int,
-	horario datetime,
+	id_horario int,
 	id_formato int,
 	estado bit,
 	id_pelicula int,
@@ -317,8 +294,8 @@ CREATE TABLE FUNCIONES/**/
 	CONSTRAINT FK_FUNCIONES_SALAS FOREIGN KEY (id_sala)
 		REFERENCES SALAS(id_sala),
 	
-	--CONSTRAINT FK_FUNCIONES_HORARIOS FOREIGN KEY (id_horario)
-	--	REFERENCES HORARIOS(id_horario),
+	CONSTRAINT FK_FUNCIONES_HORARIOS FOREIGN KEY (id_horario)
+		REFERENCES HORARIOS(id_horario),
 
 	CONSTRAINT FK_FUNCIONES_PELICULAS FOREIGN KEY (id_pelicula)
 		REFERENCES PELICULAS(id_pelicula)
@@ -392,10 +369,10 @@ create proc SP_UPDATE_FUNCION
 @precio money,
 @fecha_desde datetime,
 @fecha_hasta datetime,
-@horario datetime
+@id_horario int
 as
 begin
-update funciones set id_sala = @id_sala, id_pelicula = @id_pelicula, precio = @precio, fecha_desde = @fecha_desde, fecha_hasta = fecha_hasta, Horario = @horario
+update funciones set id_sala = @id_sala, id_pelicula = @id_pelicula, precio = @precio, fecha_desde = @fecha_desde, fecha_hasta = fecha_hasta, id_horario = @id_horario
 where id_funcion = @id_funcion
 end;
 
@@ -416,12 +393,12 @@ CREATE proc [dbo].[SP_INSERTAR_FUNCION]
 @precio money,
 @fecha_desde datetime,
 @fecha_hasta datetime,
-@horario datetime,
+@id_horario int,
 @id_formato int
 as
 begin
-insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, horario, id_formato) 
-values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@horario, @id_formato)
+insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, id_horario, id_formato) 
+values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@id_horario, @id_formato)
 end;
 
 
@@ -440,6 +417,57 @@ end;
 
 
 -------------------------------------------TICKET
+
+create PROCEDURE SP_CONSULTAR_TICKETS
+	@fecha_desde Datetime,
+	@fecha_hasta Datetime,
+	@cliente varchar(50),
+	@empleado varchar(50),
+	@pelicula varchar(50)
+AS
+BEGIN
+	SELECT t.id_ticket, c.nombre +' '+ c.apellido 'Nombre cliente',
+			e.nombre +' '+ e.apellido 'Nombre empleado', p.titulo, t.total, t.fecha
+	FROM TICKETS T
+	join CLIENTES C on T.id_cliente = c.id_cliente
+	join EMPLEADOS E on e.id_empleado = t.id_empleado
+	join DETALLES_TICKET dt on dt.id_ticket = t.id_ticket
+	join FUNCIONES f on f.id_funcion = dt.id_funcion
+	join PELICULAS p on p.id_pelicula = f.id_pelicula
+	WHERE (@fecha_desde is null OR fecha >= @fecha_desde)
+	AND (@fecha_hasta is null OR fecha <= @fecha_hasta)
+	AND (@cliente is null OR c.nombre + c.apellido LIKE '%' + @cliente + '%')
+	AND (@empleado is null OR e.nombre + e.apellido LIKE '%' + @empleado + '%')
+	AND (@pelicula is null or p.titulo LIKE '%' + @pelicula + '%' );
+END
+
+
+create PROCEDURE SP_CONSULTAR_DETALLE_TICKET
+	@id_ticket int
+AS
+BEGIN
+	SELECT D.*, B.*, fo.formato, s.*, p.titulo, t.total, t.fecha, p.id_pelicula,
+			cl.nombre +' '+ cl.apellido 'cliente', H.*, C.*, i.*, g.*
+	FROM DETALLES_TICKET D
+	JOIN BUTACAS B ON B.id_butaca = D.id_butaca
+	JOIN FUNCIONES F ON F.id_funcion = D.id_funcion
+	JOIN HORARIOS H ON H.id_horario = F.id_horario
+	JOIN FORMATOS FO ON FO.id_formato = f.id_formato
+	join SALAS S ON S.id_sala = F.id_sala
+	JOIN PELICULAS P ON P.id_pelicula = F.id_pelicula
+	JOIN CLASIFICACIONES C ON C.id_clasificacion = P.id_clasificacion
+	JOIN IDIOMAS I ON I.id_idioma = P.id_idioma
+	JOIN GENEROS G ON G.id_genero = P.id_genero
+	JOIN TICKETS T ON T.id_ticket = d.id_ticket
+	join CLIENTES CL on T.id_cliente = cl.id_cliente
+	AND T.id_ticket = @id_ticket
+END;
+
+select * from peliculas
+select * from DETALLES_TICKET d
+join TICKETS t on t.id_ticket = d.id_ticket 
+where t.id_ticket = 2
+
 create proc SP_BAJA_TICKET
 @id_ticket int
 as
@@ -448,19 +476,19 @@ update TICKETS set estado = 0 where id_ticket = @id_ticket
 end;
 
 
-
 create proc SP_INSERTAR_TICKET
 @nuevo_id_ticket int output,
 @fecha datetime,
 @id_cliente int,
+@id_empleado int,
 @id_medio_pedido int,
 @id_promocion int,
 @total money,
 @id_forma_pago int
 as
 begin
-insert into TICKETS(fecha,id_cliente,id_medio_pedido,id_promocion,total,estado, id_forma_pago) 
-values (@fecha,@id_cliente,@id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
+insert into TICKETS(fecha,id_cliente, id_empleado, id_medio_pedido,id_promocion,total,estado, id_forma_pago) 
+values (@fecha,@id_cliente,@id_empleado, @id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
 	set @nuevo_id_ticket = SCOPE_IDENTITY()
 end;
 
@@ -476,34 +504,45 @@ values(@id_ticket,@id_funcion,@id_butaca,@precio_venta);
 end;
 
 
-
-
 ----------------------------------------------------PELICULAS
 
 create proc [dbo].[SP_CONSULTAR_PELICULAS_SIN_FILTRO]
 as
-select titulo Titulo, duracion Duracion,clasificacion Clasificacion, genero Genero, idioma Idioma, estado Estado 
+select P.*, titulo Titulo, sinopsis Sinopsis,clasificacion Clasificacion, genero Genero, idioma Idioma 
 from PELICULAS p
 join GENEROS g on g.id_genero = p.id_genero
 join IDIOMAS i on i.id_idioma = p.id_idioma
 join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+WHERE estado = 1
 
---mejorar
+
 create proc [dbo].[SP_CONSULTAR_PELICULAS]
 @titulo varchar(200),
-@duracion int,
+@sinopsis varchar(200),
 @id_genero int,
 @id_idioma int
 as
-select titulo Titulo, duracion Duracion,clasificacion Clasificacion, genero Genero, idioma Idioma 
+select P.*, titulo Titulo, sinopsis Sinopsis,clasificacion Clasificacion, genero Genero, idioma Idioma 
 from PELICULAS p
 join GENEROS g on g.id_genero = p.id_genero
 join IDIOMAS i on i.id_idioma = p.id_idioma
 join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
-where titulo like '%'+ @titulo +'%'
-or duracion = @duracion
-or p.id_genero = @id_genero
-or p.id_idioma = @id_idioma
+where estado = 1
+AND (titulo like '%'+ @titulo +'%' OR @titulo IS NULL)
+AND (sinopsis like '%'+ @sinopsis +'%' OR @sinopsis IS NULL)
+AND (p.id_genero = @id_genero OR @id_genero IS NULL)
+AND (p.id_idioma = @id_idioma OR @id_idioma IS NULL)
+
+
+create procedure SP_CONSULTAR_PELICULA_ID
+@id_pelicula int
+as
+select P.*, titulo Titulo, sinopsis Sinopsis,clasificacion Clasificacion, genero Genero, idioma Idioma 
+from PELICULAS p
+join GENEROS g on g.id_genero = p.id_genero
+join IDIOMAS i on i.id_idioma = p.id_idioma
+join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+where id_pelicula = @id_pelicula
 
 
 create proc SP_MODIFICAR_PELICULA
@@ -529,13 +568,14 @@ join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
 
 
 
-alter proc SP_NUEVA_PELICULA
+create proc SP_NUEVA_PELICULA
 @titulo varchar(200),
 @duracion int,
 @sinopsis varchar(400),
 @id_clasificacion int,
 @id_genero int,
 @id_idioma int
+
 as
 insert into PELICULAS(titulo,duracion,sinopsis,id_clasificacion,id_genero,id_idioma, estado) 
 values (@titulo, @duracion, @sinopsis, @id_clasificacion, @id_genero, @id_idioma,1)
@@ -551,13 +591,13 @@ end;
 
 
 -------Para pruebas-------
-/*
-select * from PELICULAS
-update PELICULAS set estado = 1 where estado = 0
-delete from PELICULAS where id_pelicula > 5
-DBCC CHECKIDENT(peliculas, NORESEED);
-DBCC CHECKIDENT(peliculas, RESEED, 5);
-*/
+
+--select * from PELICULAS
+--update PELICULAS set duracion = 120 where sinopsis = 'Sinopsis...'
+--delete from PELICULAS where id_pelicula > 5
+--DBCC CHECKIDENT(peliculas, NORESEED);
+--DBCC CHECKIDENT(peliculas, RESEED, 5);
+
 
 
 
@@ -709,28 +749,39 @@ INSERT INTO FORMATOS (formato) VALUES ('IMAX');
 INSERT INTO FORMATOS (formato) VALUES ('Dolby Atmos');
 INSERT INTO FORMATOS (formato) VALUES ('ScreenX');
 
-INSERT INTO FUNCIONES (id_sala, horario, id_formato, estado, id_pelicula, precio, fecha_desde, fecha_hasta)
+INSERT INTO HORARIOS(horario)
+VALUES ('10:00'),
+('12:00'),
+('12:30'),
+('14:00'),
+('15:30'),
+('16:00'),
+('17:00'),
+('18:30'),
+('20:30');
+
+INSERT INTO FUNCIONES (id_sala, id_horario, id_formato, estado, id_pelicula, precio, fecha_desde, fecha_hasta)
 VALUES
-(2, '2022-01-15 15:30:00', 1, 1, 3, 12.50, '2022-01-01', '2022-02-01'),
-(2, '2022-02-20 18:45:00', 2, 0, 1, 15.75, '2022-02-01', '2022-03-01'),
-(3, '2022-03-10 20:15:00', 3, 1, 1, 20.00, '2022-03-01', '2022-04-01'),
-(4, '2022-04-05 14:00:00', 4, 0, 2, 18.25, '2022-04-01', '2022-05-01'),
-(5, '2022-05-22 17:30:00', 5, 1, 3, 25.50, '2022-05-01', '2022-06-01'),
-(1, '2022-06-12 19:45:00', 1, 0, 3, 30.75, '2022-06-01', '2022-07-01'),
-(2, '2022-07-08 21:00:00', 2, 1, 4, 35.00, '2022-07-01', '2022-08-01'),
-(3, '2022-08-18 16:15:00', 3, 0, 4, 40.25, '2022-08-01', '2022-09-01'),
-(4, '2022-09-25 12:30:00', 4, 1, 5, 45.50, '2022-09-01', '2022-10-01'),
-(5, '2022-10-30 14:45:00', 5, 0, 1, 50.75, '2022-10-01', '2022-11-01'),
-(3, '2022-11-15 18:00:00', 1, 1, 2, 55.00, '2022-11-01', '2022-12-01'),
-(2, '2023-01-03 20:30:00', 2, 0, 2, 60.25, '2023-01-01', '2023-02-01'),
-(3, '2023-02-12 15:45:00', 3, 1, 3, 65.50, '2023-02-01', '2023-03-01'),
-(4, '2023-03-08 17:15:00', 4, 0, 3, 70.75, '2023-03-01', '2023-04-01'),
-(1, '2023-04-20 19:30:00', 5, 1, 4, 75.00, '2023-04-01', '2023-05-01'),
-(1, '2023-05-28 12:45:00', 1, 0, 4, 80.25, '2023-05-01', '2023-06-01'),
-(2, '2023-06-17 14:00:00', 2, 1, 5, 85.50, '2023-06-01', '2023-07-01'),
-(3, '2023-07-22 16:30:00', 3, 0, 1, 90.75, '2023-07-01', '2023-08-01'),
-(4, '2023-08-10 18:45:00', 4, 1, 2, 95.00, '2023-08-01', '2023-09-01'),
-(5, '2023-09-05 21:00:00', 5, 0, 5, 100.25, '2023-09-01', '2023-10-01');
+(2, 1, 1, 1, 3, 12.50, '2022-01-01', '2022-02-01'),
+(2, 1, 2, 0, 1, 15.75, '2022-02-01', '2022-03-01'),
+(3, 1, 3, 1, 1, 20.00, '2022-03-01', '2022-04-01'),
+(4, 1, 4, 0, 2, 18.25, '2022-04-01', '2022-05-01'),
+(5, 1, 5, 1, 3, 25.50, '2022-05-01', '2022-06-01'),
+(1, 1, 1, 0, 3, 30.75, '2022-06-01', '2022-07-01'),
+(2, 4, 2, 1, 4, 35.00, '2022-07-01', '2022-08-01'),
+(3, 1, 3, 0, 4, 40.25, '2022-08-01', '2022-09-01'),
+(4, 4, 4, 1, 5, 45.50, '2022-09-01', '2022-10-01'),
+(5, 2, 5, 0, 1, 50.75, '2022-10-01', '2022-11-01'),
+(3, 2, 1, 1, 2, 55.00, '2022-11-01', '2022-12-01'),
+(2, 4, 2, 0, 2, 60.25, '2023-01-01', '2023-02-01'),
+(3, 4, 3, 1, 3, 65.50, '2023-02-01', '2023-03-01'),
+(4, 2, 4, 0, 3, 70.75, '2023-03-01', '2023-04-01'),
+(1, 2, 5, 1, 4, 75.00, '2023-04-01', '2023-05-01'),
+(1, 4, 1, 0, 4, 80.25, '2023-05-01', '2023-06-01'),
+(2, 2, 2, 1, 5, 85.50, '2023-06-01', '2023-07-01'),
+(3, 4, 3, 0, 1, 90.75, '2023-07-01', '2023-08-01'),
+(4, 4, 4, 1, 2, 95.00, '2023-08-01', '2023-09-01'),
+(5, 4, 5, 0, 5, 100.25, '2023-09-01', '2023-10-01');
 ---
 -- INSERTAR 20 DATOS EN LA TABLA TICKETS
 INSERT INTO TICKETS (fecha, id_cliente, id_empleado, id_medio_pedido, id_promocion, id_forma_pago, total)
@@ -818,14 +869,14 @@ INSERT INTO DETALLES_TICKET (id_ticket, id_funcion, id_butaca, precio_venta) VAL
 INSERT INTO DETALLES_TICKET (id_ticket, id_funcion, id_butaca, precio_venta) VALUES (5, 4, 6, 80.99);
 
 
-exec sp_insertar_funcion 1,2,223,'2023/11/10', '2023/11/12','2023/11/11',1
+--exec sp_insertar_funcion 1,2,223,'2023/11/10', '2023/11/12','2023/11/11',1
 
-select * from SALAS
-select * from FUNCIONES
-select * from PELICULAS
-update FUNCIONES set id_formato = 1 where id_funcion = 46
+--select * from SALAS
+--select * from FUNCIONES
+--select * from PELICULAS
+--update FUNCIONES set id_formato = 1 where id_funcion = 46
 
-DBCC CHECKIDENT(funciones, NORESEED);
-DBCC CHECKIDENT(funciones, RESEED, 21);
+--DBCC CHECKIDENT(funciones, NORESEED);
+--DBCC CHECKIDENT(funciones, RESEED, 21);
 
-SELECT * FROM SALAS WHERE id_sala = 4;
+--SELECT * FROM SALAS WHERE id_sala = 4;

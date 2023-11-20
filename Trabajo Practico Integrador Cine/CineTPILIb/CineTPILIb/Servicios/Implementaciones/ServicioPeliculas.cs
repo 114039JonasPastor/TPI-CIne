@@ -45,14 +45,19 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.GetIdiomas();
         }
 
-        public List<PeliculaDTO> GetPeliculas()
+        public Pelicula GetPeliculaById(int id)
+        {
+            return dao.PeliculaPorID(id);
+        }
+
+        public List<Pelicula> GetPeliculas()
         {
             return dao.GetPeliculas();
         }
 
-        public List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma)
+        public List<Pelicula> GetPeliculasConFiltro(int id_genero, int id_idioma, string sinopsis, string titulo)
         {
-            return dao.GetPeliculasConFiltro(titulo, duracion, id_genero, id_idioma);
+            return dao.GetPeliculasConFiltro(id_genero, id_idioma, sinopsis, titulo);
         }
 
         public bool ModificarPelicula(Pelicula pelicula)

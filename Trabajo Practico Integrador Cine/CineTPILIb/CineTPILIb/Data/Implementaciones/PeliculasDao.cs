@@ -80,33 +80,44 @@ namespace CineTPILIb.Data.Implementaciones
         }
 
 
-        public List<PeliculaDTO> GetPeliculas()
+        public List<Pelicula> GetPeliculas()
         {
-            List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();
+            List<Pelicula> lPeliculas = new List<Pelicula>();
 
             DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS_SIN_FILTRO");
 
             foreach(DataRow row in tabla.Rows)
             {
-                PeliculaDTO p = new PeliculaDTO();
-                p.Titulo = row["titulo"].ToString();
-                p.Duracion = Convert.ToInt32(row["duracion"].ToString());
-                p.Clasificacion = row["clasificacion"].ToString();
-                p.Genero = row["genero"].ToString();
-                p.Idioma = row["idioma"].ToString();
+                Pelicula pelicula = new Pelicula();
+                pelicula.Id_pelicula = (int)row["id_pelicula"];
+                pelicula.Titulo = row["titulo"].ToString();
+                pelicula.Sinopsis = row["sinopsis"].ToString();
+                pelicula.Duracion = (int)row["duracion"];
 
-                lPeliculas.Add(p);
+                pelicula.Clasificacion = new Clasificacion();
+                pelicula.Clasificacion.ClasificacionName = row["clasificacion"].ToString();
+                pelicula.Clasificacion.IdClasificacion = (int)row["id_clasificacion"];
+
+                pelicula.Genero = new Genero();
+                pelicula.Genero.IdGenero = (int)row["id_genero"];
+                pelicula.Genero.GeneroName = row["genero"].ToString();
+
+                pelicula.Idioma = new Idioma();
+                pelicula.Idioma.IdIdioma = (int)row["id_idioma"];
+                pelicula.Idioma.IdiomaName = row["idioma"].ToString();
+
+                lPeliculas.Add(pelicula);
             }
             return lPeliculas;
         }
 
-        public List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma)
+        public List<Pelicula> GetPeliculasConFiltro(int id_genero, int id_idioma, string sinopsis, string titulo)
         {
-            List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();
+            List<Pelicula> lPeliculas = new List<Pelicula>();
 
             List<Parametro> lParametros = new List<Parametro>();
             lParametros.Add(new Parametro("@titulo",titulo));
-            lParametros.Add(new Parametro("@duracion", duracion));
+            lParametros.Add(new Parametro("@sinopsis", sinopsis));
             lParametros.Add(new Parametro("@id_genero", id_genero));
             lParametros.Add(new Parametro("@id_idioma", id_idioma));
 
@@ -114,18 +125,62 @@ namespace CineTPILIb.Data.Implementaciones
 
             foreach (DataRow row in tabla.Rows)
             {
-                PeliculaDTO pelicula = new PeliculaDTO();
+                Pelicula pelicula = new Pelicula();
+                pelicula.Id_pelicula = (int)row["id_pelicula"];
                 pelicula.Titulo = row["titulo"].ToString();
-                pelicula.Duracion = Convert.ToInt32(row["duracion"].ToString());
-                pelicula.Clasificacion = row["clasificacion"].ToString();
-                pelicula.Genero = row["genero"].ToString();
-                pelicula.Idioma = row["idioma"].ToString();
+                pelicula.Sinopsis = row["sinopsis"].ToString();
+                pelicula.Duracion = (int)row["duracion"];
+
+                pelicula.Clasificacion = new Clasificacion();
+                pelicula.Clasificacion.ClasificacionName = row["clasificacion"].ToString();
+                pelicula.Clasificacion.IdClasificacion = (int)row["id_clasificacion"];
+
+                pelicula.Genero = new Genero();
+                pelicula.Genero.IdGenero = (int)row["id_genero"];
+                pelicula.Genero.GeneroName = row["genero"].ToString();
+
+                pelicula.Idioma = new Idioma();
+                pelicula.Idioma.IdIdioma = (int)row["id_idioma"];
+                pelicula.Idioma.IdiomaName = row["idioma"].ToString();
 
                 lPeliculas.Add(pelicula);
             }
             return lPeliculas;
         }
-        
+
+        public Pelicula PeliculaPorID(int id)
+        {
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@id_pelicula", id));
+            DataTable tabla = HelperDB.ObtenerInstancia().ConsultarConParametros("SP_CONSULTAR_PELICULA_ID", lst);
+
+            Pelicula pelicula = new Pelicula();
+
+            foreach (DataRow row in tabla.Rows)
+            {
+                pelicula.Id_pelicula = (int)row["id_pelicula"];
+                pelicula.Titulo = row["titulo"].ToString();
+                pelicula.Sinopsis = row["sinopsis"].ToString();
+                pelicula.Duracion = (int)row["duracion"];
+
+                pelicula.Clasificacion = new Clasificacion();
+                pelicula.Clasificacion.ClasificacionName = row["clasificacion"].ToString();
+                pelicula.Clasificacion.IdClasificacion = (int)row["id_clasificacion"];
+
+                pelicula.Genero = new Genero();
+                pelicula.Genero.IdGenero = (int)row["id_genero"];
+                pelicula.Genero.GeneroName = row["genero"].ToString();
+
+                pelicula.Idioma = new Idioma();
+                pelicula.Idioma.IdIdioma = (int)row["id_idioma"];
+                pelicula.Idioma.IdiomaName = row["idioma"].ToString();
+
+            }
+            return pelicula;
+        }
+
+
+
         public bool AltaPelicula(Pelicula nueva)
         {
             bool resultado = true;
@@ -142,9 +197,9 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@titulo",nueva.Titulo);
                 comando.Parameters.AddWithValue("@duracion",nueva.Duracion);
                 comando.Parameters.AddWithValue("@sinopsis",nueva.Sinopsis);
-                comando.Parameters.AddWithValue("@id_clasificacion",nueva.Id_clasificacion);
-                comando.Parameters.AddWithValue("@id_genero",nueva.Id_genero);
-                comando.Parameters.AddWithValue("@id_idioma",nueva.Id_idioma);
+                comando.Parameters.AddWithValue("@id_clasificacion",nueva.Clasificacion.IdClasificacion);
+                comando.Parameters.AddWithValue("@id_genero",nueva.Genero.IdGenero);
+                comando.Parameters.AddWithValue("@id_idioma",nueva.Idioma.IdIdioma);
 
                 comando.ExecuteNonQuery();
 
@@ -186,9 +241,9 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@titulo", pelicula.Titulo);
                 comando.Parameters.AddWithValue("@duracion", pelicula.Duracion);
                 comando.Parameters.AddWithValue("@sinopsis", pelicula.Sinopsis);
-                comando.Parameters.AddWithValue("@id_clasificacion", pelicula.Id_clasificacion);
-                comando.Parameters.AddWithValue("@id_genero", pelicula.Id_genero);
-                comando.Parameters.AddWithValue("@id_idioma", pelicula.Id_idioma);
+                comando.Parameters.AddWithValue("@id_clasificacion", pelicula.Clasificacion.IdClasificacion);
+                comando.Parameters.AddWithValue("@id_genero", pelicula.Genero.IdGenero);
+                comando.Parameters.AddWithValue("@id_idioma", pelicula.Idioma.IdIdioma);
 
                 comando.ExecuteNonQuery();
 
@@ -248,5 +303,7 @@ namespace CineTPILIb.Data.Implementaciones
             }
             return resultado;
         }
+
+        
     }
 }

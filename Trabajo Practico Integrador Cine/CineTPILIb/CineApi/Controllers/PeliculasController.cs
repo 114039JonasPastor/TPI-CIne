@@ -2,7 +2,6 @@
 using CineTPILIb.Servicios.Implementaciones;
 using CineTPILIb.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -76,13 +75,35 @@ namespace CineApi.Controllers
             }
         }
 
-        // GET api/<PeliculasController>/5
-        [HttpGet("{titulo},{duracion},{id_genero},{id_idioma}")]
-        public IActionResult GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma)
+        [HttpGet("{id}")]
+        public IActionResult GetPeliculaPorId(int id)
         {
             try
             {
-                return Ok(app.GetPeliculasConFiltro(titulo, duracion, id_genero, id_idioma));
+                Pelicula p = app.GetPeliculaById(id);
+                if (p != null)
+                    return Ok(p);
+                else
+                    return NotFound("Pelicula id: " + id + " NO encontrada!");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+
+
+        // GET api/<PeliculasController>/5
+        [HttpGet("/peliculas")]
+        public IActionResult GetPeliculasConFiltro(int id_genero, int id_idioma, string? sinopsis = null, string? titulo = null)
+        {
+            List<Pelicula> lst = null;
+            try
+            {
+                titulo = titulo != null ? titulo : String.Empty;
+                sinopsis = sinopsis != null ? sinopsis : String.Empty;
+                return Ok(app.GetPeliculasConFiltro(id_genero, id_idioma, sinopsis, titulo));
             }
             catch (Exception ex)
             {
@@ -94,7 +115,7 @@ namespace CineApi.Controllers
 
         // POST api/<PeliculasController>
         [HttpPost]
-        public IActionResult GuardarPelicula([FromBody] Pelicula  nueva)
+        public IActionResult GuardarPelicula([FromBody] Pelicula nueva)
         {
             try
             {
@@ -104,7 +125,7 @@ namespace CineApi.Controllers
                 }
                 return Ok(app.AltaPelicula(nueva));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }

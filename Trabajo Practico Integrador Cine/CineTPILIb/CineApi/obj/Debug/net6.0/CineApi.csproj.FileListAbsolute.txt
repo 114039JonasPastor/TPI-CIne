@@ -220,3 +220,4 @@ C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\Cin
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.pdb
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.genruntimeconfig.cache
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\ref\CineApi.dll
+C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineApi\obj\Debug\net6.0\CineApi.MvcApplicationPartsAssemblyInfo.cs

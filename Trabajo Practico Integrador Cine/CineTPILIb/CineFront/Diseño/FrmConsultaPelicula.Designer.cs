@@ -29,69 +29,87 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            chkConsulta = new CheckBox();
             btnConsultar = new Button();
             cboGenero = new ComboBox();
             cboIdioma = new ComboBox();
             label8 = new Label();
             label5 = new Label();
-            label3 = new Label();
-            txtDuracion = new TextBox();
+            txtSinopsis = new TextBox();
             txtTitulo = new TextBox();
             label6 = new Label();
             label2 = new Label();
             label1 = new Label();
-            dgvAltaPelicula = new DataGridView();
+            dgvPelicula = new DataGridView();
             colId = new DataGridViewTextBoxColumn();
             colTitulo = new DataGridViewTextBoxColumn();
-            colDuracion = new DataGridViewTextBoxColumn();
+            colSinopsis = new DataGridViewTextBoxColumn();
             colClasificacion = new DataGridViewTextBoxColumn();
             colGenero = new DataGridViewTextBoxColumn();
             colIdioma = new DataGridViewTextBoxColumn();
+            colAccion = new DataGridViewButtonColumn();
             btnSalir = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvAltaPelicula).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPelicula).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = SystemColors.Control;
+            groupBox1.Controls.Add(chkConsulta);
             groupBox1.Controls.Add(btnConsultar);
             groupBox1.Controls.Add(cboGenero);
             groupBox1.Controls.Add(cboIdioma);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(txtDuracion);
+            groupBox1.Controls.Add(txtSinopsis);
             groupBox1.Controls.Add(txtTitulo);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(33, 48);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(541, 112);
+            groupBox1.Size = new Size(771, 112);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Filtros";
             // 
+            // chkConsulta
+            // 
+            chkConsulta.AutoSize = true;
+            chkConsulta.Location = new Point(670, 32);
+            chkConsulta.Name = "chkConsulta";
+            chkConsulta.Size = new Size(75, 19);
+            chkConsulta.TabIndex = 23;
+            chkConsulta.Text = "Sin filtros";
+            chkConsulta.UseVisualStyleBackColor = true;
+            chkConsulta.CheckedChanged += chkConsulta_CheckedChanged;
+            // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(450, 79);
+            btnConsultar.Location = new Point(670, 62);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(75, 23);
             btnConsultar.TabIndex = 22;
             btnConsultar.Text = "Consultar";
             btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // cboGenero
             // 
+            cboGenero.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboGenero.Enabled = false;
             cboGenero.FormattingEnabled = true;
-            cboGenero.Location = new Point(326, 16);
+            cboGenero.Location = new Point(439, 28);
             cboGenero.Name = "cboGenero";
             cboGenero.Size = new Size(199, 23);
             cboGenero.TabIndex = 21;
             // 
             // cboIdioma
             // 
+            cboIdioma.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboIdioma.Enabled = false;
             cboIdioma.FormattingEnabled = true;
-            cboIdioma.Location = new Point(326, 50);
+            cboIdioma.Location = new Point(439, 62);
             cboIdioma.Name = "cboIdioma";
             cboIdioma.Size = new Size(199, 23);
             cboIdioma.TabIndex = 20;
@@ -99,7 +117,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(273, 55);
+            label8.Location = new Point(386, 67);
             label8.Name = "label8";
             label8.Size = new Size(47, 15);
             label8.TabIndex = 19;
@@ -108,48 +126,39 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(272, 19);
+            label5.Location = new Point(385, 31);
             label5.Name = "label5";
             label5.Size = new Size(48, 15);
             label5.TabIndex = 18;
             label5.Text = "Género:";
             // 
-            // label3
+            // txtSinopsis
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(162, 53);
-            label3.Name = "label3";
-            label3.Size = new Size(51, 15);
-            label3.TabIndex = 17;
-            label3.Text = "minutos";
-            // 
-            // txtDuracion
-            // 
-            txtDuracion.Location = new Point(72, 50);
-            txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(84, 23);
-            txtDuracion.TabIndex = 16;
+            txtSinopsis.Location = new Point(72, 62);
+            txtSinopsis.Name = "txtSinopsis";
+            txtSinopsis.Size = new Size(294, 23);
+            txtSinopsis.TabIndex = 16;
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(72, 16);
+            txtTitulo.Location = new Point(72, 28);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(164, 23);
+            txtTitulo.Size = new Size(294, 23);
             txtTitulo.TabIndex = 15;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(8, 53);
+            label6.Location = new Point(8, 65);
             label6.Name = "label6";
-            label6.Size = new Size(58, 15);
+            label6.Size = new Size(53, 15);
             label6.TabIndex = 14;
-            label6.Text = "Duracion:";
+            label6.Text = "Sinopsis:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(26, 19);
+            label2.Location = new Point(26, 31);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 13;
@@ -165,19 +174,22 @@
             label1.TabIndex = 1;
             label1.Text = "CONSULTA PELICULAS";
             // 
-            // dgvAltaPelicula
+            // dgvPelicula
             // 
-            dgvAltaPelicula.AllowUserToAddRows = false;
-            dgvAltaPelicula.AllowUserToDeleteRows = false;
-            dgvAltaPelicula.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvAltaPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAltaPelicula.Columns.AddRange(new DataGridViewColumn[] { colId, colTitulo, colDuracion, colClasificacion, colGenero, colIdioma });
-            dgvAltaPelicula.Location = new Point(33, 187);
-            dgvAltaPelicula.Name = "dgvAltaPelicula";
-            dgvAltaPelicula.ReadOnly = true;
-            dgvAltaPelicula.RowTemplate.Height = 25;
-            dgvAltaPelicula.Size = new Size(541, 199);
-            dgvAltaPelicula.TabIndex = 15;
+            dgvPelicula.AllowUserToAddRows = false;
+            dgvPelicula.AllowUserToDeleteRows = false;
+            dgvPelicula.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPelicula.BackgroundColor = SystemColors.Control;
+            dgvPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPelicula.Columns.AddRange(new DataGridViewColumn[] { colId, colTitulo, colSinopsis, colClasificacion, colGenero, colIdioma, colAccion });
+            dgvPelicula.Location = new Point(33, 187);
+            dgvPelicula.Name = "dgvPelicula";
+            dgvPelicula.ReadOnly = true;
+            dgvPelicula.RowTemplate.Height = 25;
+            dgvPelicula.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPelicula.Size = new Size(771, 199);
+            dgvPelicula.TabIndex = 15;
+            dgvPelicula.CellContentClick += dgvPelicula_CellContentClick;
             // 
             // colId
             // 
@@ -193,11 +205,11 @@
             colTitulo.Name = "colTitulo";
             colTitulo.ReadOnly = true;
             // 
-            // colDuracion
+            // colSinopsis
             // 
-            colDuracion.HeaderText = "Duracion";
-            colDuracion.Name = "colDuracion";
-            colDuracion.ReadOnly = true;
+            colSinopsis.HeaderText = "Sinopsis";
+            colSinopsis.Name = "colSinopsis";
+            colSinopsis.ReadOnly = true;
             // 
             // colClasificacion
             // 
@@ -217,9 +229,15 @@
             colIdioma.Name = "colIdioma";
             colIdioma.ReadOnly = true;
             // 
+            // colAccion
+            // 
+            colAccion.HeaderText = "Acción";
+            colAccion.Name = "colAccion";
+            colAccion.ReadOnly = true;
+            // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(499, 392);
+            btnSalir.Location = new Point(729, 391);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(75, 23);
             btnSalir.TabIndex = 23;
@@ -231,17 +249,20 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(612, 426);
+            BackgroundImage = Properties.Resources.cine;
+            BackgroundImageLayout = ImageLayout.Center;
+            ClientSize = new Size(841, 426);
             Controls.Add(btnSalir);
-            Controls.Add(dgvAltaPelicula);
+            Controls.Add(dgvPelicula);
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Name = "FrmConsultaPelicula";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmConsultaPelicula";
+            Load += FrmConsultaPelicula_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvAltaPelicula).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPelicula).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -250,23 +271,24 @@
 
         private GroupBox groupBox1;
         private Label label1;
-        private TextBox txtDuracion;
+        private TextBox txtSinopsis;
         private TextBox txtTitulo;
         private Label label6;
         private Label label2;
-        private Label label3;
         private ComboBox cboGenero;
         private ComboBox cboIdioma;
         private Label label8;
         private Label label5;
-        private DataGridView dgvAltaPelicula;
+        private DataGridView dgvPelicula;
+        private Button btnConsultar;
+        private Button btnSalir;
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colTitulo;
-        private DataGridViewTextBoxColumn colDuracion;
+        private DataGridViewTextBoxColumn colSinopsis;
         private DataGridViewTextBoxColumn colClasificacion;
         private DataGridViewTextBoxColumn colGenero;
         private DataGridViewTextBoxColumn colIdioma;
-        private Button btnConsultar;
-        private Button btnSalir;
+        private DataGridViewButtonColumn colAccion;
+        private CheckBox chkConsulta;
     }
 }

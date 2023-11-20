@@ -35,9 +35,10 @@
 
         }
 
-        public Funcion(int id_funcion, Sala sala, Horario horario)
+        public Funcion(int id_funcion, int id_pelicula, Sala sala, Horario horario)
         {
             Id_funcion = id_funcion;
+            Id_pelicula= id_pelicula;
             Sala = sala;
             Horario = horario;
         }

@@ -36,8 +36,8 @@
             consultarFuncionesToolStripMenuItem = new ToolStripMenuItem();
             agregarFuncionToolStripMenuItem = new ToolStripMenuItem();
             peliculasToolStripMenuItem = new ToolStripMenuItem();
-            consultarPeliculasToolStripMenuItem = new ToolStripMenuItem();
             nuevaPelículaToolStripMenuItem = new ToolStripMenuItem();
+            consultarPeliculasToolStripMenuItem = new ToolStripMenuItem();
             ticketsToolStripMenuItem = new ToolStripMenuItem();
             nuevoTicketToolStripMenuItem = new ToolStripMenuItem();
             bajaTicketToolStripMenuItem = new ToolStripMenuItem();
@@ -66,14 +66,16 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(143, 22);
+            salirToolStripMenuItem.Size = new Size(180, 22);
             salirToolStripMenuItem.Text = "Cerrar Sesion";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click_1;
             // 
             // salirToolStripMenuItem1
             // 
             salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            salirToolStripMenuItem1.Size = new Size(143, 22);
+            salirToolStripMenuItem1.Size = new Size(180, 22);
             salirToolStripMenuItem1.Text = "Salir";
+            salirToolStripMenuItem1.Click += salirToolStripMenuItem_Click;
             // 
             // funcionesToolStripMenuItem
             // 
@@ -96,17 +98,10 @@
             // 
             // peliculasToolStripMenuItem
             // 
-            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarPeliculasToolStripMenuItem, nuevaPelículaToolStripMenuItem });
+            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaPelículaToolStripMenuItem, consultarPeliculasToolStripMenuItem });
             peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
             peliculasToolStripMenuItem.Size = new Size(65, 20);
             peliculasToolStripMenuItem.Text = "Peliculas";
-            // 
-            // consultarPeliculasToolStripMenuItem
-            // 
-            consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            consultarPeliculasToolStripMenuItem.Size = new Size(174, 22);
-            consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
-            consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click_1;
             // 
             // nuevaPelículaToolStripMenuItem
             // 
@@ -114,6 +109,13 @@
             nuevaPelículaToolStripMenuItem.Size = new Size(174, 22);
             nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
             nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
+            // 
+            // consultarPeliculasToolStripMenuItem
+            // 
+            consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
+            consultarPeliculasToolStripMenuItem.Size = new Size(174, 22);
+            consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
+            consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click_1;
             // 
             // ticketsToolStripMenuItem
             // 
@@ -165,6 +167,7 @@
             Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
