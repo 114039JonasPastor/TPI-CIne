@@ -14,10 +14,11 @@ namespace CineTPILIb.Data.Interfaces
         List<Idioma> GetIdiomas();
         List<Genero> GetGeneros();
 
-        List<PeliculaDTO> GetPeliculas();
+        List<Pelicula> GetPeliculas();
         List<Pelicula> GetPeliculasConFiltro(int id_genero, int id_idioma, string sinopsis, string titulo);
         bool AltaPelicula(Pelicula nueva);
         bool ModificarPelicula(Pelicula pelicula);
         bool BajaPelicula(int id);
+        Pelicula PeliculaPorID(int id);
     }
 }

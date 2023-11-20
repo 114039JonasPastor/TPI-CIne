@@ -8,8 +8,60 @@ namespace CineTPILIb.Data.Implementaciones
 {
     public class FuncionesDao : IFuncionesDao
     {
- 
-            private SqlConnection conexion;
+        private SqlConnection conexion;
+
+        public List<Funcion> GetFunciones()
+        {
+            List<Funcion> lFunciones = new List<Funcion>();
+
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_FUNCIONES");
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                Funcion f = new Funcion();
+                f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
+                f.Id_sala = Convert.ToInt32(fila["id_sala"]);
+                f.IdHorario = Convert.ToInt32(fila["id_horario"]);
+                f.IdFormato = Convert.ToInt32(fila["id_formato"]);
+                f.Estado = Convert.ToBoolean(fila["estado"]);
+                f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
+                f.Precio = Convert.ToDouble(fila["precio"]);
+                f.FechaDesde = Convert.ToDateTime(fila["fecha_desde"]);
+                f.FechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
+
+                lFunciones.Add(f);
+            }
+            return lFunciones;
+        }
+
+        public Funcion ObtenerFuncionPorId(int nro)
+        {
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@idfuncion", nro));
+
+            string sp = "SP_CONSULTAR_FUNCIONES_ID";
+            DataTable dt = HelperDB.ObtenerInstancia().ConsultarConParametros(sp, lst);
+            
+
+            Funcion f = new Funcion();
+            foreach (DataRow fila in dt.Rows)
+            {
+                f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
+                f.Id_sala = Convert.ToInt32(fila["id_sala"]);
+                f.IdHorario = Convert.ToInt32(fila["id_horario"]);
+                f.IdFormato = Convert.ToInt32(fila["id_formato"]);
+                f.Estado = Convert.ToBoolean(fila["estado"]);
+                f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
+                f.Precio = Convert.ToDouble(fila["precio"]);
+                f.FechaDesde = Convert.ToDateTime(fila["fecha_desde"]);
+                f.FechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
+
+
+            }
+
+            return f;
+        }
+
 
         public bool AltaFuncion(Funcion funcion)
         {
@@ -25,6 +77,50 @@ namespace CineTPILIb.Data.Implementaciones
 
                 SqlCommand comando = new SqlCommand("SP_INSERTAR_FUNCION", conexion, t);
                 comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
+                comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
+                comando.Parameters.AddWithValue("@precio", funcion.Precio);
+                comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
+                comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
+                comando.Parameters.AddWithValue("@id_horario", funcion.IdHorario);
+                comando.Parameters.AddWithValue("@id_formato", funcion.IdFormato);
+
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    resultado = false;
+                }
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+            return resultado;
+        }
+
+
+        public bool ModificarFuncion(Funcion funcion)
+        {
+            bool resultado = true;
+            SqlTransaction t = null;
+            conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
+
+            try
+            {
+                conexion.Open();
+                t = conexion.BeginTransaction();
+
+                SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCION", conexion, t);
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@id_funcion", funcion.Id_funcion);
                 comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
                 comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
                 comando.Parameters.AddWithValue("@precio", funcion.Precio);
@@ -52,6 +148,7 @@ namespace CineTPILIb.Data.Implementaciones
             }
             return resultado;
         }
+
 
         public bool BajaFuncion(int id)
         {
@@ -89,29 +186,6 @@ namespace CineTPILIb.Data.Implementaciones
             return resultado;
         }
 
-        public List<Funcion> GetFunciones()
-        {
-            List<Funcion> lFunciones = new List<Funcion>();
-
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_FUNCIONES");
-
-            foreach (DataRow fila in tabla.Rows)
-            {
-                Funcion f = new Funcion();
-                f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
-                f.Id_sala = Convert.ToInt32(fila["id_sala"]);
-                f.IdHorario = Convert.ToInt32(fila["id_horario"]);
-                f.Estado = Convert.ToBoolean(fila["estado"]);
-                f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
-                f.Precio = Convert.ToDouble(fila["precio"]);
-                f.FechaDesde = Convert.ToDateTime(fila["fecha_desde"]);
-                f.FechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
-
-                lFunciones.Add(f);
-            }
-            return lFunciones;
-        }
-
         public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion)
         {
             List<FuncionDTO> lFunciones = new List<FuncionDTO>();
@@ -128,6 +202,7 @@ namespace CineTPILIb.Data.Implementaciones
                 FuncionDTO aux = new FuncionDTO();
                 aux.Pelicula = fila["Pelicula"].ToString();
                 aux.Sala = Convert.ToInt32(fila["Sala"]);
+                aux.TipoSala = fila["Tipo de sala"].ToString();
                 aux.Horario = fila["Horario"].ToString();
                 aux.FechaDesde = Convert.ToDateTime(fila["Fecha desde"]);
                 aux.FechaHasta = Convert.ToDateTime(fila["Fecha hasta"]);
@@ -136,22 +211,6 @@ namespace CineTPILIb.Data.Implementaciones
                 lFunciones.Add(aux);
             }
             return lFunciones;
-        }
-
-        public List<Horario> GetHorarios()
-        {
-            List<Horario> lHorarios = new List<Horario>();
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_HORARIOS");
-
-            foreach (DataRow fila in tabla.Rows)
-            {
-                Horario aux = new Horario();
-                aux.IdHorario = Convert.ToInt32(fila["id_horario"]);
-                aux.Hora = fila["horario"].ToString();
-
-                lHorarios.Add(aux);
-            }
-            return lHorarios;
         }
 
         public List<PeliculaDTO> GetPeliculaList()
@@ -175,6 +234,22 @@ namespace CineTPILIb.Data.Implementaciones
             return lPeliculas;
         }
 
+        public List<Horario> GetHorarios()
+        {
+            List<Horario> lHorarios = new List<Horario>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_HORARIOS");
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                Horario aux = new Horario();
+                aux.IdHorario = Convert.ToInt32(fila["id_horario"]);
+                aux.Hora = fila["horario"].ToString();
+
+                lHorarios.Add(aux);
+            }
+            return lHorarios;
+        }
+
         public List<Sala> GetSalas()
         {
             List<Sala> lSalas = new List<Sala>();
@@ -192,51 +267,47 @@ namespace CineTPILIb.Data.Implementaciones
             return lSalas;
         }
 
-        public bool ModificarFuncion(int id, Funcion funcion)
-        {
-            bool resultado = true;
-            SqlTransaction t = null;
-            conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
+        //public bool ModificarFuncion(int id, Funcion funcion)
+        //{
+        //    bool resultado = true;
+        //    SqlTransaction t = null;
+        //    conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
 
-            try
-            {
-                conexion.Open();
-                t = conexion.BeginTransaction();
+        //    try
+        //    {
+        //        conexion.Open();
+        //        t = conexion.BeginTransaction();
 
-                id = funcion.Id_funcion;
+        //        SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCION", conexion, t);
+        //        comando.CommandType = CommandType.StoredProcedure;
+        //        comando.Parameters.AddWithValue("@id_funcion", funcion.Id_funcion);
+        //        comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
+        //        comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
+        //        comando.Parameters.AddWithValue("@precio", funcion.Precio);
+        //        comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
+        //        comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
+        //        comando.Parameters.AddWithValue("@id_horario", funcion.IdHorario);
 
-                SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCION", conexion, t);
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@id_funcion", id);
-                comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
-                comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
-                comando.Parameters.AddWithValue("@precio", funcion.Precio);
-                comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
-                comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@horarios", funcion.IdHorario);
-
-                comando.ExecuteNonQuery();
-                t.Commit();
-            }
-            catch
-            {
-                if (t != null)
-                {
-                    t.Rollback();
-                    resultado = false;
-                }
-            }
-            finally
-            {
-                if (conexion != null && conexion.State == ConnectionState.Open)
-                {
-                    conexion.Close();
-                }
-            }
-            return resultado;
-        }
+        //        comando.ExecuteNonQuery();
+        //        t.Commit();
+        //    }
+        //    catch
+        //    {
+        //        if (t != null)
+        //        {
+        //            t.Rollback();
+        //            resultado = false;
+        //        }
+        //    }
+        //    finally
+        //    {
+        //        if (conexion != null && conexion.State == ConnectionState.Open)
+        //        {
+        //            conexion.Close();
+        //        }
+        //    }
+        //    return resultado;
+        //}
     }
-
 }
-
 

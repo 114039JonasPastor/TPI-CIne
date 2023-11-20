@@ -18,6 +18,11 @@ namespace CineFront.Diseño
 
         private void FrmConsultaPelicula_Load(object sender, EventArgs e)
         {
+            txtTitulo.Enabled = true;
+            txtSinopsis.Enabled = true;
+            cboGenero.Enabled = true;
+            cboIdioma.Enabled = true;
+
             CargarIdiomasAsync();
             CargarGenerosAsync();
         }
@@ -41,14 +46,48 @@ namespace CineFront.Diseño
             cboGenero.ValueMember = "IdGenero";
         }
 
+        bool check = false;
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            string titulo = Uri.EscapeDataString(txtTitulo.Text);
-            string sinopsis = Uri.EscapeDataString(txtSinopsis.Text);
-            int id_genero = Convert.ToInt32(cboGenero.SelectedIndex + 1);
-            int id_idioma = Convert.ToInt32(cboIdioma.SelectedIndex + 1);
-            CargarPeliculas(id_genero, id_idioma, sinopsis, titulo);
+            if (check == false)
+            {
+                string titulo = Uri.EscapeDataString(txtTitulo.Text);
+                string sinopsis = Uri.EscapeDataString(txtSinopsis.Text);
+                int id_genero = Convert.ToInt32(cboGenero.SelectedIndex + 1);
+                int id_idioma = Convert.ToInt32(cboIdioma.SelectedIndex + 1);
+                CargarPeliculas(id_genero, id_idioma, sinopsis, titulo);
+            }
+            else
+                CargarTodasLasPeliculas();
 
+        }
+
+        private async void CargarTodasLasPeliculas()
+        {
+            string url = string.Format("https://localhost:7074/api/Peliculas");
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            var lst = JsonConvert.DeserializeObject<List<Pelicula>>(result);
+            dgvPelicula.Rows.Clear();
+
+
+            if (lst != null)
+            {
+
+                foreach (Pelicula pelicula in lst)
+                {
+                    dgvPelicula.Rows.Add(new object[] {
+                                            pelicula.Id_pelicula,
+                                            pelicula.Titulo,
+                                            pelicula.Sinopsis,
+                                            pelicula.Clasificacion.ClasificacionName,
+                                            pelicula.Genero.GeneroName,
+                                            pelicula.Idioma.IdiomaName, "Ver Detalles"     });
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay peliculas en el catalogo.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private async void CargarPeliculas(int id_genero, int id_idioma, string sinopsis, string titulo)
@@ -63,19 +102,15 @@ namespace CineFront.Diseño
             if (!String.IsNullOrEmpty(titulo))
                 url = String.Format(url + "&titulo={0}", titulo);
 
-            // Realizar la solicitud GET a la API
+
             var result = await ClientSingleton.GetInstance().GetAsync(url);
-
-            // Deserializar la respuesta JSON en una lista de objetos Pelicula
             var lst = JsonConvert.DeserializeObject<List<Pelicula>>(result);
-
-            // Limpiar las filas existentes en el DataGridView
             dgvPelicula.Rows.Clear();
 
-            // Verificar si se obtuvieron datos
+
             if (lst != null)
             {
-                // Iterar sobre la lista de Peliculas y agregarlas al DataGridView
+
                 foreach (Pelicula pelicula in lst)
                 {
                     dgvPelicula.Rows.Add(new object[] {
@@ -93,21 +128,40 @@ namespace CineFront.Diseño
             }
         }
 
-        private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cboIdioma_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
 
         private void chkConsulta_CheckedChanged(object sender, EventArgs e)
         {
-            //txtTitulo.Enabled = false;
-            //txtSinopsis.Enabled = false;
-            //cboGenero.Enabled = false;
-            //cboIdioma.Enabled = false;
+            if (chkConsulta.Checked)
+            {
+                check = true;
+                txtTitulo.Enabled = false;
+                txtSinopsis.Enabled = false;
+                cboGenero.Enabled = false;
+                cboIdioma.Enabled = false;
+            }
+            else
+            {
+                check = false;
+                txtTitulo.Enabled = true;
+                txtSinopsis.Enabled = true;
+                cboGenero.Enabled = true;
+                cboIdioma.Enabled = true;
+            }
+
+
+        }
+
+        private void dgvPelicula_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvPelicula.CurrentCell.ColumnIndex == 6)
+            {
+                int nro = int.Parse(dgvPelicula.CurrentRow.Cells["colId"].Value.ToString());
+                new FrmDetallesPelicula(nro).ShowDialog();
+
+            }
+
+
         }
 
         private void FrmConsultaPelicula_Load_1(object sender, EventArgs e)
@@ -115,9 +169,9 @@ namespace CineFront.Diseño
 
         }
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
+        private void btnConsultar_Click_1(object sender, EventArgs e)
         {
-            this.Dispose();
+
         }
     }
 }

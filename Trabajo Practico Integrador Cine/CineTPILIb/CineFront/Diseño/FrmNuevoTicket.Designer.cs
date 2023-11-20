@@ -301,7 +301,6 @@
             this.btnSalir.TabIndex = 31;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnConfirmar
             // 
@@ -381,7 +380,8 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvTicket);
             this.Name = "FrmNuevoTicket";
-            this.Text = "Nuevo Ticket";
+            this.Text = "NuevoTicketFrm";
+            this.Load += new System.EventHandler(this.FrmNuevoTicket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

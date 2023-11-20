@@ -64,14 +64,14 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<PeliculaDTO>>(result);
 
-            cboPelicula.DataSource = lst;
-            cboPelicula.DisplayMember = "ID";
-            cboPelicula.ValueMember = "Titulo";
+            cboHorarios.DataSource = lst;
+            cboHorarios.DisplayMember = "ID";
+            cboHorarios.ValueMember = "Titulo";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (cboPelicula.SelectedIndex == -1)
+            if (cboHorarios.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe de seleccionar una pelicula", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -91,7 +91,7 @@ namespace CineFront.Diseño
                 MessageBox.Show("Debe de ingresar un precio", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            nuevaDTO.Pelicula = cboPelicula.Text;
+            nuevaDTO.Pelicula = cboHorarios.Text;
             nuevaDTO.Sala = Convert.ToInt32(cboSala.Text);
             nuevaDTO.Horario = cboHorarios.Text;
             nuevaDTO.FechaDesde = dtpDesde.Value;
@@ -110,7 +110,7 @@ namespace CineFront.Diseño
         private async Task GuardarFuncionAsync()
         {
             nueva.Id_sala = cboSala.SelectedIndex + 1;
-            nueva.Id_pelicula = cboPelicula.SelectedIndex + 1;
+            nueva.Id_pelicula = cboHorarios.SelectedIndex + 1;
             nueva.Precio = Convert.ToDouble(txtPrecio.Text);
             nueva.FechaDesde = dtpDesde.Value;
             nueva.FechaHasta = dtpHasta.Value;

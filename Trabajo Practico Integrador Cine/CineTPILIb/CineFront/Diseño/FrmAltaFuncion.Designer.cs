@@ -38,6 +38,8 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblFormato = new System.Windows.Forms.Label();
+            this.cboFormato = new System.Windows.Forms.ComboBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.cboHorarios = new System.Windows.Forms.ComboBox();
             this.lblHorario = new System.Windows.Forms.Label();
@@ -46,6 +48,7 @@
             this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFormato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,6 +131,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtPrecio);
+            this.groupBox1.Controls.Add(this.lblFormato);
+            this.groupBox1.Controls.Add(this.cboFormato);
             this.groupBox1.Controls.Add(this.lblPrecio);
             this.groupBox1.Controls.Add(this.cboHorarios);
             this.groupBox1.Controls.Add(this.lblHorario);
@@ -151,6 +156,23 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
             this.txtPrecio.TabIndex = 18;
+            // 
+            // lblFormato
+            // 
+            this.lblFormato.AutoSize = true;
+            this.lblFormato.Location = new System.Drawing.Point(0, 84);
+            this.lblFormato.Name = "lblFormato";
+            this.lblFormato.Size = new System.Drawing.Size(52, 15);
+            this.lblFormato.TabIndex = 14;
+            this.lblFormato.Text = "Formato";
+            // 
+            // cboFormato
+            // 
+            this.cboFormato.FormattingEnabled = true;
+            this.cboFormato.Location = new System.Drawing.Point(64, 81);
+            this.cboFormato.Name = "cboFormato";
+            this.cboFormato.Size = new System.Drawing.Size(100, 23);
+            this.cboFormato.TabIndex = 16;
             // 
             // lblPrecio
             // 
@@ -188,6 +210,7 @@
             this.ColPelicula,
             this.ColSala,
             this.ColHorario,
+            this.ColFormato,
             this.ColFecDesde,
             this.ColFecHasta,
             this.ColPrecio,
@@ -212,7 +235,6 @@
             this.ColPelicula.HeaderText = "Pelicula";
             this.ColPelicula.Name = "ColPelicula";
             this.ColPelicula.ReadOnly = true;
-            this.ColPelicula.Width = 200;
             // 
             // ColSala
             // 
@@ -225,6 +247,12 @@
             this.ColHorario.HeaderText = "Horario";
             this.ColHorario.Name = "ColHorario";
             this.ColHorario.ReadOnly = true;
+            // 
+            // ColFormato
+            // 
+            this.ColFormato.HeaderText = "Formato";
+            this.ColFormato.Name = "ColFormato";
+            this.ColFormato.ReadOnly = true;
             // 
             // ColFecDesde
             // 
@@ -249,8 +277,6 @@
             this.ColAccion.HeaderText = "Accion";
             this.ColAccion.Name = "ColAccion";
             this.ColAccion.ReadOnly = true;
-            this.ColAccion.Text = "Quitar";
-            this.ColAccion.UseColumnTextForButtonValue = true;
             // 
             // btnAgregar
             // 
@@ -303,7 +329,7 @@
             this.Controls.Add(this.dgvFunciones);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAltaFuncion";
-            this.Text = "Nueva Función";
+            this.Text = "NuevaFuncionFrm";
             this.Load += new System.EventHandler(this.FrmAltaFuncion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -324,6 +350,8 @@
         private DateTimePicker dtpHasta;
         private GroupBox groupBox1;
         private TextBox txtPrecio;
+        private Label lblFormato;
+        private ComboBox cboFormato;
         private Label lblPrecio;
         private ComboBox cboHorarios;
         private Label lblHorario;
@@ -336,6 +364,7 @@
         private DataGridViewTextBoxColumn ColPelicula;
         private DataGridViewTextBoxColumn ColSala;
         private DataGridViewTextBoxColumn ColHorario;
+        private DataGridViewTextBoxColumn ColFormato;
         private DataGridViewTextBoxColumn ColFecDesde;
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;

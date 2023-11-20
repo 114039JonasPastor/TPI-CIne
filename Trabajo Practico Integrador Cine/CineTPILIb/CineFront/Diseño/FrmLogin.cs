@@ -65,15 +65,5 @@ namespace CineFront.Diseño
         {
             this.Dispose();
         }
-
-        private void btnAcceder_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalir_Click_1(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
     }
 }

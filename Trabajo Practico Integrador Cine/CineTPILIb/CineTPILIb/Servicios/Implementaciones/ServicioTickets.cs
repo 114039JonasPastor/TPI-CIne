@@ -1,6 +1,7 @@
 ﻿using CineTPILIb.Data.Implementaciones;
 using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Interfaces;
 
 namespace CineTPILIb.Servicios.Implementaciones
@@ -34,5 +35,14 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.BajaTicket(id);
         }
 
+        public List<Cliente> GetClientes()
+        {
+            return dao.GetClientes();
+        }
+
+        List<TicketDTO> IServicioTickets.GetTicketPorFiltros(int id, DateTime fecha, string cliente)
+        {
+            return dao.GetTicketPorFiltros(id, fecha, cliente);
+        }
     }
 }

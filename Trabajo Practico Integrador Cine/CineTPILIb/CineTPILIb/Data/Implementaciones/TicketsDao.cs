@@ -1,5 +1,6 @@
 ﻿using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -215,6 +216,45 @@ namespace CineTPILIb.Data.Implementaciones
             }
 
             return ticket;
+        }
+
+        public List<Cliente> GetClientes()
+        {
+            List<Cliente> lClientes = new List<Cliente>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_CLIENTES");
+
+            foreach(DataRow fila in tabla.Rows)
+            {
+                Cliente aux = new Cliente();
+                aux.IdCliente = Convert.ToInt32(fila["ID"]);
+                aux.Nombre = fila["Nombre"].ToString();
+
+                lClientes.Add(aux);
+            }
+            return lClientes;
+        }
+
+        public List<TicketDTO> GetTicketPorFiltros(int id, DateTime fecha, string cliente)
+        {
+            List<TicketDTO> lista = new List<TicketDTO>();
+
+            List<Parametro> parametros = new List<Parametro>();
+            parametros.Add(new Parametro("@id",id));
+            parametros.Add(new Parametro("@fecha", fecha));
+            parametros.Add(new Parametro("@cliente", cliente));
+
+            DataTable tabla = HelperDB.ObtenerInstancia().ConsultarConParametros("SP_GET_TICKETS_FILTROS", parametros);
+
+            foreach(DataRow fila in tabla.Rows)
+            {
+                TicketDTO aux = new TicketDTO();
+                aux.NroTicket = Convert.ToInt32(fila["Numero de ticket"]);
+                aux.Cliente = fila["Cliente"].ToString();
+                aux.FechaEmision = Convert.ToDateTime(fila["Fecha"]);
+
+                lista.Add(aux);
+            }
+            return lista;
         }
     }
 }

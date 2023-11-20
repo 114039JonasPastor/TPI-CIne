@@ -19,19 +19,6 @@ namespace CineApi.Controllers
             app = new ServicioFunciones();
         }
 
-        // GET: api/<FuncionesController>
-        [HttpGet]
-        public IActionResult GetFunciones()
-        {
-            try
-            {
-                return Ok(app.ObtenerFunciones());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
 
         [HttpGet("/Combo Horarios")]
         public IActionResult GetGeneros()
@@ -81,7 +68,38 @@ namespace CineApi.Controllers
             List<FuncionDTO> lst = null;
             try
             {
-                return Ok(app.GetFuncionesFiltros(desde,hasta,id_funcion));
+                return Ok(app.GetFuncionesFiltros(desde, hasta, id_funcion));
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+
+        // GET: api/<FuncionesController>
+        [HttpGet]
+        public IActionResult GetFunciones()
+        {
+            try
+            {
+                return Ok(app.ObtenerFunciones());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
+
+        // GET api/<FuncionesController>/5
+        [HttpGet("/funciones/{id}")]
+        public IActionResult GetFuncionesPorId(int id)
+        {
+            try
+            {
+                return Ok(app.GetFuncionesPorId(id));
 
             }
             catch (Exception)
@@ -122,7 +140,7 @@ namespace CineApi.Controllers
                 }
                 else
                 {
-                    return Ok(app.ModificarFuncion(id, funcion));
+                    return Ok(app.ModificarFuncion(funcion));
                 }
             }
             catch (Exception ex)

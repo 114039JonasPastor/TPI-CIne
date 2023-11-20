@@ -34,9 +34,19 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.BajaFuncion(id);
         }
 
-        public bool ModificarFuncion(int id, Funcion funcion)
+        public bool ModificarFuncion(Funcion funcion)
         {
-            return dao.ModificarFuncion(id, funcion);
+            return dao.ModificarFuncion(funcion);
+        }
+
+        public Funcion GetFuncionesPorId(int nro)
+        {
+            return dao.ObtenerFuncionPorId(nro);
+        }
+
+        public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion)
+        {
+            return dao.GetFuncionesFiltros(desde, hasta, id_funcion);
         }
 
         public List<PeliculaDTO> GetPeliculaList()
@@ -52,11 +62,6 @@ namespace CineTPILIb.Servicios.Implementaciones
         public List<Sala> GetSalas()
         {
             return dao.GetSalas();
-        }
-
-        public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion)
-        {
-            return dao.GetFuncionesFiltros(desde, hasta, id_funcion);
         }
     }
 }

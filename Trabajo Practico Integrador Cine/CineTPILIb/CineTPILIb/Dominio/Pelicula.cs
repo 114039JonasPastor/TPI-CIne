@@ -13,7 +13,6 @@ namespace CineTPILIb.Dominio
         public string? Titulo { get; set; }
         public int Duracion { get; set; }
         public string? Sinopsis { get; set; }
-        public bool Estado { get; set; }
 
         public Clasificacion Clasificacion { get; set; }
         public Genero Genero { get; set; }

@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvFunciones = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNumero = new System.Windows.Forms.TextBox();
@@ -46,6 +38,15 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTipoDeSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +60,7 @@
             this.ColID,
             this.ColPelicula,
             this.ColSala,
+            this.ColTipoDeSala,
             this.ColHorario,
             this.ColFecDesde,
             this.ColFecHasta,
@@ -70,56 +72,7 @@
             this.dgvFunciones.RowTemplate.Height = 25;
             this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
             this.dgvFunciones.TabIndex = 16;
-            // 
-            // ColID
-            // 
-            this.ColID.HeaderText = "ID";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Visible = false;
-            // 
-            // ColPelicula
-            // 
-            this.ColPelicula.HeaderText = "Pelicula";
-            this.ColPelicula.Name = "ColPelicula";
-            this.ColPelicula.ReadOnly = true;
-            this.ColPelicula.Width = 200;
-            // 
-            // ColSala
-            // 
-            this.ColSala.HeaderText = "Sala";
-            this.ColSala.Name = "ColSala";
-            this.ColSala.ReadOnly = true;
-            // 
-            // ColHorario
-            // 
-            this.ColHorario.HeaderText = "Horario";
-            this.ColHorario.Name = "ColHorario";
-            this.ColHorario.ReadOnly = true;
-            // 
-            // ColFecDesde
-            // 
-            this.ColFecDesde.HeaderText = "Fecha desde";
-            this.ColFecDesde.Name = "ColFecDesde";
-            this.ColFecDesde.ReadOnly = true;
-            // 
-            // ColFecHasta
-            // 
-            this.ColFecHasta.HeaderText = "Fecha hasta";
-            this.ColFecHasta.Name = "ColFecHasta";
-            this.ColFecHasta.ReadOnly = true;
-            // 
-            // ColPrecio
-            // 
-            this.ColPrecio.HeaderText = "Precio";
-            this.ColPrecio.Name = "ColPrecio";
-            this.ColPrecio.ReadOnly = true;
-            // 
-            // ColAccion
-            // 
-            this.ColAccion.HeaderText = "Accion";
-            this.ColAccion.Name = "ColAccion";
-            this.ColAccion.ReadOnly = true;
+            this.dgvFunciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunciones_CellContentClick);
             // 
             // btnSalir
             // 
@@ -129,7 +82,6 @@
             this.btnSalir.TabIndex = 20;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
@@ -204,6 +156,63 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // ColID
+            // 
+            this.ColID.HeaderText = "ID";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Visible = false;
+            // 
+            // ColPelicula
+            // 
+            this.ColPelicula.HeaderText = "Pelicula";
+            this.ColPelicula.Name = "ColPelicula";
+            this.ColPelicula.ReadOnly = true;
+            // 
+            // ColSala
+            // 
+            this.ColSala.HeaderText = "Sala";
+            this.ColSala.Name = "ColSala";
+            this.ColSala.ReadOnly = true;
+            // 
+            // ColTipoDeSala
+            // 
+            this.ColTipoDeSala.HeaderText = "Tipo de sala";
+            this.ColTipoDeSala.Name = "ColTipoDeSala";
+            this.ColTipoDeSala.ReadOnly = true;
+            // 
+            // ColHorario
+            // 
+            this.ColHorario.HeaderText = "Horario";
+            this.ColHorario.Name = "ColHorario";
+            this.ColHorario.ReadOnly = true;
+            // 
+            // ColFecDesde
+            // 
+            this.ColFecDesde.HeaderText = "Fecha desde";
+            this.ColFecDesde.Name = "ColFecDesde";
+            this.ColFecDesde.ReadOnly = true;
+            // 
+            // ColFecHasta
+            // 
+            this.ColFecHasta.HeaderText = "Fecha hasta";
+            this.ColFecHasta.Name = "ColFecHasta";
+            this.ColFecHasta.ReadOnly = true;
+            // 
+            // ColPrecio
+            // 
+            this.ColPrecio.HeaderText = "Precio";
+            this.ColPrecio.Name = "ColPrecio";
+            this.ColPrecio.ReadOnly = true;
+            // 
+            // ColAccion
+            // 
+            this.ColAccion.HeaderText = "Accion";
+            this.ColAccion.Name = "ColAccion";
+            this.ColAccion.ReadOnly = true;
+            this.ColAccion.Text = "Dar de baja";
+            this.ColAccion.UseColumnTextForButtonValue = true;
+            // 
             // FrmConsultarFunciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,7 +223,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvFunciones);
             this.Name = "FrmConsultarFunciones";
-            this.Text = "Consulta Función";
+            this.Text = "ConsultarFuncionesFrm";
             this.Load += new System.EventHandler(this.FrmConsultarFunciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -238,6 +247,7 @@
         private DataGridViewTextBoxColumn ColID;
         private DataGridViewTextBoxColumn ColPelicula;
         private DataGridViewTextBoxColumn ColSala;
+        private DataGridViewTextBoxColumn ColTipoDeSala;
         private DataGridViewTextBoxColumn ColHorario;
         private DataGridViewTextBoxColumn ColFecDesde;
         private DataGridViewTextBoxColumn ColFecHasta;

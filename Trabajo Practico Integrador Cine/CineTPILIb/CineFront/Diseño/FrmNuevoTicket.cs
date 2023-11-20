@@ -17,9 +17,9 @@ namespace CineFront.Diseño
             InitializeComponent();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void FrmNuevoTicket_Load(object sender, EventArgs e)
         {
-            this.Dispose();
+
         }
     }
 }

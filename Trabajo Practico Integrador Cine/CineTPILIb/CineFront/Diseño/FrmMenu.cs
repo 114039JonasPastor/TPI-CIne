@@ -50,23 +50,6 @@ namespace CineFront
             }
         }
 
-        private void consultarPeliculasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmConsultaPelicula consultaPelicula = new FrmConsultaPelicula();
-            consultaPelicula.ShowDialog();
-        }
-
-        private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
-            frmLogin.Dispose();
-        }
-
-        private void nuevaPelículaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
-            frmAltaPelicula.ShowDialog();
-        }
 
         private void consultarPeliculasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -92,16 +75,16 @@ namespace CineFront
             frmConsultarFuncion.ShowDialog();
         }
 
-        private void nuevaPelículaToolStripMenuItem_Click_2(object sender, EventArgs e)
+        private void nuevoTicketToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
-            frmAltaPelicula.ShowDialog();
+            FrmNuevoTicket frmNuevoTicket = new FrmNuevoTicket();
+            frmNuevoTicket.ShowDialog();
         }
 
-        private void consultarPeliculasToolStripMenuItem_Click_2(object sender, EventArgs e)
+        private void bajaTicketToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultaPelicula frmConsultarPelicula = new FrmConsultaPelicula();
-            frmConsultarPelicula.ShowDialog();
+            FrmBajaTicket frmBajaTicket = new FrmBajaTicket();
+            frmBajaTicket.ShowDialog();
         }
     }
 }

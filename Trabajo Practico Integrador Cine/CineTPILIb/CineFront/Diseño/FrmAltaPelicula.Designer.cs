@@ -50,7 +50,6 @@
             this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(90, 9);
+            this.label1.Location = new System.Drawing.Point(90, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 25);
             this.label1.TabIndex = 0;
@@ -240,26 +239,15 @@
             this.btnAgregar.TabIndex = 15;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(26, 415);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 16;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(604, 415);
+            this.btnSalir.Location = new System.Drawing.Point(321, 415);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 18;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // FrmAltaPelicula
             // 
@@ -269,7 +257,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(717, 450);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvAltaPelicula);
             this.Controls.Add(this.txtSinopsis);
@@ -288,7 +275,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAltaPelicula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nueva Pelicula";
+            this.Text = "Alta Pelicula";
             this.Load += new System.EventHandler(this.FrmAltaPelicula_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).EndInit();
             this.ResumeLayout(false);
@@ -314,7 +301,6 @@
         private TextBox txtSinopsis;
         private DataGridView dgvAltaPelicula;
         private Button btnAgregar;
-        private Button btnModificar;
         private Button button3;
         private Button btnSalir;
         private DataGridViewTextBoxColumn colId;

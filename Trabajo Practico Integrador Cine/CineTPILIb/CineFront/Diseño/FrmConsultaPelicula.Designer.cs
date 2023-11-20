@@ -91,6 +91,7 @@
             this.btnConsultar.TabIndex = 22;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click_1);
             // 
             // cboGenero
             // 
@@ -191,6 +192,7 @@
             this.dgvPelicula.Name = "dgvPelicula";
             this.dgvPelicula.ReadOnly = true;
             this.dgvPelicula.RowTemplate.Height = 25;
+            this.dgvPelicula.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPelicula.Size = new System.Drawing.Size(771, 199);
             this.dgvPelicula.TabIndex = 15;
             // 
@@ -246,7 +248,6 @@
             this.btnSalir.TabIndex = 23;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // FrmConsultaPelicula
             // 
@@ -261,7 +262,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmConsultaPelicula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulta Pelicula";
+            this.Text = "FrmConsultaPelicula";
             this.Load += new System.EventHandler(this.FrmConsultaPelicula_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

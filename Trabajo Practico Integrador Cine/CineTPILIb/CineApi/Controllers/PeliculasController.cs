@@ -75,6 +75,25 @@ namespace CineApi.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetPeliculaPorId(int id)
+        {
+            try
+            {
+                Pelicula p = app.GetPeliculaById(id);
+                if (p != null)
+                    return Ok(p);
+                else
+                    return NotFound("Pelicula id: " + id + " NO encontrada!");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+
+
         // GET api/<PeliculasController>/5
         [HttpGet("/peliculas")]
         public IActionResult GetPeliculasConFiltro(int id_genero, int id_idioma, string? sinopsis = null, string? titulo = null)

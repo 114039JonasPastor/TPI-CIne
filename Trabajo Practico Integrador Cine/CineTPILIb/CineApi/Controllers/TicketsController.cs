@@ -1,4 +1,5 @@
 ﻿using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Implementaciones;
 using CineTPILIb.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,36 @@ namespace CineApi.Controllers
         {
             app = new ServicioTickets();
         }
-        
 
-        
+        [HttpGet("/Clientes")]
+        public IActionResult GetGeneros()
+        {
+            try
+            {
+                return Ok(app.GetClientes());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Tickets Filtro")]
+        public IActionResult GetTicketPorFiltros(int id, DateTime fecha, string cliente)
+        {
+            List<TicketDTO> lst = null;
+            try
+            {
+                return Ok(app.GetTicketPorFiltros(id, fecha, cliente));
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
         [HttpGet("/Tickets")]
         public IActionResult GetTickets(DateTime desde, DateTime hasta, string? cliente = null, 
                                         string? empleado= null, string? pelicula = null)

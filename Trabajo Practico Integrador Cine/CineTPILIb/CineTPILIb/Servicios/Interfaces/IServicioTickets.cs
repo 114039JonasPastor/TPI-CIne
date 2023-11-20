@@ -1,4 +1,5 @@
 ﻿using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace CineTPILIb.Servicios.Interfaces
         bool NuevoTicket(Ticket nuevo);
         bool BajaTicket(int id);
         Ticket GetTicketById(int id);
+        List<Cliente> GetClientes();
+        List<TicketDTO> GetTicketPorFiltros(int id, DateTime fecha, string cliente);
     }
 }
