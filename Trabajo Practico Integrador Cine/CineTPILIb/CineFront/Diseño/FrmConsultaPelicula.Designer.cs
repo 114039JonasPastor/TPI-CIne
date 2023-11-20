@@ -103,7 +103,6 @@
             cboGenero.Name = "cboGenero";
             cboGenero.Size = new Size(199, 23);
             cboGenero.TabIndex = 21;
-            cboGenero.SelectedIndexChanged += cboGenero_SelectedIndexChanged;
             // 
             // cboIdioma
             // 
@@ -114,7 +113,6 @@
             cboIdioma.Name = "cboIdioma";
             cboIdioma.Size = new Size(199, 23);
             cboIdioma.TabIndex = 20;
-            cboIdioma.SelectedIndexChanged += cboIdioma_SelectedIndexChanged;
             // 
             // label8
             // 
@@ -188,8 +186,10 @@
             dgvPelicula.Name = "dgvPelicula";
             dgvPelicula.ReadOnly = true;
             dgvPelicula.RowTemplate.Height = 25;
+            dgvPelicula.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPelicula.Size = new Size(771, 199);
             dgvPelicula.TabIndex = 15;
+            dgvPelicula.CellContentClick += dgvPelicula_CellContentClick;
             // 
             // colId
             // 

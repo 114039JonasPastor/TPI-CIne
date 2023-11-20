@@ -45,7 +45,12 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.GetIdiomas();
         }
 
-        public List<PeliculaDTO> GetPeliculas()
+        public Pelicula GetPeliculaById(int id)
+        {
+            return dao.PeliculaPorID(id);
+        }
+
+        public List<Pelicula> GetPeliculas()
         {
             return dao.GetPeliculas();
         }

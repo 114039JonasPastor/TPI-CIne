@@ -50,23 +50,6 @@ namespace CineFront
             }
         }
 
-        private void consultarPeliculasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmConsultaPelicula consultaPelicula = new FrmConsultaPelicula();
-            consultaPelicula.ShowDialog();
-        }
-
-        private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
-            frmLogin.Dispose();
-        }
-
-        private void nuevaPelículaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
-            frmAltaPelicula.ShowDialog();
-        }
 
         private void consultarPeliculasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {

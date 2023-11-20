@@ -442,7 +442,7 @@ BEGIN
 END
 
 
-alter PROCEDURE SP_CONSULTAR_DETALLE_TICKET
+create PROCEDURE SP_CONSULTAR_DETALLE_TICKET
 	@id_ticket int
 AS
 BEGIN
@@ -508,7 +508,7 @@ end;
 
 create proc [dbo].[SP_CONSULTAR_PELICULAS_SIN_FILTRO]
 as
-select titulo Titulo, duracion Duracion,clasificacion Clasificacion, genero Genero, idioma Idioma, estado Estado 
+select P.*, titulo Titulo, sinopsis Sinopsis,clasificacion Clasificacion, genero Genero, idioma Idioma 
 from PELICULAS p
 join GENEROS g on g.id_genero = p.id_genero
 join IDIOMAS i on i.id_idioma = p.id_idioma
@@ -555,7 +555,7 @@ join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
 
 
 
-alter proc SP_NUEVA_PELICULA
+create proc SP_NUEVA_PELICULA
 @titulo varchar(200),
 @duracion int,
 @sinopsis varchar(400),
