@@ -182,9 +182,9 @@ namespace CineTPILIb.Data.Implementaciones
                 genero.GeneroName = fila["genero"].ToString();
                 genero.IdGenero = (int)fila["id_genero"];
 
-                string titulo = (fila["titulo"].ToString());
+                
 
-                Pelicula pelicula = new Pelicula(titulo, genero, clasificacion, oIdioma);
+                Pelicula pelicula = new Pelicula(genero, clasificacion, oIdioma);
                 
                 //funcion
                 Sala sala = new Sala();
@@ -196,8 +196,10 @@ namespace CineTPILIb.Data.Implementaciones
                 horario.Hora = (fila["horario"].ToString());
 
                 int id_funcion = int.Parse(fila["id_funcion"].ToString());
+                int id_pelicula = (int)fila["id_pelicula"];
+                string titulo = fila["titulo"].ToString();
 
-                Funcion funcion = new Funcion(id_funcion, sala, horario);
+                Funcion funcion = new Funcion(id_funcion, id_pelicula, sala, horario);
 
                 //detalle
                 double precio_venta = double.Parse(fila["precio_venta"].ToString());

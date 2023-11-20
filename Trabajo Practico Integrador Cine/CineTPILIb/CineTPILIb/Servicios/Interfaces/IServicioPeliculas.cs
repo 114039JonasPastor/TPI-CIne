@@ -14,7 +14,7 @@ namespace CineTPILIb.Servicios.Interfaces
         List<Idioma> GetIdiomas();
         List<Genero> GetGeneros();
 
-        List<PeliculaDTO> GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma);
+        List<Pelicula> GetPeliculasConFiltro(int id_genero, int id_idioma, string sinopsis, string titulo);
         bool AltaPelicula(Pelicula nueva);
         bool ModificarPelicula(Pelicula pelicula);
         public List<PeliculaDTO> GetPeliculas();

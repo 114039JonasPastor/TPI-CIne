@@ -31,7 +31,7 @@ namespace CineFront.Http
         public async Task<string> PostAsync(string url, string data)
         {
             StringContent content = new StringContent(data, Encoding.UTF8,
-            "application/json");
+            "Application/Json");
             var result = await client.PostAsync(url, content);
             var response = "";
             if (result.IsSuccessStatusCode)

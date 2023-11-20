@@ -96,7 +96,7 @@
             // 
             // peliculasToolStripMenuItem
             // 
-            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarPeliculasToolStripMenuItem, nuevaPelículaToolStripMenuItem });
+            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaPelículaToolStripMenuItem, consultarPeliculasToolStripMenuItem });
             peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
             peliculasToolStripMenuItem.Size = new Size(65, 20);
             peliculasToolStripMenuItem.Text = "Peliculas";
@@ -104,14 +104,14 @@
             // consultarPeliculasToolStripMenuItem
             // 
             consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            consultarPeliculasToolStripMenuItem.Size = new Size(174, 22);
+            consultarPeliculasToolStripMenuItem.Size = new Size(180, 22);
             consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
             consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click_1;
             // 
             // nuevaPelículaToolStripMenuItem
             // 
             nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            nuevaPelículaToolStripMenuItem.Size = new Size(174, 22);
+            nuevaPelículaToolStripMenuItem.Size = new Size(180, 22);
             nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
             nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
             // 
@@ -165,6 +165,7 @@
             Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
