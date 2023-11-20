@@ -8,7 +8,8 @@ namespace CineTPILIb.Data.Implementaciones
 {
     public class FuncionesDao : IFuncionesDao
     {
-        private SqlConnection conexion;
+ 
+            private SqlConnection conexion;
 
         public bool AltaFuncion(Funcion funcion)
         {
@@ -29,7 +30,7 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@precio", funcion.Precio);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@id_horarios", funcion.Id_horarios);
+                comando.Parameters.AddWithValue("@id_horario", funcion.IdHorario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();
@@ -99,7 +100,7 @@ namespace CineTPILIb.Data.Implementaciones
                 Funcion f = new Funcion();
                 f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
                 f.Id_sala = Convert.ToInt32(fila["id_sala"]);
-                f.Id_horarios = Convert.ToInt32(fila["id_horarios"]);
+                f.IdHorario = Convert.ToInt32(fila["id_horario"]);
                 f.Estado = Convert.ToBoolean(fila["estado"]);
                 f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
                 f.Precio = Convert.ToDouble(fila["precio"]);
@@ -111,12 +112,12 @@ namespace CineTPILIb.Data.Implementaciones
             return lFunciones;
         }
 
-        public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, string pelicula)
+        public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion)
         {
             List<FuncionDTO> lFunciones = new List<FuncionDTO>();
 
             List<Parametro> parametros = new List<Parametro>();
-            parametros.Add(new Parametro("@pelicula", pelicula));
+            parametros.Add(new Parametro("@id_funcion", id_funcion));
             parametros.Add(new Parametro("@desde", desde));
             parametros.Add(new Parametro("@hasta", hasta));
 
@@ -140,34 +141,34 @@ namespace CineTPILIb.Data.Implementaciones
         public List<Horario> GetHorarios()
         {
             List<Horario> lHorarios = new List<Horario>();
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_COMBO_HORARIO");
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_HORARIOS");
 
-            foreach(DataRow fila in tabla.Rows)
+            foreach (DataRow fila in tabla.Rows)
             {
                 Horario aux = new Horario();
-                aux.IdHorario = Convert.ToInt32(fila["id_horarios"]);
-                aux.Horarios = fila["horario"].ToString();
+                aux.IdHorario = Convert.ToInt32(fila["id_horario"]);
+                aux.Hora = fila["horario"].ToString();
 
                 lHorarios.Add(aux);
             }
             return lHorarios;
         }
 
-        public List<Pelicula> GetPeliculaList()
+        public List<PeliculaDTO> GetPeliculaList()
         {
-            List<Pelicula> lPeliculas = new List<Pelicula>();
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_COMBO_PELICULA");
+            List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS_SIN_FILTRO");
 
-            foreach(DataRow fila in tabla.Rows)
+            foreach (DataRow fila in tabla.Rows)
             {
-                Pelicula aux = new Pelicula();
-                aux.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
+                PeliculaDTO aux = new PeliculaDTO();
+                aux.IdPelicula = Convert.ToInt32(fila["ID"]);
                 aux.Titulo = fila["titulo"].ToString();
                 aux.Duracion = Convert.ToInt32(fila["duracion"]);
-                aux.Sinopsis = fila["sinopsis"].ToString();
-                aux.Id_clasificacion = Convert.ToInt32(fila["id_clasificacion"]);
-                aux.Id_genero = Convert.ToInt32(fila["id_genero"]);
-                aux.Id_idioma = Convert.ToInt32(fila["id_idioma"]);
+                aux.Clasificacion = fila["clasificacion"].ToString();
+                aux.Genero = fila["genero"].ToString();
+                aux.Idioma = fila["idioma"].ToString();
+                aux.Estado = Convert.ToBoolean(fila["estado"]);
 
                 lPeliculas.Add(aux);
             }
@@ -177,9 +178,9 @@ namespace CineTPILIb.Data.Implementaciones
         public List<Sala> GetSalas()
         {
             List<Sala> lSalas = new List<Sala>();
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_COMBO_SALAS");
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_SALAS");
 
-            foreach(DataRow fila in tabla.Rows)
+            foreach (DataRow fila in tabla.Rows)
             {
                 Sala aux = new Sala();
                 aux.IdSala = Convert.ToInt32(fila["id_sala"]);
@@ -212,7 +213,7 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@precio", funcion.Precio);
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-                comando.Parameters.AddWithValue("@horarios", funcion.Id_horarios);
+                comando.Parameters.AddWithValue("@horarios", funcion.IdHorario);
 
                 comando.ExecuteNonQuery();
                 t.Commit();
@@ -235,4 +236,7 @@ namespace CineTPILIb.Data.Implementaciones
             return resultado;
         }
     }
+
 }
+
+

@@ -29,51 +29,63 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkConsulta = new System.Windows.Forms.CheckBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.cboGenero = new System.Windows.Forms.ComboBox();
             this.cboIdioma = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDuracion = new System.Windows.Forms.TextBox();
+            this.txtSinopsis = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvAltaPelicula = new System.Windows.Forms.DataGridView();
+            this.dgvPelicula = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSinopsis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPelicula)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.chkConsulta);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Controls.Add(this.cboGenero);
             this.groupBox1.Controls.Add(this.cboIdioma);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtDuracion);
+            this.groupBox1.Controls.Add(this.txtSinopsis);
             this.groupBox1.Controls.Add(this.txtTitulo);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(33, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(541, 112);
+            this.groupBox1.Size = new System.Drawing.Size(771, 112);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
+            // chkConsulta
+            // 
+            this.chkConsulta.AutoSize = true;
+            this.chkConsulta.Location = new System.Drawing.Point(670, 32);
+            this.chkConsulta.Name = "chkConsulta";
+            this.chkConsulta.Size = new System.Drawing.Size(75, 19);
+            this.chkConsulta.TabIndex = 23;
+            this.chkConsulta.Text = "Sin filtros";
+            this.chkConsulta.UseVisualStyleBackColor = true;
+            // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(450, 79);
+            this.btnConsultar.Location = new System.Drawing.Point(670, 62);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 22;
@@ -82,16 +94,20 @@
             // 
             // cboGenero
             // 
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGenero.Enabled = false;
             this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(326, 16);
+            this.cboGenero.Location = new System.Drawing.Point(439, 28);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(199, 23);
             this.cboGenero.TabIndex = 21;
             // 
             // cboIdioma
             // 
+            this.cboIdioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboIdioma.Enabled = false;
             this.cboIdioma.FormattingEnabled = true;
-            this.cboIdioma.Location = new System.Drawing.Point(326, 50);
+            this.cboIdioma.Location = new System.Drawing.Point(439, 62);
             this.cboIdioma.Name = "cboIdioma";
             this.cboIdioma.Size = new System.Drawing.Size(199, 23);
             this.cboIdioma.TabIndex = 20;
@@ -99,7 +115,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(273, 55);
+            this.label8.Location = new System.Drawing.Point(386, 67);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 15);
             this.label8.TabIndex = 19;
@@ -108,48 +124,39 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(272, 19);
+            this.label5.Location = new System.Drawing.Point(385, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 15);
             this.label5.TabIndex = 18;
             this.label5.Text = "Género:";
             // 
-            // label3
+            // txtSinopsis
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(162, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "minutos";
-            // 
-            // txtDuracion
-            // 
-            this.txtDuracion.Location = new System.Drawing.Point(72, 50);
-            this.txtDuracion.Name = "txtDuracion";
-            this.txtDuracion.Size = new System.Drawing.Size(84, 23);
-            this.txtDuracion.TabIndex = 16;
+            this.txtSinopsis.Location = new System.Drawing.Point(72, 62);
+            this.txtSinopsis.Name = "txtSinopsis";
+            this.txtSinopsis.Size = new System.Drawing.Size(294, 23);
+            this.txtSinopsis.TabIndex = 16;
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(72, 16);
+            this.txtTitulo.Location = new System.Drawing.Point(72, 28);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(164, 23);
+            this.txtTitulo.Size = new System.Drawing.Size(294, 23);
             this.txtTitulo.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 53);
+            this.label6.Location = new System.Drawing.Point(8, 65);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 15);
+            this.label6.Size = new System.Drawing.Size(53, 15);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Duracion:";
+            this.label6.Text = "Sinopsis:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 19);
+            this.label2.Location = new System.Drawing.Point(26, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 15);
             this.label2.TabIndex = 13;
@@ -165,25 +172,27 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "CONSULTA PELICULAS";
             // 
-            // dgvAltaPelicula
+            // dgvPelicula
             // 
-            this.dgvAltaPelicula.AllowUserToAddRows = false;
-            this.dgvAltaPelicula.AllowUserToDeleteRows = false;
-            this.dgvAltaPelicula.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAltaPelicula.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAltaPelicula.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPelicula.AllowUserToAddRows = false;
+            this.dgvPelicula.AllowUserToDeleteRows = false;
+            this.dgvPelicula.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPelicula.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvPelicula.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPelicula.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colTitulo,
-            this.colDuracion,
+            this.colSinopsis,
             this.colClasificacion,
             this.colGenero,
-            this.colIdioma});
-            this.dgvAltaPelicula.Location = new System.Drawing.Point(33, 187);
-            this.dgvAltaPelicula.Name = "dgvAltaPelicula";
-            this.dgvAltaPelicula.ReadOnly = true;
-            this.dgvAltaPelicula.RowTemplate.Height = 25;
-            this.dgvAltaPelicula.Size = new System.Drawing.Size(541, 199);
-            this.dgvAltaPelicula.TabIndex = 15;
+            this.colIdioma,
+            this.colAccion});
+            this.dgvPelicula.Location = new System.Drawing.Point(33, 187);
+            this.dgvPelicula.Name = "dgvPelicula";
+            this.dgvPelicula.ReadOnly = true;
+            this.dgvPelicula.RowTemplate.Height = 25;
+            this.dgvPelicula.Size = new System.Drawing.Size(771, 199);
+            this.dgvPelicula.TabIndex = 15;
             // 
             // colId
             // 
@@ -199,11 +208,11 @@
             this.colTitulo.Name = "colTitulo";
             this.colTitulo.ReadOnly = true;
             // 
-            // colDuracion
+            // colSinopsis
             // 
-            this.colDuracion.HeaderText = "Duracion";
-            this.colDuracion.Name = "colDuracion";
-            this.colDuracion.ReadOnly = true;
+            this.colSinopsis.HeaderText = "Sinopsis";
+            this.colSinopsis.Name = "colSinopsis";
+            this.colSinopsis.ReadOnly = true;
             // 
             // colClasificacion
             // 
@@ -223,31 +232,40 @@
             this.colIdioma.Name = "colIdioma";
             this.colIdioma.ReadOnly = true;
             // 
+            // colAccion
+            // 
+            this.colAccion.HeaderText = "Acción";
+            this.colAccion.Name = "colAccion";
+            this.colAccion.ReadOnly = true;
+            // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(499, 392);
+            this.btnSalir.Location = new System.Drawing.Point(729, 391);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 23;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // FrmConsultaPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 426);
+            this.BackgroundImage = global::CineFront.Properties.Resources.cine;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(841, 426);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dgvAltaPelicula);
+            this.Controls.Add(this.dgvPelicula);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmConsultaPelicula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmConsultaPelicula";
-            this.Load += new System.EventHandler(this.FrmConsultaPelicula_Load);
+            this.Text = "Consulta Pelicula";
+            this.Load += new System.EventHandler(this.FrmConsultaPelicula_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPelicula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,23 +275,24 @@
 
         private GroupBox groupBox1;
         private Label label1;
-        private TextBox txtDuracion;
+        private TextBox txtSinopsis;
         private TextBox txtTitulo;
         private Label label6;
         private Label label2;
-        private Label label3;
         private ComboBox cboGenero;
         private ComboBox cboIdioma;
         private Label label8;
         private Label label5;
-        private DataGridView dgvAltaPelicula;
+        private DataGridView dgvPelicula;
+        private Button btnConsultar;
+        private Button btnSalir;
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colTitulo;
-        private DataGridViewTextBoxColumn colDuracion;
+        private DataGridViewTextBoxColumn colSinopsis;
         private DataGridViewTextBoxColumn colClasificacion;
         private DataGridViewTextBoxColumn colGenero;
         private DataGridViewTextBoxColumn colIdioma;
-        private Button btnConsultar;
-        private Button btnSalir;
+        private DataGridViewButtonColumn colAccion;
+        private CheckBox chkConsulta;
     }
 }

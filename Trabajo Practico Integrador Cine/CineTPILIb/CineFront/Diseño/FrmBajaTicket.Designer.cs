@@ -31,21 +31,21 @@
             this.btnConsular = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblNumeroDeTicket = new System.Windows.Forms.Label();
-            this.lblFechaDeEmision = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtNumeroDeTicket = new System.Windows.Forms.TextBox();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColBaja = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblVendedor = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.txtNumeroDeTicket = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaDeEmision = new System.Windows.Forms.Label();
+            this.lblNumeroDeTicket = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dataGridView1
             // 
@@ -85,65 +86,6 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(547, 150);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(403, 303);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblVendedor);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.cboCliente);
-            this.groupBox1.Controls.Add(this.lblCliente);
-            this.groupBox1.Controls.Add(this.txtNumeroDeTicket);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.lblFechaDeEmision);
-            this.groupBox1.Controls.Add(this.lblNumeroDeTicket);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 100);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            // 
-            // lblNumeroDeTicket
-            // 
-            this.lblNumeroDeTicket.AutoSize = true;
-            this.lblNumeroDeTicket.Location = new System.Drawing.Point(6, 19);
-            this.lblNumeroDeTicket.Name = "lblNumeroDeTicket";
-            this.lblNumeroDeTicket.Size = new System.Drawing.Size(101, 15);
-            this.lblNumeroDeTicket.TabIndex = 0;
-            this.lblNumeroDeTicket.Text = "Numero de Ticket";
-            // 
-            // lblFechaDeEmision
-            // 
-            this.lblFechaDeEmision.AutoSize = true;
-            this.lblFechaDeEmision.Location = new System.Drawing.Point(307, 19);
-            this.lblFechaDeEmision.Name = "lblFechaDeEmision";
-            this.lblFechaDeEmision.Size = new System.Drawing.Size(99, 15);
-            this.lblFechaDeEmision.TabIndex = 1;
-            this.lblFechaDeEmision.Text = "Fecha de emisión";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(420, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 23);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // txtNumeroDeTicket
-            // 
-            this.txtNumeroDeTicket.Location = new System.Drawing.Point(131, 16);
-            this.txtNumeroDeTicket.Name = "txtNumeroDeTicket";
-            this.txtNumeroDeTicket.Size = new System.Drawing.Size(121, 23);
-            this.txtNumeroDeTicket.TabIndex = 3;
             // 
             // ColID
             // 
@@ -175,30 +117,31 @@
             this.ColBaja.Name = "ColBaja";
             this.ColBaja.ReadOnly = true;
             // 
-            // lblCliente
+            // btnCancelar
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(6, 52);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(44, 15);
-            this.lblCliente.TabIndex = 4;
-            this.lblCliente.Text = "Cliente";
+            this.btnCancelar.Location = new System.Drawing.Point(403, 303);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // cboCliente
+            // groupBox1
             // 
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(131, 49);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(121, 23);
-            this.cboCliente.TabIndex = 5;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(420, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 6;
+            this.groupBox1.Controls.Add(this.lblVendedor);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboCliente);
+            this.groupBox1.Controls.Add(this.lblCliente);
+            this.groupBox1.Controls.Add(this.txtNumeroDeTicket);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.lblFechaDeEmision);
+            this.groupBox1.Controls.Add(this.lblNumeroDeTicket);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(547, 100);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
             // 
             // lblVendedor
             // 
@@ -208,6 +151,64 @@
             this.lblVendedor.Size = new System.Drawing.Size(57, 15);
             this.lblVendedor.TabIndex = 7;
             this.lblVendedor.Text = "Vendedor";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(420, 48);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // cboCliente
+            // 
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(131, 49);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(121, 23);
+            this.cboCliente.TabIndex = 5;
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(6, 52);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(44, 15);
+            this.lblCliente.TabIndex = 4;
+            this.lblCliente.Text = "Cliente";
+            // 
+            // txtNumeroDeTicket
+            // 
+            this.txtNumeroDeTicket.Location = new System.Drawing.Point(131, 16);
+            this.txtNumeroDeTicket.Name = "txtNumeroDeTicket";
+            this.txtNumeroDeTicket.Size = new System.Drawing.Size(121, 23);
+            this.txtNumeroDeTicket.TabIndex = 3;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(420, 19);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(121, 23);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // lblFechaDeEmision
+            // 
+            this.lblFechaDeEmision.AutoSize = true;
+            this.lblFechaDeEmision.Location = new System.Drawing.Point(307, 19);
+            this.lblFechaDeEmision.Name = "lblFechaDeEmision";
+            this.lblFechaDeEmision.Size = new System.Drawing.Size(99, 15);
+            this.lblFechaDeEmision.TabIndex = 1;
+            this.lblFechaDeEmision.Text = "Fecha de emisión";
+            // 
+            // lblNumeroDeTicket
+            // 
+            this.lblNumeroDeTicket.AutoSize = true;
+            this.lblNumeroDeTicket.Location = new System.Drawing.Point(6, 19);
+            this.lblNumeroDeTicket.Name = "lblNumeroDeTicket";
+            this.lblNumeroDeTicket.Size = new System.Drawing.Size(101, 15);
+            this.lblNumeroDeTicket.TabIndex = 0;
+            this.lblNumeroDeTicket.Text = "Numero de Ticket";
             // 
             // FrmBajaTicket
             // 
@@ -220,7 +221,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnConsular);
             this.Name = "FrmBajaTicket";
-            this.Text = "FrmBajaTicket";
+            this.Text = "Baja Ticket";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

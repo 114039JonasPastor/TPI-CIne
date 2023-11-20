@@ -36,8 +36,8 @@
             this.consultarFuncionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarFuncionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarPeliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaPelículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarPeliculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bajaTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +58,7 @@
             this.soporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(715, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -109,25 +109,25 @@
             // peliculasToolStripMenuItem
             // 
             this.peliculasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarPeliculasToolStripMenuItem,
-            this.nuevaPelículaToolStripMenuItem});
+            this.nuevaPelículaToolStripMenuItem,
+            this.consultarPeliculasToolStripMenuItem});
             this.peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
             this.peliculasToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.peliculasToolStripMenuItem.Text = "Peliculas";
             // 
-            // consultarPeliculasToolStripMenuItem
-            // 
-            this.consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
-            this.consultarPeliculasToolStripMenuItem.Click += new System.EventHandler(this.consultarPeliculasToolStripMenuItem_Click_1);
-            // 
             // nuevaPelículaToolStripMenuItem
             // 
             this.nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
-            this.nuevaPelículaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPelículaToolStripMenuItem_Click_1);
+            this.nuevaPelículaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPelículaToolStripMenuItem_Click_2);
+            // 
+            // consultarPeliculasToolStripMenuItem
+            // 
+            this.consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
+            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
+            this.consultarPeliculasToolStripMenuItem.Click += new System.EventHandler(this.consultarPeliculasToolStripMenuItem_Click_2);
             // 
             // ticketsToolStripMenuItem
             // 
@@ -174,12 +174,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 353);
+            this.BackgroundImage = global::CineFront.Properties.Resources.cine1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(715, 426);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

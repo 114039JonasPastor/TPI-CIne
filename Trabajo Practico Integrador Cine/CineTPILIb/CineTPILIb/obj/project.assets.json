@@ -499,11 +499,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+      "projectUniqueName": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
       "projectName": "CineTPILIb",
-      "projectPath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+      "projectPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
       "packagesPath": "C:\\Users\\Jonás\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\obj\\",
+      "outputPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jonás\\AppData\\Roaming\\NuGet\\NuGet.Config",

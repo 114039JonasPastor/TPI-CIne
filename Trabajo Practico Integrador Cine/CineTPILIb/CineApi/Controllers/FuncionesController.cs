@@ -27,42 +27,13 @@ namespace CineApi.Controllers
             {
                 return Ok(app.ObtenerFunciones());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
         }
 
-
-        [HttpGet("/peliculas")]
-        public IActionResult GetClasificaciones()
-        {
-            try
-            {
-                return Ok(app.GetPeliculaList());
-
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error interno! Intente luego");
-            }
-        }
-
-        [HttpGet("/salas")]
-        public IActionResult GetIdiomas()
-        {
-            try
-            {
-                return Ok(app.GetSalas());
-
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error interno! Intente luego");
-            }
-        }
-
-        [HttpGet("/horarios")]
+        [HttpGet("/Combo Horarios")]
         public IActionResult GetGeneros()
         {
             try
@@ -76,38 +47,49 @@ namespace CineApi.Controllers
             }
         }
 
-
-        // GET api/<FuncionesController>/5
-        [HttpGet("/Funciones")]
-        public IActionResult Get(DateTime desde, DateTime hasta, string pelicula)
+        [HttpGet("/Combo Peliculas")]
+        public IActionResult GetPeliculas()
         {
-            List<FuncionDTO> lista = null;
-
             try
             {
-                lista = app.GetFuncionesFiltros(desde,hasta,pelicula);
-                return Ok(lista);
+                return Ok(app.GetPeliculaList());
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return BadRequest();
+                return StatusCode(500, "Error interno! Intente luego");
             }
         }
 
+        [HttpGet("/Combo Salas")]
+        public IActionResult GetIdiomas()
+        {
+            try
+            {
+                return Ok(app.GetSalas());
 
-        //// GET api/<FuncionesController>/5
-        //[HttpGet("{id},{desde},{hasta}")]
-        //public IActionResult Get(int id, DateTime desde, DateTime hasta)
-        //{
-        //    try
-        //    {
-        //        return Ok(app.GetFuncionesFiltros(id, desde, hasta));
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        return BadRequest(ex.ToString());
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+        // GET api/<FuncionesController>/5
+        [HttpGet("/funciones")]
+        public IActionResult GetFuncionesPorFiltro(DateTime desde, DateTime hasta, int id_funcion)
+        {
+            List<FuncionDTO> lst = null;
+            try
+            {
+                return Ok(app.GetFuncionesFiltros(desde,hasta,id_funcion));
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
 
         // POST api/<FuncionesController>
         [HttpPost]
@@ -115,17 +97,18 @@ namespace CineApi.Controllers
         {
             try
             {
-                if(funcion == null)
+                if (funcion == null)
                 {
                     return BadRequest();
                 }
                 return Ok(app.AltaFuncion(funcion));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }
         }
+
 
         // PUT api/<FuncionesController>/5
         [HttpPut("{id}")]
@@ -133,7 +116,7 @@ namespace CineApi.Controllers
         {
             try
             {
-                if(funcion == null)
+                if (funcion == null)
                 {
                     return BadRequest();
                 }
@@ -142,11 +125,12 @@ namespace CineApi.Controllers
                     return Ok(app.ModificarFuncion(id, funcion));
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }
         }
+
 
         // DELETE api/<FuncionesController>/5
         [HttpDelete("{id}")]
@@ -156,7 +140,7 @@ namespace CineApi.Controllers
             {
                 return Ok(app.BajaFuncion(id));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }

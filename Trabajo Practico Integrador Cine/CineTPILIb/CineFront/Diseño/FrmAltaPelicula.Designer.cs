@@ -43,16 +43,15 @@
             this.txtDuracion = new System.Windows.Forms.TextBox();
             this.txtSinopsis = new System.Windows.Forms.TextBox();
             this.dgvAltaPelicula = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAccion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,43 +186,13 @@
             this.colDuracion,
             this.colClasificacion,
             this.colGenero,
-            this.colIdioma,
-            this.colAccion});
+            this.colIdioma});
             this.dgvAltaPelicula.Location = new System.Drawing.Point(26, 208);
             this.dgvAltaPelicula.Name = "dgvAltaPelicula";
             this.dgvAltaPelicula.ReadOnly = true;
             this.dgvAltaPelicula.RowTemplate.Height = 25;
             this.dgvAltaPelicula.Size = new System.Drawing.Size(653, 190);
             this.dgvAltaPelicula.TabIndex = 14;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(604, 165);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 15;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(26, 415);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 16;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(604, 415);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // colId
             // 
@@ -263,18 +232,41 @@
             this.colIdioma.Name = "colIdioma";
             this.colIdioma.ReadOnly = true;
             // 
-            // colAccion
+            // btnAgregar
             // 
-            this.colAccion.HeaderText = "Acción";
-            this.colAccion.Name = "colAccion";
-            this.colAccion.ReadOnly = true;
-            this.colAccion.Text = "Dar de baja";
-            this.colAccion.UseColumnTextForButtonValue = true;
+            this.btnAgregar.Location = new System.Drawing.Point(604, 165);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 15;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(26, 415);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 16;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(604, 415);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 18;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // FrmAltaPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CineFront.Properties.Resources.cine;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(717, 450);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnModificar);
@@ -296,8 +288,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmAltaPelicula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alta Pelicula";
-            this.Load += new System.EventHandler(this.FrmAltaPelicula_Load);
+            this.Text = "Nueva Pelicula";
+            this.Load += new System.EventHandler(this.FrmAltaPelicula_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,6 +323,5 @@
         private DataGridViewTextBoxColumn colClasificacion;
         private DataGridViewTextBoxColumn colGenero;
         private DataGridViewTextBoxColumn colIdioma;
-        private DataGridViewButtonColumn colAccion;
     }
 }

@@ -76,12 +76,15 @@ namespace CineApi.Controllers
         }
 
         // GET api/<PeliculasController>/5
-        [HttpGet("{titulo},{duracion},{id_genero},{id_idioma}")]
-        public IActionResult GetPeliculasConFiltro(string titulo, int duracion, int id_genero, int id_idioma)
+        [HttpGet("/peliculas")]
+        public IActionResult GetPeliculasConFiltro(int id_genero, int id_idioma, string? sinopsis = null, string? titulo = null)
         {
+            List<Pelicula> lst = null;
             try
             {
-                return Ok(app.GetPeliculasConFiltro(titulo, duracion, id_genero, id_idioma));
+                titulo = titulo != null ? titulo : String.Empty;
+                sinopsis = sinopsis != null ? sinopsis : String.Empty;
+                return Ok(app.GetPeliculasConFiltro(id_genero, id_idioma, sinopsis, titulo));
             }
             catch (Exception ex)
             {
@@ -89,9 +92,11 @@ namespace CineApi.Controllers
             }
         }
 
+
+
         // POST api/<PeliculasController>
         [HttpPost]
-        public IActionResult GuardarPelicula([FromBody] Pelicula  nueva)
+        public IActionResult GuardarPelicula([FromBody] Pelicula nueva)
         {
             try
             {
@@ -101,11 +106,12 @@ namespace CineApi.Controllers
                 }
                 return Ok(app.AltaPelicula(nueva));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest();
             }
         }
+
 
         // PUT api/<PeliculasController>/5
         [HttpPut("{id}")]
@@ -128,10 +134,18 @@ namespace CineApi.Controllers
             }
         }
 
-        //// DELETE api/<PeliculasController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        // DELETE api/<PeliculasController>/5
+        [HttpDelete("{id}")]
+        public IActionResult BorrarPelicula(int id)
+        {
+            try
+            {
+                return Ok(app.BajaPelicula(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
     }
 }

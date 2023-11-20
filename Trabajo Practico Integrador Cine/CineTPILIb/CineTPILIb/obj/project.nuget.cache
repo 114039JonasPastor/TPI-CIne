@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L3hXsr2wk5zKCmLPFXQBlBfUFLBMW12gvOWTlFYV5lImN5zyqLnq2Y4oAp7Kv9X513k8ybVmbfX68nkpvyTLnw==",
+  "dgSpecHash": "b5759tP6waolcgIDMaaOFOLyhcZz8zu9qFMvYLvfH+SUWpROEpVk5nh63NSQBRiAV0p/IZj4k9Alrhy53aJUkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
+  "projectFilePath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

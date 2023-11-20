@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IIZzyagbUbszLFa/uoXXxUuY/lZ7dN1trntqb0OcqOMQtHs6Be4e6r0TOBCDhiXviHUBxdnm9eb09Z3fH0Ex3A==",
+  "dgSpecHash": "L67Nz5XLCJj1U4ZoAfaPAuqIDCeDz0WB78OPDy1TBEYDLiSWTLMM48LD2xw2Oa5P0n6VQyS2Dc5TkVVRKWMfNA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jonás\\Desktop\\TPI-CIne-JonasPastor\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\CineApi.csproj",
+  "projectFilePath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineApi\\CineApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Jonás\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

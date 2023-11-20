@@ -11,8 +11,8 @@ namespace CineTPILIb.Data.Interfaces
     public interface IFuncionesDao
     {
         List<Funcion> GetFunciones();
-        List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, string titulo);
-        List<Pelicula> GetPeliculaList();
+        List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion);
+        List<PeliculaDTO> GetPeliculaList();
         List<Horario> GetHorarios();
         List<Sala> GetSalas();
         bool AltaFuncion(Funcion funcion);

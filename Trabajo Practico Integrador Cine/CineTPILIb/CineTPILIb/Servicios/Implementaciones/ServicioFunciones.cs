@@ -39,7 +39,7 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.ModificarFuncion(id, funcion);
         }
 
-        public List<Pelicula> GetPeliculaList()
+        public List<PeliculaDTO> GetPeliculaList()
         {
             return dao.GetPeliculaList();
         }
@@ -54,9 +54,9 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.GetSalas();
         }
 
-        public List<FuncionDTO> GetFuncionesFiltros( DateTime desde, DateTime hasta, string pelicula)
+        public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion)
         {
-            return dao.GetFuncionesFiltros(desde, hasta, pelicula);
+            return dao.GetFuncionesFiltros(desde, hasta, id_funcion);
         }
     }
 }

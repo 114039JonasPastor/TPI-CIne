@@ -11,12 +11,12 @@ namespace CineTPILIb.Servicios.Interfaces
     public interface IServicioFunciones
     {
         List<Funcion> ObtenerFunciones();
-        List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, string pelicula);
-        List<Pelicula> GetPeliculaList();
+        List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion);
+        List<PeliculaDTO> GetPeliculaList();
         List<Horario> GetHorarios();
         List<Sala> GetSalas();
         bool AltaFuncion(Funcion funcion);
         bool BajaFuncion(int id);
-        bool ModificarFuncion(int id,Funcion funcion);
+        bool ModificarFuncion(int id, Funcion funcion);
     }
 }

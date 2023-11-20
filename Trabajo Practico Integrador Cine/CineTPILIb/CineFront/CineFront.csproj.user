@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Diseño\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Diseño\FrmAltaFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -25,8 +22,13 @@
     <Compile Update="Diseño\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Diseño\Login.cs">
+    <Compile Update="Diseño\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Diseño\FrmAltaFuncion.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -33,7 +33,7 @@ namespace CineFront
             if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
-                Login frmLogin = Login.ObtenerInstancia();
+                FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
                 this.Dispose();
                 frmLogin.Dispose();
             }
@@ -44,7 +44,7 @@ namespace CineFront
             if (MessageBox.Show("¿Desea cerrar la sesion?", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
-                Login frmLogin = Login.ObtenerInstancia();
+                FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
                 frmLogin.Show();
                 this.Hide();
             }
@@ -58,7 +58,7 @@ namespace CineFront
 
         private void FrmMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Login frmLogin = Login.ObtenerInstancia();
+            FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
             frmLogin.Dispose();
         }
 
@@ -88,8 +88,20 @@ namespace CineFront
 
         private void consultarFuncionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultarFunciones frmConsultarFunciones = new FrmConsultarFunciones();
-            frmConsultarFunciones.ShowDialog();
+            FrmConsultarFunciones frmConsultarFuncion = new FrmConsultarFunciones();
+            frmConsultarFuncion.ShowDialog();
+        }
+
+        private void nuevaPelículaToolStripMenuItem_Click_2(object sender, EventArgs e)
+        {
+            FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
+            frmAltaPelicula.ShowDialog();
+        }
+
+        private void consultarPeliculasToolStripMenuItem_Click_2(object sender, EventArgs e)
+        {
+            FrmConsultaPelicula frmConsultarPelicula = new FrmConsultaPelicula();
+            frmConsultarPelicula.ShowDialog();
         }
     }
 }

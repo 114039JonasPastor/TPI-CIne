@@ -36,21 +36,20 @@ namespace CineFront.Diseño
             CargarSalasAscync();
             CargarHorariosAsync();
         }
-
         private async void CargarHorariosAsync()
         {
-            string url = "https://localhost:7074/horarios";
+            string url = "https://localhost:7074/Combo Horarios";
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Horario>>(result);
 
             cboHorarios.DataSource = lst;
-            cboHorarios.DisplayMember = "Horarios";
+            cboHorarios.DisplayMember = "hora";
             cboHorarios.ValueMember = "IdHorario";
         }
 
         private async void CargarSalasAscync()
         {
-            string url = "https://localhost:7074/salas";
+            string url = "https://localhost:7074/Combo Salas";
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Sala>>(result);
 
@@ -61,33 +60,33 @@ namespace CineFront.Diseño
 
         private async void CargarPeliculasAsync()
         {
-            string url = "https://localhost:7074/peliculas";
+            string url = "https://localhost:7074/Combo Peliculas";
             var result = await ClientSingleton.GetInstance().GetAsync(url);
-            var lst = JsonConvert.DeserializeObject<List<Pelicula>>(result);
+            var lst = JsonConvert.DeserializeObject<List<PeliculaDTO>>(result);
 
             cboPelicula.DataSource = lst;
-            cboPelicula.DisplayMember = "Titulo";
-            cboPelicula.ValueMember = "Id_pelicula";
+            cboPelicula.DisplayMember = "ID";
+            cboPelicula.ValueMember = "Titulo";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(cboPelicula.SelectedIndex == -1)
+            if (cboPelicula.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe de seleccionar una pelicula", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(cboSala.SelectedIndex == -1)
+            if (cboSala.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe de seleccionar una sala", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(cboHorarios.SelectedIndex == -1)
+            if (cboHorarios.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe de seleccionar un horario", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(txtPrecio.Text == String.Empty)
+            if (txtPrecio.Text == String.Empty)
             {
                 MessageBox.Show("Debe de ingresar un precio", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -99,7 +98,7 @@ namespace CineFront.Diseño
             nuevaDTO.FechaHasta = dtpHasta.Value;
             nuevaDTO.Precio = Convert.ToDouble(txtPrecio.Text);
 
-            dgvFunciones.Rows.Add(new object[] {nueva.Id_funcion, nuevaDTO.Pelicula, nuevaDTO.Sala, nuevaDTO.Horario, nuevaDTO.FechaDesde, nuevaDTO.FechaHasta, nuevaDTO.Precio });
+            dgvFunciones.Rows.Add(new object[] { nueva.Id_funcion, nuevaDTO.Pelicula, nuevaDTO.Sala, nuevaDTO.Horario, nuevaDTO.FechaDesde, nuevaDTO.FechaHasta, nuevaDTO.Precio });
         }
 
         private async void btnConfirmar_Click(object sender, EventArgs e)
@@ -115,13 +114,13 @@ namespace CineFront.Diseño
             nueva.Precio = Convert.ToDouble(txtPrecio.Text);
             nueva.FechaDesde = dtpDesde.Value;
             nueva.FechaHasta = dtpHasta.Value;
-            nueva.Id_horarios = cboHorarios.SelectedIndex + 1;
+            nueva.IdHorario = cboHorarios.SelectedIndex + 1;
 
             string bodyContent = JsonConvert.SerializeObject(nueva);
             string url = "https://localhost:7074/api/Funciones";
             var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
 
-            if (result.Equals("true")) 
+            if (result.Equals("true"))
             {
                 MessageBox.Show("Funcion agregada", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -133,10 +132,15 @@ namespace CineFront.Diseño
 
         private void dgvFunciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvFunciones.CurrentCell.ColumnIndex == 7)
+            if (dgvFunciones.CurrentCell.ColumnIndex == 7)
             {
                 dgvFunciones.Rows.Remove(dgvFunciones.CurrentRow);
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

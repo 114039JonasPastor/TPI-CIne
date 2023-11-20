@@ -39,8 +39,8 @@
             this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboTitulo = new System.Windows.Forms.ComboBox();
-            this.lblTituloPelicula = new System.Windows.Forms.Label();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.lblNumeroDeFuncion = new System.Windows.Forms.Label();
             this.lblFecHasta = new System.Windows.Forms.Label();
             this.lblFecDesde = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -129,11 +129,12 @@
             this.btnSalir.TabIndex = 20;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cboTitulo);
-            this.groupBox1.Controls.Add(this.lblTituloPelicula);
+            this.groupBox1.Controls.Add(this.txtNumero);
+            this.groupBox1.Controls.Add(this.lblNumeroDeFuncion);
             this.groupBox1.Controls.Add(this.lblFecHasta);
             this.groupBox1.Controls.Add(this.lblFecDesde);
             this.groupBox1.Controls.Add(this.dtpHasta);
@@ -145,22 +146,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // cboTitulo
+            // txtNumero
             // 
-            this.cboTitulo.FormattingEnabled = true;
-            this.cboTitulo.Location = new System.Drawing.Point(121, 25);
-            this.cboTitulo.Name = "cboTitulo";
-            this.cboTitulo.Size = new System.Drawing.Size(234, 23);
-            this.cboTitulo.TabIndex = 6;
+            this.txtNumero.Location = new System.Drawing.Point(141, 22);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(220, 23);
+            this.txtNumero.TabIndex = 5;
             // 
-            // lblTituloPelicula
+            // lblNumeroDeFuncion
             // 
-            this.lblTituloPelicula.AutoSize = true;
-            this.lblTituloPelicula.Location = new System.Drawing.Point(6, 25);
-            this.lblTituloPelicula.Name = "lblTituloPelicula";
-            this.lblTituloPelicula.Size = new System.Drawing.Size(109, 15);
-            this.lblTituloPelicula.TabIndex = 4;
-            this.lblTituloPelicula.Text = "Titulo de la pelicula";
+            this.lblNumeroDeFuncion.AutoSize = true;
+            this.lblNumeroDeFuncion.Location = new System.Drawing.Point(6, 25);
+            this.lblNumeroDeFuncion.Name = "lblNumeroDeFuncion";
+            this.lblNumeroDeFuncion.Size = new System.Drawing.Size(113, 15);
+            this.lblNumeroDeFuncion.TabIndex = 4;
+            this.lblNumeroDeFuncion.Text = "Numero de Función";
             // 
             // lblFecHasta
             // 
@@ -214,7 +214,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvFunciones);
             this.Name = "FrmConsultarFunciones";
-            this.Text = "ConsultarFuncionesFrm";
+            this.Text = "Consulta Función";
             this.Load += new System.EventHandler(this.FrmConsultarFunciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -228,7 +228,8 @@
         private DataGridView dgvFunciones;
         private Button btnSalir;
         private GroupBox groupBox1;
-        private Label lblTituloPelicula;
+        private TextBox txtNumero;
+        private Label lblNumeroDeFuncion;
         private Label lblFecHasta;
         private Label lblFecDesde;
         private DateTimePicker dtpHasta;
@@ -242,6 +243,5 @@
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewButtonColumn ColAccion;
-        private ComboBox cboTitulo;
     }
 }
