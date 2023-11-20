@@ -198,6 +198,7 @@
             this.dgvFunciones.RowTemplate.Height = 25;
             this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
             this.dgvFunciones.TabIndex = 15;
+            this.dgvFunciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunciones_CellContentClick);
             // 
             // btnAgregar
             // 
@@ -286,6 +287,8 @@
             this.ColAccion.HeaderText = "Accion";
             this.ColAccion.Name = "ColAccion";
             this.ColAccion.ReadOnly = true;
+            this.ColAccion.Text = "Quitar";
+            this.ColAccion.UseColumnTextForButtonValue = true;
             // 
             // FrmAltaFuncion
             // 

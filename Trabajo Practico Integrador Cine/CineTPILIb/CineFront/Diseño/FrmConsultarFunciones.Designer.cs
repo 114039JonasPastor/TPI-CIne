@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvFunciones = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.lblNumeroDeFuncion = new System.Windows.Forms.Label();
-            this.lblFecHasta = new System.Windows.Forms.Label();
-            this.lblFecDesde = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +37,15 @@
             this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboTitulo = new System.Windows.Forms.ComboBox();
+            this.lblTituloPelicula = new System.Windows.Forms.Label();
+            this.lblFecHasta = new System.Windows.Forms.Label();
+            this.lblFecDesde = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.btnConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,87 +71,6 @@
             this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
             this.dgvFunciones.TabIndex = 16;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(416, 303);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(95, 23);
-            this.btnSalir.TabIndex = 20;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtNumero);
-            this.groupBox1.Controls.Add(this.lblNumeroDeFuncion);
-            this.groupBox1.Controls.Add(this.lblFecHasta);
-            this.groupBox1.Controls.Add(this.lblFecDesde);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(844, 100);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(141, 22);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(220, 23);
-            this.txtNumero.TabIndex = 5;
-            // 
-            // lblNumeroDeFuncion
-            // 
-            this.lblNumeroDeFuncion.AutoSize = true;
-            this.lblNumeroDeFuncion.Location = new System.Drawing.Point(6, 25);
-            this.lblNumeroDeFuncion.Name = "lblNumeroDeFuncion";
-            this.lblNumeroDeFuncion.Size = new System.Drawing.Size(113, 15);
-            this.lblNumeroDeFuncion.TabIndex = 4;
-            this.lblNumeroDeFuncion.Text = "Numero de Función";
-            // 
-            // lblFecHasta
-            // 
-            this.lblFecHasta.AutoSize = true;
-            this.lblFecHasta.Location = new System.Drawing.Point(540, 57);
-            this.lblFecHasta.Name = "lblFecHasta";
-            this.lblFecHasta.Size = new System.Drawing.Size(37, 15);
-            this.lblFecHasta.TabIndex = 3;
-            this.lblFecHasta.Text = "Hasta";
-            // 
-            // lblFecDesde
-            // 
-            this.lblFecDesde.AutoSize = true;
-            this.lblFecDesde.Location = new System.Drawing.Point(540, 28);
-            this.lblFecDesde.Name = "lblFecDesde";
-            this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
-            this.lblFecDesde.TabIndex = 2;
-            this.lblFecDesde.Text = "Desde";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(638, 51);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(638, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(761, 118);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(95, 23);
-            this.btnConsultar.TabIndex = 22;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
             // ColID
             // 
             this.ColID.HeaderText = "ID";
@@ -164,6 +83,7 @@
             this.ColPelicula.HeaderText = "Pelicula";
             this.ColPelicula.Name = "ColPelicula";
             this.ColPelicula.ReadOnly = true;
+            this.ColPelicula.Width = 200;
             // 
             // ColSala
             // 
@@ -201,6 +121,89 @@
             this.ColAccion.Name = "ColAccion";
             this.ColAccion.ReadOnly = true;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(416, 303);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(95, 23);
+            this.btnSalir.TabIndex = 20;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cboTitulo);
+            this.groupBox1.Controls.Add(this.lblTituloPelicula);
+            this.groupBox1.Controls.Add(this.lblFecHasta);
+            this.groupBox1.Controls.Add(this.lblFecDesde);
+            this.groupBox1.Controls.Add(this.dtpHasta);
+            this.groupBox1.Controls.Add(this.dtpDesde);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(844, 100);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
+            // 
+            // cboTitulo
+            // 
+            this.cboTitulo.FormattingEnabled = true;
+            this.cboTitulo.Location = new System.Drawing.Point(121, 25);
+            this.cboTitulo.Name = "cboTitulo";
+            this.cboTitulo.Size = new System.Drawing.Size(234, 23);
+            this.cboTitulo.TabIndex = 6;
+            // 
+            // lblTituloPelicula
+            // 
+            this.lblTituloPelicula.AutoSize = true;
+            this.lblTituloPelicula.Location = new System.Drawing.Point(6, 25);
+            this.lblTituloPelicula.Name = "lblTituloPelicula";
+            this.lblTituloPelicula.Size = new System.Drawing.Size(109, 15);
+            this.lblTituloPelicula.TabIndex = 4;
+            this.lblTituloPelicula.Text = "Titulo de la pelicula";
+            // 
+            // lblFecHasta
+            // 
+            this.lblFecHasta.AutoSize = true;
+            this.lblFecHasta.Location = new System.Drawing.Point(540, 57);
+            this.lblFecHasta.Name = "lblFecHasta";
+            this.lblFecHasta.Size = new System.Drawing.Size(37, 15);
+            this.lblFecHasta.TabIndex = 3;
+            this.lblFecHasta.Text = "Hasta";
+            // 
+            // lblFecDesde
+            // 
+            this.lblFecDesde.AutoSize = true;
+            this.lblFecDesde.Location = new System.Drawing.Point(540, 28);
+            this.lblFecDesde.Name = "lblFecDesde";
+            this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
+            this.lblFecDesde.TabIndex = 2;
+            this.lblFecDesde.Text = "Desde";
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Location = new System.Drawing.Point(638, 51);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(200, 23);
+            this.dtpHasta.TabIndex = 1;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Location = new System.Drawing.Point(638, 22);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(200, 23);
+            this.dtpDesde.TabIndex = 0;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(761, 118);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(95, 23);
+            this.btnConsultar.TabIndex = 22;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // FrmConsultarFunciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -225,12 +228,11 @@
         private DataGridView dgvFunciones;
         private Button btnSalir;
         private GroupBox groupBox1;
-        private TextBox txtNumero;
-        private Label lblNumeroDeFuncion;
+        private Label lblTituloPelicula;
         private Label lblFecHasta;
         private Label lblFecDesde;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpHasta;
+        private DateTimePicker dtpDesde;
         private Button btnConsultar;
         private DataGridViewTextBoxColumn ColID;
         private DataGridViewTextBoxColumn ColPelicula;
@@ -240,5 +242,6 @@
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewButtonColumn ColAccion;
+        private ComboBox cboTitulo;
     }
 }

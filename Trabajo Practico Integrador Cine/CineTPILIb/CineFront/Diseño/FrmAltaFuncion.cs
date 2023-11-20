@@ -130,5 +130,13 @@ namespace CineFront.Diseño
                 MessageBox.Show("No se pudo agregar la funcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dgvFunciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvFunciones.CurrentCell.ColumnIndex == 7)
+            {
+                dgvFunciones.Rows.Remove(dgvFunciones.CurrentRow);
+            }
+        }
     }
 }

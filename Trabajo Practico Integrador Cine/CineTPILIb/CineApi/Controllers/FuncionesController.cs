@@ -1,4 +1,5 @@
 ﻿using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Implementaciones;
 using CineTPILIb.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -76,13 +77,37 @@ namespace CineApi.Controllers
         }
 
 
-
         // GET api/<FuncionesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("/Funciones")]
+        public IActionResult Get(DateTime desde, DateTime hasta, string pelicula)
         {
-            return "value";
+            List<FuncionDTO> lista = null;
+
+            try
+            {
+                lista = app.GetFuncionesFiltros(desde,hasta,pelicula);
+                return Ok(lista);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest();
+            }
         }
+
+
+        //// GET api/<FuncionesController>/5
+        //[HttpGet("{id},{desde},{hasta}")]
+        //public IActionResult Get(int id, DateTime desde, DateTime hasta)
+        //{
+        //    try
+        //    {
+        //        return Ok(app.GetFuncionesFiltros(id, desde, hasta));
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        return BadRequest(ex.ToString());
+        //    }
+        //}
 
         // POST api/<FuncionesController>
         [HttpPost]

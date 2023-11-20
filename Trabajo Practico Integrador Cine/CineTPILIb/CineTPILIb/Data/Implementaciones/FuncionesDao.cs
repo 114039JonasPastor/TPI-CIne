@@ -1,5 +1,6 @@
 ﻿using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -106,6 +107,32 @@ namespace CineTPILIb.Data.Implementaciones
                 f.FechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
 
                 lFunciones.Add(f);
+            }
+            return lFunciones;
+        }
+
+        public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, string pelicula)
+        {
+            List<FuncionDTO> lFunciones = new List<FuncionDTO>();
+
+            List<Parametro> parametros = new List<Parametro>();
+            parametros.Add(new Parametro("@pelicula", pelicula));
+            parametros.Add(new Parametro("@desde", desde));
+            parametros.Add(new Parametro("@hasta", hasta));
+
+            DataTable tabla = HelperDB.ObtenerInstancia().ConsultarConParametros("SP_CONSULTAR_FUNCIONES_FILTROS", parametros);
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                FuncionDTO aux = new FuncionDTO();
+                aux.Pelicula = fila["Pelicula"].ToString();
+                aux.Sala = Convert.ToInt32(fila["Sala"]);
+                aux.Horario = fila["Horario"].ToString();
+                aux.FechaDesde = Convert.ToDateTime(fila["Fecha desde"]);
+                aux.FechaHasta = Convert.ToDateTime(fila["Fecha hasta"]);
+                aux.Precio = Convert.ToDouble(fila["Precio"]);
+
+                lFunciones.Add(aux);
             }
             return lFunciones;
         }

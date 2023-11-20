@@ -625,3 +625,27 @@ where id_funcion = @nro_funcion or fecha_desde = @desde and fecha_hasta = @hasta
 
 insert into horarios(horario) values('19:00')
 insert into horarios(horario) values('22:00')
+
+
+Create proc [dbo].[SP_CONSULTAR_FUNCIONES_FILTROS]
+@nro_funcion int,
+@desde datetime,
+@hasta datetime
+as
+select /*f.id_funcion 'Numero de funcion'*/titulo Pelicula, nro_sala Sala, horario Horario, fecha_desde 'Fecha desde', fecha_hasta 'Fecha hasta', precio Precio
+from FUNCIONES f join PELICULAS p on p.id_pelicula = f.id_pelicula
+join SALAS s on s.id_sala = f.id_sala
+join Horarios h on h.id_horarios = f.id_horarios
+where ((fecha_desde between @desde and @hasta) and(fecha_hasta between @desde and @hasta)) or f.id_funcion = @nro_funcion
+
+ALTER proc [dbo].[SP_CONSULTAR_FUNCIONES_FILTROS]
+@pelicula varchar(200),
+@desde datetime,
+@hasta datetime
+as
+select /*f.id_funcion 'Numero de funcion'*/titulo Pelicula, nro_sala Sala, horario Horario, fecha_desde 'Fecha desde', fecha_hasta 'Fecha hasta', precio Precio
+from FUNCIONES f join PELICULAS p on p.id_pelicula = f.id_pelicula
+join SALAS s on s.id_sala = f.id_sala
+join Horarios h on h.id_horarios = f.id_horarios
+where ((fecha_desde between @desde and @hasta) and(fecha_hasta between @desde and @hasta)) or titulo = @pelicula
+

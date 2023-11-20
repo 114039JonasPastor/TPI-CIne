@@ -85,5 +85,11 @@ namespace CineFront
             FrmAltaFuncion frmAltaFuncion = new FrmAltaFuncion();
             frmAltaFuncion.ShowDialog();
         }
+
+        private void consultarFuncionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarFunciones frmConsultarFunciones = new FrmConsultarFunciones();
+            frmConsultarFunciones.ShowDialog();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CineTPILIb.Data.Implementaciones;
 using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -51,6 +52,11 @@ namespace CineTPILIb.Servicios.Implementaciones
         public List<Sala> GetSalas()
         {
             return dao.GetSalas();
+        }
+
+        public List<FuncionDTO> GetFuncionesFiltros( DateTime desde, DateTime hasta, string pelicula)
+        {
+            return dao.GetFuncionesFiltros(desde, hasta, pelicula);
         }
     }
 }

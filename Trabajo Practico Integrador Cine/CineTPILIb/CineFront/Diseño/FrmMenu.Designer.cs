@@ -97,6 +97,7 @@
             this.consultarFuncionesToolStripMenuItem.Name = "consultarFuncionesToolStripMenuItem";
             this.consultarFuncionesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.consultarFuncionesToolStripMenuItem.Text = "Consultar Funciones";
+            this.consultarFuncionesToolStripMenuItem.Click += new System.EventHandler(this.consultarFuncionesToolStripMenuItem_Click);
             // 
             // agregarFuncionToolStripMenuItem
             // 

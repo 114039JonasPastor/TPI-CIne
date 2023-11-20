@@ -21,5 +21,10 @@ namespace CineFront.Diseño
         {
             this.Dispose();
         }
+
+        private void FrmConsultaPelicula_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
