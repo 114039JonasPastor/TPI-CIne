@@ -513,6 +513,7 @@ from PELICULAS p
 join GENEROS g on g.id_genero = p.id_genero
 join IDIOMAS i on i.id_idioma = p.id_idioma
 join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+WHERE estado = 1
 
 
 create proc [dbo].[SP_CONSULTAR_PELICULAS]
@@ -526,10 +527,22 @@ from PELICULAS p
 join GENEROS g on g.id_genero = p.id_genero
 join IDIOMAS i on i.id_idioma = p.id_idioma
 join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
-where (titulo like '%'+ @titulo +'%' OR @titulo IS NULL)
+where estado = 1
+AND (titulo like '%'+ @titulo +'%' OR @titulo IS NULL)
 AND (sinopsis like '%'+ @sinopsis +'%' OR @sinopsis IS NULL)
 AND (p.id_genero = @id_genero OR @id_genero IS NULL)
 AND (p.id_idioma = @id_idioma OR @id_idioma IS NULL)
+
+
+create procedure SP_CONSULTAR_PELICULA_ID
+@id_pelicula int
+as
+select P.*, titulo Titulo, sinopsis Sinopsis,clasificacion Clasificacion, genero Genero, idioma Idioma 
+from PELICULAS p
+join GENEROS g on g.id_genero = p.id_genero
+join IDIOMAS i on i.id_idioma = p.id_idioma
+join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+where id_pelicula = @id_pelicula
 
 
 create proc SP_MODIFICAR_PELICULA

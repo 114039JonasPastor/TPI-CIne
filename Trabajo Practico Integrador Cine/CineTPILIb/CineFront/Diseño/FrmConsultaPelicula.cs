@@ -156,13 +156,9 @@ namespace CineFront.Diseño
 
             if (dgvPelicula.CurrentCell.ColumnIndex == 6)
             {
-                //int nro = int.Parse(dgvPelicula.CurrentRow.Cells["colId"].Value.ToString());
-                //new FrmDetallesPelicula(nro).ShowDialog();
-                Pelicula seleccionado;
-                seleccionado = (Pelicula)dgvPelicula.CurrentRow.DataBoundItem;
+                int nro = int.Parse(dgvPelicula.CurrentRow.Cells["colId"].Value.ToString());
+                new FrmDetallesPelicula(nro).ShowDialog();
 
-                FrmDetallesPelicula detalle = new FrmDetallesPelicula(seleccionado);
-                detalle.ShowDialog();
             }
 
 

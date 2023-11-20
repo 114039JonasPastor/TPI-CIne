@@ -43,9 +43,11 @@
             btnVolver = new Button();
             btnModificar = new Button();
             btnGuardar = new Button();
-            txtDuracion = new Label();
-            textBox1 = new TextBox();
+            lblDuracion = new Label();
+            txtDuracion = new TextBox();
             label8 = new Label();
+            btnCancelar = new Button();
+            chkBaja = new CheckBox();
             SuspendLayout();
             // 
             // label1
@@ -84,7 +86,7 @@
             // lblID
             // 
             lblID.AutoSize = true;
-            lblID.Location = new Point(177, 62);
+            lblID.Location = new Point(165, 62);
             lblID.Name = "lblID";
             lblID.Size = new Size(0, 15);
             lblID.TabIndex = 4;
@@ -112,7 +114,7 @@
             cboClasificacion.FormattingEnabled = true;
             cboClasificacion.Location = new Point(165, 283);
             cboClasificacion.Name = "cboClasificacion";
-            cboClasificacion.Size = new Size(172, 23);
+            cboClasificacion.Size = new Size(213, 23);
             cboClasificacion.TabIndex = 7;
             // 
             // cboGenero
@@ -120,7 +122,7 @@
             cboGenero.FormattingEnabled = true;
             cboGenero.Location = new Point(165, 327);
             cboGenero.Name = "cboGenero";
-            cboGenero.Size = new Size(172, 23);
+            cboGenero.Size = new Size(213, 23);
             cboGenero.TabIndex = 9;
             // 
             // label6
@@ -137,7 +139,7 @@
             cboIdioma.FormattingEnabled = true;
             cboIdioma.Location = new Point(165, 371);
             cboIdioma.Name = "cboIdioma";
-            cboIdioma.Size = new Size(172, 23);
+            cboIdioma.Size = new Size(213, 23);
             cboIdioma.TabIndex = 11;
             // 
             // label7
@@ -151,7 +153,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(413, 438);
+            btnVolver.Location = new Point(429, 478);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(86, 41);
             btnVolver.TabIndex = 12;
@@ -161,37 +163,39 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(55, 438);
+            btnModificar.Location = new Point(22, 478);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(86, 41);
             btnModificar.TabIndex = 13;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(165, 438);
+            btnGuardar.Location = new Point(260, 478);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(86, 41);
             btnGuardar.TabIndex = 14;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // lblDuracion
+            // 
+            lblDuracion.AutoSize = true;
+            lblDuracion.Location = new Point(83, 245);
+            lblDuracion.Name = "lblDuracion";
+            lblDuracion.Size = new Size(58, 15);
+            lblDuracion.TabIndex = 15;
+            lblDuracion.Text = "Duración:";
             // 
             // txtDuracion
             // 
-            txtDuracion.AutoSize = true;
-            txtDuracion.Location = new Point(83, 245);
+            txtDuracion.Location = new Point(165, 242);
             txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(58, 15);
-            txtDuracion.TabIndex = 15;
-            txtDuracion.Text = "Duración:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(165, 242);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(86, 23);
-            textBox1.TabIndex = 16;
+            txtDuracion.Size = new Size(86, 23);
+            txtDuracion.TabIndex = 16;
             // 
             // label8
             // 
@@ -202,16 +206,38 @@
             label8.TabIndex = 17;
             label8.Text = "minutos.";
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(141, 478);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(86, 41);
+            btnCancelar.TabIndex = 18;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // chkBaja
+            // 
+            chkBaja.AutoSize = true;
+            chkBaja.Location = new Point(223, 420);
+            chkBaja.Name = "chkBaja";
+            chkBaja.Size = new Size(97, 19);
+            chkBaja.TabIndex = 19;
+            chkBaja.Text = "DAR DE BAJA";
+            chkBaja.UseVisualStyleBackColor = true;
+            // 
             // FrmDetallesPelicula
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.fondoB;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(535, 515);
+            ClientSize = new Size(535, 549);
+            Controls.Add(chkBaja);
+            Controls.Add(btnCancelar);
             Controls.Add(label8);
-            Controls.Add(textBox1);
             Controls.Add(txtDuracion);
+            Controls.Add(lblDuracion);
             Controls.Add(btnGuardar);
             Controls.Add(btnModificar);
             Controls.Add(btnVolver);
@@ -252,8 +278,10 @@
         private Button btnVolver;
         private Button btnModificar;
         private Button btnGuardar;
-        private Label txtDuracion;
-        private TextBox textBox1;
+        private Label lblDuracion;
+        private TextBox txtDuracion;
         private Label label8;
+        private Button btnCancelar;
+        private CheckBox chkBaja;
     }
 }

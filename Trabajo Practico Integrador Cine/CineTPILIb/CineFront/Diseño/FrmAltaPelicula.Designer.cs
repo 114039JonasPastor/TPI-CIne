@@ -43,15 +43,14 @@
             txtDuracion = new TextBox();
             txtSinopsis = new TextBox();
             dgvAltaPelicula = new DataGridView();
-            btnAgregar = new Button();
-            btnModificar = new Button();
-            btnSalir = new Button();
             colId = new DataGridViewTextBoxColumn();
             colTitulo = new DataGridViewTextBoxColumn();
             colDuracion = new DataGridViewTextBoxColumn();
             colClasificacion = new DataGridViewTextBoxColumn();
             colGenero = new DataGridViewTextBoxColumn();
             colIdioma = new DataGridViewTextBoxColumn();
+            btnAgregar = new Button();
+            btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvAltaPelicula).BeginInit();
             SuspendLayout();
             // 
@@ -59,7 +58,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(90, 9);
+            label1.Location = new Point(90, 15);
             label1.Name = "label1";
             label1.Size = new Size(105, 25);
             label1.TabIndex = 0;
@@ -188,35 +187,6 @@
             dgvAltaPelicula.Size = new Size(653, 190);
             dgvAltaPelicula.TabIndex = 14;
             // 
-            // btnAgregar
-            // 
-            btnAgregar.Location = new Point(604, 165);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 23);
-            btnAgregar.TabIndex = 15;
-            btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
-            btnAgregar.Click += btnAgregar_Click;
-            // 
-            // btnModificar
-            // 
-            btnModificar.Location = new Point(26, 415);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(75, 23);
-            btnModificar.TabIndex = 16;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(604, 415);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 18;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
-            // 
             // colId
             // 
             colId.HeaderText = "Id";
@@ -255,6 +225,26 @@
             colIdioma.Name = "colIdioma";
             colIdioma.ReadOnly = true;
             // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(604, 165);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 15;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(321, 415);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 18;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // FrmAltaPelicula
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -263,7 +253,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(717, 450);
             Controls.Add(btnSalir);
-            Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
             Controls.Add(dgvAltaPelicula);
             Controls.Add(txtSinopsis);
@@ -307,7 +296,6 @@
         private TextBox txtSinopsis;
         private DataGridView dgvAltaPelicula;
         private Button btnAgregar;
-        private Button btnModificar;
         private Button button3;
         private Button btnSalir;
         private DataGridViewTextBoxColumn colId;

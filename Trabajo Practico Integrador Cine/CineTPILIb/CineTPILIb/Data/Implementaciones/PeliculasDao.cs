@@ -92,6 +92,7 @@ namespace CineTPILIb.Data.Implementaciones
                 pelicula.Id_pelicula = (int)row["id_pelicula"];
                 pelicula.Titulo = row["titulo"].ToString();
                 pelicula.Sinopsis = row["sinopsis"].ToString();
+                pelicula.Duracion = (int)row["duracion"];
 
                 pelicula.Clasificacion = new Clasificacion();
                 pelicula.Clasificacion.ClasificacionName = row["clasificacion"].ToString();
@@ -128,6 +129,7 @@ namespace CineTPILIb.Data.Implementaciones
                 pelicula.Id_pelicula = (int)row["id_pelicula"];
                 pelicula.Titulo = row["titulo"].ToString();
                 pelicula.Sinopsis = row["sinopsis"].ToString();
+                pelicula.Duracion = (int)row["duracion"];
 
                 pelicula.Clasificacion = new Clasificacion();
                 pelicula.Clasificacion.ClasificacionName = row["clasificacion"].ToString();
@@ -159,6 +161,7 @@ namespace CineTPILIb.Data.Implementaciones
                 pelicula.Id_pelicula = (int)row["id_pelicula"];
                 pelicula.Titulo = row["titulo"].ToString();
                 pelicula.Sinopsis = row["sinopsis"].ToString();
+                pelicula.Duracion = (int)row["duracion"];
 
                 pelicula.Clasificacion = new Clasificacion();
                 pelicula.Clasificacion.ClasificacionName = row["clasificacion"].ToString();
