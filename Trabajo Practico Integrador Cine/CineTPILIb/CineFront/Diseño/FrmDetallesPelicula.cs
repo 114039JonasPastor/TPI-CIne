@@ -120,6 +120,7 @@ namespace CineFront.Diseño
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            chkBaja.Checked = false;
             btnModificar.Enabled = true;
             btnCancelar.Enabled = false;
             btnGuardar.Enabled = false;
@@ -213,6 +214,25 @@ namespace CineFront.Diseño
             {
                 MessageBox.Show($"Error al realizar la solicitud PUT: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void chkBaja_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBaja.Checked)
+            {
+                Activar(false);
+                btnCancelar.Enabled = true;
+                btnGuardar.Enabled = true;
+                btnModificar.Enabled = false;
+            }
+            else
+            {
+                Activar(true);
+                btnCancelar.Enabled = false;
+                btnGuardar.Enabled = false;
+                btnModificar.Enabled = true;
+            }
+            
         }
     }
 }

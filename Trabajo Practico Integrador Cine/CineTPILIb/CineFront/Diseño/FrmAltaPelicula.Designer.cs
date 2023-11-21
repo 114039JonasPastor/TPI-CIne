@@ -57,17 +57,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(90, 15);
+            label1.BackColor = Color.Transparent;
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(73, 15);
             label1.Name = "label1";
-            label1.Size = new Size(105, 25);
+            label1.Size = new Size(217, 32);
             label1.TabIndex = 0;
-            label1.Text = "PELICULAS";
+            label1.Text = "AGREGAR PELICULA";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(44, 61);
+            label2.BackColor = Color.Black;
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(27, 64);
             label2.Name = "label2";
             label2.Size = new Size(40, 15);
             label2.TabIndex = 1;
@@ -76,7 +81,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(201, 97);
+            label3.Location = new Point(184, 100);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 2;
@@ -85,7 +90,9 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(397, 61);
+            label4.BackColor = Color.Black;
+            label4.ForeColor = SystemColors.ControlLightLight;
+            label4.Location = new Point(380, 64);
             label4.Name = "label4";
             label4.Size = new Size(77, 15);
             label4.TabIndex = 3;
@@ -94,7 +101,9 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(426, 97);
+            label5.BackColor = Color.Black;
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(409, 100);
             label5.Name = "label5";
             label5.Size = new Size(48, 15);
             label5.TabIndex = 6;
@@ -103,7 +112,9 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(26, 97);
+            label6.BackColor = Color.Black;
+            label6.ForeColor = SystemColors.ControlLightLight;
+            label6.Location = new Point(9, 100);
             label6.Name = "label6";
             label6.Size = new Size(58, 15);
             label6.TabIndex = 5;
@@ -112,7 +123,9 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(31, 133);
+            label7.BackColor = Color.Black;
+            label7.ForeColor = SystemColors.ControlLightLight;
+            label7.Location = new Point(14, 136);
             label7.Name = "label7";
             label7.Size = new Size(53, 15);
             label7.TabIndex = 4;
@@ -121,7 +134,9 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(427, 133);
+            label8.BackColor = Color.Black;
+            label8.ForeColor = SystemColors.ControlLightLight;
+            label8.Location = new Point(410, 136);
             label8.Name = "label8";
             label8.Size = new Size(47, 15);
             label8.TabIndex = 7;
@@ -129,7 +144,7 @@
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(90, 58);
+            txtTitulo.Location = new Point(73, 61);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(279, 23);
             txtTitulo.TabIndex = 8;
@@ -137,7 +152,7 @@
             // cboClasif
             // 
             cboClasif.FormattingEnabled = true;
-            cboClasif.Location = new Point(480, 58);
+            cboClasif.Location = new Point(463, 61);
             cboClasif.Name = "cboClasif";
             cboClasif.Size = new Size(199, 23);
             cboClasif.TabIndex = 9;
@@ -145,7 +160,7 @@
             // cboIdioma
             // 
             cboIdioma.FormattingEnabled = true;
-            cboIdioma.Location = new Point(480, 128);
+            cboIdioma.Location = new Point(463, 131);
             cboIdioma.Name = "cboIdioma";
             cboIdioma.Size = new Size(199, 23);
             cboIdioma.TabIndex = 10;
@@ -153,21 +168,21 @@
             // cboGenero
             // 
             cboGenero.FormattingEnabled = true;
-            cboGenero.Location = new Point(480, 94);
+            cboGenero.Location = new Point(463, 97);
             cboGenero.Name = "cboGenero";
             cboGenero.Size = new Size(199, 23);
             cboGenero.TabIndex = 11;
             // 
             // txtDuracion
             // 
-            txtDuracion.Location = new Point(90, 94);
+            txtDuracion.Location = new Point(73, 97);
             txtDuracion.Name = "txtDuracion";
             txtDuracion.Size = new Size(105, 23);
             txtDuracion.TabIndex = 12;
             // 
             // txtSinopsis
             // 
-            txtSinopsis.Location = new Point(90, 133);
+            txtSinopsis.Location = new Point(73, 136);
             txtSinopsis.Multiline = true;
             txtSinopsis.Name = "txtSinopsis";
             txtSinopsis.Size = new Size(279, 55);
@@ -180,7 +195,7 @@
             dgvAltaPelicula.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvAltaPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAltaPelicula.Columns.AddRange(new DataGridViewColumn[] { colId, colTitulo, colDuracion, colClasificacion, colGenero, colIdioma });
-            dgvAltaPelicula.Location = new Point(26, 208);
+            dgvAltaPelicula.Location = new Point(9, 211);
             dgvAltaPelicula.Name = "dgvAltaPelicula";
             dgvAltaPelicula.ReadOnly = true;
             dgvAltaPelicula.RowTemplate.Height = 25;
@@ -227,7 +242,8 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(604, 165);
+            btnAgregar.ForeColor = SystemColors.ActiveCaptionText;
+            btnAgregar.Location = new Point(587, 168);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 15;
@@ -237,7 +253,8 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(321, 415);
+            btnSalir.ForeColor = SystemColors.ActiveCaptionText;
+            btnSalir.Location = new Point(304, 418);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(75, 23);
             btnSalir.TabIndex = 18;
@@ -249,9 +266,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.cine;
+            BackColor = Color.Black;
+            BackgroundImage = Properties.Resources.consulta;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(717, 450);
+            ClientSize = new Size(674, 450);
             Controls.Add(btnSalir);
             Controls.Add(btnAgregar);
             Controls.Add(dgvAltaPelicula);
@@ -269,6 +287,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            ForeColor = SystemColors.ControlLightLight;
             Name = "FrmAltaPelicula";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Alta Pelicula";

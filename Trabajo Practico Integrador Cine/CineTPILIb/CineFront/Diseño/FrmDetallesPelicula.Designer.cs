@@ -225,6 +225,7 @@
             chkBaja.TabIndex = 19;
             chkBaja.Text = "DAR DE BAJA";
             chkBaja.UseVisualStyleBackColor = true;
+            chkBaja.CheckedChanged += chkBaja_CheckedChanged;
             // 
             // FrmDetallesPelicula
             // 

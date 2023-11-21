@@ -66,14 +66,14 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Size = new Size(143, 22);
             salirToolStripMenuItem.Text = "Cerrar Sesion";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click_1;
             // 
             // salirToolStripMenuItem1
             // 
             salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            salirToolStripMenuItem1.Size = new Size(180, 22);
+            salirToolStripMenuItem1.Size = new Size(143, 22);
             salirToolStripMenuItem1.Text = "Salir";
             salirToolStripMenuItem1.Click += salirToolStripMenuItem_Click;
             // 
@@ -98,7 +98,7 @@
             // 
             // peliculasToolStripMenuItem
             // 
-            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaPelículaToolStripMenuItem, consultarPeliculasToolStripMenuItem });
+            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarPeliculasToolStripMenuItem, nuevaPelículaToolStripMenuItem });
             peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
             peliculasToolStripMenuItem.Size = new Size(65, 20);
             peliculasToolStripMenuItem.Text = "Peliculas";
@@ -106,14 +106,14 @@
             // nuevaPelículaToolStripMenuItem
             // 
             nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            nuevaPelículaToolStripMenuItem.Size = new Size(174, 22);
+            nuevaPelículaToolStripMenuItem.Size = new Size(180, 22);
             nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
             nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
             // 
             // consultarPeliculasToolStripMenuItem
             // 
             consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            consultarPeliculasToolStripMenuItem.Size = new Size(174, 22);
+            consultarPeliculasToolStripMenuItem.Size = new Size(180, 22);
             consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
             consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click_1;
             // 
@@ -152,8 +152,9 @@
             // quienesSomosToolStripMenuItem
             // 
             quienesSomosToolStripMenuItem.Name = "quienesSomosToolStripMenuItem";
-            quienesSomosToolStripMenuItem.Size = new Size(165, 22);
+            quienesSomosToolStripMenuItem.Size = new Size(180, 22);
             quienesSomosToolStripMenuItem.Text = "¿Quienes somos?";
+            quienesSomosToolStripMenuItem.Click += quienesSomosToolStripMenuItem_Click;
             // 
             // FrmMenu
             // 

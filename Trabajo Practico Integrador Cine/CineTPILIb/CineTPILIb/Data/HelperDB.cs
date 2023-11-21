@@ -15,7 +15,7 @@ namespace CineTPILIb.Data
 
         private HelperDB()
         {
-            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=CineNuevo0;Integrated Security=True");
+            conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=CineOk;Integrated Security=True");
         }
         public static HelperDB ObtenerInstancia()
         {
