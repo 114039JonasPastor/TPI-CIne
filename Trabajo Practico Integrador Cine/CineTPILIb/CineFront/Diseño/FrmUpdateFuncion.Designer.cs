@@ -44,11 +44,15 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtHorarios = new System.Windows.Forms.TextBox();
+            this.txtSalas = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtHorarios);
+            this.groupBox1.Controls.Add(this.txtSalas);
             this.groupBox1.Controls.Add(this.txtPrecio);
             this.groupBox1.Controls.Add(this.lblPrecio);
             this.groupBox1.Controls.Add(this.cboHorarios);
@@ -195,6 +199,20 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtHorarios
+            // 
+            this.txtHorarios.Location = new System.Drawing.Point(329, 121);
+            this.txtHorarios.Name = "txtHorarios";
+            this.txtHorarios.Size = new System.Drawing.Size(100, 23);
+            this.txtHorarios.TabIndex = 20;
+            // 
+            // txtSalas
+            // 
+            this.txtSalas.Location = new System.Drawing.Point(212, 87);
+            this.txtSalas.Name = "txtSalas";
+            this.txtSalas.Size = new System.Drawing.Size(100, 23);
+            this.txtSalas.TabIndex = 19;
+            // 
             // FrmUpdateFuncion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -207,6 +225,7 @@
             this.Name = "FrmUpdateFuncion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Función";
+            this.Load += new System.EventHandler(this.FrmUpdateFuncion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -231,5 +250,7 @@
         private Button btnModificar;
         private Button btnCancelar;
         private Button btnGuardar;
+        private TextBox txtHorarios;
+        private TextBox txtSalas;
     }
 }

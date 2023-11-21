@@ -94,5 +94,11 @@ namespace CineFront.Diseño
                 }
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int nro = int.Parse(dgvFunciones.CurrentRow.Cells["ColID"].Value.ToString());
+            new FrmUpdateFuncion(nro).ShowDialog();
+        }
     }
 }

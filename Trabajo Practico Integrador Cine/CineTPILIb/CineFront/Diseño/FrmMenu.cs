@@ -86,5 +86,11 @@ namespace CineFront
             FrmBajaTicket frmBajaTicket = new FrmBajaTicket();
             frmBajaTicket.ShowDialog();
         }
+
+        private void consultarPeliculasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaPelicula frmConsultaPelicula = new FrmConsultaPelicula();
+            frmConsultaPelicula.ShowDialog();
+        }
     }
 }

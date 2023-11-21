@@ -10,12 +10,15 @@ namespace CineTPILIb.Servicios.Interfaces
 {
     public interface IServicioTickets
     {
-
-        public List<Ticket> GetTicket(DateTime desde, DateTime hasta, string nombre, string empleado, string pelicula);
         bool NuevoTicket(Ticket nuevo);
         bool BajaTicket(int id);
 
         List<Cliente> GetClientes();
+        List<MedioDeVenta> GetMedioDeVenta();
+        List<FormaDePago> GetFormaDePagos();
+        List<Promocion> GetPromociones();
+        List<Butaca> GetButacas();
+        List<Funcion> GetFunciones();
         List<TicketDTO> GetTicketPorFiltros(int id, DateTime fecha, string cliente);
     }
 }

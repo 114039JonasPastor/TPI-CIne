@@ -987,3 +987,86 @@ join SALAS s on s.id_sala = f.id_sala
 join Horarios h on h.id_horario = f.id_horario
 join TIPOS_SALAS ts on ts.id_tipo_sala = s.id_tipo_sala
 where (f.id_funcion = @id_funcion or (fecha_desde >= @desde and fecha_hasta <= @hasta)) and f.estado = 1
+
+create proc SP_CONSULTAR_CLIENTES
+as
+select id_cliente ID, nombre+' '+apellido Nombre from CLIENTES
+
+
+alter proc SP_GET_TICKETS_FILTROS
+@id int,
+@fecha datetime,
+@cliente varchar(200)
+as
+select id_ticket 'Numero de ticket', nombre+' '+apellido Cliente, fecha Fecha from TICKETS t
+join clientes c on c.id_cliente = t.id_cliente
+where (id_ticket = @id or fecha = @fecha or nombre+' '+apellido = @cliente) and estado = 1
+
+exec SP_GET_TICKETS_FILTROS 50,'','2023-08-15'
+
+exec SP_CONSULTAR_FUNCIONES_FILTROS 5,'2020-10-10','2023-12-12'
+
+select * from TIPOS_SALAS
+select * from FUNCIONES 
+select * from tickets where estado = 1
+
+update tickets set estado = 1
+
+
+ALTER proc [dbo].[SP_CONSULTAR_FUNCIONES_FILTROS]
+@id_funcion int,
+@desde datetime,
+@hasta datetime
+as
+select f.id_funcion 'Numero de funcion',titulo Pelicula, nro_sala Sala,tipo 'Tipo de sala',horario Horario, fecha_desde 'Fecha desde', fecha_hasta 'Fecha hasta', precio Precio
+from FUNCIONES f join PELICULAS p on p.id_pelicula = f.id_pelicula
+join SALAS s on s.id_sala = f.id_sala
+join Horarios h on h.id_horario = f.id_horario
+join TIPOS_SALAS ts on ts.id_tipo_sala = s.id_tipo_sala
+where (f.id_funcion = @id_funcion or (fecha_desde >= @desde and fecha_hasta <= @hasta)) and f.estado = 1
+
+
+create proc SP_CONSULTAR_PROMOCIONES
+as
+select id_promocion, procentaje_descuento from PROMOCIONES
+
+create proc SP_CONSUTAR_FORMAS_PAGO
+AS
+SELECT * FROM FORMAS_PAGO
+
+create proc SP_CONSULTAR_MEDIOS_PEDIDOS
+as
+select * from MEDIOS_PEDIDO
+
+create proc SP_CONSULTAR_BUTACAS
+as
+select * from BUTACAS
+
+
+select * from BUTACAS
+alter table butacas drop column numero
+alter table butacas add numero varchar(200)
+
+update butacas set numero = '1A' where id_butaca = 1
+update butacas set numero = '1B' where id_butaca = 2
+update butacas set numero = '1C' where id_butaca = 3
+update butacas set numero = '1D' where id_butaca = 4
+update butacas set numero = '1E' where id_butaca = 5
+update butacas set numero = '2A' where id_butaca = 6
+update butacas set numero = '2B' where id_butaca = 7
+update butacas set numero = '2C' where id_butaca = 8
+
+ALTER proc [dbo].[SP_INSERTAR_TICKET]
+@nuevo_id_ticket int output,
+@fecha datetime,
+@id_cliente int,
+@id_medio_pedido int,
+@id_promocion int,
+@total money,
+@id_forma_pago int
+as
+begin
+insert into TICKETS(fecha,id_cliente, id_medio_pedido,id_promocion,total,estado, id_forma_pago) 
+values (@fecha,@id_cliente, @id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
+	set @nuevo_id_ticket = SCOPE_IDENTITY()
+end;

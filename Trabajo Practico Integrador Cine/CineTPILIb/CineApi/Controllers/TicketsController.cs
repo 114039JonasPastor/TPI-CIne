@@ -20,11 +20,82 @@ namespace CineApi.Controllers
         }
 
         [HttpGet("/Clientes")]
-        public IActionResult GetGeneros()
+        public IActionResult GetClientes()
         {
             try
             {
                 return Ok(app.GetClientes());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Butacas")]
+        public IActionResult GetButacas()
+        {
+            try
+            {
+                return Ok(app.GetButacas());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Combo Funciones")]
+        public IActionResult GetFunciones()
+        {
+            try
+            {
+                return Ok(app.GetFunciones());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+
+        [HttpGet("/Promociones")]
+        public IActionResult GetPromociones()
+        {
+            try
+            {
+                return Ok(app.GetPromociones());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Formas de pago")]
+        public IActionResult GetFormasDePago()
+        {
+            try
+            {
+                return Ok(app.GetFormaDePagos());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Medio de venta")]
+        public IActionResult GetMediosDeVenta()
+        {
+            try
+            {
+                return Ok(app.GetMedioDeVenta());
 
             }
             catch (Exception ex)
@@ -48,27 +119,27 @@ namespace CineApi.Controllers
             }
         }
 
-        [HttpGet("/Tickets")]
-        public IActionResult GetTickets(DateTime desde, DateTime hasta, string? cliente = null, 
-                                        string? empleado= null, string? pelicula = null)
-        {
-            List<Ticket> lst = null;
-            try
-            {
-                //Si el parámetro cliente no se envía entonces cliente es igual a null
-                //Para evitar un error de parámetro requerido se inicializa con una cadena vacía
-                cliente = cliente != null ? cliente : String.Empty;
-                empleado = empleado != null ? empleado : String.Empty;
-                pelicula = pelicula != null ? pelicula : String.Empty;
-                lst = app.GetTicket(desde, hasta, cliente, empleado, pelicula);
-                return Ok(lst);
+        //[HttpGet("/Tickets")]
+        //public IActionResult GetTickets(DateTime desde, DateTime hasta, string? cliente = null, 
+        //                                string? empleado= null, string? pelicula = null)
+        //{
+        //    List<Ticket> lst = null;
+        //    try
+        //    {
+        //        //Si el parámetro cliente no se envía entonces cliente es igual a null
+        //        //Para evitar un error de parámetro requerido se inicializa con una cadena vacía
+        //        cliente = cliente != null ? cliente : String.Empty;
+        //        empleado = empleado != null ? empleado : String.Empty;
+        //        pelicula = pelicula != null ? pelicula : String.Empty;
+        //        lst = app.GetTicket(desde, hasta, cliente, empleado, pelicula);
+        //        return Ok(lst);
 
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Error interno! Intente luego");
-            }
-        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(500, "Error interno! Intente luego");
+        //    }
+        //}
 
         // POST api/<TicketsController>
         [HttpPost]

@@ -10,43 +10,6 @@ namespace CineTPILIb.Data.Implementaciones
     {
         private SqlConnection conexion;
 
-
-        public List<Ticket> ObtenerTicketsPorFiltros(DateTime desde, DateTime hasta, string cliente, string pelicula, string empleado)
-        {
-            List<Ticket> lstTickets = new List<Ticket>();
-            string sp = "SP_CONSULTAR_TICKETS";
-            List<Parametro> lst = new List<Parametro>();
-            lst.Add(new Parametro("@fecha_desde", desde));
-            lst.Add(new Parametro("@fecha_hasta", hasta));
-            lst.Add(new Parametro("@cliente", cliente));
-            lst.Add(new Parametro("@empleado", empleado));
-            lst.Add(new Parametro("@pelicula", pelicula));
-
-            DataTable dt = HelperDB.ObtenerInstancia().ConsultarConParametros(sp, lst);
-
-            foreach (DataRow row in dt.Rows)
-            {
-                Ticket ticket = new Ticket();
-                ticket.Id_ticket = (int)row["id_ticket"];
-                ticket.Total = (decimal)row["total"];
-                ticket.Fecha = Convert.ToDateTime(row["fecha"]);
-
-                ticket.Cliente = new Cliente();
-                ticket.Cliente.Nombre = (row["Nombre cliente"].ToString());
-
-                ticket.Empleado = new Empleado();
-                ticket.Empleado.Nombre = (row["Nombre empleado"].ToString());
-
-                ticket.Pelicula = new Pelicula();
-                ticket.Pelicula.Titulo = (row["titulo"].ToString());
-
-                lstTickets.Add(ticket);
-            }
-
-            return lstTickets;
-        }
-
-
         public bool NuevoTicket(Ticket nuevo)
         {
             bool resultado = true;
@@ -62,7 +25,6 @@ namespace CineTPILIb.Data.Implementaciones
                 cmdMaestro.CommandType = CommandType.StoredProcedure;
                 cmdMaestro.Parameters.AddWithValue("@fecha", nuevo.Fecha);
                 cmdMaestro.Parameters.AddWithValue("@id_cliente", nuevo.Id_cliente);
-                cmdMaestro.Parameters.AddWithValue("@id_empleado", nuevo.Empleado.IdEmpleado);
                 cmdMaestro.Parameters.AddWithValue("@id_medio_pedido", nuevo.Id_medio_pedido);
                 cmdMaestro.Parameters.AddWithValue("@id_promocion", nuevo.Id_promocion);
                 cmdMaestro.Parameters.AddWithValue("@total", nuevo.Total);
@@ -184,6 +146,93 @@ namespace CineTPILIb.Data.Implementaciones
                 lista.Add(aux);
             }
             return lista;
+        }
+
+        public List<MedioDeVenta> GetMedioDeVenta()
+        {
+            List<MedioDeVenta> lMedio= new List<MedioDeVenta>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_MEDIOS_PEDIDOS");
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                MedioDeVenta aux = new MedioDeVenta();
+                aux.IdMedioPago = Convert.ToInt32(fila["id_medio_pedido"]);
+                aux.Descripcion = fila["descripcion"].ToString();
+
+                lMedio.Add(aux);
+            }
+            return lMedio;
+        }
+
+        public List<FormaDePago> GetFormaDePagos()
+        {
+            List<FormaDePago> lForma = new List<FormaDePago>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSUTAR_FORMAS_PAGO");
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                FormaDePago aux = new FormaDePago();
+                aux.IdFormaPago = Convert.ToInt32(fila["id_forma_pago"]);
+                aux.Descripcion = fila["descripcion"].ToString();
+                aux.Recargo = Convert.ToInt32(fila["porcentaje_recargo"]);
+
+                lForma.Add(aux);
+            }
+            return lForma;
+        }
+
+        public List<Promocion> GetPromociones()
+        {
+            List<Promocion> lPromocion = new List<Promocion>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PROMOCIONES");
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                Promocion aux = new Promocion();
+                aux.IdPromocion = Convert.ToInt32(fila["id_promocion"]);
+                aux.PorcentajeDescuento = Convert.ToInt32(fila["procentaje_descuento"]);
+
+                lPromocion.Add(aux);
+            }
+            return lPromocion;
+        }
+
+        public List<Butaca> GetButacas()
+        {
+            List<Butaca> lButaca = new List<Butaca>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_BUTACAS");
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                Butaca aux = new Butaca();
+                aux.IdButaca = Convert.ToInt32(fila["id_butaca"]);
+                aux.NroButaca = fila["numero"].ToString();
+
+                lButaca.Add(aux);
+            }
+            return lButaca;
+        }
+        public List<Funcion> GetFunciones()
+        {
+            List<Funcion> lFunciones = new List<Funcion>();
+
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_FUNCIONES");
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                Funcion f = new Funcion();
+                f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
+                f.Id_sala = Convert.ToInt32(fila["id_sala"]);
+                f.IdHorario = Convert.ToInt32(fila["id_horario"]);
+                f.Estado = Convert.ToBoolean(fila["estado"]);
+                f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
+                f.Precio = Convert.ToDouble(fila["precio"]);
+                f.FechaDesde = Convert.ToDateTime(fila["fecha_desde"]);
+                f.FechaHasta = Convert.ToDateTime(fila["fecha_hasta"]);
+
+                lFunciones.Add(f);
+            }
+            return lFunciones;
         }
     }
 }

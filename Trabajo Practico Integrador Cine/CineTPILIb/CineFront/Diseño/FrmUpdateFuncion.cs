@@ -17,7 +17,7 @@ namespace CineFront.Diseño
     public partial class FrmUpdateFuncion : Form
     {
         private int id;
-        public FrmUpdateFuncion()
+        public FrmUpdateFuncion(int id)
         {
             InitializeComponent();
             this.id = id;
@@ -25,49 +25,41 @@ namespace CineFront.Diseño
 
         private void FrmSeleccionarFuncion_Load(object sender, EventArgs e)
         {
-            CargarFuncion();
+            //CargarFuncion();
         }
-        private async void CargarFuncion()
-        {
-            string url = string.Format("https://localhost:7074/funciones/{0}", id);
-            var result = await ClientSingleton.GetInstance().GetAsync(url);
+        //private async void CargarFuncion()
+        //{
+        //    string url = string.Format("https://localhost:7074/funciones/{0}", id);
+        //    var result = await ClientSingleton.GetInstance().GetAsync(url);
 
-            var func = JsonConvert.DeserializeObject<FuncionDTO>(result);
-            if(func != null)
-            {
-                cboPelicula.Text = func.Pelicula.ToString();
-                cboSala.Text = func.Sala.ToString();
-                cboHorarios.Text = func.Horario.ToString();
-                txtPrecio.Text = func.Precio.ToString();
-                dtpDesde.Value = func.FechaDesde;
-                dtpHasta.Value = func.FechaHasta;
-            }
-            else
-            {
-                MessageBox.Show("No se pudo recuperar información de la función", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
+        //    var func = JsonConvert.DeserializeObject<FuncionDTO>(result);
+        //    if(func != null)
+        //    {
+        //        cboPelicula.Text = func.Pelicula.ToString();
+        //        cboSala.Text = func.Sala.ToString();
+        //        cboHorarios.Text = func.Horario.ToString();
+        //        txtPrecio.Text = func.Precio.ToString();
+        //        dtpDesde.Value = func.FechaDesde;
+        //        dtpHasta.Value = func.FechaHasta;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("No se pudo recuperar información de la función", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //    }
+        //}
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            CargarPeliculasAsync();
-            CargarSalasAscync();
-            CargarHorariosAsync();
         }
-
-        private static object lockObject = new object();
         private async void CargarHorariosAsync()
         {
             string url = "https://localhost:7074/Combo Horarios";
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Horario>>(result);
 
-            lock (lockObject)
-            {
-                cboHorarios.DataSource = lst;
-                cboHorarios.DisplayMember = "hora";
-                cboHorarios.ValueMember = "IdHorario";
-            }
+            cboHorarios.DataSource = lst;
+            cboHorarios.DisplayMember = "hora";
+            cboHorarios.ValueMember = "IdHorario";
         }
 
         private async void CargarSalasAscync()
@@ -76,12 +68,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Sala>>(result);
 
-            lock (lockObject)
-            {
-                cboSala.DataSource = lst;
-                cboSala.DisplayMember = "NroSala";
-                cboSala.ValueMember = "IdSala";
-            }
+            cboSala.DataSource = lst;
+            cboSala.DisplayMember = "NroSala";
+            cboSala.ValueMember = "IdSala";
         }
 
         private async void CargarPeliculasAsync()
@@ -90,12 +79,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<PeliculaDTO>>(result);
 
-            lock (lockObject)
-            {
-                cboPelicula.DataSource = lst;
-                cboPelicula.DisplayMember = "ID";
-                cboPelicula.ValueMember = "Titulo";
-            }
+            cboPelicula.DataSource = lst;
+            cboPelicula.DisplayMember = "ID";
+            cboPelicula.ValueMember = "Titulo";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -108,12 +94,12 @@ namespace CineFront.Diseño
             Funcion funcionModificada = new Funcion
             {
                 Id_funcion = id,
-                Id_sala = Convert.ToInt32(cboSala.SelectedValue),
-                Id_pelicula = Convert.ToInt32(cboPelicula.SelectedValue),
+                Id_sala = Convert.ToInt32(txtSalas.Text),
+                Id_pelicula = Convert.ToInt32(cboPelicula.SelectedIndex + 1),
                 Precio = Convert.ToDouble(txtPrecio.Text),
                 FechaDesde = Convert.ToDateTime(dtpDesde.Value),
                 FechaHasta = Convert.ToDateTime(dtpHasta.Value),
-                IdHorario = Convert.ToInt32(cboHorarios.SelectedValue)
+                IdHorario = Convert.ToInt32(txtHorarios.Text)
             };
 
             string funcionJson = JsonConvert.SerializeObject(funcionModificada);
@@ -137,6 +123,13 @@ namespace CineFront.Diseño
             {
                 MessageBox.Show($"Error al realizar la solicitud PUT: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmUpdateFuncion_Load(object sender, EventArgs e)
+        {
+            CargarPeliculasAsync();
+            CargarSalasAscync();
+            CargarHorariosAsync();
         }
     }
 }

@@ -15,11 +15,6 @@ namespace CineTPILIb.Servicios.Implementaciones
             dao = new TicketsDao();
         }
 
-        public List<Ticket> GetTicket(DateTime desde, DateTime hasta, string cliente, string empleado, string pelicula)
-        {
-            return dao.ObtenerTicketsPorFiltros(desde, hasta, cliente, pelicula, empleado);
-        }
-
         public bool NuevoTicket(Ticket nuevo)
         {
             return dao.NuevoTicket(nuevo);
@@ -38,6 +33,31 @@ namespace CineTPILIb.Servicios.Implementaciones
         List<TicketDTO> IServicioTickets.GetTicketPorFiltros(int id, DateTime fecha, string cliente)
         {
             return dao.GetTicketPorFiltros(id, fecha, cliente);
+        }
+
+        public List<MedioDeVenta> GetMedioDeVenta()
+        {
+            return dao.GetMedioDeVenta();
+        }
+
+        public List<FormaDePago> GetFormaDePagos()
+        {
+            return dao.GetFormaDePagos();
+        }
+
+        public List<Promocion> GetPromociones()
+        {
+            return dao.GetPromociones();
+        }
+
+        public List<Butaca> GetButacas()
+        {
+            return dao.GetButacas();
+        }
+
+        public List<Funcion> GetFunciones()
+        {
+            return dao.GetFunciones();
         }
     }
 }

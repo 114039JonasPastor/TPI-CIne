@@ -52,7 +52,6 @@
             this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
@@ -273,15 +272,6 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(662, 361);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(93, 23);
-            this.btnCancelar.TabIndex = 18;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(761, 361);
@@ -298,7 +288,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 401);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvFunciones);
@@ -331,7 +320,6 @@
         private DataGridView dgvFunciones;
         private Button btnAgregar;
         private Button btnConfirmar;
-        private Button btnCancelar;
         private Button btnSalir;
         private DataGridViewTextBoxColumn ColID;
         private DataGridViewTextBoxColumn ColPelicula;

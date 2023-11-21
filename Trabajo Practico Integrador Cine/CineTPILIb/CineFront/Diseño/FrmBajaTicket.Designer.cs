@@ -35,7 +35,6 @@
             this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAcción = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtClientes = new System.Windows.Forms.TextBox();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@
             this.btnSalir.TabIndex = 1;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dgvTicket
             // 
@@ -110,15 +110,6 @@
             this.ColAcción.ReadOnly = true;
             this.ColAcción.Text = "Dar de baja";
             this.ColAcción.UseColumnTextForButtonValue = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(403, 291);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -190,7 +181,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 321);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dgvTicket);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnConsular);
@@ -209,7 +199,6 @@
         private Button btnConsular;
         private Button btnSalir;
         private DataGridView dgvTicket;
-        private Button btnCancelar;
         private GroupBox groupBox1;
         private TextBox txtNumeroDeTicket;
         private DateTimePicker dtpFecha;

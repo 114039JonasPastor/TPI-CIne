@@ -118,14 +118,15 @@
             // nuevaPelículaToolStripMenuItem
             // 
             this.nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
             // 
             // consultarPeliculasToolStripMenuItem
             // 
             this.consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
+            this.consultarPeliculasToolStripMenuItem.Click += new System.EventHandler(this.consultarPeliculasToolStripMenuItem_Click);
             // 
             // ticketsToolStripMenuItem
             // 
@@ -139,14 +140,14 @@
             // nuevoTicketToolStripMenuItem
             // 
             this.nuevoTicketToolStripMenuItem.Name = "nuevoTicketToolStripMenuItem";
-            this.nuevoTicketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoTicketToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.nuevoTicketToolStripMenuItem.Text = "Nuevo Ticket";
             this.nuevoTicketToolStripMenuItem.Click += new System.EventHandler(this.nuevoTicketToolStripMenuItem_Click);
             // 
             // bajaTicketToolStripMenuItem
             // 
             this.bajaTicketToolStripMenuItem.Name = "bajaTicketToolStripMenuItem";
-            this.bajaTicketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bajaTicketToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.bajaTicketToolStripMenuItem.Text = "Baja Ticket";
             this.bajaTicketToolStripMenuItem.Click += new System.EventHandler(this.bajaTicketToolStripMenuItem_Click);
             // 

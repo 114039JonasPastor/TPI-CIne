@@ -130,7 +130,7 @@ namespace CineApi.Controllers
 
         // PUT api/<FuncionesController>/5
         [HttpPut("{id}")]
-        public IActionResult EditarFuncion(int id, [FromBody] Funcion funcion)
+        public IActionResult EditarFuncion(/*int id, */[FromBody] Funcion funcion)
         {
             try
             {
