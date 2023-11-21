@@ -18,9 +18,8 @@ namespace CineTPILIb.Dominio
         public int Id_forma_pago { get; set; }
         public List<DetalleTicket> DetallesTicket { get; set; }
 
-        public Empleado Empleado { get; set; }
-        public Cliente Cliente { get; set; }
-        public Pelicula Pelicula { get; set; }
+        //public Cliente Cliente { get; set; }
+        //public Pelicula Pelicula { get; set; }
 
 
 

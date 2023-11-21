@@ -59,11 +59,18 @@ namespace CineFront.Diseño
         {
             txtContraseña.UseSystemPasswordChar = true;
             chkContraseña.Checked = false;
+            txtUsuario.Clear();
+            txtContraseña.Clear();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void Login_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

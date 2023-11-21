@@ -28,226 +28,238 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvFunciones = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFormato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.lblFecDesde = new System.Windows.Forms.Label();
-            this.lblFecHasta = new System.Windows.Forms.Label();
-            this.lblNumeroDeFuncion = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarFunciones));
+            dgvFunciones = new DataGridView();
+            ColID = new DataGridViewTextBoxColumn();
+            ColPelicula = new DataGridViewTextBoxColumn();
+            ColSala = new DataGridViewTextBoxColumn();
+            ColTipoDeSala = new DataGridViewTextBoxColumn();
+            ColHorario = new DataGridViewTextBoxColumn();
+            ColFecDesde = new DataGridViewTextBoxColumn();
+            ColFecHasta = new DataGridViewTextBoxColumn();
+            ColPrecio = new DataGridViewTextBoxColumn();
+            ColAccion = new DataGridViewButtonColumn();
+            btnSalir = new Button();
+            groupBox1 = new GroupBox();
+            txtNumero = new TextBox();
+            lblNumeroDeFuncion = new Label();
+            lblFecHasta = new Label();
+            lblFecDesde = new Label();
+            dtpHasta = new DateTimePicker();
+            dtpDesde = new DateTimePicker();
+            btnConsultar = new Button();
+            btnModificar = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvFunciones).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // dgvFunciones
             // 
-            this.dgvFunciones.AllowUserToAddRows = false;
-            this.dgvFunciones.AllowUserToDeleteRows = false;
-            this.dgvFunciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFunciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColID,
-            this.ColPelicula,
-            this.ColSala,
-            this.ColHorario,
-            this.ColFormato,
-            this.ColFecDesde,
-            this.ColFecHasta,
-            this.ColPrecio,
-            this.ColAccion});
-            this.dgvFunciones.Location = new System.Drawing.Point(12, 147);
-            this.dgvFunciones.Name = "dgvFunciones";
-            this.dgvFunciones.ReadOnly = true;
-            this.dgvFunciones.RowTemplate.Height = 25;
-            this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
-            this.dgvFunciones.TabIndex = 16;
+            dgvFunciones.AllowUserToAddRows = false;
+            dgvFunciones.AllowUserToDeleteRows = false;
+            dgvFunciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFunciones.Columns.AddRange(new DataGridViewColumn[] { ColID, ColPelicula, ColSala, ColTipoDeSala, ColHorario, ColFecDesde, ColFecHasta, ColPrecio, ColAccion });
+            dgvFunciones.Location = new Point(12, 147);
+            dgvFunciones.Name = "dgvFunciones";
+            dgvFunciones.ReadOnly = true;
+            dgvFunciones.RowTemplate.Height = 25;
+            dgvFunciones.Size = new Size(844, 150);
+            dgvFunciones.TabIndex = 16;
+            dgvFunciones.CellContentClick += dgvFunciones_CellContentClick;
             // 
             // ColID
             // 
-            this.ColID.HeaderText = "ID";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Visible = false;
+            ColID.HeaderText = "ID";
+            ColID.Name = "ColID";
+            ColID.ReadOnly = true;
+            ColID.Visible = false;
             // 
             // ColPelicula
             // 
-            this.ColPelicula.HeaderText = "Pelicula";
-            this.ColPelicula.Name = "ColPelicula";
-            this.ColPelicula.ReadOnly = true;
+            ColPelicula.HeaderText = "Pelicula";
+            ColPelicula.Name = "ColPelicula";
+            ColPelicula.ReadOnly = true;
             // 
             // ColSala
             // 
-            this.ColSala.HeaderText = "Sala";
-            this.ColSala.Name = "ColSala";
-            this.ColSala.ReadOnly = true;
+            ColSala.HeaderText = "Sala";
+            ColSala.Name = "ColSala";
+            ColSala.ReadOnly = true;
+            // 
+            // ColTipoDeSala
+            // 
+            ColTipoDeSala.HeaderText = "Tipo de sala";
+            ColTipoDeSala.Name = "ColTipoDeSala";
+            ColTipoDeSala.ReadOnly = true;
             // 
             // ColHorario
             // 
-            this.ColHorario.HeaderText = "Horario";
-            this.ColHorario.Name = "ColHorario";
-            this.ColHorario.ReadOnly = true;
-            // 
-            // ColFormato
-            // 
-            this.ColFormato.HeaderText = "Formato";
-            this.ColFormato.Name = "ColFormato";
-            this.ColFormato.ReadOnly = true;
+            ColHorario.HeaderText = "Horario";
+            ColHorario.Name = "ColHorario";
+            ColHorario.ReadOnly = true;
             // 
             // ColFecDesde
             // 
-            this.ColFecDesde.HeaderText = "Fecha desde";
-            this.ColFecDesde.Name = "ColFecDesde";
-            this.ColFecDesde.ReadOnly = true;
+            ColFecDesde.HeaderText = "Fecha desde";
+            ColFecDesde.Name = "ColFecDesde";
+            ColFecDesde.ReadOnly = true;
             // 
             // ColFecHasta
             // 
-            this.ColFecHasta.HeaderText = "Fecha hasta";
-            this.ColFecHasta.Name = "ColFecHasta";
-            this.ColFecHasta.ReadOnly = true;
+            ColFecHasta.HeaderText = "Fecha hasta";
+            ColFecHasta.Name = "ColFecHasta";
+            ColFecHasta.ReadOnly = true;
             // 
             // ColPrecio
             // 
-            this.ColPrecio.HeaderText = "Precio";
-            this.ColPrecio.Name = "ColPrecio";
-            this.ColPrecio.ReadOnly = true;
+            ColPrecio.HeaderText = "Precio";
+            ColPrecio.Name = "ColPrecio";
+            ColPrecio.ReadOnly = true;
             // 
             // ColAccion
             // 
-            this.ColAccion.HeaderText = "Accion";
-            this.ColAccion.Name = "ColAccion";
-            this.ColAccion.ReadOnly = true;
+            ColAccion.HeaderText = "Accion";
+            ColAccion.Name = "ColAccion";
+            ColAccion.ReadOnly = true;
+            ColAccion.Text = "Dar de baja";
+            ColAccion.UseColumnTextForButtonValue = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(416, 303);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(95, 23);
-            this.btnSalir.TabIndex = 20;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Location = new Point(755, 303);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(95, 23);
+            btnSalir.TabIndex = 20;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNumero);
-            this.groupBox1.Controls.Add(this.lblNumeroDeFuncion);
-            this.groupBox1.Controls.Add(this.lblFecHasta);
-            this.groupBox1.Controls.Add(this.lblFecDesde);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(844, 100);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(761, 118);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(95, 23);
-            this.btnConsultar.TabIndex = 22;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(638, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(638, 51);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
-            // lblFecDesde
-            // 
-            this.lblFecDesde.AutoSize = true;
-            this.lblFecDesde.Location = new System.Drawing.Point(540, 28);
-            this.lblFecDesde.Name = "lblFecDesde";
-            this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
-            this.lblFecDesde.TabIndex = 2;
-            this.lblFecDesde.Text = "Desde";
-            // 
-            // lblFecHasta
-            // 
-            this.lblFecHasta.AutoSize = true;
-            this.lblFecHasta.Location = new System.Drawing.Point(540, 57);
-            this.lblFecHasta.Name = "lblFecHasta";
-            this.lblFecHasta.Size = new System.Drawing.Size(37, 15);
-            this.lblFecHasta.TabIndex = 3;
-            this.lblFecHasta.Text = "Hasta";
-            // 
-            // lblNumeroDeFuncion
-            // 
-            this.lblNumeroDeFuncion.AutoSize = true;
-            this.lblNumeroDeFuncion.Location = new System.Drawing.Point(6, 25);
-            this.lblNumeroDeFuncion.Name = "lblNumeroDeFuncion";
-            this.lblNumeroDeFuncion.Size = new System.Drawing.Size(113, 15);
-            this.lblNumeroDeFuncion.TabIndex = 4;
-            this.lblNumeroDeFuncion.Text = "Numero de Función";
+            groupBox1.BackColor = SystemColors.GradientActiveCaption;
+            groupBox1.Controls.Add(txtNumero);
+            groupBox1.Controls.Add(lblNumeroDeFuncion);
+            groupBox1.Controls.Add(lblFecHasta);
+            groupBox1.Controls.Add(lblFecDesde);
+            groupBox1.Controls.Add(dtpHasta);
+            groupBox1.Controls.Add(dtpDesde);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(844, 100);
+            groupBox1.TabIndex = 21;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Filtros";
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(141, 22);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(220, 23);
-            this.txtNumero.TabIndex = 5;
+            txtNumero.Location = new Point(141, 22);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(220, 23);
+            txtNumero.TabIndex = 5;
+            // 
+            // lblNumeroDeFuncion
+            // 
+            lblNumeroDeFuncion.AutoSize = true;
+            lblNumeroDeFuncion.Location = new Point(6, 25);
+            lblNumeroDeFuncion.Name = "lblNumeroDeFuncion";
+            lblNumeroDeFuncion.Size = new Size(113, 15);
+            lblNumeroDeFuncion.TabIndex = 4;
+            lblNumeroDeFuncion.Text = "Numero de Función";
+            // 
+            // lblFecHasta
+            // 
+            lblFecHasta.AutoSize = true;
+            lblFecHasta.Location = new Point(444, 54);
+            lblFecHasta.Name = "lblFecHasta";
+            lblFecHasta.Size = new Size(37, 15);
+            lblFecHasta.TabIndex = 3;
+            lblFecHasta.Text = "Hasta";
+            // 
+            // lblFecDesde
+            // 
+            lblFecDesde.AutoSize = true;
+            lblFecDesde.Location = new Point(444, 25);
+            lblFecDesde.Name = "lblFecDesde";
+            lblFecDesde.Size = new Size(39, 15);
+            lblFecDesde.TabIndex = 2;
+            lblFecDesde.Text = "Desde";
+            // 
+            // dtpHasta
+            // 
+            dtpHasta.Location = new Point(508, 48);
+            dtpHasta.Name = "dtpHasta";
+            dtpHasta.Size = new Size(266, 23);
+            dtpHasta.TabIndex = 1;
+            // 
+            // dtpDesde
+            // 
+            dtpDesde.Location = new Point(508, 19);
+            dtpDesde.Name = "dtpDesde";
+            dtpDesde.Size = new Size(266, 23);
+            dtpDesde.TabIndex = 0;
+            // 
+            // btnConsultar
+            // 
+            btnConsultar.Location = new Point(761, 118);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(95, 23);
+            btnConsultar.TabIndex = 22;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
+            // 
+            // btnModificar
+            // 
+            btnModificar.Location = new Point(12, 303);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(75, 23);
+            btnModificar.TabIndex = 23;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // FrmConsultarFunciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 334);
-            this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dgvFunciones);
-            this.Name = "FrmConsultarFunciones";
-            this.Text = "ConsultarFuncionesFrm";
-            this.Load += new System.EventHandler(this.FrmConsultarFunciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(870, 334);
+            Controls.Add(btnModificar);
+            Controls.Add(btnConsultar);
+            Controls.Add(groupBox1);
+            Controls.Add(btnSalir);
+            Controls.Add(dgvFunciones);
+            Name = "FrmConsultarFunciones";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Consultar funciones";
+            Load += FrmConsultarFunciones_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvFunciones).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dgvFunciones;
-        private DataGridViewTextBoxColumn ColID;
-        private DataGridViewTextBoxColumn ColPelicula;
-        private DataGridViewTextBoxColumn ColSala;
-        private DataGridViewTextBoxColumn ColHorario;
-        private DataGridViewTextBoxColumn ColFormato;
-        private DataGridViewTextBoxColumn ColFecDesde;
-        private DataGridViewTextBoxColumn ColFecHasta;
-        private DataGridViewTextBoxColumn ColPrecio;
-        private DataGridViewButtonColumn ColAccion;
         private Button btnSalir;
         private GroupBox groupBox1;
         private TextBox txtNumero;
         private Label lblNumeroDeFuncion;
         private Label lblFecHasta;
         private Label lblFecDesde;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpHasta;
+        private DateTimePicker dtpDesde;
         private Button btnConsultar;
+        private DataGridViewTextBoxColumn ColID;
+        private DataGridViewTextBoxColumn ColPelicula;
+        private DataGridViewTextBoxColumn ColSala;
+        private DataGridViewTextBoxColumn ColTipoDeSala;
+        private DataGridViewTextBoxColumn ColHorario;
+        private DataGridViewTextBoxColumn ColFecDesde;
+        private DataGridViewTextBoxColumn ColFecHasta;
+        private DataGridViewTextBoxColumn ColPrecio;
+        private DataGridViewButtonColumn ColAccion;
+        private Button btnModificar;
     }
 }

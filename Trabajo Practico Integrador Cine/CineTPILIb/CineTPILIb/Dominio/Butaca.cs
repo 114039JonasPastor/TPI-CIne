@@ -3,6 +3,6 @@
     public class Butaca
     {
         public int IdButaca { get; set; }
-        public int NroButaca { get; set; }
+        public string NroButaca { get; set; }
     }
 }

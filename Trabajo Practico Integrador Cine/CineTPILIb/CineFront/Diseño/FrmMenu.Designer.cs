@@ -36,14 +36,15 @@
             consultarFuncionesToolStripMenuItem = new ToolStripMenuItem();
             agregarFuncionToolStripMenuItem = new ToolStripMenuItem();
             peliculasToolStripMenuItem = new ToolStripMenuItem();
-            nuevaPelículaToolStripMenuItem = new ToolStripMenuItem();
             consultarPeliculasToolStripMenuItem = new ToolStripMenuItem();
+            nuevaPelículaToolStripMenuItem = new ToolStripMenuItem();
             ticketsToolStripMenuItem = new ToolStripMenuItem();
             nuevoTicketToolStripMenuItem = new ToolStripMenuItem();
             bajaTicketToolStripMenuItem = new ToolStripMenuItem();
             reportesToolStripMenuItem = new ToolStripMenuItem();
             soporteToolStripMenuItem = new ToolStripMenuItem();
             quienesSomosToolStripMenuItem = new ToolStripMenuItem();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,14 +67,14 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(180, 22);
+            salirToolStripMenuItem.Size = new Size(143, 22);
             salirToolStripMenuItem.Text = "Cerrar Sesion";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click_1;
             // 
             // salirToolStripMenuItem1
             // 
             salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            salirToolStripMenuItem1.Size = new Size(180, 22);
+            salirToolStripMenuItem1.Size = new Size(143, 22);
             salirToolStripMenuItem1.Text = "Salir";
             salirToolStripMenuItem1.Click += salirToolStripMenuItem_Click;
             // 
@@ -89,26 +90,21 @@
             consultarFuncionesToolStripMenuItem.Name = "consultarFuncionesToolStripMenuItem";
             consultarFuncionesToolStripMenuItem.Size = new Size(182, 22);
             consultarFuncionesToolStripMenuItem.Text = "Consultar Funciones";
+            consultarFuncionesToolStripMenuItem.Click += consultarFuncionesToolStripMenuItem_Click;
             // 
             // agregarFuncionToolStripMenuItem
             // 
             agregarFuncionToolStripMenuItem.Name = "agregarFuncionToolStripMenuItem";
             agregarFuncionToolStripMenuItem.Size = new Size(182, 22);
             agregarFuncionToolStripMenuItem.Text = "Agregar Funcion";
+            agregarFuncionToolStripMenuItem.Click += agregarFuncionToolStripMenuItem_Click;
             // 
             // peliculasToolStripMenuItem
             // 
-            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaPelículaToolStripMenuItem, consultarPeliculasToolStripMenuItem });
+            peliculasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarPeliculasToolStripMenuItem, nuevaPelículaToolStripMenuItem });
             peliculasToolStripMenuItem.Name = "peliculasToolStripMenuItem";
             peliculasToolStripMenuItem.Size = new Size(65, 20);
             peliculasToolStripMenuItem.Text = "Peliculas";
-            // 
-            // nuevaPelículaToolStripMenuItem
-            // 
-            nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            nuevaPelículaToolStripMenuItem.Size = new Size(174, 22);
-            nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
-            nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
             // 
             // consultarPeliculasToolStripMenuItem
             // 
@@ -116,6 +112,13 @@
             consultarPeliculasToolStripMenuItem.Size = new Size(174, 22);
             consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
             consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click_1;
+            // 
+            // nuevaPelículaToolStripMenuItem
+            // 
+            nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
+            nuevaPelículaToolStripMenuItem.Size = new Size(174, 22);
+            nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
+            nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
             // 
             // ticketsToolStripMenuItem
             // 
@@ -129,12 +132,14 @@
             nuevoTicketToolStripMenuItem.Name = "nuevoTicketToolStripMenuItem";
             nuevoTicketToolStripMenuItem.Size = new Size(143, 22);
             nuevoTicketToolStripMenuItem.Text = "Nuevo Ticket";
+            nuevoTicketToolStripMenuItem.Click += nuevoTicketToolStripMenuItem_Click;
             // 
             // bajaTicketToolStripMenuItem
             // 
             bajaTicketToolStripMenuItem.Name = "bajaTicketToolStripMenuItem";
             bajaTicketToolStripMenuItem.Size = new Size(143, 22);
             bajaTicketToolStripMenuItem.Text = "Baja Ticket";
+            bajaTicketToolStripMenuItem.Click += bajaTicketToolStripMenuItem_Click;
             // 
             // reportesToolStripMenuItem
             // 
@@ -154,6 +159,21 @@
             quienesSomosToolStripMenuItem.Name = "quienesSomosToolStripMenuItem";
             quienesSomosToolStripMenuItem.Size = new Size(165, 22);
             quienesSomosToolStripMenuItem.Text = "¿Quienes somos?";
+            quienesSomosToolStripMenuItem.Click += quienesSomosToolStripMenuItem_Click;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(548, 394);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 23);
+            label1.TabIndex = 1;
+            label1.Text = "TPI Programación II";
             // 
             // FrmMenu
             // 
@@ -162,11 +182,12 @@
             BackgroundImage = Properties.Resources.cine1;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(715, 426);
+            Controls.Add(label1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Menu";
+            Text = "Administrador de Cine";
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -192,5 +213,6 @@
         private ToolStripMenuItem peliculasToolStripMenuItem;
         private ToolStripMenuItem consultarPeliculasToolStripMenuItem;
         private ToolStripMenuItem nuevaPelículaToolStripMenuItem;
+        private Label label1;
     }
 }

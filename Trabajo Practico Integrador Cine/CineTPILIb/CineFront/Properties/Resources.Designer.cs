@@ -63,6 +63,16 @@ namespace CineFront.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acerca {
+            get {
+                object obj = ResourceManager.GetObject("acerca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cine {
             get {
                 object obj = ResourceManager.GetObject("cine", resourceCulture);
@@ -83,9 +93,29 @@ namespace CineFront.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap consulta {
+            get {
+                object obj = ResourceManager.GetObject("consulta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoB {
             get {
                 object obj = ResourceManager.GetObject("fondoB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_big_screen_movie_background_picture_image_809169 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-big-screen-movie-background-picture-image_809169", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

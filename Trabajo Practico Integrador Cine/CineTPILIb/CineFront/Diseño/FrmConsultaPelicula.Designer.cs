@@ -167,10 +167,13 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.BorderStyle = BorderStyle.Fixed3D;
             label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(33, 9);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(33, 10);
             label1.Name = "label1";
-            label1.Size = new Size(204, 25);
+            label1.Size = new Size(206, 27);
             label1.TabIndex = 1;
             label1.Text = "CONSULTA PELICULAS";
             // 
@@ -249,8 +252,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.cine;
-            BackgroundImageLayout = ImageLayout.Center;
+            BackgroundImage = Properties.Resources.consulta;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(841, 426);
             Controls.Add(btnSalir);
             Controls.Add(dgvPelicula);
@@ -258,7 +261,7 @@
             Controls.Add(groupBox1);
             Name = "FrmConsultaPelicula";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmConsultaPelicula";
+            Text = "Consultar peliculas";
             Load += FrmConsultaPelicula_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

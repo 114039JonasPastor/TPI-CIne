@@ -1,6 +1,7 @@
 ﻿using CineTPILIb.Data.Implementaciones;
 using CineTPILIb.Data.Interfaces;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,26 @@ namespace CineTPILIb.Servicios.Implementaciones
         public Funcion GetFuncionesPorId(int nro)
         {
             return dao.ObtenerFuncionPorId(nro);
+        }
+
+        public List<FuncionDTO> GetFuncionesFiltros(DateTime desde, DateTime hasta, int id_funcion)
+        {
+            return dao.GetFuncionesFiltros(desde, hasta, id_funcion);
+        }
+
+        public List<PeliculaDTO> GetPeliculaList()
+        {
+            return dao.GetPeliculaList();
+        }
+
+        public List<Horario> GetHorarios()
+        {
+            return dao.GetHorarios();
+        }
+
+        public List<Sala> GetSalas()
+        {
+            return dao.GetSalas();
         }
     }
 }

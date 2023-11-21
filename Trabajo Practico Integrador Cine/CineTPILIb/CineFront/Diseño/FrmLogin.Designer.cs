@@ -80,7 +80,7 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
-            // Login
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -90,9 +90,9 @@
             Controls.Add(btnAcceder);
             Controls.Add(txtContraseña);
             Controls.Add(txtUsuario);
-            Name = "Login";
+            Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Text = "Iniciar sesión";
             Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
