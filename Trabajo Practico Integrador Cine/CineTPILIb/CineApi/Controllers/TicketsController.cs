@@ -33,8 +33,8 @@ namespace CineApi.Controllers
             }
         }
 
-        [HttpGet("/Tickets Filtro")]
-        public IActionResult GetTicketPorFiltros(int id, DateTime fecha, string cliente)
+        [HttpGet("/TicketsFiltro")]
+        public IActionResult GetTicketPorFiltros(DateTime fecha, string cliente, int id)
         {
             List<TicketDTO> lst = null;
             try

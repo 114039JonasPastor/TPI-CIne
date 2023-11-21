@@ -967,12 +967,23 @@ create proc SP_CONSULTAR_CLIENTES
 as
 select id_cliente ID, nombre+' '+apellido Nombre from CLIENTES
 
-
-create proc SP_GET_TICKETS_FILTROS
+alter proc SP_GET_TICKETS_FILTROS
 @id int,
 @fecha datetime,
 @cliente varchar(200)
 as
 select id_ticket 'Numero de ticket', nombre+' '+apellido Cliente, fecha Fecha from TICKETS t
 join clientes c on c.id_cliente = t.id_cliente
-where id_ticket = @id or fecha = @fecha or nombre+' '+apellido = @cliente
+where (id_ticket = @id or fecha = @fecha or nombre+' '+apellido = @cliente) and estado = 1
+
+ALTER proc [dbo].[SP_CONSULTAR_FUNCIONES_FILTROS]
+@id_funcion int,
+@desde datetime,
+@hasta datetime
+as
+select f.estado ,f.id_funcion 'Numero de funcion',titulo Pelicula, nro_sala Sala,tipo 'Tipo de sala',horario Horario, fecha_desde 'Fecha desde', fecha_hasta 'Fecha hasta', precio Precio
+from FUNCIONES f join PELICULAS p on p.id_pelicula = f.id_pelicula
+join SALAS s on s.id_sala = f.id_sala
+join Horarios h on h.id_horario = f.id_horario
+join TIPOS_SALAS ts on ts.id_tipo_sala = s.id_tipo_sala
+where (f.id_funcion = @id_funcion or (fecha_desde >= @desde and fecha_hasta <= @hasta)) and f.estado = 1

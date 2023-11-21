@@ -22,7 +22,6 @@ namespace CineTPILIb.Data.Implementaciones
                 f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
                 f.Id_sala = Convert.ToInt32(fila["id_sala"]);
                 f.IdHorario = Convert.ToInt32(fila["id_horario"]);
-                f.IdFormato = Convert.ToInt32(fila["id_formato"]);
                 f.Estado = Convert.ToBoolean(fila["estado"]);
                 f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
                 f.Precio = Convert.ToDouble(fila["precio"]);
@@ -49,7 +48,6 @@ namespace CineTPILIb.Data.Implementaciones
                 f.Id_funcion = Convert.ToInt32(fila["id_funcion"]);
                 f.Id_sala = Convert.ToInt32(fila["id_sala"]);
                 f.IdHorario = Convert.ToInt32(fila["id_horario"]);
-                f.IdFormato = Convert.ToInt32(fila["id_formato"]);
                 f.Estado = Convert.ToBoolean(fila["estado"]);
                 f.Id_pelicula = Convert.ToInt32(fila["id_pelicula"]);
                 f.Precio = Convert.ToDouble(fila["precio"]);
@@ -83,7 +81,6 @@ namespace CineTPILIb.Data.Implementaciones
                 comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
                 comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
                 comando.Parameters.AddWithValue("@id_horario", funcion.IdHorario);
-                comando.Parameters.AddWithValue("@id_formato", funcion.IdFormato);
 
                 comando.ExecuteNonQuery();
                 t.Commit();

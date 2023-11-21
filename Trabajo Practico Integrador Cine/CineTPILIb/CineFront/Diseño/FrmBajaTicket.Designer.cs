@@ -30,20 +30,20 @@
         {
             this.btnConsular = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTicket = new System.Windows.Forms.DataGridView();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAcción = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtClientes = new System.Windows.Forms.TextBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.txtNumeroDeTicket = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDeEmision = new System.Windows.Forms.Label();
             this.lblNumeroDeTicket = new System.Windows.Forms.Label();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColBaja = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.btnConsular.TabIndex = 0;
             this.btnConsular.Text = "Consultar";
             this.btnConsular.UseVisualStyleBackColor = true;
+            this.btnConsular.Click += new System.EventHandler(this.btnConsular_Click);
             // 
             // btnSalir
             // 
@@ -65,22 +66,50 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvTicket
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTicket.AllowUserToAddRows = false;
+            this.dgvTicket.AllowUserToDeleteRows = false;
+            this.dgvTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTicket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
             this.ColCliente,
             this.ColFecha,
-            this.ColBaja});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 135);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(547, 150);
-            this.dataGridView1.TabIndex = 2;
+            this.ColAcción});
+            this.dgvTicket.Location = new System.Drawing.Point(12, 135);
+            this.dgvTicket.Name = "dgvTicket";
+            this.dgvTicket.ReadOnly = true;
+            this.dgvTicket.RowTemplate.Height = 25;
+            this.dgvTicket.Size = new System.Drawing.Size(547, 150);
+            this.dgvTicket.TabIndex = 2;
+            this.dgvTicket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicket_CellContentClick);
+            // 
+            // ColID
+            // 
+            this.ColID.HeaderText = "Numero de Ticket";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            // 
+            // ColCliente
+            // 
+            this.ColCliente.HeaderText = "Cliente";
+            this.ColCliente.Name = "ColCliente";
+            this.ColCliente.ReadOnly = true;
+            this.ColCliente.Width = 202;
+            // 
+            // ColFecha
+            // 
+            this.ColFecha.HeaderText = "Fecha de emision";
+            this.ColFecha.Name = "ColFecha";
+            this.ColFecha.ReadOnly = true;
+            // 
+            // ColAcción
+            // 
+            this.ColAcción.HeaderText = "Acción";
+            this.ColAcción.Name = "ColAcción";
+            this.ColAcción.ReadOnly = true;
+            this.ColAcción.Text = "Dar de baja";
+            this.ColAcción.UseColumnTextForButtonValue = true;
             // 
             // btnCancelar
             // 
@@ -96,7 +125,7 @@
             this.groupBox1.Controls.Add(this.txtClientes);
             this.groupBox1.Controls.Add(this.lblCliente);
             this.groupBox1.Controls.Add(this.txtNumeroDeTicket);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.lblFechaDeEmision);
             this.groupBox1.Controls.Add(this.lblNumeroDeTicket);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -129,13 +158,13 @@
             this.txtNumeroDeTicket.Size = new System.Drawing.Size(170, 23);
             this.txtNumeroDeTicket.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(420, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 23);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(420, 19);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(121, 23);
+            this.dtpFecha.TabIndex = 2;
             // 
             // lblFechaDeEmision
             // 
@@ -155,31 +184,6 @@
             this.lblNumeroDeTicket.TabIndex = 0;
             this.lblNumeroDeTicket.Text = "Numero de Ticket";
             // 
-            // ColID
-            // 
-            this.ColID.HeaderText = "Numero de Ticket";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            // 
-            // ColCliente
-            // 
-            this.ColCliente.HeaderText = "Cliente";
-            this.ColCliente.Name = "ColCliente";
-            this.ColCliente.ReadOnly = true;
-            this.ColCliente.Width = 202;
-            // 
-            // ColFecha
-            // 
-            this.ColFecha.HeaderText = "Fecha de emision";
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.ReadOnly = true;
-            // 
-            // ColBaja
-            // 
-            this.ColBaja.HeaderText = "Dar de baja";
-            this.ColBaja.Name = "ColBaja";
-            this.ColBaja.ReadOnly = true;
-            // 
             // FrmBajaTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -187,12 +191,13 @@
             this.ClientSize = new System.Drawing.Size(571, 321);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTicket);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnConsular);
             this.Name = "FrmBajaTicket";
             this.Text = "FrmBajaTicket";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmBajaTicket_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -203,11 +208,11 @@
 
         private Button btnConsular;
         private Button btnSalir;
-        private DataGridView dataGridView1;
+        private DataGridView dgvTicket;
         private Button btnCancelar;
         private GroupBox groupBox1;
         private TextBox txtNumeroDeTicket;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpFecha;
         private Label lblFechaDeEmision;
         private Label lblNumeroDeTicket;
         private Label lblCliente;
@@ -215,6 +220,6 @@
         private DataGridViewTextBoxColumn ColID;
         private DataGridViewTextBoxColumn ColCliente;
         private DataGridViewTextBoxColumn ColFecha;
-        private DataGridViewButtonColumn ColBaja;
+        private DataGridViewButtonColumn ColAcción;
     }
 }

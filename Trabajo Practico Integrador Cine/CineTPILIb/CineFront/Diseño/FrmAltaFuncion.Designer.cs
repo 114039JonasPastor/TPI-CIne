@@ -38,25 +38,22 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.lblFormato = new System.Windows.Forms.Label();
-            this.cboFormato = new System.Windows.Forms.ComboBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.cboHorarios = new System.Windows.Forms.ComboBox();
             this.lblHorario = new System.Windows.Forms.Label();
             this.dgvFunciones = new System.Windows.Forms.DataGridView();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFormato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.SuspendLayout();
@@ -131,8 +128,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtPrecio);
-            this.groupBox1.Controls.Add(this.lblFormato);
-            this.groupBox1.Controls.Add(this.cboFormato);
             this.groupBox1.Controls.Add(this.lblPrecio);
             this.groupBox1.Controls.Add(this.cboHorarios);
             this.groupBox1.Controls.Add(this.lblHorario);
@@ -156,23 +151,6 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
             this.txtPrecio.TabIndex = 18;
-            // 
-            // lblFormato
-            // 
-            this.lblFormato.AutoSize = true;
-            this.lblFormato.Location = new System.Drawing.Point(0, 84);
-            this.lblFormato.Name = "lblFormato";
-            this.lblFormato.Size = new System.Drawing.Size(52, 15);
-            this.lblFormato.TabIndex = 14;
-            this.lblFormato.Text = "Formato";
-            // 
-            // cboFormato
-            // 
-            this.cboFormato.FormattingEnabled = true;
-            this.cboFormato.Location = new System.Drawing.Point(64, 81);
-            this.cboFormato.Name = "cboFormato";
-            this.cboFormato.Size = new System.Drawing.Size(100, 23);
-            this.cboFormato.TabIndex = 16;
             // 
             // lblPrecio
             // 
@@ -210,7 +188,6 @@
             this.ColPelicula,
             this.ColSala,
             this.ColHorario,
-            this.ColFormato,
             this.ColFecDesde,
             this.ColFecHasta,
             this.ColPrecio,
@@ -222,61 +199,6 @@
             this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
             this.dgvFunciones.TabIndex = 15;
             this.dgvFunciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunciones_CellContentClick);
-            // 
-            // ColID
-            // 
-            this.ColID.HeaderText = "ID";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Visible = false;
-            // 
-            // ColPelicula
-            // 
-            this.ColPelicula.HeaderText = "Pelicula";
-            this.ColPelicula.Name = "ColPelicula";
-            this.ColPelicula.ReadOnly = true;
-            // 
-            // ColSala
-            // 
-            this.ColSala.HeaderText = "Sala";
-            this.ColSala.Name = "ColSala";
-            this.ColSala.ReadOnly = true;
-            // 
-            // ColHorario
-            // 
-            this.ColHorario.HeaderText = "Horario";
-            this.ColHorario.Name = "ColHorario";
-            this.ColHorario.ReadOnly = true;
-            // 
-            // ColFormato
-            // 
-            this.ColFormato.HeaderText = "Formato";
-            this.ColFormato.Name = "ColFormato";
-            this.ColFormato.ReadOnly = true;
-            // 
-            // ColFecDesde
-            // 
-            this.ColFecDesde.HeaderText = "Fecha desde";
-            this.ColFecDesde.Name = "ColFecDesde";
-            this.ColFecDesde.ReadOnly = true;
-            // 
-            // ColFecHasta
-            // 
-            this.ColFecHasta.HeaderText = "Fecha hasta";
-            this.ColFecHasta.Name = "ColFecHasta";
-            this.ColFecHasta.ReadOnly = true;
-            // 
-            // ColPrecio
-            // 
-            this.ColPrecio.HeaderText = "Precio";
-            this.ColPrecio.Name = "ColPrecio";
-            this.ColPrecio.ReadOnly = true;
-            // 
-            // ColAccion
-            // 
-            this.ColAccion.HeaderText = "Accion";
-            this.ColAccion.Name = "ColAccion";
-            this.ColAccion.ReadOnly = true;
             // 
             // btnAgregar
             // 
@@ -317,6 +239,58 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // ColID
+            // 
+            this.ColID.HeaderText = "ID";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Visible = false;
+            // 
+            // ColPelicula
+            // 
+            this.ColPelicula.HeaderText = "Pelicula";
+            this.ColPelicula.Name = "ColPelicula";
+            this.ColPelicula.ReadOnly = true;
+            this.ColPelicula.Width = 200;
+            // 
+            // ColSala
+            // 
+            this.ColSala.HeaderText = "Sala";
+            this.ColSala.Name = "ColSala";
+            this.ColSala.ReadOnly = true;
+            // 
+            // ColHorario
+            // 
+            this.ColHorario.HeaderText = "Horario";
+            this.ColHorario.Name = "ColHorario";
+            this.ColHorario.ReadOnly = true;
+            // 
+            // ColFecDesde
+            // 
+            this.ColFecDesde.HeaderText = "Fecha desde";
+            this.ColFecDesde.Name = "ColFecDesde";
+            this.ColFecDesde.ReadOnly = true;
+            // 
+            // ColFecHasta
+            // 
+            this.ColFecHasta.HeaderText = "Fecha hasta";
+            this.ColFecHasta.Name = "ColFecHasta";
+            this.ColFecHasta.ReadOnly = true;
+            // 
+            // ColPrecio
+            // 
+            this.ColPrecio.HeaderText = "Precio";
+            this.ColPrecio.Name = "ColPrecio";
+            this.ColPrecio.ReadOnly = true;
+            // 
+            // ColAccion
+            // 
+            this.ColAccion.HeaderText = "Accion";
+            this.ColAccion.Name = "ColAccion";
+            this.ColAccion.ReadOnly = true;
+            this.ColAccion.Text = "Quitar";
+            this.ColAccion.UseColumnTextForButtonValue = true;
+            // 
             // FrmAltaFuncion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -350,8 +324,6 @@
         private DateTimePicker dtpHasta;
         private GroupBox groupBox1;
         private TextBox txtPrecio;
-        private Label lblFormato;
-        private ComboBox cboFormato;
         private Label lblPrecio;
         private ComboBox cboHorarios;
         private Label lblHorario;
@@ -364,7 +336,6 @@
         private DataGridViewTextBoxColumn ColPelicula;
         private DataGridViewTextBoxColumn ColSala;
         private DataGridViewTextBoxColumn ColHorario;
-        private DataGridViewTextBoxColumn ColFormato;
         private DataGridViewTextBoxColumn ColFecDesde;
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;

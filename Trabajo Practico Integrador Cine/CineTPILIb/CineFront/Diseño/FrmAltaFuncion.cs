@@ -64,9 +64,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<PeliculaDTO>>(result);
 
-            cboHorarios.DataSource = lst;
-            cboHorarios.DisplayMember = "ID";
-            cboHorarios.ValueMember = "Titulo";
+            cboPelicula.DataSource = lst;
+            cboPelicula.DisplayMember = "ID";
+            cboPelicula.ValueMember = "Titulo";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
