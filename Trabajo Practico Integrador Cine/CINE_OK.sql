@@ -700,7 +700,13 @@ end;
 GO
 
 
-
+create PROCEDURE [dbo].[SP_PROXIMO_ID]
+@next int OUTPUT
+AS
+BEGIN
+	SET @next = (SELECT MAX(id_ticket)+1  FROM TICKETS);
+END;
+go
 
 
 
