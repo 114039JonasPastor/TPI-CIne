@@ -1,5 +1,6 @@
 ﻿using CineFront.Http;
 using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace CineFront.Diseño
             var lst = JsonConvert.DeserializeObject<List<FormaDePago>>(result);
 
             cboFormaDePago.DataSource = lst;
-            cboFormaDePago.DisplayMember = "Recargo";
+            cboFormaDePago.DisplayMember = "Descripcion";
             cboFormaDePago.ValueMember = "IdFormaPago";
         }
 
@@ -117,7 +118,7 @@ namespace CineFront.Diseño
             string url = "https://localhost:7074/api/Tickets";
             var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
 
-            if (result.Equals("true"))//servicio.CrearPresupuesto(nuevo)
+            if (result.Equals("true"))
             {
                 MessageBox.Show("Ticket registrado", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Dispose();
@@ -165,17 +166,46 @@ namespace CineFront.Diseño
                 MessageBox.Show("Debe de ingresar un precio de venta", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+            AltaTicketDTO ticketDTO = new AltaTicketDTO();
+            ticketDTO.Cliente = cboCliente.Text;
+            ticketDTO.NroFuncion = Convert.ToInt32(cboFuncion.SelectedIndex + 1);
+            ticketDTO.Fecha = dtpFecha.Value;
+            ticketDTO.Butaca = cboButaca.Text;
+            ticketDTO.PrecioVenta = Convert.ToDouble(txtPrecioVenta.Text);
+            ticketDTO.MedioDeVenta = cboMedioDeVenta.Text;
+            ticketDTO.FormaDePago = cboFormaDePago.Text;
+            ticketDTO.Descuento = Convert.ToInt32(cboPromocion.Text);
+
             Funcion f = (Funcion)cboFuncion.SelectedItem;
             int id_butaca = Convert.ToInt32(cboButaca.SelectedIndex + 1);
-            double precio_venta = Convert.ToDouble(txtPrecioVenta.Text);
+            decimal precio_venta = Convert.ToDecimal(txtPrecioVenta.Text);
 
             DetalleTicket detalle = new DetalleTicket(f,id_butaca,precio_venta);
             nuevo.AgregarDetalle(detalle);
+            dgvTicket.Rows.Add(new object[] { ticketDTO.Cliente, ticketDTO.NroFuncion, ticketDTO.Fecha, ticketDTO.Butaca, ticketDTO.PrecioVenta, ticketDTO.MedioDeVenta, ticketDTO.FormaDePago, ticketDTO.Descuento, CalcularTotal() });
+        }
+
+        private double CalcularTotal()
+        {
+            double precioVenta = Convert.ToDouble(txtPrecioVenta.Text);
+            int descuento = Convert.ToInt32(cboPromocion.Text);
+
+            double subTotal = precioVenta - (precioVenta * descuento) / 100;
+
+            return subTotal;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dgvTicket_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvTicket.CurrentCell.ColumnIndex == 9)
+            {
+                dgvTicket.Rows.Remove(dgvTicket.CurrentRow);
+            }
         }
     }
 }
