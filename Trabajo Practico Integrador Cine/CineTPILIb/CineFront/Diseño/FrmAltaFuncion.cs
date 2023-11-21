@@ -91,14 +91,14 @@ namespace CineFront.Diseño
                 MessageBox.Show("Debe de ingresar un precio", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            nuevaDTO.Pelicula = cboHorarios.Text;
+            nuevaDTO.Pelicula = cboPelicula.Text;
             nuevaDTO.Sala = Convert.ToInt32(cboSala.Text);
             nuevaDTO.Horario = cboHorarios.Text;
             nuevaDTO.FechaDesde = dtpDesde.Value;
             nuevaDTO.FechaHasta = dtpHasta.Value;
             nuevaDTO.Precio = Convert.ToDouble(txtPrecio.Text);
 
-            dgvFunciones.Rows.Add(new object[] { nueva.Id_funcion, nuevaDTO.Pelicula, nuevaDTO.Sala, nuevaDTO.Horario, nuevaDTO.FechaDesde, nuevaDTO.FechaHasta, nuevaDTO.Precio });
+            dgvFunciones.Rows.Add(new object[] { nuevaDTO.ID, nuevaDTO.Pelicula, nuevaDTO.Sala, nuevaDTO.Horario, nuevaDTO.FechaDesde, nuevaDTO.FechaHasta, nuevaDTO.Precio });
         }
 
         private async void btnConfirmar_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace CineFront.Diseño
         private async Task GuardarFuncionAsync()
         {
             nueva.Id_sala = cboSala.SelectedIndex + 1;
-            nueva.Id_pelicula = cboHorarios.SelectedIndex + 1;
+            nueva.Id_pelicula = cboPelicula.SelectedIndex + 1;
             nueva.Precio = Convert.ToDouble(txtPrecio.Text);
             nueva.FechaDesde = dtpDesde.Value;
             nueva.FechaHasta = dtpHasta.Value;
@@ -141,6 +141,11 @@ namespace CineFront.Diseño
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void cboPelicula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

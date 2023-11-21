@@ -253,6 +253,7 @@
             this.Name = "FrmDetallesPelicula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalles de la Pelicula";
+            this.Load += new System.EventHandler(this.FrmDetallesPelicula_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

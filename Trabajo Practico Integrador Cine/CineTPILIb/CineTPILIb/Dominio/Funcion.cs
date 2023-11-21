@@ -11,9 +11,6 @@
         public DateTime FechaDesde { get; set; }
         public DateTime FechaHasta { get; set; }
 
-        public Sala Sala { get; set; }
-        public Horario Horario { get; set; }
-
         public Funcion()
         {
 
@@ -33,12 +30,10 @@
 
         }
 
-        public Funcion(int id_funcion, int id_pelicula, Sala sala, Horario horario)
+        public Funcion(int id_funcion, int id_pelicula)
         {
             Id_funcion = id_funcion;
             Id_pelicula= id_pelicula;
-            Sala = sala;
-            Horario = horario;
         }
     }
 }

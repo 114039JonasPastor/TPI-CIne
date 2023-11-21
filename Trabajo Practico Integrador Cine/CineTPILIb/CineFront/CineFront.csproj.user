@@ -28,7 +28,7 @@
     <Compile Update="Diseño\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Diseño\FrmSeleccionarFuncion.cs">
+    <Compile Update="Diseño\FrmUpdateFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Diseño\FrmLogin.cs">

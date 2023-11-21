@@ -219,6 +219,11 @@ namespace CineFront.Diseño
         {
 
         }
+
+        private void FrmDetallesPelicula_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

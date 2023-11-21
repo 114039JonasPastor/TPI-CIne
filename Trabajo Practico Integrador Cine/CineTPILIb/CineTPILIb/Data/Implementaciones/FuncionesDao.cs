@@ -264,47 +264,6 @@ namespace CineTPILIb.Data.Implementaciones
             return lSalas;
         }
 
-        //public bool ModificarFuncion(int id, Funcion funcion)
-        //{
-        //    bool resultado = true;
-        //    SqlTransaction t = null;
-        //    conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
-
-        //    try
-        //    {
-        //        conexion.Open();
-        //        t = conexion.BeginTransaction();
-
-        //        SqlCommand comando = new SqlCommand("SP_UPDATE_FUNCION", conexion, t);
-        //        comando.CommandType = CommandType.StoredProcedure;
-        //        comando.Parameters.AddWithValue("@id_funcion", funcion.Id_funcion);
-        //        comando.Parameters.AddWithValue("@id_sala", funcion.Id_sala);
-        //        comando.Parameters.AddWithValue("@id_pelicula", funcion.Id_pelicula);
-        //        comando.Parameters.AddWithValue("@precio", funcion.Precio);
-        //        comando.Parameters.AddWithValue("@fecha_desde", funcion.FechaDesde);
-        //        comando.Parameters.AddWithValue("@fecha_hasta", funcion.FechaHasta);
-        //        comando.Parameters.AddWithValue("@id_horario", funcion.IdHorario);
-
-        //        comando.ExecuteNonQuery();
-        //        t.Commit();
-        //    }
-        //    catch
-        //    {
-        //        if (t != null)
-        //        {
-        //            t.Rollback();
-        //            resultado = false;
-        //        }
-        //    }
-        //    finally
-        //    {
-        //        if (conexion != null && conexion.State == ConnectionState.Open)
-        //        {
-        //            conexion.Close();
-        //        }
-        //    }
-        //    return resultado;
-        //}
     }
 }
 

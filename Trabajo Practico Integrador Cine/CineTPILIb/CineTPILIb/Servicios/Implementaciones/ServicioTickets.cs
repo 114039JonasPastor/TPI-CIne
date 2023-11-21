@@ -20,11 +20,6 @@ namespace CineTPILIb.Servicios.Implementaciones
             return dao.ObtenerTicketsPorFiltros(desde, hasta, cliente, pelicula, empleado);
         }
 
-        public Ticket GetTicketById(int id)
-        {
-            return dao.ObtenerTicketById(id);
-        }
-
         public bool NuevoTicket(Ticket nuevo)
         {
             return dao.NuevoTicket(nuevo);

@@ -178,7 +178,6 @@ C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucia
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.FrmMenu.resources
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmNuevaFuncion.resources
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmNuevoTicket.resources
-C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmSeleccionarFuncion.resources
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Properties.Resources.resources
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.csproj.GenerateResource.cache
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.GeneratedMSBuildEditorConfig.editorconfig
@@ -191,3 +190,4 @@ C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucia
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.pdb
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.genruntimeconfig.cache
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\ref\CineFront.dll
+C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmUpdateFuncion.resources

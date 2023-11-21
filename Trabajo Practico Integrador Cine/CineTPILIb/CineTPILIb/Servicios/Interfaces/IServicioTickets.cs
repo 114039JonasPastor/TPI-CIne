@@ -14,7 +14,7 @@ namespace CineTPILIb.Servicios.Interfaces
         public List<Ticket> GetTicket(DateTime desde, DateTime hasta, string nombre, string empleado, string pelicula);
         bool NuevoTicket(Ticket nuevo);
         bool BajaTicket(int id);
-        Ticket GetTicketById(int id);
+
         List<Cliente> GetClientes();
         List<TicketDTO> GetTicketPorFiltros(int id, DateTime fecha, string cliente);
     }

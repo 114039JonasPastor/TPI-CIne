@@ -70,26 +70,6 @@ namespace CineApi.Controllers
             }
         }
 
-
-
-        [HttpGet("/Tickets/{id}")]
-        public IActionResult GetTicketsById(int id)
-        {
-            try
-            {
-                Ticket ticket = app.GetTicketById(id);
-                if (ticket != null)
-                    return Ok(ticket);
-                else
-                    return NotFound("Presupuesto Nro: " + id + " NO encontrado!");
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Error interno! Intente luego");
-            }
-        }
-
-
         // POST api/<TicketsController>
         [HttpPost]
         public IActionResult Post([FromBody] Ticket nuevo)
