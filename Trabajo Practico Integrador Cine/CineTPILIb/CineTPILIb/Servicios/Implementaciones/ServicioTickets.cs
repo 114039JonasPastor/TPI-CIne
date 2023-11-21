@@ -59,5 +59,10 @@ namespace CineTPILIb.Servicios.Implementaciones
         {
             return dao.GetFunciones();
         }
+
+        public int ObtenerProximoNro()
+        {
+            return dao.ObtenerProximoNro();
+        }
     }
 }

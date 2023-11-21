@@ -15,7 +15,8 @@ namespace CineTPILIb.Dominio
         public int Id_butaca { get; set; }
         public decimal Precio_venta { get; set; }
 
-        //public Butaca Butaca { get; set; }
+        public Butaca Butaca { get; set; }
+
 
         public DetalleTicket(/*int id_detalle, */Funcion funcion, int id_butaca, decimal precio_venta)
         {
@@ -25,10 +26,10 @@ namespace CineTPILIb.Dominio
             Precio_venta = precio_venta;
         }
 
-        public DetalleTicket(/*Butaca butaca,*/ decimal precio_venta)
-        {
-            //Butaca = butaca;
-            Precio_venta = precio_venta;
-        }
+        //public DetalleTicket(Butaca butaca, decimal precio_venta)
+        //{
+        //    Butaca = butaca;
+        //    Precio_venta = precio_venta;
+        //}
     }
 }

@@ -10,6 +10,7 @@ namespace CineTPILIb.Servicios.Interfaces
 {
     public interface IServicioTickets
     {
+        int ObtenerProximoNro();
         bool NuevoTicket(Ticket nuevo);
         bool BajaTicket(int id);
 

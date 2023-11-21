@@ -1,6 +1,8 @@
 ﻿using CineFront.Http;
 using CineTPILIb.Dominio;
 using CineTPILIb.Dominio.DTO;
+using CineTPILIb.Servicios.Implementaciones;
+using CineTPILIb.Servicios.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,21 +18,33 @@ namespace CineFront.Diseño
 {
     public partial class FrmNuevoTicket : Form
     {
+        private IServicioTickets servicio;
         private Ticket nuevo;
         public FrmNuevoTicket()
         {
             InitializeComponent();
             nuevo = new Ticket();
+            servicio = new ServicioTickets();
         }
 
         private void FrmNuevoTicket_Load(object sender, EventArgs e)
         {
+            ProximoTicket();
             CargarClientesAsync();
             CargarFuncionAsync();
             CargarButacasAsync();
             CargarMediosDeVentaAsync();
             CargarFormasDePagoAsync();
             CargarPromocionesAsync();
+        }
+
+        private void ProximoTicket()
+        {
+            int next = servicio.ObtenerProximoNro();
+            if (next > 0)
+                lblTicket.Text = "Ticket Nº: " + next.ToString();
+            else
+                MessageBox.Show("Error de datos. No se puede obtener Nº de ticket!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private async void CargarPromocionesAsync()
@@ -98,7 +112,7 @@ namespace CineFront.Diseño
             cboCliente.DisplayMember = "Nombre";
             cboCliente.ValueMember = "IdCliente";
         }
-
+        
         private async void btnConfirmar_Click(object sender, EventArgs e)
         {
             await GuardarTicketAsync();
@@ -110,7 +124,7 @@ namespace CineFront.Diseño
             nuevo.Id_cliente = Convert.ToInt32(cboCliente.SelectedIndex + 1);
             nuevo.Id_medio_pedido = Convert.ToInt32(cboMedioDeVenta.SelectedIndex + 1);
             nuevo.Id_promocion = Convert.ToInt32(cboPromocion.SelectedIndex + 1);
-            nuevo.Total = Convert.ToDecimal(txtPrecioVenta.Text);
+            nuevo.Total = Convert.ToDecimal(dgvTicket.CurrentRow.Cells[8].Value);
             nuevo.Id_forma_pago = Convert.ToInt32(cboFormaDePago.SelectedIndex + 1);
 
             string bodyContent = JsonConvert.SerializeObject(nuevo);
