@@ -56,7 +56,7 @@ namespace CineFront.Diseño
             {
                 foreach (FuncionDTO funcion in lst)
                 {
-                    dgvFunciones.Rows.Add(new object[] { funcion.ID ,funcion.Pelicula, funcion.Sala, funcion.TipoSala, funcion.Horario, funcion.FechaDesde, funcion.FechaHasta, funcion.Precio });
+                    dgvFunciones.Rows.Add(new object[] { funcion.ID, funcion.Pelicula, funcion.Sala, funcion.TipoSala, funcion.Horario, funcion.FechaDesde, funcion.FechaHasta, funcion.Precio });
                 }
             }
             else
@@ -67,7 +67,7 @@ namespace CineFront.Diseño
 
         private async void dgvFunciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvFunciones.CurrentCell.ColumnIndex == 8)
+            if (dgvFunciones.CurrentCell.ColumnIndex == 8)
             {
                 await BajaFuncionAsync();
                 dgvFunciones.Rows.Remove(dgvFunciones.CurrentRow);
@@ -79,7 +79,7 @@ namespace CineFront.Diseño
             int id = Convert.ToInt32(dgvFunciones.Rows[dgvFunciones.CurrentRow.Index].Cells[0].Value);
             DialogResult result = MessageBox.Show("¿Estás seguro de que quieres dar de baja esta función?", "Confirmar baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 string url = $"https://localhost:7074/api/Funciones/{id}";
                 try

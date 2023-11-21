@@ -105,11 +105,12 @@ namespace CineApi.Controllers
         }
 
         [HttpGet("/TicketsFiltro")]
-        public IActionResult GetTicketPorFiltros(DateTime fecha, string cliente, int id)
+        public IActionResult GetTicketPorFiltros(DateTime fecha, int id, string? cliente = null)
         {
             List<TicketDTO> lst = null;
             try
             {
+                cliente = cliente != null ? cliente : String.Empty;
                 return Ok(app.GetTicketPorFiltros(id, fecha, cliente));
 
             }

@@ -92,7 +92,7 @@
             Controls.Add(txtUsuario);
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Text = "Iniciar sesión";
             Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();

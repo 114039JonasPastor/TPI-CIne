@@ -125,21 +125,21 @@
             // 
             txtNumeroDeTicket.Location = new Point(137, 6);
             txtNumeroDeTicket.Name = "txtNumeroDeTicket";
-            txtNumeroDeTicket.Size = new Size(170, 23);
+            txtNumeroDeTicket.Size = new Size(100, 23);
             txtNumeroDeTicket.TabIndex = 3;
             // 
             // dtpFecha
             // 
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(426, 9);
+            dtpFecha.Location = new Point(384, 6);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(121, 23);
+            dtpFecha.Size = new Size(163, 23);
             dtpFecha.TabIndex = 2;
             // 
             // lblFechaDeEmision
             // 
             lblFechaDeEmision.AutoSize = true;
-            lblFechaDeEmision.Location = new Point(313, 9);
+            lblFechaDeEmision.Location = new Point(279, 9);
             lblFechaDeEmision.Name = "lblFechaDeEmision";
             lblFechaDeEmision.Size = new Size(99, 15);
             lblFechaDeEmision.TabIndex = 1;
@@ -170,7 +170,8 @@
             Controls.Add(lblFechaDeEmision);
             Controls.Add(lblNumeroDeTicket);
             Name = "FrmBajaTicket";
-            Text = "FrmBajaTicket";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Baja ticket";
             Load += FrmBajaTicket_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();
             ResumeLayout(false);

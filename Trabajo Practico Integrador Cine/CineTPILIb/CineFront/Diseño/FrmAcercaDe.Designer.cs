@@ -79,6 +79,7 @@
             label3.Size = new Size(181, 27);
             label3.TabIndex = 2;
             label3.Text = "Luciano Rodriguez";
+            lm.SetToolTip(label3, "GitHub");
             label3.Click += label3_Click;
             // 
             // label4

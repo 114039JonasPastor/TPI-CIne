@@ -30,7 +30,7 @@ namespace CineFront
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
                 FrmLogin frmLogin = FrmLogin.ObtenerInstancia();
@@ -41,7 +41,7 @@ namespace CineFront
 
         private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea cerrar la sesion?", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea cerrar la sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
                 FrmLogin frmLogin = FrmLogin.ObtenerInstancia();

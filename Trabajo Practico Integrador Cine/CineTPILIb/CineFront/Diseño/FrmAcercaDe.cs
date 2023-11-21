@@ -63,7 +63,7 @@ namespace CineFront.Diseño
 
         private void label3_Click(object sender, EventArgs e)
         {
-            string url = "chrome://new-tab-page";
+            string url = "https://github.com/Luciano1732";
             Process.Start(new ProcessStartInfo
             {
                 FileName = "cmd",
@@ -76,7 +76,7 @@ namespace CineFront.Diseño
 
         private void label7_Click(object sender, EventArgs e)
         {
-            string url = "chrome://new-tab-page";
+            string url = "https://www.linkedin.com/in/franco-dominguez-208425228/";
             Process.Start(new ProcessStartInfo
             {
                 FileName = "cmd",

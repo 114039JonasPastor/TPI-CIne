@@ -197,6 +197,7 @@ namespace CineTPILIb.Data.Implementaciones
             foreach (DataRow fila in tabla.Rows)
             {
                 FuncionDTO aux = new FuncionDTO();
+                aux.ID = Convert.ToInt32(fila["Numero de funcion"]);
                 aux.Pelicula = fila["Pelicula"].ToString();
                 aux.Sala = Convert.ToInt32(fila["Sala"]);
                 aux.TipoSala = fila["Tipo de sala"].ToString();
