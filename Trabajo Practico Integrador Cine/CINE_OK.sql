@@ -306,7 +306,7 @@ CREATE TABLE FUNCIONES
 CREATE TABLE BUTACAS
 (
 	id_butaca int identity(1,1),
-	numero int,
+	numero varchar(4),
 	CONSTRAINT PK_BUTACAS PRIMARY KEY (id_butaca),
 );
 
@@ -508,20 +508,7 @@ end;
 GO
 
 
-CREATE proc [dbo].[SP_INSERTAR_FUNCION]
-@id_sala int,
-@id_pelicula int,
-@precio money,
-@fecha_desde datetime,
-@fecha_hasta datetime,
-@id_horario int,
-@id_formato int
-as
-begin
-insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, id_horario, id_formato) 
-values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@id_horario, @id_formato)
-end;
-GO
+
 
 
 
@@ -583,22 +570,7 @@ end;
 GO
 
 
-create proc SP_INSERTAR_TICKET
-@nuevo_id_ticket int output,
-@fecha datetime,
-@id_cliente int,
-@id_empleado int,
-@id_medio_pedido int,
-@id_promocion int,
-@total money,
-@id_forma_pago int
-as
-begin
-insert into TICKETS(fecha,id_cliente, id_empleado, id_medio_pedido,id_promocion,total,estado, id_forma_pago) 
-values (@fecha,@id_cliente,@id_empleado, @id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
-	set @nuevo_id_ticket = SCOPE_IDENTITY()
-end;
-GO
+
 
 
 create procedure SP_INSERTAR_DETALLE
@@ -612,6 +584,123 @@ insert into DETALLES_TICKET(id_ticket,id_funcion,id_butaca,precio_venta)
 values(@id_ticket,@id_funcion,@id_butaca,@precio_venta);
 end;
 GO
+-----------------------------
+
+
+create proc SP_CONSULTAR_SALAS
+as
+BEGIN
+select * from SALAS
+END;
+GO
+
+create proc SP_CONSULTAR_HORARIOS
+as
+BEGIN
+select * from HORARIOS
+END;
+GO
+
+
+CREATE proc [dbo].[SP_INSERTAR_FUNCION]
+@id_sala int,
+@id_pelicula int,
+@precio money,
+@fecha_desde datetime,
+@fecha_hasta datetime,
+@id_horario int
+as
+begin
+insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, id_horario) 
+values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@id_horario)
+end;
+GO
+
+
+
+create proc SP_CONSULTAR_CLIENTES
+as
+BEGIN
+select id_cliente ID, nombre+' '+apellido Nombre from CLIENTES
+END;
+GO
+
+
+CREATE proc SP_GET_TICKETS_FILTROS
+@id int,
+@fecha datetime,
+@cliente varchar(200)
+as
+BEGIN
+select id_ticket 'Numero de ticket', nombre+' '+apellido Cliente, fecha Fecha from TICKETS t
+join clientes c on c.id_cliente = t.id_cliente
+where (id_ticket = @id or fecha = @fecha or nombre+' '+apellido = @cliente) and estado = 1
+END;
+GO
+
+CREATE proc [dbo].[SP_CONSULTAR_FUNCIONES_FILTROS]
+@id_funcion int,
+@desde datetime,
+@hasta datetime
+as
+BEGIN
+select f.id_funcion 'Numero de funcion',titulo Pelicula, nro_sala Sala,tipo 'Tipo de sala',horario Horario, fecha_desde 'Fecha desde', fecha_hasta 'Fecha hasta', precio Precio
+from FUNCIONES f join PELICULAS p on p.id_pelicula = f.id_pelicula
+join SALAS s on s.id_sala = f.id_sala
+join Horarios h on h.id_horario = f.id_horario
+join TIPOS_SALAS ts on ts.id_tipo_sala = s.id_tipo_sala
+where (f.id_funcion = @id_funcion or (fecha_desde >= @desde and fecha_hasta <= @hasta)) and f.estado = 1
+END;
+GO
+
+
+create proc SP_CONSULTAR_PROMOCIONES
+as
+BEGIN
+select id_promocion, procentaje_descuento from PROMOCIONES
+END;
+GO
+
+create proc SP_CONSUTAR_FORMAS_PAGO
+AS
+BEGIN
+SELECT * FROM FORMAS_PAGO
+END;
+GO
+
+create proc SP_CONSULTAR_MEDIOS_PEDIDOS
+as
+BEGIN
+select * from MEDIOS_PEDIDO
+END;
+GO
+
+create proc SP_CONSULTAR_BUTACAS
+as
+BEGIN
+select * from BUTACAS
+END;
+GO
+
+
+CREATE proc [dbo].[SP_INSERTAR_TICKET]
+@nuevo_id_ticket int output,
+@fecha datetime,
+@id_cliente int,
+@id_medio_pedido int,
+@id_promocion int,
+@total money,
+@id_forma_pago int
+as
+begin
+insert into TICKETS(fecha,id_cliente, id_medio_pedido,id_promocion,total,estado, id_forma_pago) 
+values (@fecha,@id_cliente, @id_medio_pedido,@id_promocion,@total,1,@id_forma_pago);
+	set @nuevo_id_ticket = SCOPE_IDENTITY()
+end;
+GO
+
+
+
 
 
 
@@ -742,14 +831,14 @@ INSERT INTO SALAS (nro_sala, id_tipo_sala) VALUES (5, 5);
 
 INSERT INTO BUTACAS(numero) 
 VALUES
-(1),
-(2),
-(3),
-(4),
-(5),
-(6),
-(7),
-(8);
+('1A'),
+('1B'),
+('1C'),
+('2A'),
+('2B'),
+('2C'),
+('3A'),
+('3B');
 
 INSERT INTO FORMATOS (formato) VALUES ('2D');
 INSERT INTO FORMATOS (formato) VALUES ('3D');
