@@ -92,5 +92,24 @@ namespace CineFront
             FrmConsultaPelicula frmConsultaPelicula = new FrmConsultaPelicula();
             frmConsultaPelicula.ShowDialog();
         }
+
+        private void nuevaPelículaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAltaPelicula frmAltaPelicula = new FrmAltaPelicula();
+            frmAltaPelicula.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void salirToolStripMenuItem_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,9 +49,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<FormaDePago>>(result);
 
-            cboPromocion.DataSource = lst;
-            cboPromocion.DisplayMember = "Recargo";
-            cboPromocion.ValueMember = "IdFormaPago";
+            cboFormaDePago.DataSource = lst;
+            cboFormaDePago.DisplayMember = "Recargo";
+            cboFormaDePago.ValueMember = "IdFormaPago";
         }
 
         private async void CargarMediosDeVentaAsync()
@@ -60,9 +60,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<MedioDeVenta>>(result);
 
-            cboPromocion.DataSource = lst;
-            cboPromocion.DisplayMember = "Descripcion";
-            cboPromocion.ValueMember = "IdMedioPago";
+            cboMedioDeVenta.DataSource = lst;
+            cboMedioDeVenta.DisplayMember = "Descripcion";
+            cboMedioDeVenta.ValueMember = "IdMedioPago";
         }
 
         private async void CargarButacasAsync()
@@ -71,9 +71,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Butaca>>(result);
 
-            cboPromocion.DataSource = lst;
-            cboPromocion.DisplayMember = "NroButaca";
-            cboPromocion.ValueMember = "IdButaca";
+            cboButaca.DataSource = lst;
+            cboButaca.DisplayMember = "NroButaca";
+            cboButaca.ValueMember = "IdButaca";
         }
 
         private async void CargarFuncionAsync()
@@ -82,9 +82,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Funcion>>(result);
 
-            cboPromocion.DataSource = lst;
-            cboPromocion.DisplayMember = "Id_funcion";
-            cboPromocion.ValueMember = "Id_funcion";
+            cboFuncion.DataSource = lst;
+            cboFuncion.DisplayMember = "Id_funcion";
+            cboFuncion.ValueMember = "Id_funcion";
         }
 
         private async void CargarClientesAsync()
@@ -93,9 +93,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Cliente>>(result);
 
-            cboPromocion.DataSource = lst;
-            cboPromocion.DisplayMember = "Nombre";
-            cboPromocion.ValueMember = "IdCliente";
+            cboCliente.DataSource = lst;
+            cboCliente.DisplayMember = "Nombre";
+            cboCliente.ValueMember = "IdCliente";
         }
 
         private async void btnConfirmar_Click(object sender, EventArgs e)

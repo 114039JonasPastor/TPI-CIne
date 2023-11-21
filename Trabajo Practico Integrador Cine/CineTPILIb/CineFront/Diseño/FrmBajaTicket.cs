@@ -22,7 +22,14 @@ namespace CineFront.Diseño
 
         private void FrmBajaTicket_Load(object sender, EventArgs e)
         {
+            Limpiar();
+        }
 
+        private void Limpiar()
+        {
+            txtClientes.Text = String.Empty;
+            txtNumeroDeTicket.Text = String.Empty;
+            dtpFecha.Value = DateTime.Now;
         }
 
         private void btnConsular_Click(object sender, EventArgs e)
@@ -33,6 +40,7 @@ namespace CineFront.Diseño
             cliente = Uri.EscapeDataString(txtClientes.Text);
 
             CargarTicktes(nroTicket, fechaEmision, cliente);
+            Limpiar();
         }
 
         //https://localhost:7074/Tickets Filtro?id=1&fecha=2020-12-12&cliente=jorge
@@ -65,7 +73,7 @@ namespace CineFront.Diseño
 
         private async void dgvTicket_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvTicket.CurrentCell.ColumnIndex == 4)
+            if(dgvTicket.CurrentCell.ColumnIndex == 3)
             {
                 BajaTicketAsync();
                 dgvTicket.Rows.Remove(dgvTicket.CurrentRow);

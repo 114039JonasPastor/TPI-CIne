@@ -136,6 +136,11 @@ namespace CineFront.Diseño
 
         }
 
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
         //private async Task BorrarPresupuestoAsync(int idPelicula)
         //{
         //    string url = $"http://localhost:5031/api/Peliculas/{idPelicula}";

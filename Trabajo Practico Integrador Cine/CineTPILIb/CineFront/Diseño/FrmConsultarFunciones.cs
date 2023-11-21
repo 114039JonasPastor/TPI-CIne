@@ -22,7 +22,14 @@ namespace CineFront.Diseño
 
         private void FrmConsultarFunciones_Load(object sender, EventArgs e)
         {
+            Limpiar();
+        }
 
+        private void Limpiar()
+        {
+            dtpDesde.Value = DateTime.Now;
+            dtpHasta.Value = DateTime.Now.AddDays(7);
+            txtNumero.Text = String.Empty;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -33,6 +40,7 @@ namespace CineFront.Diseño
             hasta = Uri.EscapeDataString(dtpHasta.Value.ToString("yyyy/MM/dd"));
 
             CargarFunciones(id_funcion, desde, hasta);
+            Limpiar();
         }
         private async void CargarFunciones(string id_funcion, string desde, string hasta)
         {
@@ -99,6 +107,11 @@ namespace CineFront.Diseño
         {
             int nro = int.Parse(dgvFunciones.CurrentRow.Cells["ColID"].Value.ToString());
             new FrmUpdateFuncion(nro).ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

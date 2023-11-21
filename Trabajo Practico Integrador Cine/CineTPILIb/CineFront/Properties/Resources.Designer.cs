@@ -89,5 +89,15 @@ namespace CineFront.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_big_screen_movie_background_picture_image_809169 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-big-screen-movie-background-picture-image_809169", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

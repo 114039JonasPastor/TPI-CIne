@@ -74,14 +74,16 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Cerrar Sesion";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_2);
             // 
             // salirToolStripMenuItem1
             // 
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
             // funcionesToolStripMenuItem
             // 
@@ -118,13 +120,14 @@
             // nuevaPelículaToolStripMenuItem
             // 
             this.nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
+            this.nuevaPelículaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPelículaToolStripMenuItem_Click);
             // 
             // consultarPeliculasToolStripMenuItem
             // 
             this.consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
             this.consultarPeliculasToolStripMenuItem.Click += new System.EventHandler(this.consultarPeliculasToolStripMenuItem_Click);
             // 

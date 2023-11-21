@@ -60,13 +60,7 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTicket
@@ -86,7 +80,7 @@
             this.ColDescuento,
             this.ColSubtotal,
             this.ColAccion});
-            this.dgvTicket.Location = new System.Drawing.Point(12, 203);
+            this.dgvTicket.Location = new System.Drawing.Point(12, 186);
             this.dgvTicket.Name = "dgvTicket";
             this.dgvTicket.ReadOnly = true;
             this.dgvTicket.RowTemplate.Height = 25;
@@ -166,7 +160,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(1019, 174);
+            this.btnAgregar.Location = new System.Drawing.Point(1019, 157);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(121, 23);
             this.btnAgregar.TabIndex = 11;
@@ -177,7 +171,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(0, 19);
+            this.lblCliente.Location = new System.Drawing.Point(12, 45);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(44, 15);
             this.lblCliente.TabIndex = 12;
@@ -186,7 +180,7 @@
             // cboCliente
             // 
             this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(101, 16);
+            this.cboCliente.Location = new System.Drawing.Point(113, 42);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(438, 23);
             this.cboCliente.TabIndex = 13;
@@ -203,7 +197,7 @@
             // lblMedio_vendido
             // 
             this.lblMedio_vendido.AutoSize = true;
-            this.lblMedio_vendido.Location = new System.Drawing.Point(0, 19);
+            this.lblMedio_vendido.Location = new System.Drawing.Point(699, 50);
             this.lblMedio_vendido.Name = "lblMedio_vendido";
             this.lblMedio_vendido.Size = new System.Drawing.Size(89, 15);
             this.lblMedio_vendido.TabIndex = 17;
@@ -212,7 +206,7 @@
             // cboMedioDeVenta
             // 
             this.cboMedioDeVenta.FormattingEnabled = true;
-            this.cboMedioDeVenta.Location = new System.Drawing.Point(101, 16);
+            this.cboMedioDeVenta.Location = new System.Drawing.Point(814, 45);
             this.cboMedioDeVenta.Name = "cboMedioDeVenta";
             this.cboMedioDeVenta.Size = new System.Drawing.Size(121, 23);
             this.cboMedioDeVenta.TabIndex = 18;
@@ -220,7 +214,7 @@
             // lblPromocion
             // 
             this.lblPromocion.AutoSize = true;
-            this.lblPromocion.Location = new System.Drawing.Point(355, 78);
+            this.lblPromocion.Location = new System.Drawing.Point(955, 107);
             this.lblPromocion.Name = "lblPromocion";
             this.lblPromocion.Size = new System.Drawing.Size(66, 15);
             this.lblPromocion.TabIndex = 19;
@@ -229,7 +223,7 @@
             // cboPromocion
             // 
             this.cboPromocion.FormattingEnabled = true;
-            this.cboPromocion.Location = new System.Drawing.Point(449, 75);
+            this.cboPromocion.Location = new System.Drawing.Point(1049, 104);
             this.cboPromocion.Name = "cboPromocion";
             this.cboPromocion.Size = new System.Drawing.Size(90, 23);
             this.cboPromocion.TabIndex = 20;
@@ -237,7 +231,7 @@
             // lblFormaDePago
             // 
             this.lblFormaDePago.AutoSize = true;
-            this.lblFormaDePago.Location = new System.Drawing.Point(0, 78);
+            this.lblFormaDePago.Location = new System.Drawing.Point(701, 107);
             this.lblFormaDePago.Name = "lblFormaDePago";
             this.lblFormaDePago.Size = new System.Drawing.Size(87, 15);
             this.lblFormaDePago.TabIndex = 21;
@@ -246,7 +240,7 @@
             // cboFormaDePago
             // 
             this.cboFormaDePago.FormattingEnabled = true;
-            this.cboFormaDePago.Location = new System.Drawing.Point(101, 75);
+            this.cboFormaDePago.Location = new System.Drawing.Point(814, 104);
             this.cboFormaDePago.Name = "cboFormaDePago";
             this.cboFormaDePago.Size = new System.Drawing.Size(121, 23);
             this.cboFormaDePago.TabIndex = 22;
@@ -254,7 +248,7 @@
             // lblFuncion
             // 
             this.lblFuncion.AutoSize = true;
-            this.lblFuncion.Location = new System.Drawing.Point(0, 19);
+            this.lblFuncion.Location = new System.Drawing.Point(12, 104);
             this.lblFuncion.Name = "lblFuncion";
             this.lblFuncion.Size = new System.Drawing.Size(50, 15);
             this.lblFuncion.TabIndex = 23;
@@ -263,7 +257,7 @@
             // cboFuncion
             // 
             this.cboFuncion.FormattingEnabled = true;
-            this.cboFuncion.Location = new System.Drawing.Point(101, 16);
+            this.cboFuncion.Location = new System.Drawing.Point(113, 101);
             this.cboFuncion.Name = "cboFuncion";
             this.cboFuncion.Size = new System.Drawing.Size(121, 23);
             this.cboFuncion.TabIndex = 24;
@@ -271,7 +265,7 @@
             // lblButaca
             // 
             this.lblButaca.AutoSize = true;
-            this.lblButaca.Location = new System.Drawing.Point(0, 48);
+            this.lblButaca.Location = new System.Drawing.Point(12, 133);
             this.lblButaca.Name = "lblButaca";
             this.lblButaca.Size = new System.Drawing.Size(43, 15);
             this.lblButaca.TabIndex = 25;
@@ -280,7 +274,7 @@
             // cboButaca
             // 
             this.cboButaca.FormattingEnabled = true;
-            this.cboButaca.Location = new System.Drawing.Point(101, 45);
+            this.cboButaca.Location = new System.Drawing.Point(113, 130);
             this.cboButaca.Name = "cboButaca";
             this.cboButaca.Size = new System.Drawing.Size(121, 23);
             this.cboButaca.TabIndex = 26;
@@ -288,7 +282,7 @@
             // lblPrecioVenta
             // 
             this.lblPrecioVenta.AutoSize = true;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(355, 19);
+            this.lblPrecioVenta.Location = new System.Drawing.Point(955, 48);
             this.lblPrecioVenta.Name = "lblPrecioVenta";
             this.lblPrecioVenta.Size = new System.Drawing.Size(32, 15);
             this.lblPrecioVenta.TabIndex = 27;
@@ -296,7 +290,7 @@
             // 
             // txtPrecioVenta
             // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(449, 16);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(1049, 45);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(90, 23);
             this.txtPrecioVenta.TabIndex = 28;
@@ -304,7 +298,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(355, 25);
+            this.lblFecha.Location = new System.Drawing.Point(367, 110);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(38, 15);
             this.lblFecha.TabIndex = 29;
@@ -313,14 +307,14 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(418, 19);
+            this.dtpFecha.Location = new System.Drawing.Point(430, 104);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 23);
             this.dtpFecha.TabIndex = 30;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1065, 359);
+            this.btnSalir.Location = new System.Drawing.Point(1065, 342);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 31;
@@ -330,7 +324,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(941, 359);
+            this.btnConfirmar.Location = new System.Drawing.Point(941, 342);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
             this.btnConfirmar.TabIndex = 32;
@@ -338,59 +332,30 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblCliente);
-            this.groupBox1.Controls.Add(this.cboCliente);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 53);
-            this.groupBox1.TabIndex = 34;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblFuncion);
-            this.groupBox2.Controls.Add(this.cboFuncion);
-            this.groupBox2.Controls.Add(this.cboButaca);
-            this.groupBox2.Controls.Add(this.lblButaca);
-            this.groupBox2.Controls.Add(this.dtpFecha);
-            this.groupBox2.Controls.Add(this.lblFecha);
-            this.groupBox2.Location = new System.Drawing.Point(12, 86);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(545, 82);
-            this.groupBox2.TabIndex = 35;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lblMedio_vendido);
-            this.groupBox3.Controls.Add(this.cboMedioDeVenta);
-            this.groupBox3.Controls.Add(this.cboFormaDePago);
-            this.groupBox3.Controls.Add(this.lblFormaDePago);
-            this.groupBox3.Controls.Add(this.txtPrecioVenta);
-            this.groupBox3.Controls.Add(this.cboPromocion);
-            this.groupBox3.Controls.Add(this.lblPrecioVenta);
-            this.groupBox3.Controls.Add(this.lblPromocion);
-            this.groupBox3.Location = new System.Drawing.Point(595, 27);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(545, 141);
-            this.groupBox3.TabIndex = 36;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            // 
             // FrmNuevoTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 399);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.BackgroundImage = global::CineFront.Properties.Resources.cine1;
+            this.ClientSize = new System.Drawing.Size(1163, 397);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.lblFuncion);
+            this.Controls.Add(this.cboCliente);
+            this.Controls.Add(this.cboFuncion);
+            this.Controls.Add(this.lblPromocion);
+            this.Controls.Add(this.cboButaca);
+            this.Controls.Add(this.lblMedio_vendido);
+            this.Controls.Add(this.lblButaca);
+            this.Controls.Add(this.cboMedioDeVenta);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.cboFormaDePago);
+            this.Controls.Add(this.lblFormaDePago);
+            this.Controls.Add(this.txtPrecioVenta);
             this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.cboPromocion);
             this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.lblPrecioVenta);
             this.Controls.Add(this.lblTicket);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvTicket);
@@ -398,12 +363,6 @@
             this.Text = "Nuevo Ticket";
             this.Load += new System.EventHandler(this.FrmNuevoTicket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,9 +390,6 @@
         private DateTimePicker dtpFecha;
         private Button btnSalir;
         private Button btnConfirmar;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
         private DataGridViewTextBoxColumn IdTicket;
         private DataGridViewTextBoxColumn ColCliente;
         private DataGridViewTextBoxColumn ColFuncion;
