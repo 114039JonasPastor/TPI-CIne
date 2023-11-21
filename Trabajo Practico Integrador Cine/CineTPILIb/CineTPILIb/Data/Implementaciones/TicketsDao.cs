@@ -234,5 +234,10 @@ namespace CineTPILIb.Data.Implementaciones
             }
             return lFunciones;
         }
+
+        public int ObtenerProximoNro()
+        {
+            return HelperDB.ObtenerInstancia().ConsultarEscalar("SP_PROXIMO_ID", "@next");
+        }
     }
 }

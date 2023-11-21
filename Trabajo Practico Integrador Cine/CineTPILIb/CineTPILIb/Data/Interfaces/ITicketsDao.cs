@@ -10,6 +10,7 @@ namespace CineTPILIb.Data.Interfaces
 {
     public interface ITicketsDao
     {
+        int ObtenerProximoNro();
         List<TicketDTO> GetTicketPorFiltros(int id, DateTime fecha, string cliente);
         List<Cliente> GetClientes();
         List<MedioDeVenta> GetMedioDeVenta();

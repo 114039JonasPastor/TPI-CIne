@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvTicket = new System.Windows.Forms.DataGridView();
+            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFuncion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColButaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecioDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMedioDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFormaDePago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
             this.cboCliente = new System.Windows.Forms.ComboBox();
@@ -49,16 +59,6 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFuncion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColButaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecioDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMedioDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFormaDePago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +85,73 @@
             this.dgvTicket.Size = new System.Drawing.Size(1128, 150);
             this.dgvTicket.TabIndex = 10;
             this.dgvTicket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicket_CellContentClick);
+            // 
+            // ColCliente
+            // 
+            this.ColCliente.HeaderText = "Cliente";
+            this.ColCliente.Name = "ColCliente";
+            this.ColCliente.ReadOnly = true;
+            this.ColCliente.Width = 200;
+            // 
+            // ColFuncion
+            // 
+            this.ColFuncion.HeaderText = "Numero de función";
+            this.ColFuncion.Name = "ColFuncion";
+            this.ColFuncion.ReadOnly = true;
+            // 
+            // ColFecha
+            // 
+            this.ColFecha.HeaderText = "Fecha";
+            this.ColFecha.Name = "ColFecha";
+            this.ColFecha.ReadOnly = true;
+            // 
+            // ColButaca
+            // 
+            this.ColButaca.HeaderText = "Butaca";
+            this.ColButaca.Name = "ColButaca";
+            this.ColButaca.ReadOnly = true;
+            this.ColButaca.Width = 50;
+            // 
+            // ColPrecioDeVenta
+            // 
+            this.ColPrecioDeVenta.HeaderText = "Precio de venta";
+            this.ColPrecioDeVenta.Name = "ColPrecioDeVenta";
+            this.ColPrecioDeVenta.ReadOnly = true;
+            this.ColPrecioDeVenta.Width = 75;
+            // 
+            // ColMedioDeVenta
+            // 
+            this.ColMedioDeVenta.HeaderText = "Medio de venta";
+            this.ColMedioDeVenta.Name = "ColMedioDeVenta";
+            this.ColMedioDeVenta.ReadOnly = true;
+            this.ColMedioDeVenta.Width = 150;
+            // 
+            // ColFormaDePago
+            // 
+            this.ColFormaDePago.HeaderText = "Forma de pago";
+            this.ColFormaDePago.Name = "ColFormaDePago";
+            this.ColFormaDePago.ReadOnly = true;
+            // 
+            // ColDescuento
+            // 
+            this.ColDescuento.HeaderText = "Descuento";
+            this.ColDescuento.Name = "ColDescuento";
+            this.ColDescuento.ReadOnly = true;
+            // 
+            // ColSubtotal
+            // 
+            this.ColSubtotal.HeaderText = "Subtotal";
+            this.ColSubtotal.Name = "ColSubtotal";
+            this.ColSubtotal.ReadOnly = true;
+            // 
+            // ColAccion
+            // 
+            this.ColAccion.HeaderText = "Accion";
+            this.ColAccion.Name = "ColAccion";
+            this.ColAccion.ReadOnly = true;
+            this.ColAccion.Text = "Quitar";
+            this.ColAccion.UseColumnTextForButtonValue = true;
+            this.ColAccion.Width = 107;
             // 
             // btnAgregar
             // 
@@ -259,73 +326,6 @@
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // ColCliente
-            // 
-            this.ColCliente.HeaderText = "Cliente";
-            this.ColCliente.Name = "ColCliente";
-            this.ColCliente.ReadOnly = true;
-            this.ColCliente.Width = 200;
-            // 
-            // ColFuncion
-            // 
-            this.ColFuncion.HeaderText = "Numero de función";
-            this.ColFuncion.Name = "ColFuncion";
-            this.ColFuncion.ReadOnly = true;
-            // 
-            // ColFecha
-            // 
-            this.ColFecha.HeaderText = "Fecha";
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.ReadOnly = true;
-            // 
-            // ColButaca
-            // 
-            this.ColButaca.HeaderText = "Butaca";
-            this.ColButaca.Name = "ColButaca";
-            this.ColButaca.ReadOnly = true;
-            this.ColButaca.Width = 50;
-            // 
-            // ColPrecioDeVenta
-            // 
-            this.ColPrecioDeVenta.HeaderText = "Precio de venta";
-            this.ColPrecioDeVenta.Name = "ColPrecioDeVenta";
-            this.ColPrecioDeVenta.ReadOnly = true;
-            this.ColPrecioDeVenta.Width = 75;
-            // 
-            // ColMedioDeVenta
-            // 
-            this.ColMedioDeVenta.HeaderText = "Medio de venta";
-            this.ColMedioDeVenta.Name = "ColMedioDeVenta";
-            this.ColMedioDeVenta.ReadOnly = true;
-            this.ColMedioDeVenta.Width = 150;
-            // 
-            // ColFormaDePago
-            // 
-            this.ColFormaDePago.HeaderText = "Forma de pago";
-            this.ColFormaDePago.Name = "ColFormaDePago";
-            this.ColFormaDePago.ReadOnly = true;
-            // 
-            // ColDescuento
-            // 
-            this.ColDescuento.HeaderText = "Descuento";
-            this.ColDescuento.Name = "ColDescuento";
-            this.ColDescuento.ReadOnly = true;
-            // 
-            // ColSubtotal
-            // 
-            this.ColSubtotal.HeaderText = "Subtotal";
-            this.ColSubtotal.Name = "ColSubtotal";
-            this.ColSubtotal.ReadOnly = true;
-            // 
-            // ColAccion
-            // 
-            this.ColAccion.HeaderText = "Accion";
-            this.ColAccion.Name = "ColAccion";
-            this.ColAccion.ReadOnly = true;
-            this.ColAccion.Text = "Quitar";
-            this.ColAccion.UseColumnTextForButtonValue = true;
-            this.ColAccion.Width = 107;
             // 
             // FrmNuevoTicket
             // 
