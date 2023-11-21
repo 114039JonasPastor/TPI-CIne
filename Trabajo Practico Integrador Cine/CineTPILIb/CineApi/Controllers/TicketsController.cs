@@ -1,4 +1,5 @@
 ﻿using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Implementaciones;
 using CineTPILIb.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -17,23 +18,99 @@ namespace CineApi.Controllers
         {
             app = new ServicioTickets();
         }
-        
 
-        
-        [HttpGet("/Tickets")]
-        public IActionResult GetTickets(DateTime desde, DateTime hasta, string? cliente = null, 
-                                        string? empleado= null, string? pelicula = null)
+        [HttpGet("/Clientes")]
+        public IActionResult GetClientes()
         {
-            List<Ticket> lst = null;
             try
             {
-                //Si el parámetro cliente no se envía entonces cliente es igual a null
-                //Para evitar un error de parámetro requerido se inicializa con una cadena vacía
-                cliente = cliente != null ? cliente : String.Empty;
-                empleado = empleado != null ? empleado : String.Empty;
-                pelicula = pelicula != null ? pelicula : String.Empty;
-                lst = app.GetTicket(desde, hasta, cliente, empleado, pelicula);
-                return Ok(lst);
+                return Ok(app.GetClientes());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Butacas")]
+        public IActionResult GetButacas()
+        {
+            try
+            {
+                return Ok(app.GetButacas());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Combo Funciones")]
+        public IActionResult GetFunciones()
+        {
+            try
+            {
+                return Ok(app.GetFunciones());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+
+        [HttpGet("/Promociones")]
+        public IActionResult GetPromociones()
+        {
+            try
+            {
+                return Ok(app.GetPromociones());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Formas de pago")]
+        public IActionResult GetFormasDePago()
+        {
+            try
+            {
+                return Ok(app.GetFormaDePagos());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Medio de venta")]
+        public IActionResult GetMediosDeVenta()
+        {
+            try
+            {
+                return Ok(app.GetMedioDeVenta());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/TicketsFiltro")]
+        public IActionResult GetTicketPorFiltros(DateTime fecha, string cliente, int id)
+        {
+            List<TicketDTO> lst = null;
+            try
+            {
+                return Ok(app.GetTicketPorFiltros(id, fecha, cliente));
 
             }
             catch (Exception)
@@ -42,25 +119,27 @@ namespace CineApi.Controllers
             }
         }
 
+        //[HttpGet("/Tickets")]
+        //public IActionResult GetTickets(DateTime desde, DateTime hasta, string? cliente = null, 
+        //                                string? empleado= null, string? pelicula = null)
+        //{
+        //    List<Ticket> lst = null;
+        //    try
+        //    {
+        //        //Si el parámetro cliente no se envía entonces cliente es igual a null
+        //        //Para evitar un error de parámetro requerido se inicializa con una cadena vacía
+        //        cliente = cliente != null ? cliente : String.Empty;
+        //        empleado = empleado != null ? empleado : String.Empty;
+        //        pelicula = pelicula != null ? pelicula : String.Empty;
+        //        lst = app.GetTicket(desde, hasta, cliente, empleado, pelicula);
+        //        return Ok(lst);
 
-
-        [HttpGet("/Tickets/{id}")]
-        public IActionResult GetTicketsById(int id)
-        {
-            try
-            {
-                Ticket ticket = app.GetTicketById(id);
-                if (ticket != null)
-                    return Ok(ticket);
-                else
-                    return NotFound("Presupuesto Nro: " + id + " NO encontrado!");
-            }
-            catch (Exception)
-            {
-                return StatusCode(500, "Error interno! Intente luego");
-            }
-        }
-
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return StatusCode(500, "Error interno! Intente luego");
+        //    }
+        //}
 
         // POST api/<TicketsController>
         [HttpPost]
