@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarFunciones));
             this.dgvFunciones = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTipoDeSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFormato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.lblFecDesde = new System.Windows.Forms.Label();
-            this.lblFecHasta = new System.Windows.Forms.Label();
-            this.lblNumeroDeFuncion = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
+            this.lblNumeroDeFuncion = new System.Windows.Forms.Label();
+            this.lblFecHasta = new System.Windows.Forms.Label();
+            this.lblFecDesde = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,8 +62,8 @@
             this.ColID,
             this.ColPelicula,
             this.ColSala,
+            this.ColTipoDeSala,
             this.ColHorario,
-            this.ColFormato,
             this.ColFecDesde,
             this.ColFecHasta,
             this.ColPrecio,
@@ -72,6 +74,7 @@
             this.dgvFunciones.RowTemplate.Height = 25;
             this.dgvFunciones.Size = new System.Drawing.Size(844, 150);
             this.dgvFunciones.TabIndex = 16;
+            this.dgvFunciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunciones_CellContentClick);
             // 
             // ColID
             // 
@@ -92,17 +95,17 @@
             this.ColSala.Name = "ColSala";
             this.ColSala.ReadOnly = true;
             // 
+            // ColTipoDeSala
+            // 
+            this.ColTipoDeSala.HeaderText = "Tipo de sala";
+            this.ColTipoDeSala.Name = "ColTipoDeSala";
+            this.ColTipoDeSala.ReadOnly = true;
+            // 
             // ColHorario
             // 
             this.ColHorario.HeaderText = "Horario";
             this.ColHorario.Name = "ColHorario";
             this.ColHorario.ReadOnly = true;
-            // 
-            // ColFormato
-            // 
-            this.ColFormato.HeaderText = "Formato";
-            this.ColFormato.Name = "ColFormato";
-            this.ColFormato.ReadOnly = true;
             // 
             // ColFecDesde
             // 
@@ -127,24 +130,28 @@
             this.ColAccion.HeaderText = "Accion";
             this.ColAccion.Name = "ColAccion";
             this.ColAccion.ReadOnly = true;
+            this.ColAccion.Text = "Dar de baja";
+            this.ColAccion.UseColumnTextForButtonValue = true;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(416, 303);
+            this.btnSalir.Location = new System.Drawing.Point(755, 303);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(95, 23);
             this.btnSalir.TabIndex = 20;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox1.Controls.Add(this.txtNumero);
             this.groupBox1.Controls.Add(this.lblNumeroDeFuncion);
             this.groupBox1.Controls.Add(this.lblFecHasta);
             this.groupBox1.Controls.Add(this.lblFecDesde);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpHasta);
+            this.groupBox1.Controls.Add(this.dtpDesde);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(844, 100);
@@ -152,46 +159,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // btnConsultar
+            // txtNumero
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(761, 118);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(95, 23);
-            this.btnConsultar.TabIndex = 22;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(638, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(638, 51);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
-            // lblFecDesde
-            // 
-            this.lblFecDesde.AutoSize = true;
-            this.lblFecDesde.Location = new System.Drawing.Point(540, 28);
-            this.lblFecDesde.Name = "lblFecDesde";
-            this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
-            this.lblFecDesde.TabIndex = 2;
-            this.lblFecDesde.Text = "Desde";
-            // 
-            // lblFecHasta
-            // 
-            this.lblFecHasta.AutoSize = true;
-            this.lblFecHasta.Location = new System.Drawing.Point(540, 57);
-            this.lblFecHasta.Name = "lblFecHasta";
-            this.lblFecHasta.Size = new System.Drawing.Size(37, 15);
-            this.lblFecHasta.TabIndex = 3;
-            this.lblFecHasta.Text = "Hasta";
+            this.txtNumero.Location = new System.Drawing.Point(141, 22);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(220, 23);
+            this.txtNumero.TabIndex = 5;
             // 
             // lblNumeroDeFuncion
             // 
@@ -202,18 +175,65 @@
             this.lblNumeroDeFuncion.TabIndex = 4;
             this.lblNumeroDeFuncion.Text = "Numero de Función";
             // 
-            // txtNumero
+            // lblFecHasta
             // 
-            this.txtNumero.Location = new System.Drawing.Point(141, 22);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(220, 23);
-            this.txtNumero.TabIndex = 5;
+            this.lblFecHasta.AutoSize = true;
+            this.lblFecHasta.Location = new System.Drawing.Point(540, 57);
+            this.lblFecHasta.Name = "lblFecHasta";
+            this.lblFecHasta.Size = new System.Drawing.Size(37, 15);
+            this.lblFecHasta.TabIndex = 3;
+            this.lblFecHasta.Text = "Hasta";
+            // 
+            // lblFecDesde
+            // 
+            this.lblFecDesde.AutoSize = true;
+            this.lblFecDesde.Location = new System.Drawing.Point(540, 28);
+            this.lblFecDesde.Name = "lblFecDesde";
+            this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
+            this.lblFecDesde.TabIndex = 2;
+            this.lblFecDesde.Text = "Desde";
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Location = new System.Drawing.Point(638, 51);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(200, 23);
+            this.dtpHasta.TabIndex = 1;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Location = new System.Drawing.Point(638, 22);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(200, 23);
+            this.dtpDesde.TabIndex = 0;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(761, 118);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(95, 23);
+            this.btnConsultar.TabIndex = 22;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(12, 303);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 23;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // FrmConsultarFunciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(870, 334);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalir);
@@ -231,23 +251,24 @@
         #endregion
 
         private DataGridView dgvFunciones;
-        private DataGridViewTextBoxColumn ColID;
-        private DataGridViewTextBoxColumn ColPelicula;
-        private DataGridViewTextBoxColumn ColSala;
-        private DataGridViewTextBoxColumn ColHorario;
-        private DataGridViewTextBoxColumn ColFormato;
-        private DataGridViewTextBoxColumn ColFecDesde;
-        private DataGridViewTextBoxColumn ColFecHasta;
-        private DataGridViewTextBoxColumn ColPrecio;
-        private DataGridViewButtonColumn ColAccion;
         private Button btnSalir;
         private GroupBox groupBox1;
         private TextBox txtNumero;
         private Label lblNumeroDeFuncion;
         private Label lblFecHasta;
         private Label lblFecDesde;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpHasta;
+        private DateTimePicker dtpDesde;
         private Button btnConsultar;
+        private DataGridViewTextBoxColumn ColID;
+        private DataGridViewTextBoxColumn ColPelicula;
+        private DataGridViewTextBoxColumn ColSala;
+        private DataGridViewTextBoxColumn ColTipoDeSala;
+        private DataGridViewTextBoxColumn ColHorario;
+        private DataGridViewTextBoxColumn ColFecDesde;
+        private DataGridViewTextBoxColumn ColFecHasta;
+        private DataGridViewTextBoxColumn ColPrecio;
+        private DataGridViewButtonColumn ColAccion;
+        private Button btnModificar;
     }
 }

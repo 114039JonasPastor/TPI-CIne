@@ -18,14 +18,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -41,14 +37,10 @@
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -94,14 +86,10 @@
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
@@ -121,14 +109,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -140,14 +124,10 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp3.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -533,23 +513,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lucho\\.nuget\\packages\\": {}
+    "C:\\Users\\Jonás\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
+      "projectUniqueName": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\branch pc escritorio\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
       "projectName": "CineFront",
-      "projectPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
-      "packagesPath": "C:\\Users\\lucho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\obj\\",
+      "projectPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\branch pc escritorio\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\CineFront.csproj",
+      "packagesPath": "C:\\Users\\Jonás\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\branch pc escritorio\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineFront\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lucho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jonás\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -559,8 +539,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
-              "projectPath": "C:\\Users\\lucho\\OneDrive\\Escritorio\\TPI-CIne\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj"
+            "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\branch pc escritorio\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj": {
+              "projectPath": "C:\\Users\\Jonás\\Desktop\\Branch TP Manzanelli\\branch pc escritorio\\TPI-CIne-lucianomanzanelli\\Trabajo Practico Integrador Cine\\CineTPILIb\\CineTPILIb\\CineTPILIb.csproj"
             }
           }
         }
@@ -586,8 +566,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -599,7 +578,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

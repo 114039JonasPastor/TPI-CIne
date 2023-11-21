@@ -204,35 +204,35 @@
             // 
             // colId
             // 
-            colId.HeaderText = "Id";
-            colId.Name = "colId";
-            colId.ReadOnly = true;
-            colId.Visible = false;
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
             // 
             // colTitulo
             // 
-            colTitulo.FillWeight = 150F;
-            colTitulo.HeaderText = "Título";
-            colTitulo.Name = "colTitulo";
-            colTitulo.ReadOnly = true;
+            this.colTitulo.FillWeight = 150F;
+            this.colTitulo.HeaderText = "Título";
+            this.colTitulo.Name = "colTitulo";
+            this.colTitulo.ReadOnly = true;
             // 
             // colDuracion
             // 
-            colDuracion.HeaderText = "Duracion";
-            colDuracion.Name = "colDuracion";
-            colDuracion.ReadOnly = true;
+            this.colDuracion.HeaderText = "Duracion";
+            this.colDuracion.Name = "colDuracion";
+            this.colDuracion.ReadOnly = true;
             // 
             // colClasificacion
             // 
-            colClasificacion.HeaderText = "Clasificación";
-            colClasificacion.Name = "colClasificacion";
-            colClasificacion.ReadOnly = true;
+            this.colClasificacion.HeaderText = "Clasificación";
+            this.colClasificacion.Name = "colClasificacion";
+            this.colClasificacion.ReadOnly = true;
             // 
             // colGenero
             // 
-            colGenero.HeaderText = "Género";
-            colGenero.Name = "colGenero";
-            colGenero.ReadOnly = true;
+            this.colGenero.HeaderText = "Género";
+            this.colGenero.Name = "colGenero";
+            this.colGenero.ReadOnly = true;
             // 
             // colIdioma
             // 

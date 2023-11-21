@@ -15,19 +15,19 @@ namespace CineTPILIb.Dominio
         public int Id_butaca { get; set; }
         public double Precio_venta { get; set; }
 
-        public Butaca Butaca { get; set; }
+        //public Butaca Butaca { get; set; }
 
-        public DetalleTicket(int id_detalle, Funcion funcion, int id_butaca, double precio_venta)
+        public DetalleTicket(/*int id_detalle, */Funcion funcion, int id_butaca, double precio_venta)
         {
-            Id_detalle = id_detalle;
+            //Id_detalle = id_detalle;
             Funcion = funcion;
             Id_butaca = id_butaca;
             Precio_venta = precio_venta;
         }
 
-        public DetalleTicket(Butaca butaca, double precio_venta)
+        public DetalleTicket(/*Butaca butaca,*/ double precio_venta)
         {
-            Butaca = butaca;
+            //Butaca = butaca;
             Precio_venta = precio_venta;
         }
     }

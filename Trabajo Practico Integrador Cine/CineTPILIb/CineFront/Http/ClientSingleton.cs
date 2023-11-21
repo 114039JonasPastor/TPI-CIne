@@ -56,5 +56,6 @@ namespace CineFront.Http
                 response = await result.Content.ReadAsStringAsync();
             return response;
         }
+
     }
 }

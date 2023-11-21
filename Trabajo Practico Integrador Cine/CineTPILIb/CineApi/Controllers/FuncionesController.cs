@@ -1,4 +1,5 @@
 ﻿using CineTPILIb.Dominio;
+using CineTPILIb.Dominio.DTO;
 using CineTPILIb.Servicios.Implementaciones;
 using CineTPILIb.Servicios.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,65 @@ namespace CineApi.Controllers
         {
             app = new ServicioFunciones();
         }
+
+
+        [HttpGet("/Combo Horarios")]
+        public IActionResult GetGeneros()
+        {
+            try
+            {
+                return Ok(app.GetHorarios());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Combo Peliculas")]
+        public IActionResult GetPeliculas()
+        {
+            try
+            {
+                return Ok(app.GetPeliculaList());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/Combo Salas")]
+        public IActionResult GetIdiomas()
+        {
+            try
+            {
+                return Ok(app.GetSalas());
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+        // GET api/<FuncionesController>/5
+        [HttpGet("/funciones")]
+        public IActionResult GetFuncionesPorFiltro(DateTime desde, DateTime hasta, int id_funcion)
+        {
+            List<FuncionDTO> lst = null;
+            try
+            {
+                return Ok(app.GetFuncionesFiltros(desde, hasta, id_funcion));
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
 
         // GET: api/<FuncionesController>
         [HttpGet]
@@ -70,7 +130,7 @@ namespace CineApi.Controllers
 
         // PUT api/<FuncionesController>/5
         [HttpPut("{id}")]
-        public IActionResult EditarFuncion(int id, [FromBody] Funcion funcion)
+        public IActionResult EditarFuncion(/*int id, */[FromBody] Funcion funcion)
         {
             try
             {
