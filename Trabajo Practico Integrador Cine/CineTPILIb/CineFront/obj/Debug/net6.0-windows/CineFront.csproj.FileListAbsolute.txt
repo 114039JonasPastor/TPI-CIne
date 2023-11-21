@@ -190,3 +190,5 @@ C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucia
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.genruntimeconfig.cache
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\ref\CineFront.dll
 C:\Users\Jonás\Desktop\Branch TP Manzanelli\branch pc escritorio\TPI-CIne-lucianomanzanelli\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmUpdateFuncion.resources
+C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmAcercaDe.resources
+C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineFront\obj\Debug\net6.0-windows\CineFront.Diseño.FrmUpdateFuncion.resources

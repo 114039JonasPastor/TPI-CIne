@@ -133,4 +133,7 @@
   <data name="consulta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consulta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngtree-big-screen-movie-background-picture-image_809169" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-big-screen-movie-background-picture-image_809169.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

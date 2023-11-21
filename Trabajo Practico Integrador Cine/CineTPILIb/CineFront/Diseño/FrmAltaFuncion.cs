@@ -147,10 +147,5 @@ namespace CineFront.Diseño
         {
 
         }
-
-        private void lblSala_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

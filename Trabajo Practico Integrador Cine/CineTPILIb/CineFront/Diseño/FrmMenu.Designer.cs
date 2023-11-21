@@ -36,8 +36,8 @@
             consultarFuncionesToolStripMenuItem = new ToolStripMenuItem();
             agregarFuncionToolStripMenuItem = new ToolStripMenuItem();
             peliculasToolStripMenuItem = new ToolStripMenuItem();
-            nuevaPelículaToolStripMenuItem = new ToolStripMenuItem();
             consultarPeliculasToolStripMenuItem = new ToolStripMenuItem();
+            nuevaPelículaToolStripMenuItem = new ToolStripMenuItem();
             ticketsToolStripMenuItem = new ToolStripMenuItem();
             nuevoTicketToolStripMenuItem = new ToolStripMenuItem();
             bajaTicketToolStripMenuItem = new ToolStripMenuItem();
@@ -66,14 +66,14 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(143, 22);
+            salirToolStripMenuItem.Size = new Size(180, 22);
             salirToolStripMenuItem.Text = "Cerrar Sesion";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click_1;
             // 
             // salirToolStripMenuItem1
             // 
             salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            salirToolStripMenuItem1.Size = new Size(143, 22);
+            salirToolStripMenuItem1.Size = new Size(180, 22);
             salirToolStripMenuItem1.Text = "Salir";
             salirToolStripMenuItem1.Click += salirToolStripMenuItem_Click;
             // 
@@ -89,12 +89,14 @@
             consultarFuncionesToolStripMenuItem.Name = "consultarFuncionesToolStripMenuItem";
             consultarFuncionesToolStripMenuItem.Size = new Size(182, 22);
             consultarFuncionesToolStripMenuItem.Text = "Consultar Funciones";
+            consultarFuncionesToolStripMenuItem.Click += consultarFuncionesToolStripMenuItem_Click;
             // 
             // agregarFuncionToolStripMenuItem
             // 
             agregarFuncionToolStripMenuItem.Name = "agregarFuncionToolStripMenuItem";
             agregarFuncionToolStripMenuItem.Size = new Size(182, 22);
             agregarFuncionToolStripMenuItem.Text = "Agregar Funcion";
+            agregarFuncionToolStripMenuItem.Click += agregarFuncionToolStripMenuItem_Click;
             // 
             // peliculasToolStripMenuItem
             // 
@@ -103,19 +105,19 @@
             peliculasToolStripMenuItem.Size = new Size(65, 20);
             peliculasToolStripMenuItem.Text = "Peliculas";
             // 
-            // nuevaPelículaToolStripMenuItem
-            // 
-            nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            nuevaPelículaToolStripMenuItem.Size = new Size(180, 22);
-            nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
-            nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
-            // 
             // consultarPeliculasToolStripMenuItem
             // 
             consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
             consultarPeliculasToolStripMenuItem.Size = new Size(180, 22);
             consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
             consultarPeliculasToolStripMenuItem.Click += consultarPeliculasToolStripMenuItem_Click_1;
+            // 
+            // nuevaPelículaToolStripMenuItem
+            // 
+            nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
+            nuevaPelículaToolStripMenuItem.Size = new Size(180, 22);
+            nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
+            nuevaPelículaToolStripMenuItem.Click += nuevaPelículaToolStripMenuItem_Click_1;
             // 
             // ticketsToolStripMenuItem
             // 
@@ -127,14 +129,16 @@
             // nuevoTicketToolStripMenuItem
             // 
             nuevoTicketToolStripMenuItem.Name = "nuevoTicketToolStripMenuItem";
-            nuevoTicketToolStripMenuItem.Size = new Size(143, 22);
+            nuevoTicketToolStripMenuItem.Size = new Size(180, 22);
             nuevoTicketToolStripMenuItem.Text = "Nuevo Ticket";
+            nuevoTicketToolStripMenuItem.Click += nuevoTicketToolStripMenuItem_Click;
             // 
             // bajaTicketToolStripMenuItem
             // 
             bajaTicketToolStripMenuItem.Name = "bajaTicketToolStripMenuItem";
-            bajaTicketToolStripMenuItem.Size = new Size(143, 22);
+            bajaTicketToolStripMenuItem.Size = new Size(180, 22);
             bajaTicketToolStripMenuItem.Text = "Baja Ticket";
+            bajaTicketToolStripMenuItem.Click += bajaTicketToolStripMenuItem_Click;
             // 
             // reportesToolStripMenuItem
             // 
@@ -152,7 +156,7 @@
             // quienesSomosToolStripMenuItem
             // 
             quienesSomosToolStripMenuItem.Name = "quienesSomosToolStripMenuItem";
-            quienesSomosToolStripMenuItem.Size = new Size(180, 22);
+            quienesSomosToolStripMenuItem.Size = new Size(165, 22);
             quienesSomosToolStripMenuItem.Text = "¿Quienes somos?";
             quienesSomosToolStripMenuItem.Click += quienesSomosToolStripMenuItem_Click;
             // 

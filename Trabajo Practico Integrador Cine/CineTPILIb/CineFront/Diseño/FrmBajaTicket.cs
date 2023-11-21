@@ -47,7 +47,7 @@ namespace CineFront.Diseño
 
         private async void CargarTicktes(string nroTicket, string fechaEmision, string cliente)
         {
-            string url = string.Format("https://localhost:7074/TicketsFiltro?fecha={0}",fechaEmision);
+            string url = string.Format("https://localhost:7074/TicketsFiltro?fecha={0}", fechaEmision);
             if (!String.IsNullOrEmpty(cliente))
                 url = String.Format(url + "&cliente={0}", cliente);
             if (!String.IsNullOrEmpty(nroTicket))
@@ -73,7 +73,7 @@ namespace CineFront.Diseño
 
         private async void dgvTicket_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvTicket.CurrentCell.ColumnIndex == 3)
+            if (dgvTicket.CurrentCell.ColumnIndex == 3)
             {
                 BajaTicketAsync();
                 dgvTicket.Rows.Remove(dgvTicket.CurrentRow);
