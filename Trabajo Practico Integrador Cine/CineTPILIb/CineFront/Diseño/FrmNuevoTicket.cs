@@ -182,19 +182,19 @@ namespace CineFront.Diseño
             }
             AltaTicketDTO ticketDTO = new AltaTicketDTO();
             ticketDTO.Cliente = cboCliente.Text;
-            ticketDTO.NroFuncion = Convert.ToInt32(cboFuncion.SelectedIndex + 1);
+            ticketDTO.NroFuncion = cboFuncion.SelectedIndex + 1;
             ticketDTO.Fecha = dtpFecha.Value;
             ticketDTO.Butaca = cboButaca.Text;
             ticketDTO.PrecioVenta = Convert.ToDouble(txtPrecioVenta.Text);
             ticketDTO.MedioDeVenta = cboMedioDeVenta.Text;
             ticketDTO.FormaDePago = cboFormaDePago.Text;
-            ticketDTO.Descuento = Convert.ToInt32(cboPromocion.Text);
+            ticketDTO.Descuento = Convert.ToInt32(cboPromocion.SelectedIndex + 1);
 
             Funcion f = (Funcion)cboFuncion.SelectedItem;
-            int id_butaca = Convert.ToInt32(cboButaca.SelectedIndex + 1);
+            int id_butaca = cboButaca.SelectedIndex + 1;
             decimal precio_venta = Convert.ToDecimal(txtPrecioVenta.Text);
 
-            DetalleTicket detalle = new DetalleTicket(f,id_butaca,precio_venta);
+            DetalleTicket detalle = new DetalleTicket(f, id_butaca, precio_venta);
             nuevo.AgregarDetalle(detalle);
             dgvTicket.Rows.Add(new object[] { ticketDTO.Cliente, ticketDTO.NroFuncion, ticketDTO.Fecha, ticketDTO.Butaca, ticketDTO.PrecioVenta, ticketDTO.MedioDeVenta, ticketDTO.FormaDePago, ticketDTO.Descuento, CalcularTotal() });
         }

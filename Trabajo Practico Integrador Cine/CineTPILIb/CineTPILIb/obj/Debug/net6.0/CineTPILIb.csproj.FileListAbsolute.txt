@@ -70,3 +70,15 @@ C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\Cin
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
 C:\Users\lucho\OneDrive\Escritorio\TPI-CIne\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.deps.json
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.dll
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.pdb
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.AssemblyReference.cache
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfoInputs.cache
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfo.cs
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.dll
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
+C:\Users\Usuario\Downloads\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll

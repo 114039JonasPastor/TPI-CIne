@@ -30,17 +30,18 @@ namespace CineFront.Diseño
             dtpDesde.Value = DateTime.Now;
             dtpHasta.Value = DateTime.Now.AddDays(7);
             txtNumero.Text = String.Empty;
+            dgvFunciones.Rows.Clear();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            string desde, hasta, id_funcion;
-            id_funcion = Uri.EscapeDataString(txtNumero.Text);
-            desde = Uri.EscapeDataString(dtpDesde.Value.ToString("yyyy/MM/dd"));
-            hasta = Uri.EscapeDataString(dtpHasta.Value.ToString("yyyy/MM/dd"));
+            //string desde, hasta, id_funcion;
+            //id_funcion = Uri.EscapeDataString(txtNumero.Text);
+            //desde = Uri.EscapeDataString(dtpDesde.Value.ToString("yyyy/MM/dd"));
+            //hasta = Uri.EscapeDataString(dtpHasta.Value.ToString("yyyy/MM/dd"));
 
-            CargarFunciones(id_funcion, desde, hasta);
-            Limpiar();
+            //CargarFunciones(id_funcion, desde, hasta);
+            //Limpiar();
         }
         private async void CargarFunciones(string id_funcion, string desde, string hasta)
         {
@@ -112,6 +113,28 @@ namespace CineFront.Diseño
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnConsultar_Click_1(object sender, EventArgs e)
+        {
+            //
+
+            string desde, hasta, id_funcion;
+            id_funcion = Uri.EscapeDataString(txtNumero.Text);
+            desde = Uri.EscapeDataString(dtpDesde.Value.ToString("yyyy/MM/dd"));
+            hasta = Uri.EscapeDataString(dtpHasta.Value.ToString("yyyy/MM/dd"));
+
+            CargarFunciones(id_funcion, desde, hasta);
+            Limpiar();
+        }
+
+        private async void dgvFunciones_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvFunciones.CurrentCell.ColumnIndex == 8)
+            {
+                await BajaFuncionAsync();
+                dgvFunciones.Rows.Remove(dgvFunciones.CurrentRow);
+            }
         }
     }
 }

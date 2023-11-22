@@ -214,7 +214,7 @@ namespace CineTPILIb.Data.Implementaciones
         public List<PeliculaDTO> GetPeliculaList()
         {
             List<PeliculaDTO> lPeliculas = new List<PeliculaDTO>();
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS_SIN_FILTRO");
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS_DTO");
 
             foreach (DataRow fila in tabla.Rows)
             {

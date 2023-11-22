@@ -13,7 +13,6 @@
 
         public Funcion()
         {
-
         }
 
         public Funcion(int id_funcion, int id_sala, int id_horario, bool estado, int id_pelicula, double precio,

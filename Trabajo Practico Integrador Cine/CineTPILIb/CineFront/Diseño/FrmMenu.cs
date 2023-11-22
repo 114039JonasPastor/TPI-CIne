@@ -112,5 +112,16 @@ namespace CineFront
             FrmAcercaDe frmAcercaDe = new FrmAcercaDe();
             frmAcercaDe.ShowDialog();
         }
+
+        private void peliculasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.ShowDialog();
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
