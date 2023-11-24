@@ -34,27 +34,30 @@ namespace CineTPILIb.Data.Implementaciones
                 pOUT.ParameterName = "@nuevo_id_ticket";
                 pOUT.DbType = DbType.Int32;
                 pOUT.Direction = ParameterDirection.Output;
-
                 cmdMaestro.Parameters.Add(pOUT);
-
                 cmdMaestro.ExecuteNonQuery();
 
-                int id_ticket = Convert.ToInt32(pOUT.Value);
+                int id_ticket = (int)pOUT.Value;
                 SqlCommand cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
                 cmdDetalle.CommandType = CommandType.StoredProcedure;
+                int detalleNro = 1;
 
-                for (int i = 0; i < nuevo.DetallesTicket.Count; i++)
-                {
-                    cmdDetalle.Parameters.Clear();
+                foreach (DetalleTicket item in nuevo.DetallesTicket)
+                { 
                     cmdDetalle.Parameters.AddWithValue("@id_ticket", id_ticket);
-                    cmdDetalle.Parameters.AddWithValue("@id_funcion", nuevo.DetallesTicket[i].Funcion.Id_funcion);
-                    cmdDetalle.Parameters.AddWithValue("@id_butaca", nuevo.DetallesTicket[i].Id_butaca);
-                    cmdDetalle.Parameters.AddWithValue("@precio_venta", nuevo.DetallesTicket[i].Precio_venta);
+                    //cmdDetalle.Parameters.AddWithValue("@id_detalle", detalleNro);
+                    cmdDetalle.Parameters.AddWithValue("@id_funcion",item.Funcion.Id_funcion);
+                    cmdDetalle.Parameters.AddWithValue("@id_butaca", item.Id_butaca);
+                    cmdDetalle.Parameters.AddWithValue("@precio_venta", item.Precio_venta);
                     cmdDetalle.ExecuteNonQuery();
+
+                    detalleNro++;
+
                 }
                 t.Commit();
+
             }
-            catch
+            catch(Exception ex)
             {
                 if (t != null)
                 {
@@ -63,12 +66,12 @@ namespace CineTPILIb.Data.Implementaciones
                 }
             }
             finally
-            {
-                if (conexion != null && conexion.State == ConnectionState.Open)
                 {
-                    conexion.Close();
+                    if (conexion != null && conexion.State == ConnectionState.Open)
+                        {
+                            conexion.Close();
+                        }
                 }
-            }
             return resultado;
         }
 

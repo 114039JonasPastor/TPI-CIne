@@ -124,7 +124,7 @@ namespace CineFront.Diseño
             nuevo.Id_cliente = Convert.ToInt32(cboCliente.SelectedIndex + 1);
             nuevo.Id_medio_pedido = Convert.ToInt32(cboMedioDeVenta.SelectedIndex + 1);
             nuevo.Id_promocion = Convert.ToInt32(cboPromocion.SelectedIndex + 1);
-            nuevo.Total = Convert.ToDecimal(dgvTicket.CurrentRow.Cells[8].Value);
+            nuevo.Total = Convert.ToDecimal(txtPrecioVenta.Text);
             nuevo.Id_forma_pago = Convert.ToInt32(cboFormaDePago.SelectedIndex + 1);
 
             string bodyContent = JsonConvert.SerializeObject(nuevo);
@@ -191,7 +191,7 @@ namespace CineFront.Diseño
             ticketDTO.Descuento = Convert.ToInt32(cboPromocion.SelectedIndex + 1);
 
             Funcion f = (Funcion)cboFuncion.SelectedItem;
-            int id_butaca = cboButaca.SelectedIndex + 1;
+            int id_butaca = Convert.ToInt32( cboButaca.SelectedIndex + 1);
             decimal precio_venta = Convert.ToDecimal(txtPrecioVenta.Text);
 
             DetalleTicket detalle = new DetalleTicket(f, id_butaca, precio_venta);

@@ -120,28 +120,6 @@ namespace CineApi.Controllers
             }
         }
 
-        //[HttpGet("/Tickets")]
-        //public IActionResult GetTickets(DateTime desde, DateTime hasta, string? cliente = null, 
-        //                                string? empleado= null, string? pelicula = null)
-        //{
-        //    List<Ticket> lst = null;
-        //    try
-        //    {
-        //        //Si el parámetro cliente no se envía entonces cliente es igual a null
-        //        //Para evitar un error de parámetro requerido se inicializa con una cadena vacía
-        //        cliente = cliente != null ? cliente : String.Empty;
-        //        empleado = empleado != null ? empleado : String.Empty;
-        //        pelicula = pelicula != null ? pelicula : String.Empty;
-        //        lst = app.GetTicket(desde, hasta, cliente, empleado, pelicula);
-        //        return Ok(lst);
-
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return StatusCode(500, "Error interno! Intente luego");
-        //    }
-        //}
-
         // POST api/<TicketsController>
         [HttpPost]
         public IActionResult Post([FromBody] Ticket nuevo)

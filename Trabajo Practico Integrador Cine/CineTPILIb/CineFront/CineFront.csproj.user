@@ -25,9 +25,6 @@
     <Compile Update="Diseño\FrmDetallesPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Diseño\FrmNuevaFuncion.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Diseño\FrmNuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -40,8 +40,6 @@
             this.ColSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
             this.lblTicket = new System.Windows.Forms.Label();
             this.lblMedio_vendido = new System.Windows.Forms.Label();
             this.cboMedioDeVenta = new System.Windows.Forms.ComboBox();
@@ -49,16 +47,18 @@
             this.cboPromocion = new System.Windows.Forms.ComboBox();
             this.lblFormaDePago = new System.Windows.Forms.Label();
             this.cboFormaDePago = new System.Windows.Forms.ComboBox();
-            this.lblFuncion = new System.Windows.Forms.Label();
-            this.cboFuncion = new System.Windows.Forms.ComboBox();
-            this.lblButaca = new System.Windows.Forms.Label();
-            this.cboButaca = new System.Windows.Forms.ComboBox();
             this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblButaca = new System.Windows.Forms.Label();
+            this.cboButaca = new System.Windows.Forms.ComboBox();
+            this.cboFuncion = new System.Windows.Forms.ComboBox();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.lblFuncion = new System.Windows.Forms.Label();
+            this.lblCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,23 +163,6 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // lblCliente
-            // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(12, 45);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(44, 15);
-            this.lblCliente.TabIndex = 12;
-            this.lblCliente.Text = "Cliente";
-            // 
-            // cboCliente
-            // 
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(113, 42);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(438, 23);
-            this.cboCliente.TabIndex = 13;
-            // 
             // lblTicket
             // 
             this.lblTicket.AutoSize = true;
@@ -240,40 +223,6 @@
             this.cboFormaDePago.Size = new System.Drawing.Size(121, 23);
             this.cboFormaDePago.TabIndex = 22;
             // 
-            // lblFuncion
-            // 
-            this.lblFuncion.AutoSize = true;
-            this.lblFuncion.Location = new System.Drawing.Point(12, 104);
-            this.lblFuncion.Name = "lblFuncion";
-            this.lblFuncion.Size = new System.Drawing.Size(50, 15);
-            this.lblFuncion.TabIndex = 23;
-            this.lblFuncion.Text = "Funcion";
-            // 
-            // cboFuncion
-            // 
-            this.cboFuncion.FormattingEnabled = true;
-            this.cboFuncion.Location = new System.Drawing.Point(113, 101);
-            this.cboFuncion.Name = "cboFuncion";
-            this.cboFuncion.Size = new System.Drawing.Size(121, 23);
-            this.cboFuncion.TabIndex = 24;
-            // 
-            // lblButaca
-            // 
-            this.lblButaca.AutoSize = true;
-            this.lblButaca.Location = new System.Drawing.Point(12, 133);
-            this.lblButaca.Name = "lblButaca";
-            this.lblButaca.Size = new System.Drawing.Size(43, 15);
-            this.lblButaca.TabIndex = 25;
-            this.lblButaca.Text = "Butaca";
-            // 
-            // cboButaca
-            // 
-            this.cboButaca.FormattingEnabled = true;
-            this.cboButaca.Location = new System.Drawing.Point(113, 130);
-            this.cboButaca.Name = "cboButaca";
-            this.cboButaca.Size = new System.Drawing.Size(121, 23);
-            this.cboButaca.TabIndex = 26;
-            // 
             // lblPrecioVenta
             // 
             this.lblPrecioVenta.AutoSize = true;
@@ -289,23 +238,6 @@
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(90, 23);
             this.txtPrecioVenta.TabIndex = 28;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(367, 110);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(38, 15);
-            this.lblFecha.TabIndex = 29;
-            this.lblFecha.Text = "Fecha";
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(430, 104);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(121, 23);
-            this.dtpFecha.TabIndex = 30;
             // 
             // btnSalir
             // 
@@ -326,6 +258,74 @@
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(367, 110);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(38, 15);
+            this.lblFecha.TabIndex = 29;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(430, 104);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(121, 23);
+            this.dtpFecha.TabIndex = 30;
+            // 
+            // lblButaca
+            // 
+            this.lblButaca.AutoSize = true;
+            this.lblButaca.Location = new System.Drawing.Point(12, 133);
+            this.lblButaca.Name = "lblButaca";
+            this.lblButaca.Size = new System.Drawing.Size(43, 15);
+            this.lblButaca.TabIndex = 25;
+            this.lblButaca.Text = "Butaca";
+            // 
+            // cboButaca
+            // 
+            this.cboButaca.FormattingEnabled = true;
+            this.cboButaca.Location = new System.Drawing.Point(113, 130);
+            this.cboButaca.Name = "cboButaca";
+            this.cboButaca.Size = new System.Drawing.Size(121, 23);
+            this.cboButaca.TabIndex = 26;
+            // 
+            // cboFuncion
+            // 
+            this.cboFuncion.FormattingEnabled = true;
+            this.cboFuncion.Location = new System.Drawing.Point(113, 101);
+            this.cboFuncion.Name = "cboFuncion";
+            this.cboFuncion.Size = new System.Drawing.Size(121, 23);
+            this.cboFuncion.TabIndex = 24;
+            // 
+            // cboCliente
+            // 
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(113, 42);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(438, 23);
+            this.cboCliente.TabIndex = 13;
+            // 
+            // lblFuncion
+            // 
+            this.lblFuncion.AutoSize = true;
+            this.lblFuncion.Location = new System.Drawing.Point(12, 104);
+            this.lblFuncion.Name = "lblFuncion";
+            this.lblFuncion.Size = new System.Drawing.Size(50, 15);
+            this.lblFuncion.TabIndex = 23;
+            this.lblFuncion.Text = "Funcion";
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(12, 45);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(44, 15);
+            this.lblCliente.TabIndex = 12;
+            this.lblCliente.Text = "Cliente";
             // 
             // FrmNuevoTicket
             // 
@@ -366,8 +366,6 @@
         #endregion
         private DataGridView dgvTicket;
         private Button btnAgregar;
-        private Label lblCliente;
-        private ComboBox cboCliente;
         private Label lblTicket;
         private Label lblMedio_vendido;
         private ComboBox cboMedioDeVenta;
@@ -375,14 +373,8 @@
         private ComboBox cboPromocion;
         private Label lblFormaDePago;
         private ComboBox cboFormaDePago;
-        private Label lblFuncion;
-        private ComboBox cboFuncion;
-        private Label lblButaca;
-        private ComboBox cboButaca;
         private Label lblPrecioVenta;
         private TextBox txtPrecioVenta;
-        private Label lblFecha;
-        private DateTimePicker dtpFecha;
         private Button btnSalir;
         private Button btnConfirmar;
         private DataGridViewTextBoxColumn ColCliente;
@@ -395,5 +387,13 @@
         private DataGridViewTextBoxColumn ColDescuento;
         private DataGridViewTextBoxColumn ColSubtotal;
         private DataGridViewButtonColumn ColAccion;
+        private Label lblFecha;
+        private DateTimePicker dtpFecha;
+        private Label lblButaca;
+        private ComboBox cboButaca;
+        private ComboBox cboFuncion;
+        private ComboBox cboCliente;
+        private Label lblFuncion;
+        private Label lblCliente;
     }
 }
