@@ -31,7 +31,6 @@ namespace CineFront.Diseño
         {
             ProximoTicket();
             CargarClientesAsync();
-            txtPrecioVenta.Enabled = false;
             //CargarFuncionAsync();
             //CargarButacasAsync();
             //CargarMediosDeVentaAsync();
@@ -138,7 +137,7 @@ namespace CineFront.Diseño
             cboCliente.DisplayMember = "Nombre";
             cboCliente.ValueMember = "IdCliente";
         }
-        
+
         private async void btnConfirmar_Click(object sender, EventArgs e)
         {
             await GuardarTicketAsync();
@@ -171,7 +170,7 @@ namespace CineFront.Diseño
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(cboCliente.SelectedIndex == -1)
+            if (cboCliente.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe de seleccionar un cliente", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -201,7 +200,7 @@ namespace CineFront.Diseño
                 MessageBox.Show("Debe de seleccionar una promoción", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if(txtPrecioVenta.Text == String.Empty)
+            if (txtPrecioVenta.Text == String.Empty)
             {
                 MessageBox.Show("Debe de ingresar un precio de venta", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -217,7 +216,7 @@ namespace CineFront.Diseño
             ticketDTO.Descuento = Convert.ToInt32(cboPromocion.SelectedIndex + 1);
 
             Funcion f = (Funcion)cboFuncion.SelectedItem;
-            int id_butaca = Convert.ToInt32( cboButaca.SelectedIndex + 1);
+            int id_butaca = Convert.ToInt32(cboButaca.SelectedIndex + 1);
             decimal precio_venta = Convert.ToDecimal(txtPrecioVenta.Text);
 
             DetalleTicket detalle = new DetalleTicket(f, id_butaca, precio_venta);
@@ -242,7 +241,7 @@ namespace CineFront.Diseño
 
         private void dgvTicket_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvTicket.CurrentCell.ColumnIndex == 9)
+            if (dgvTicket.CurrentCell.ColumnIndex == 9)
             {
                 dgvTicket.Rows.Remove(dgvTicket.CurrentRow);
                 nuevo.RemoverDetalle(dgvTicket.CurrentRow.Index);

@@ -63,9 +63,6 @@ namespace CineFront.Diseño
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            CargarClasificacionesAsync();
-            CargarGenerosAsync();
-            CargarIdiomasAsync();
 
             btnGuardar.Enabled = true;
             btnCancelar.Enabled = true;
@@ -73,21 +70,33 @@ namespace CineFront.Diseño
             Activar(true);
 
         }
+        private void cboClasificacion_Click(object sender, EventArgs e)
+        {
+            CargarClasificacionesAsync();
 
-        private static object lockObject = new object();
+        }
+
+        private void cboGenero_Click(object sender, EventArgs e)
+        {
+            CargarGenerosAsync();
+
+        }
+
+        private void cboIdioma_Click(object sender, EventArgs e)
+        {
+            CargarIdiomasAsync();
+
+        }
+
         private async void CargarClasificacionesAsync()
         {
             string url = "https://localhost:7074/clasificaciones";
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Clasificacion>>(result);
 
-            lock (lockObject)
-            {
-
-                cboClasificacion.DataSource = lst;
-                cboClasificacion.DisplayMember = "ClasificacionName";
-                cboClasificacion.ValueMember = "IdClasificacion";
-            }
+            cboClasificacion.DataSource = lst;
+            cboClasificacion.DisplayMember = "ClasificacionName";
+            cboClasificacion.ValueMember = "IdClasificacion";
         }
 
         private async void CargarGenerosAsync()
@@ -96,12 +105,9 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Genero>>(result);
 
-            lock (lockObject)
-            {
-                cboGenero.DataSource = lst;
-                cboGenero.DisplayMember = "GeneroName";
-                cboGenero.ValueMember = "IdGenero";
-            }
+            cboGenero.DataSource = lst;
+            cboGenero.DisplayMember = "GeneroName";
+            cboGenero.ValueMember = "IdGenero";
 
         }
         private async void CargarIdiomasAsync()
@@ -110,12 +116,10 @@ namespace CineFront.Diseño
             var result = await ClientSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Idioma>>(result);
 
-            lock (lockObject)
-            {
-                cboIdioma.DataSource = lst;
-                cboIdioma.DisplayMember = "IdiomaName";
-                cboIdioma.ValueMember = "IdIdioma";
-            }
+            cboIdioma.DataSource = lst;
+            cboIdioma.DisplayMember = "IdiomaName";
+            cboIdioma.ValueMember = "IdIdioma";
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -232,8 +236,10 @@ namespace CineFront.Diseño
                 btnGuardar.Enabled = false;
                 btnModificar.Enabled = true;
             }
-            
+
         }
+
+        
     }
 }
 

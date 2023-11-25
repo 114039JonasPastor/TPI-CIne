@@ -28,346 +28,334 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvTicket = new System.Windows.Forms.DataGridView();
-            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFuncion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColButaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecioDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMedioDeVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFormaDePago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblTicket = new System.Windows.Forms.Label();
-            this.lblMedio_vendido = new System.Windows.Forms.Label();
-            this.cboMedioDeVenta = new System.Windows.Forms.ComboBox();
-            this.lblPromocion = new System.Windows.Forms.Label();
-            this.cboPromocion = new System.Windows.Forms.ComboBox();
-            this.lblFormaDePago = new System.Windows.Forms.Label();
-            this.cboFormaDePago = new System.Windows.Forms.ComboBox();
-            this.lblPrecioVenta = new System.Windows.Forms.Label();
-            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.lblButaca = new System.Windows.Forms.Label();
-            this.cboButaca = new System.Windows.Forms.ComboBox();
-            this.cboFuncion = new System.Windows.Forms.ComboBox();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
-            this.lblFuncion = new System.Windows.Forms.Label();
-            this.lblCliente = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
-            this.SuspendLayout();
+            dgvTicket = new DataGridView();
+            ColCliente = new DataGridViewTextBoxColumn();
+            ColFuncion = new DataGridViewTextBoxColumn();
+            ColFecha = new DataGridViewTextBoxColumn();
+            ColButaca = new DataGridViewTextBoxColumn();
+            ColPrecioDeVenta = new DataGridViewTextBoxColumn();
+            ColMedioDeVenta = new DataGridViewTextBoxColumn();
+            ColFormaDePago = new DataGridViewTextBoxColumn();
+            ColDescuento = new DataGridViewTextBoxColumn();
+            ColSubtotal = new DataGridViewTextBoxColumn();
+            ColAccion = new DataGridViewButtonColumn();
+            btnAgregar = new Button();
+            lblTicket = new Label();
+            lblMedio_vendido = new Label();
+            cboMedioDeVenta = new ComboBox();
+            lblPromocion = new Label();
+            cboPromocion = new ComboBox();
+            lblFormaDePago = new Label();
+            cboFormaDePago = new ComboBox();
+            lblPrecioVenta = new Label();
+            txtPrecioVenta = new TextBox();
+            btnSalir = new Button();
+            btnConfirmar = new Button();
+            lblFecha = new Label();
+            dtpFecha = new DateTimePicker();
+            lblButaca = new Label();
+            cboButaca = new ComboBox();
+            cboFuncion = new ComboBox();
+            cboCliente = new ComboBox();
+            lblFuncion = new Label();
+            lblCliente = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvTicket).BeginInit();
+            SuspendLayout();
             // 
             // dgvTicket
             // 
-            this.dgvTicket.AllowUserToAddRows = false;
-            this.dgvTicket.AllowUserToDeleteRows = false;
-            this.dgvTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTicket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColCliente,
-            this.ColFuncion,
-            this.ColFecha,
-            this.ColButaca,
-            this.ColPrecioDeVenta,
-            this.ColMedioDeVenta,
-            this.ColFormaDePago,
-            this.ColDescuento,
-            this.ColSubtotal,
-            this.ColAccion});
-            this.dgvTicket.Location = new System.Drawing.Point(12, 186);
-            this.dgvTicket.Name = "dgvTicket";
-            this.dgvTicket.ReadOnly = true;
-            this.dgvTicket.RowTemplate.Height = 25;
-            this.dgvTicket.Size = new System.Drawing.Size(1128, 150);
-            this.dgvTicket.TabIndex = 10;
-            this.dgvTicket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicket_CellContentClick);
+            dgvTicket.AllowUserToAddRows = false;
+            dgvTicket.AllowUserToDeleteRows = false;
+            dgvTicket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTicket.Columns.AddRange(new DataGridViewColumn[] { ColCliente, ColFuncion, ColFecha, ColButaca, ColPrecioDeVenta, ColMedioDeVenta, ColFormaDePago, ColDescuento, ColSubtotal, ColAccion });
+            dgvTicket.Location = new Point(12, 186);
+            dgvTicket.Name = "dgvTicket";
+            dgvTicket.ReadOnly = true;
+            dgvTicket.RowTemplate.Height = 25;
+            dgvTicket.Size = new Size(1128, 150);
+            dgvTicket.TabIndex = 10;
+            dgvTicket.CellContentClick += dgvTicket_CellContentClick;
             // 
             // ColCliente
             // 
-            this.ColCliente.HeaderText = "Cliente";
-            this.ColCliente.Name = "ColCliente";
-            this.ColCliente.ReadOnly = true;
-            this.ColCliente.Width = 200;
+            ColCliente.HeaderText = "Cliente";
+            ColCliente.Name = "ColCliente";
+            ColCliente.ReadOnly = true;
+            ColCliente.Width = 200;
             // 
             // ColFuncion
             // 
-            this.ColFuncion.HeaderText = "Numero de función";
-            this.ColFuncion.Name = "ColFuncion";
-            this.ColFuncion.ReadOnly = true;
+            ColFuncion.HeaderText = "Numero de función";
+            ColFuncion.Name = "ColFuncion";
+            ColFuncion.ReadOnly = true;
             // 
             // ColFecha
             // 
-            this.ColFecha.HeaderText = "Fecha";
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.ReadOnly = true;
+            ColFecha.HeaderText = "Fecha";
+            ColFecha.Name = "ColFecha";
+            ColFecha.ReadOnly = true;
             // 
             // ColButaca
             // 
-            this.ColButaca.HeaderText = "Butaca";
-            this.ColButaca.Name = "ColButaca";
-            this.ColButaca.ReadOnly = true;
-            this.ColButaca.Width = 50;
+            ColButaca.HeaderText = "Butaca";
+            ColButaca.Name = "ColButaca";
+            ColButaca.ReadOnly = true;
+            ColButaca.Width = 50;
             // 
             // ColPrecioDeVenta
             // 
-            this.ColPrecioDeVenta.HeaderText = "Precio de venta";
-            this.ColPrecioDeVenta.Name = "ColPrecioDeVenta";
-            this.ColPrecioDeVenta.ReadOnly = true;
-            this.ColPrecioDeVenta.Width = 75;
+            ColPrecioDeVenta.HeaderText = "Precio de venta";
+            ColPrecioDeVenta.Name = "ColPrecioDeVenta";
+            ColPrecioDeVenta.ReadOnly = true;
+            ColPrecioDeVenta.Width = 75;
             // 
             // ColMedioDeVenta
             // 
-            this.ColMedioDeVenta.HeaderText = "Medio de venta";
-            this.ColMedioDeVenta.Name = "ColMedioDeVenta";
-            this.ColMedioDeVenta.ReadOnly = true;
-            this.ColMedioDeVenta.Width = 150;
+            ColMedioDeVenta.HeaderText = "Medio de venta";
+            ColMedioDeVenta.Name = "ColMedioDeVenta";
+            ColMedioDeVenta.ReadOnly = true;
+            ColMedioDeVenta.Width = 150;
             // 
             // ColFormaDePago
             // 
-            this.ColFormaDePago.HeaderText = "Forma de pago";
-            this.ColFormaDePago.Name = "ColFormaDePago";
-            this.ColFormaDePago.ReadOnly = true;
+            ColFormaDePago.HeaderText = "Forma de pago";
+            ColFormaDePago.Name = "ColFormaDePago";
+            ColFormaDePago.ReadOnly = true;
             // 
             // ColDescuento
             // 
-            this.ColDescuento.HeaderText = "Descuento";
-            this.ColDescuento.Name = "ColDescuento";
-            this.ColDescuento.ReadOnly = true;
+            ColDescuento.HeaderText = "Descuento";
+            ColDescuento.Name = "ColDescuento";
+            ColDescuento.ReadOnly = true;
             // 
             // ColSubtotal
             // 
-            this.ColSubtotal.HeaderText = "Subtotal";
-            this.ColSubtotal.Name = "ColSubtotal";
-            this.ColSubtotal.ReadOnly = true;
+            ColSubtotal.HeaderText = "Subtotal";
+            ColSubtotal.Name = "ColSubtotal";
+            ColSubtotal.ReadOnly = true;
             // 
             // ColAccion
             // 
-            this.ColAccion.HeaderText = "Accion";
-            this.ColAccion.Name = "ColAccion";
-            this.ColAccion.ReadOnly = true;
-            this.ColAccion.Text = "Quitar";
-            this.ColAccion.UseColumnTextForButtonValue = true;
-            this.ColAccion.Width = 107;
+            ColAccion.HeaderText = "Accion";
+            ColAccion.Name = "ColAccion";
+            ColAccion.ReadOnly = true;
+            ColAccion.Text = "Quitar";
+            ColAccion.UseColumnTextForButtonValue = true;
+            ColAccion.Width = 107;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(1019, 157);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(121, 23);
-            this.btnAgregar.TabIndex = 11;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            btnAgregar.Location = new Point(1019, 157);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(121, 23);
+            btnAgregar.TabIndex = 11;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // lblTicket
             // 
-            this.lblTicket.AutoSize = true;
-            this.lblTicket.Location = new System.Drawing.Point(12, 9);
-            this.lblTicket.Name = "lblTicket";
-            this.lblTicket.Size = new System.Drawing.Size(105, 15);
-            this.lblTicket.TabIndex = 14;
-            this.lblTicket.Text = "Numero de ticket: ";
+            lblTicket.AutoSize = true;
+            lblTicket.Location = new Point(12, 9);
+            lblTicket.Name = "lblTicket";
+            lblTicket.Size = new Size(105, 15);
+            lblTicket.TabIndex = 14;
+            lblTicket.Text = "Numero de ticket: ";
             // 
             // lblMedio_vendido
             // 
-            this.lblMedio_vendido.AutoSize = true;
-            this.lblMedio_vendido.Location = new System.Drawing.Point(699, 50);
-            this.lblMedio_vendido.Name = "lblMedio_vendido";
-            this.lblMedio_vendido.Size = new System.Drawing.Size(89, 15);
-            this.lblMedio_vendido.TabIndex = 17;
-            this.lblMedio_vendido.Text = "Medio de venta";
+            lblMedio_vendido.AutoSize = true;
+            lblMedio_vendido.Location = new Point(699, 50);
+            lblMedio_vendido.Name = "lblMedio_vendido";
+            lblMedio_vendido.Size = new Size(89, 15);
+            lblMedio_vendido.TabIndex = 17;
+            lblMedio_vendido.Text = "Medio de venta";
             // 
             // cboMedioDeVenta
             // 
-            this.cboMedioDeVenta.FormattingEnabled = true;
-            this.cboMedioDeVenta.Location = new System.Drawing.Point(814, 45);
-            this.cboMedioDeVenta.Name = "cboMedioDeVenta";
-            this.cboMedioDeVenta.Size = new System.Drawing.Size(121, 23);
-            this.cboMedioDeVenta.TabIndex = 18;
-            this.cboMedioDeVenta.Click += new System.EventHandler(this.LoadMediosDeVenta);
+            cboMedioDeVenta.FormattingEnabled = true;
+            cboMedioDeVenta.Location = new Point(814, 45);
+            cboMedioDeVenta.Name = "cboMedioDeVenta";
+            cboMedioDeVenta.Size = new Size(121, 23);
+            cboMedioDeVenta.TabIndex = 18;
+            cboMedioDeVenta.Click += LoadMediosDeVenta;
             // 
             // lblPromocion
             // 
-            this.lblPromocion.AutoSize = true;
-            this.lblPromocion.Location = new System.Drawing.Point(955, 107);
-            this.lblPromocion.Name = "lblPromocion";
-            this.lblPromocion.Size = new System.Drawing.Size(66, 15);
-            this.lblPromocion.TabIndex = 19;
-            this.lblPromocion.Text = "Promocion";
+            lblPromocion.AutoSize = true;
+            lblPromocion.Location = new Point(955, 107);
+            lblPromocion.Name = "lblPromocion";
+            lblPromocion.Size = new Size(66, 15);
+            lblPromocion.TabIndex = 19;
+            lblPromocion.Text = "Promocion";
             // 
             // cboPromocion
             // 
-            this.cboPromocion.FormattingEnabled = true;
-            this.cboPromocion.Location = new System.Drawing.Point(1049, 104);
-            this.cboPromocion.Name = "cboPromocion";
-            this.cboPromocion.Size = new System.Drawing.Size(90, 23);
-            this.cboPromocion.TabIndex = 20;
-            this.cboPromocion.Click += new System.EventHandler(this.LoadPromociones);
+            cboPromocion.FormattingEnabled = true;
+            cboPromocion.Location = new Point(1049, 104);
+            cboPromocion.Name = "cboPromocion";
+            cboPromocion.Size = new Size(90, 23);
+            cboPromocion.TabIndex = 20;
+            cboPromocion.Click += LoadPromociones;
             // 
             // lblFormaDePago
             // 
-            this.lblFormaDePago.AutoSize = true;
-            this.lblFormaDePago.Location = new System.Drawing.Point(701, 107);
-            this.lblFormaDePago.Name = "lblFormaDePago";
-            this.lblFormaDePago.Size = new System.Drawing.Size(87, 15);
-            this.lblFormaDePago.TabIndex = 21;
-            this.lblFormaDePago.Text = "Forma de pago";
+            lblFormaDePago.AutoSize = true;
+            lblFormaDePago.Location = new Point(701, 107);
+            lblFormaDePago.Name = "lblFormaDePago";
+            lblFormaDePago.Size = new Size(87, 15);
+            lblFormaDePago.TabIndex = 21;
+            lblFormaDePago.Text = "Forma de pago";
             // 
             // cboFormaDePago
             // 
-            this.cboFormaDePago.FormattingEnabled = true;
-            this.cboFormaDePago.Location = new System.Drawing.Point(814, 104);
-            this.cboFormaDePago.Name = "cboFormaDePago";
-            this.cboFormaDePago.Size = new System.Drawing.Size(121, 23);
-            this.cboFormaDePago.TabIndex = 22;
-            this.cboFormaDePago.Click += new System.EventHandler(this.LoadFormasDePago);
+            cboFormaDePago.FormattingEnabled = true;
+            cboFormaDePago.Location = new Point(814, 104);
+            cboFormaDePago.Name = "cboFormaDePago";
+            cboFormaDePago.Size = new Size(121, 23);
+            cboFormaDePago.TabIndex = 22;
+            cboFormaDePago.Click += LoadFormasDePago;
             // 
             // lblPrecioVenta
             // 
-            this.lblPrecioVenta.AutoSize = true;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(955, 48);
-            this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(88, 15);
-            this.lblPrecioVenta.TabIndex = 27;
-            this.lblPrecioVenta.Text = "Precio de Venta";
+            lblPrecioVenta.AutoSize = true;
+            lblPrecioVenta.Location = new Point(955, 48);
+            lblPrecioVenta.Name = "lblPrecioVenta";
+            lblPrecioVenta.Size = new Size(88, 15);
+            lblPrecioVenta.TabIndex = 27;
+            lblPrecioVenta.Text = "Precio de Venta";
             // 
             // txtPrecioVenta
             // 
-            this.txtPrecioVenta.Location = new System.Drawing.Point(1049, 45);
-            this.txtPrecioVenta.Name = "txtPrecioVenta";
-            this.txtPrecioVenta.Size = new System.Drawing.Size(90, 23);
-            this.txtPrecioVenta.TabIndex = 28;
-            this.txtPrecioVenta.Click += new System.EventHandler(this.LoadTxtPrecioVenta);
+            txtPrecioVenta.Location = new Point(1049, 45);
+            txtPrecioVenta.Name = "txtPrecioVenta";
+            txtPrecioVenta.Size = new Size(90, 23);
+            txtPrecioVenta.TabIndex = 28;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(1065, 342);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 31;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            btnSalir.Location = new Point(1065, 342);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 31;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(941, 342);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 32;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            btnConfirmar.Location = new Point(941, 342);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new Size(75, 23);
+            btnConfirmar.TabIndex = 32;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // lblFecha
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(367, 110);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(38, 15);
-            this.lblFecha.TabIndex = 29;
-            this.lblFecha.Text = "Fecha";
+            lblFecha.AutoSize = true;
+            lblFecha.Location = new Point(367, 110);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(38, 15);
+            lblFecha.TabIndex = 29;
+            lblFecha.Text = "Fecha";
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(430, 104);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(121, 23);
-            this.dtpFecha.TabIndex = 30;
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(430, 104);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(121, 23);
+            dtpFecha.TabIndex = 30;
             // 
             // lblButaca
             // 
-            this.lblButaca.AutoSize = true;
-            this.lblButaca.Location = new System.Drawing.Point(12, 133);
-            this.lblButaca.Name = "lblButaca";
-            this.lblButaca.Size = new System.Drawing.Size(43, 15);
-            this.lblButaca.TabIndex = 25;
-            this.lblButaca.Text = "Butaca";
+            lblButaca.AutoSize = true;
+            lblButaca.Location = new Point(12, 133);
+            lblButaca.Name = "lblButaca";
+            lblButaca.Size = new Size(43, 15);
+            lblButaca.TabIndex = 25;
+            lblButaca.Text = "Butaca";
             // 
             // cboButaca
             // 
-            this.cboButaca.FormattingEnabled = true;
-            this.cboButaca.Location = new System.Drawing.Point(113, 130);
-            this.cboButaca.Name = "cboButaca";
-            this.cboButaca.Size = new System.Drawing.Size(121, 23);
-            this.cboButaca.TabIndex = 26;
-            this.cboButaca.Click += new System.EventHandler(this.LoadButacas);
+            cboButaca.FormattingEnabled = true;
+            cboButaca.Location = new Point(113, 130);
+            cboButaca.Name = "cboButaca";
+            cboButaca.Size = new Size(121, 23);
+            cboButaca.TabIndex = 26;
+            cboButaca.Click += LoadButacas;
             // 
             // cboFuncion
             // 
-            this.cboFuncion.FormattingEnabled = true;
-            this.cboFuncion.Location = new System.Drawing.Point(113, 101);
-            this.cboFuncion.Name = "cboFuncion";
-            this.cboFuncion.Size = new System.Drawing.Size(121, 23);
-            this.cboFuncion.TabIndex = 24;
-            this.cboFuncion.SelectedValueChanged += new System.EventHandler(this.LoadTxtPrecioVenta);
-            this.cboFuncion.Click += new System.EventHandler(this.LoadFuncion);
+            cboFuncion.FormattingEnabled = true;
+            cboFuncion.Location = new Point(113, 101);
+            cboFuncion.Name = "cboFuncion";
+            cboFuncion.Size = new Size(121, 23);
+            cboFuncion.TabIndex = 24;
+            cboFuncion.SelectedValueChanged += LoadTxtPrecioVenta;
+            cboFuncion.Click += LoadFuncion;
             // 
             // cboCliente
             // 
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(113, 42);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(438, 23);
-            this.cboCliente.TabIndex = 13;
+            cboCliente.FormattingEnabled = true;
+            cboCliente.Location = new Point(113, 42);
+            cboCliente.Name = "cboCliente";
+            cboCliente.Size = new Size(438, 23);
+            cboCliente.TabIndex = 13;
             // 
             // lblFuncion
             // 
-            this.lblFuncion.AutoSize = true;
-            this.lblFuncion.Location = new System.Drawing.Point(12, 104);
-            this.lblFuncion.Name = "lblFuncion";
-            this.lblFuncion.Size = new System.Drawing.Size(50, 15);
-            this.lblFuncion.TabIndex = 23;
-            this.lblFuncion.Text = "Funcion";
+            lblFuncion.AutoSize = true;
+            lblFuncion.Location = new Point(12, 104);
+            lblFuncion.Name = "lblFuncion";
+            lblFuncion.Size = new Size(50, 15);
+            lblFuncion.TabIndex = 23;
+            lblFuncion.Text = "Funcion";
             // 
             // lblCliente
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(12, 45);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(44, 15);
-            this.lblCliente.TabIndex = 12;
-            this.lblCliente.Text = "Cliente";
+            lblCliente.AutoSize = true;
+            lblCliente.Location = new Point(12, 45);
+            lblCliente.Name = "lblCliente";
+            lblCliente.Size = new Size(44, 15);
+            lblCliente.TabIndex = 12;
+            lblCliente.Text = "Cliente";
             // 
             // FrmNuevoTicket
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CineFront.Properties.Resources.cine1;
-            this.ClientSize = new System.Drawing.Size(1163, 380);
-            this.Controls.Add(this.lblCliente);
-            this.Controls.Add(this.lblFuncion);
-            this.Controls.Add(this.cboCliente);
-            this.Controls.Add(this.cboFuncion);
-            this.Controls.Add(this.lblPromocion);
-            this.Controls.Add(this.cboButaca);
-            this.Controls.Add(this.lblMedio_vendido);
-            this.Controls.Add(this.lblButaca);
-            this.Controls.Add(this.cboMedioDeVenta);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.cboFormaDePago);
-            this.Controls.Add(this.lblFormaDePago);
-            this.Controls.Add(this.txtPrecioVenta);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.cboPromocion);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.lblPrecioVenta);
-            this.Controls.Add(this.lblTicket);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgvTicket);
-            this.Name = "FrmNuevoTicket";
-            this.Text = "Nuevo Ticket";
-            this.Load += new System.EventHandler(this.FrmNuevoTicket_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.cine1;
+            ClientSize = new Size(1163, 380);
+            Controls.Add(lblCliente);
+            Controls.Add(lblFuncion);
+            Controls.Add(cboCliente);
+            Controls.Add(cboFuncion);
+            Controls.Add(lblPromocion);
+            Controls.Add(cboButaca);
+            Controls.Add(lblMedio_vendido);
+            Controls.Add(lblButaca);
+            Controls.Add(cboMedioDeVenta);
+            Controls.Add(dtpFecha);
+            Controls.Add(lblFecha);
+            Controls.Add(cboFormaDePago);
+            Controls.Add(lblFormaDePago);
+            Controls.Add(txtPrecioVenta);
+            Controls.Add(btnConfirmar);
+            Controls.Add(cboPromocion);
+            Controls.Add(btnSalir);
+            Controls.Add(lblPrecioVenta);
+            Controls.Add(lblTicket);
+            Controls.Add(btnAgregar);
+            Controls.Add(dgvTicket);
+            Name = "FrmNuevoTicket";
+            Text = "Nuevo Ticket";
+            Load += FrmNuevoTicket_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

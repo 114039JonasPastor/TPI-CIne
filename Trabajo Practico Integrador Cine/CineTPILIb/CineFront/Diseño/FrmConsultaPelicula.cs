@@ -160,14 +160,7 @@ namespace CineFront.Diseño
             }
         }
 
-        private void dgvPelicula_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
-        private void FrmConsultaPelicula_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

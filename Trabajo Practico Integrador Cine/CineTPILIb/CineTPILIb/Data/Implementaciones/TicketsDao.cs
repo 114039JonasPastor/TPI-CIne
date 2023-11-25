@@ -38,14 +38,15 @@ namespace CineTPILIb.Data.Implementaciones
                 cmdMaestro.ExecuteNonQuery();
 
                 int id_ticket = (int)pOUT.Value;
-                SqlCommand cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
-                cmdDetalle.CommandType = CommandType.StoredProcedure;
                 int detalleNro = 1;
 
                 foreach (DetalleTicket item in nuevo.DetallesTicket)
                 { 
+                    SqlCommand cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
+
                     cmdDetalle.Parameters.AddWithValue("@id_ticket", id_ticket);
-                    //cmdDetalle.Parameters.AddWithValue("@id_detalle", detalleNro);
+                    cmdDetalle.Parameters.AddWithValue("@id_detalle", detalleNro);
                     cmdDetalle.Parameters.AddWithValue("@id_funcion",item.Funcion.Id_funcion);
                     cmdDetalle.Parameters.AddWithValue("@id_butaca", item.Id_butaca);
                     cmdDetalle.Parameters.AddWithValue("@precio_venta", item.Precio_venta);

@@ -23,26 +23,18 @@ namespace CineFront.Diseño
         private void FrmConsultarFunciones_Load(object sender, EventArgs e)
         {
             Limpiar();
+
         }
 
         private void Limpiar()
         {
-            dtpDesde.Value = DateTime.Now;
-            dtpHasta.Value = DateTime.Now.AddDays(7);
+            dtpDesde.Value = dtpDesde.Value.AddYears(-3);
+            dtpHasta.Value = DateTime.Today;
             txtNumero.Text = String.Empty;
             dgvFunciones.Rows.Clear();
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            //string desde, hasta, id_funcion;
-            //id_funcion = Uri.EscapeDataString(txtNumero.Text);
-            //desde = Uri.EscapeDataString(dtpDesde.Value.ToString("yyyy/MM/dd"));
-            //hasta = Uri.EscapeDataString(dtpHasta.Value.ToString("yyyy/MM/dd"));
 
-            //CargarFunciones(id_funcion, desde, hasta);
-            //Limpiar();
-        }
         private async void CargarFunciones(string id_funcion, string desde, string hasta)
         {
             string url = string.Format("https://localhost:7074/funciones?desde={0}&hasta={1}", desde, hasta);
@@ -66,14 +58,7 @@ namespace CineFront.Diseño
             }
         }
 
-        private async void dgvFunciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvFunciones.CurrentCell.ColumnIndex == 8)
-            {
-                await BajaFuncionAsync();
-                dgvFunciones.Rows.Remove(dgvFunciones.CurrentRow);
-            }
-        }
+
 
         private async Task BajaFuncionAsync()
         {
@@ -104,11 +89,6 @@ namespace CineFront.Diseño
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            int nro = int.Parse(dgvFunciones.CurrentRow.Cells["ColID"].Value.ToString());
-            new FrmUpdateFuncion(nro).ShowDialog();
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
