@@ -48,6 +48,7 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -134,7 +135,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(755, 303);
+            this.btnSalir.Location = new System.Drawing.Point(761, 299);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(95, 23);
             this.btnSalir.TabIndex = 20;
@@ -216,12 +217,23 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click_1);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(12, 299);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(104, 23);
+            this.btnModificar.TabIndex = 23;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
+            // 
             // FrmConsultarFunciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(870, 334);
+            this.ClientSize = new System.Drawing.Size(867, 329);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSalir);
@@ -257,5 +269,6 @@
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewButtonColumn ColAccion;
+        private Button btnModificar;
     }
 }

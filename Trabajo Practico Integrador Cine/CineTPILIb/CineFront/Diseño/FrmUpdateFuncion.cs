@@ -25,32 +25,24 @@ namespace CineFront.Diseño
 
         private void FrmSeleccionarFuncion_Load(object sender, EventArgs e)
         {
-            //CargarFuncion();
         }
-        //private async void CargarFuncion()
-        //{
-        //    string url = string.Format("https://localhost:7074/funciones/{0}", id);
-        //    var result = await ClientSingleton.GetInstance().GetAsync(url);
-
-        //    var func = JsonConvert.DeserializeObject<FuncionDTO>(result);
-        //    if(func != null)
-        //    {
-        //        cboPelicula.Text = func.Pelicula.ToString();
-        //        cboSala.Text = func.Sala.ToString();
-        //        cboHorarios.Text = func.Horario.ToString();
-        //        txtPrecio.Text = func.Precio.ToString();
-        //        dtpDesde.Value = func.FechaDesde;
-        //        dtpHasta.Value = func.FechaHasta;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("No se pudo recuperar información de la función", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        //    }
-        //}
-
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
         }
+
+        private void LoadHorarios(object sender, EventArgs e)
+        {
+            CargarHorariosAsync();
+        }
+        private void LoadPeliculass(object sender, EventArgs e)
+        {
+            CargarPeliculasAsync();
+        }
+        private void LoadSalas(object sender, EventArgs e)
+        {
+            CargarSalasAscync();
+        }
+
         private async void CargarHorariosAsync()
         {
             string url = "https://localhost:7074/Combo Horarios";
@@ -94,16 +86,16 @@ namespace CineFront.Diseño
             Funcion funcionModificada = new Funcion
             {
                 Id_funcion = id,
-                Id_sala = Convert.ToInt32(txtSalas.Text),
+                Id_sala = Convert.ToInt32(cboSala.SelectedIndex + 1),
                 Id_pelicula = Convert.ToInt32(cboPelicula.SelectedIndex + 1),
                 Precio = Convert.ToDouble(txtPrecio.Text),
                 FechaDesde = Convert.ToDateTime(dtpDesde.Value),
                 FechaHasta = Convert.ToDateTime(dtpHasta.Value),
-                IdHorario = Convert.ToInt32(txtHorarios.Text)
+                IdHorario = Convert.ToInt32(cboHorarios.SelectedIndex + 1)
             };
 
             string funcionJson = JsonConvert.SerializeObject(funcionModificada);
-            string url = string.Format("https://localhost:7074/funciones/{0}", id);
+            string url = string.Format("https://localhost:7074/api/Funciones/{0}", id);
 
             try
             {
@@ -112,7 +104,7 @@ namespace CineFront.Diseño
                 if (!string.IsNullOrEmpty(response))
                 {
                     MessageBox.Show("La función se modificó con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    this.Dispose();
                 }
                 else
                 {
@@ -130,6 +122,11 @@ namespace CineFront.Diseño
             CargarPeliculasAsync();
             CargarSalasAscync();
             CargarHorariosAsync();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

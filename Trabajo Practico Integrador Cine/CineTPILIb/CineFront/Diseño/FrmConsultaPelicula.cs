@@ -153,14 +153,20 @@ namespace CineFront.Diseño
 
         private void dgvPelicula_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (dgvPelicula.CurrentCell.ColumnIndex == 6)
             {
                 int nro = int.Parse(dgvPelicula.CurrentRow.Cells["colId"].Value.ToString());
                 new FrmDetallesPelicula(nro).ShowDialog();
-
             }
+        }
 
+        private void dgvPelicula_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmConsultaPelicula_Load_1(object sender, EventArgs e)
+        {
 
         }
     }

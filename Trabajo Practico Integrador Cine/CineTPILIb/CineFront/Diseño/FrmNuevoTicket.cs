@@ -31,11 +31,37 @@ namespace CineFront.Diseño
         {
             ProximoTicket();
             CargarClientesAsync();
-            CargarFuncionAsync();
-            CargarButacasAsync();
-            CargarMediosDeVentaAsync();
-            CargarFormasDePagoAsync();
+            txtPrecioVenta.Enabled = false;
+            //CargarFuncionAsync();
+            //CargarButacasAsync();
+            //CargarMediosDeVentaAsync();
+            //CargarFormasDePagoAsync();
+            //CargarPromocionesAsync();
+        }
+
+        private void LoadTxtPrecioVenta(object sender, EventArgs e)
+        {
+            txtPrecioVenta.Text = cboFuncion.SelectedValue.ToString();
+        }
+        private void LoadPromociones(object sender, EventArgs e)
+        {
             CargarPromocionesAsync();
+        }
+        private void LoadFormasDePago(object sender, EventArgs e)
+        {
+            CargarFormasDePagoAsync();
+        }
+        private void LoadButacas(object sender, EventArgs e)
+        {
+            CargarButacasAsync();
+        }
+        private void LoadFuncion(object sender, EventArgs e)
+        {
+            CargarFuncionAsync();
+        }
+        private void LoadMediosDeVenta(object sender, EventArgs e)
+        {
+            CargarMediosDeVentaAsync();
         }
 
         private void ProximoTicket()
@@ -99,7 +125,7 @@ namespace CineFront.Diseño
 
             cboFuncion.DataSource = lst;
             cboFuncion.DisplayMember = "Id_funcion";
-            cboFuncion.ValueMember = "Id_funcion";
+            cboFuncion.ValueMember = "precio";
         }
 
         private async void CargarClientesAsync()
@@ -219,7 +245,9 @@ namespace CineFront.Diseño
             if(dgvTicket.CurrentCell.ColumnIndex == 9)
             {
                 dgvTicket.Rows.Remove(dgvTicket.CurrentRow);
+                nuevo.RemoverDetalle(dgvTicket.CurrentRow.Index);
             }
         }
+
     }
 }

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtHorarios = new System.Windows.Forms.TextBox();
-            this.txtSalas = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.cboHorarios = new System.Windows.Forms.ComboBox();
@@ -51,8 +49,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.txtHorarios);
-            this.groupBox1.Controls.Add(this.txtSalas);
             this.groupBox1.Controls.Add(this.txtPrecio);
             this.groupBox1.Controls.Add(this.lblPrecio);
             this.groupBox1.Controls.Add(this.cboHorarios);
@@ -67,27 +63,13 @@
             this.groupBox1.Controls.Add(this.lblFecDesde);
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(756, 158);
+            this.groupBox1.Size = new System.Drawing.Size(756, 163);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // txtHorarios
-            // 
-            this.txtHorarios.Location = new System.Drawing.Point(329, 121);
-            this.txtHorarios.Name = "txtHorarios";
-            this.txtHorarios.Size = new System.Drawing.Size(100, 23);
-            this.txtHorarios.TabIndex = 20;
-            // 
-            // txtSalas
-            // 
-            this.txtSalas.Location = new System.Drawing.Point(212, 87);
-            this.txtSalas.Name = "txtSalas";
-            this.txtSalas.Size = new System.Drawing.Size(100, 23);
-            this.txtSalas.TabIndex = 19;
-            // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(64, 110);
+            this.txtPrecio.Location = new System.Drawing.Point(64, 100);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
             this.txtPrecio.TabIndex = 18;
@@ -95,7 +77,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(0, 113);
+            this.lblPrecio.Location = new System.Drawing.Point(0, 103);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 15);
             this.lblPrecio.TabIndex = 15;
@@ -104,15 +86,16 @@
             // cboHorarios
             // 
             this.cboHorarios.FormattingEnabled = true;
-            this.cboHorarios.Location = new System.Drawing.Point(507, 107);
+            this.cboHorarios.Location = new System.Drawing.Point(507, 126);
             this.cboHorarios.Name = "cboHorarios";
             this.cboHorarios.Size = new System.Drawing.Size(137, 23);
             this.cboHorarios.TabIndex = 17;
+            this.cboHorarios.Click += new System.EventHandler(this.LoadHorarios);
             // 
             // lblHorario
             // 
             this.lblHorario.AutoSize = true;
-            this.lblHorario.Location = new System.Drawing.Point(454, 110);
+            this.lblHorario.Location = new System.Drawing.Point(454, 129);
             this.lblHorario.Name = "lblHorario";
             this.lblHorario.Size = new System.Drawing.Size(47, 15);
             this.lblHorario.TabIndex = 13;
@@ -121,7 +104,7 @@
             // lblSala
             // 
             this.lblSala.AutoSize = true;
-            this.lblSala.Location = new System.Drawing.Point(0, 51);
+            this.lblSala.Location = new System.Drawing.Point(0, 70);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(28, 15);
             this.lblSala.TabIndex = 1;
@@ -129,7 +112,7 @@
             // 
             // dtpHasta
             // 
-            this.dtpHasta.Location = new System.Drawing.Point(507, 78);
+            this.dtpHasta.Location = new System.Drawing.Point(507, 97);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(229, 23);
             this.dtpHasta.TabIndex = 12;
@@ -137,15 +120,16 @@
             // cboSala
             // 
             this.cboSala.FormattingEnabled = true;
-            this.cboSala.Location = new System.Drawing.Point(64, 48);
+            this.cboSala.Location = new System.Drawing.Point(64, 67);
             this.cboSala.Name = "cboSala";
             this.cboSala.Size = new System.Drawing.Size(100, 23);
             this.cboSala.TabIndex = 0;
+            this.cboSala.Click += new System.EventHandler(this.LoadSalas);
             // 
             // lblFecHasta
             // 
             this.lblFecHasta.AutoSize = true;
-            this.lblFecHasta.Location = new System.Drawing.Point(454, 81);
+            this.lblFecHasta.Location = new System.Drawing.Point(454, 100);
             this.lblFecHasta.Name = "lblFecHasta";
             this.lblFecHasta.Size = new System.Drawing.Size(37, 15);
             this.lblFecHasta.TabIndex = 8;
@@ -153,7 +137,7 @@
             // 
             // dtpDesde
             // 
-            this.dtpDesde.Location = new System.Drawing.Point(507, 45);
+            this.dtpDesde.Location = new System.Drawing.Point(507, 64);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(229, 23);
             this.dtpDesde.TabIndex = 11;
@@ -161,7 +145,7 @@
             // lblPelicula
             // 
             this.lblPelicula.AutoSize = true;
-            this.lblPelicula.Location = new System.Drawing.Point(0, 19);
+            this.lblPelicula.Location = new System.Drawing.Point(0, 38);
             this.lblPelicula.Name = "lblPelicula";
             this.lblPelicula.Size = new System.Drawing.Size(48, 15);
             this.lblPelicula.TabIndex = 5;
@@ -170,15 +154,16 @@
             // cboPelicula
             // 
             this.cboPelicula.FormattingEnabled = true;
-            this.cboPelicula.Location = new System.Drawing.Point(64, 16);
+            this.cboPelicula.Location = new System.Drawing.Point(64, 35);
             this.cboPelicula.Name = "cboPelicula";
             this.cboPelicula.Size = new System.Drawing.Size(672, 23);
             this.cboPelicula.TabIndex = 2;
+            this.cboPelicula.Click += new System.EventHandler(this.LoadPeliculass);
             // 
             // lblFecDesde
             // 
             this.lblFecDesde.AutoSize = true;
-            this.lblFecDesde.Location = new System.Drawing.Point(454, 51);
+            this.lblFecDesde.Location = new System.Drawing.Point(454, 70);
             this.lblFecDesde.Name = "lblFecDesde";
             this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
             this.lblFecDesde.TabIndex = 7;
@@ -186,16 +171,17 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(693, 164);
+            this.btnCancelar.Location = new System.Drawing.Point(693, 170);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(12, 165);
+            this.btnGuardar.Location = new System.Drawing.Point(12, 170);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 23);
             this.btnGuardar.TabIndex = 17;
@@ -208,7 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CineFront.Properties.Resources.fondoB;
-            this.ClientSize = new System.Drawing.Size(784, 199);
+            this.ClientSize = new System.Drawing.Size(784, 211);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
@@ -239,7 +225,5 @@
         private Label lblFecDesde;
         private Button btnCancelar;
         private Button btnGuardar;
-        private TextBox txtHorarios;
-        private TextBox txtSalas;
     }
 }

@@ -188,6 +188,7 @@
             this.cboMedioDeVenta.Name = "cboMedioDeVenta";
             this.cboMedioDeVenta.Size = new System.Drawing.Size(121, 23);
             this.cboMedioDeVenta.TabIndex = 18;
+            this.cboMedioDeVenta.Click += new System.EventHandler(this.LoadMediosDeVenta);
             // 
             // lblPromocion
             // 
@@ -205,6 +206,7 @@
             this.cboPromocion.Name = "cboPromocion";
             this.cboPromocion.Size = new System.Drawing.Size(90, 23);
             this.cboPromocion.TabIndex = 20;
+            this.cboPromocion.Click += new System.EventHandler(this.LoadPromociones);
             // 
             // lblFormaDePago
             // 
@@ -222,6 +224,7 @@
             this.cboFormaDePago.Name = "cboFormaDePago";
             this.cboFormaDePago.Size = new System.Drawing.Size(121, 23);
             this.cboFormaDePago.TabIndex = 22;
+            this.cboFormaDePago.Click += new System.EventHandler(this.LoadFormasDePago);
             // 
             // lblPrecioVenta
             // 
@@ -238,6 +241,7 @@
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(90, 23);
             this.txtPrecioVenta.TabIndex = 28;
+            this.txtPrecioVenta.Click += new System.EventHandler(this.LoadTxtPrecioVenta);
             // 
             // btnSalir
             // 
@@ -292,6 +296,7 @@
             this.cboButaca.Name = "cboButaca";
             this.cboButaca.Size = new System.Drawing.Size(121, 23);
             this.cboButaca.TabIndex = 26;
+            this.cboButaca.Click += new System.EventHandler(this.LoadButacas);
             // 
             // cboFuncion
             // 
@@ -300,6 +305,8 @@
             this.cboFuncion.Name = "cboFuncion";
             this.cboFuncion.Size = new System.Drawing.Size(121, 23);
             this.cboFuncion.TabIndex = 24;
+            this.cboFuncion.SelectedValueChanged += new System.EventHandler(this.LoadTxtPrecioVenta);
+            this.cboFuncion.Click += new System.EventHandler(this.LoadFuncion);
             // 
             // cboCliente
             // 

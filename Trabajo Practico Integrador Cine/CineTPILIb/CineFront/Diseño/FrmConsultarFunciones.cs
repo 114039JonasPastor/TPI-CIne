@@ -136,5 +136,11 @@ namespace CineFront.Diseño
                 dgvFunciones.Rows.Remove(dgvFunciones.CurrentRow);
             }
         }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            int nro = int.Parse(dgvFunciones.CurrentRow.Cells["ColID"].Value.ToString());
+            new FrmUpdateFuncion(nro).ShowDialog();
+        }
     }
 }
