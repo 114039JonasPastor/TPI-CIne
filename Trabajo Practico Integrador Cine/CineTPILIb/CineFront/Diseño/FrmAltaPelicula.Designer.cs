@@ -28,281 +28,280 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.cboClasif = new System.Windows.Forms.ComboBox();
-            this.cboIdioma = new System.Windows.Forms.ComboBox();
-            this.cboGenero = new System.Windows.Forms.ComboBox();
-            this.txtDuracion = new System.Windows.Forms.TextBox();
-            this.txtSinopsis = new System.Windows.Forms.TextBox();
-            this.dgvAltaPelicula = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDuracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colClasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIdioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            txtTitulo = new TextBox();
+            cboClasif = new ComboBox();
+            cboIdioma = new ComboBox();
+            cboGenero = new ComboBox();
+            txtDuracion = new TextBox();
+            txtSinopsis = new TextBox();
+            dgvAltaPelicula = new DataGridView();
+            colId = new DataGridViewTextBoxColumn();
+            colTitulo = new DataGridViewTextBoxColumn();
+            colDuracion = new DataGridViewTextBoxColumn();
+            colClasificacion = new DataGridViewTextBoxColumn();
+            colGenero = new DataGridViewTextBoxColumn();
+            colIdioma = new DataGridViewTextBoxColumn();
+            btnAgregar = new Button();
+            btnSalir = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvAltaPelicula).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(73, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "AGREGAR PELICULA";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ControlLightLight;
+            label1.Location = new Point(73, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(217, 32);
+            label1.TabIndex = 0;
+            label1.Text = "AGREGAR PELICULA";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(27, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Titulo:";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Black;
+            label2.ForeColor = SystemColors.ControlLightLight;
+            label2.Location = new Point(27, 64);
+            label2.Name = "label2";
+            label2.Size = new Size(40, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Titulo:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(184, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "minutos";
+            label3.AutoSize = true;
+            label3.Location = new Point(184, 100);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 15);
+            label3.TabIndex = 2;
+            label3.Text = "minutos";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(380, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Clasificacion:";
+            label4.AutoSize = true;
+            label4.BackColor = Color.Black;
+            label4.ForeColor = SystemColors.ControlLightLight;
+            label4.Location = new Point(380, 64);
+            label4.Name = "label4";
+            label4.Size = new Size(77, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Clasificacion:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Black;
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(409, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Género:";
+            label5.AutoSize = true;
+            label5.BackColor = Color.Black;
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(409, 100);
+            label5.Name = "label5";
+            label5.Size = new Size(48, 15);
+            label5.TabIndex = 6;
+            label5.Text = "Género:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Black;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(9, 100);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Duracion:";
+            label6.AutoSize = true;
+            label6.BackColor = Color.Black;
+            label6.ForeColor = SystemColors.ControlLightLight;
+            label6.Location = new Point(9, 100);
+            label6.Name = "label6";
+            label6.Size = new Size(58, 15);
+            label6.TabIndex = 5;
+            label6.Text = "Duracion:";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Black;
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(14, 136);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Sinopsis:";
+            label7.AutoSize = true;
+            label7.BackColor = Color.Black;
+            label7.ForeColor = SystemColors.ControlLightLight;
+            label7.Location = new Point(14, 136);
+            label7.Name = "label7";
+            label7.Size = new Size(53, 15);
+            label7.TabIndex = 4;
+            label7.Text = "Sinopsis:";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Black;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(410, 136);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 15);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Idioma:";
+            label8.AutoSize = true;
+            label8.BackColor = Color.Black;
+            label8.ForeColor = SystemColors.ControlLightLight;
+            label8.Location = new Point(410, 136);
+            label8.Name = "label8";
+            label8.Size = new Size(47, 15);
+            label8.TabIndex = 7;
+            label8.Text = "Idioma:";
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(73, 61);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(279, 23);
-            this.txtTitulo.TabIndex = 8;
+            txtTitulo.Location = new Point(73, 61);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(279, 23);
+            txtTitulo.TabIndex = 8;
             // 
             // cboClasif
             // 
-            this.cboClasif.FormattingEnabled = true;
-            this.cboClasif.Location = new System.Drawing.Point(463, 61);
-            this.cboClasif.Name = "cboClasif";
-            this.cboClasif.Size = new System.Drawing.Size(199, 23);
-            this.cboClasif.TabIndex = 9;
+            cboClasif.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboClasif.FormattingEnabled = true;
+            cboClasif.Location = new Point(463, 61);
+            cboClasif.Name = "cboClasif";
+            cboClasif.Size = new Size(199, 23);
+            cboClasif.TabIndex = 9;
+            cboClasif.Click += cboClasif_Click;
             // 
             // cboIdioma
             // 
-            this.cboIdioma.FormattingEnabled = true;
-            this.cboIdioma.Location = new System.Drawing.Point(463, 131);
-            this.cboIdioma.Name = "cboIdioma";
-            this.cboIdioma.Size = new System.Drawing.Size(199, 23);
-            this.cboIdioma.TabIndex = 10;
+            cboIdioma.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboIdioma.FormattingEnabled = true;
+            cboIdioma.Location = new Point(463, 131);
+            cboIdioma.Name = "cboIdioma";
+            cboIdioma.Size = new Size(199, 23);
+            cboIdioma.TabIndex = 10;
+            cboIdioma.Click += cboIdioma_Click;
             // 
             // cboGenero
             // 
-            this.cboGenero.FormattingEnabled = true;
-            this.cboGenero.Location = new System.Drawing.Point(463, 97);
-            this.cboGenero.Name = "cboGenero";
-            this.cboGenero.Size = new System.Drawing.Size(199, 23);
-            this.cboGenero.TabIndex = 11;
+            cboGenero.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboGenero.FormattingEnabled = true;
+            cboGenero.Location = new Point(463, 97);
+            cboGenero.Name = "cboGenero";
+            cboGenero.Size = new Size(199, 23);
+            cboGenero.TabIndex = 11;
+            cboGenero.Click += cboGenero_Click;
             // 
             // txtDuracion
             // 
-            this.txtDuracion.Location = new System.Drawing.Point(73, 97);
-            this.txtDuracion.Name = "txtDuracion";
-            this.txtDuracion.Size = new System.Drawing.Size(105, 23);
-            this.txtDuracion.TabIndex = 12;
+            txtDuracion.Location = new Point(73, 97);
+            txtDuracion.Name = "txtDuracion";
+            txtDuracion.Size = new Size(105, 23);
+            txtDuracion.TabIndex = 12;
             // 
             // txtSinopsis
             // 
-            this.txtSinopsis.Location = new System.Drawing.Point(73, 136);
-            this.txtSinopsis.Multiline = true;
-            this.txtSinopsis.Name = "txtSinopsis";
-            this.txtSinopsis.Size = new System.Drawing.Size(279, 55);
-            this.txtSinopsis.TabIndex = 13;
+            txtSinopsis.Location = new Point(73, 136);
+            txtSinopsis.Multiline = true;
+            txtSinopsis.Name = "txtSinopsis";
+            txtSinopsis.Size = new Size(279, 55);
+            txtSinopsis.TabIndex = 13;
             // 
             // dgvAltaPelicula
             // 
-            this.dgvAltaPelicula.AllowUserToAddRows = false;
-            this.dgvAltaPelicula.AllowUserToDeleteRows = false;
-            this.dgvAltaPelicula.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAltaPelicula.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAltaPelicula.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colTitulo,
-            this.colDuracion,
-            this.colClasificacion,
-            this.colGenero,
-            this.colIdioma});
-            this.dgvAltaPelicula.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvAltaPelicula.Location = new System.Drawing.Point(9, 211);
-            this.dgvAltaPelicula.Name = "dgvAltaPelicula";
-            this.dgvAltaPelicula.ReadOnly = true;
-            this.dgvAltaPelicula.RowTemplate.Height = 25;
-            this.dgvAltaPelicula.Size = new System.Drawing.Size(653, 190);
-            this.dgvAltaPelicula.TabIndex = 14;
+            dgvAltaPelicula.AllowUserToAddRows = false;
+            dgvAltaPelicula.AllowUserToDeleteRows = false;
+            dgvAltaPelicula.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAltaPelicula.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAltaPelicula.Columns.AddRange(new DataGridViewColumn[] { colId, colTitulo, colDuracion, colClasificacion, colGenero, colIdioma });
+            dgvAltaPelicula.GridColor = SystemColors.ActiveCaptionText;
+            dgvAltaPelicula.Location = new Point(9, 211);
+            dgvAltaPelicula.Name = "dgvAltaPelicula";
+            dgvAltaPelicula.ReadOnly = true;
+            dgvAltaPelicula.RowTemplate.Height = 25;
+            dgvAltaPelicula.Size = new Size(653, 190);
+            dgvAltaPelicula.TabIndex = 14;
             // 
             // colId
             // 
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
+            colId.HeaderText = "Id";
+            colId.Name = "colId";
+            colId.ReadOnly = true;
+            colId.Visible = false;
             // 
             // colTitulo
             // 
-            this.colTitulo.FillWeight = 150F;
-            this.colTitulo.HeaderText = "Título";
-            this.colTitulo.Name = "colTitulo";
-            this.colTitulo.ReadOnly = true;
+            colTitulo.FillWeight = 150F;
+            colTitulo.HeaderText = "Título";
+            colTitulo.Name = "colTitulo";
+            colTitulo.ReadOnly = true;
             // 
             // colDuracion
             // 
-            this.colDuracion.HeaderText = "Duracion";
-            this.colDuracion.Name = "colDuracion";
-            this.colDuracion.ReadOnly = true;
+            colDuracion.HeaderText = "Duracion";
+            colDuracion.Name = "colDuracion";
+            colDuracion.ReadOnly = true;
             // 
             // colClasificacion
             // 
-            this.colClasificacion.HeaderText = "Clasificación";
-            this.colClasificacion.Name = "colClasificacion";
-            this.colClasificacion.ReadOnly = true;
+            colClasificacion.HeaderText = "Clasificación";
+            colClasificacion.Name = "colClasificacion";
+            colClasificacion.ReadOnly = true;
             // 
             // colGenero
             // 
-            this.colGenero.HeaderText = "Género";
-            this.colGenero.Name = "colGenero";
-            this.colGenero.ReadOnly = true;
+            colGenero.HeaderText = "Género";
+            colGenero.Name = "colGenero";
+            colGenero.ReadOnly = true;
             // 
             // colIdioma
             // 
-            this.colIdioma.HeaderText = "Idioma";
-            this.colIdioma.Name = "colIdioma";
-            this.colIdioma.ReadOnly = true;
+            colIdioma.HeaderText = "Idioma";
+            colIdioma.Name = "colIdioma";
+            colIdioma.ReadOnly = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAgregar.Location = new System.Drawing.Point(587, 168);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 15;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            btnAgregar.ForeColor = SystemColors.ActiveCaptionText;
+            btnAgregar.Location = new Point(587, 168);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(75, 23);
+            btnAgregar.TabIndex = 15;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnSalir
             // 
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSalir.Location = new System.Drawing.Point(304, 418);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            btnSalir.ForeColor = SystemColors.ActiveCaptionText;
+            btnSalir.Location = new Point(304, 418);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 18;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FrmAltaPelicula
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::CineFront.Properties.Resources.consulta;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(674, 450);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dgvAltaPelicula);
-            this.Controls.Add(this.txtSinopsis);
-            this.Controls.Add(this.txtDuracion);
-            this.Controls.Add(this.cboGenero);
-            this.Controls.Add(this.cboIdioma);
-            this.Controls.Add(this.cboClasif);
-            this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Name = "FrmAltaPelicula";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alta Pelicula";
-            this.Load += new System.EventHandler(this.FrmAltaPelicula_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAltaPelicula)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            BackgroundImage = Properties.Resources.consulta;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(674, 450);
+            Controls.Add(btnSalir);
+            Controls.Add(btnAgregar);
+            Controls.Add(dgvAltaPelicula);
+            Controls.Add(txtSinopsis);
+            Controls.Add(txtDuracion);
+            Controls.Add(cboGenero);
+            Controls.Add(cboIdioma);
+            Controls.Add(cboClasif);
+            Controls.Add(txtTitulo);
+            Controls.Add(label8);
+            Controls.Add(label5);
+            Controls.Add(label6);
+            Controls.Add(label7);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            ForeColor = SystemColors.ControlLightLight;
+            Name = "FrmAltaPelicula";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Alta Pelicula";
+            Load += FrmAltaPelicula_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvAltaPelicula).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -23,13 +23,12 @@ namespace CineFront.Diseño
         private void FrmConsultarFunciones_Load(object sender, EventArgs e)
         {
             Limpiar();
-
+            dtpDesde.Value = dtpDesde.Value.AddYears(-3);
+            dtpHasta.Value = dtpHasta.Value.AddMonths(1);
         }
 
         private void Limpiar()
         {
-            dtpDesde.Value = dtpDesde.Value.AddYears(-3);
-            dtpHasta.Value = DateTime.Today;
             txtNumero.Text = String.Empty;
             dgvFunciones.Rows.Clear();
         }

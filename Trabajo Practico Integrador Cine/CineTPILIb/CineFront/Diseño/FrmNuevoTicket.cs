@@ -31,11 +31,7 @@ namespace CineFront.Diseño
         {
             ProximoTicket();
             CargarClientesAsync();
-            //CargarFuncionAsync();
-            //CargarButacasAsync();
-            //CargarMediosDeVentaAsync();
-            //CargarFormasDePagoAsync();
-            //CargarPromocionesAsync();
+
         }
 
         private void LoadTxtPrecioVenta(object sender, EventArgs e)
@@ -205,6 +201,18 @@ namespace CineFront.Diseño
                 MessageBox.Show("Debe de ingresar un precio de venta", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            //ver
+            foreach (DataGridViewRow item in dgvTicket.Rows)
+            {
+                if (item.Cells["ColButaca"].ToString().Equals(cboButaca.Text))
+                {
+                    MessageBox.Show("No puede elegir la misma butaca", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+
             AltaTicketDTO ticketDTO = new AltaTicketDTO();
             ticketDTO.Cliente = cboCliente.Text;
             ticketDTO.NroFuncion = cboFuncion.SelectedIndex + 1;

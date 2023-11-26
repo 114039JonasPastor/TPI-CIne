@@ -18,15 +18,26 @@ namespace CineFront.Diseño
 
         private void FrmConsultaPelicula_Load(object sender, EventArgs e)
         {
+            cboIdioma.SelectedIndex = -1;
+            cboGenero.SelectedIndex = -1;
+
             txtTitulo.Enabled = true;
             txtSinopsis.Enabled = true;
             cboGenero.Enabled = true;
             cboIdioma.Enabled = true;
 
-            CargarIdiomasAsync();
+        }
+        private void cboGenero_Click(object sender, EventArgs e)
+        {
             CargarGenerosAsync();
+
         }
 
+        private void cboIdioma_Click(object sender, EventArgs e)
+        {
+            CargarIdiomasAsync();
+
+        }
         private async void CargarIdiomasAsync()
         {
             string url = "https://localhost:7074/idiomas";
@@ -160,7 +171,6 @@ namespace CineFront.Diseño
             }
         }
 
-
-
+        
     }
 }

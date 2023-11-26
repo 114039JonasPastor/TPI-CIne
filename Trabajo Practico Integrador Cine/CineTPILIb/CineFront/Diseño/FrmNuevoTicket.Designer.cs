@@ -173,6 +173,7 @@
             // 
             // cboMedioDeVenta
             // 
+            cboMedioDeVenta.DropDownStyle = ComboBoxStyle.DropDownList;
             cboMedioDeVenta.FormattingEnabled = true;
             cboMedioDeVenta.Location = new Point(814, 45);
             cboMedioDeVenta.Name = "cboMedioDeVenta";
@@ -191,6 +192,7 @@
             // 
             // cboPromocion
             // 
+            cboPromocion.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPromocion.FormattingEnabled = true;
             cboPromocion.Location = new Point(1049, 104);
             cboPromocion.Name = "cboPromocion";
@@ -209,6 +211,7 @@
             // 
             // cboFormaDePago
             // 
+            cboFormaDePago.DropDownStyle = ComboBoxStyle.DropDownList;
             cboFormaDePago.FormattingEnabled = true;
             cboFormaDePago.Location = new Point(814, 104);
             cboFormaDePago.Name = "cboFormaDePago";
@@ -280,6 +283,7 @@
             // 
             // cboButaca
             // 
+            cboButaca.DropDownStyle = ComboBoxStyle.DropDownList;
             cboButaca.FormattingEnabled = true;
             cboButaca.Location = new Point(113, 130);
             cboButaca.Name = "cboButaca";
@@ -289,6 +293,7 @@
             // 
             // cboFuncion
             // 
+            cboFuncion.DropDownStyle = ComboBoxStyle.DropDownList;
             cboFuncion.FormattingEnabled = true;
             cboFuncion.Location = new Point(113, 101);
             cboFuncion.Name = "cboFuncion";
@@ -299,6 +304,7 @@
             // 
             // cboCliente
             // 
+            cboCliente.DropDownStyle = ComboBoxStyle.DropDownList;
             cboCliente.FormattingEnabled = true;
             cboCliente.Location = new Point(113, 42);
             cboCliente.Name = "cboCliente";
@@ -351,6 +357,7 @@
             Controls.Add(btnAgregar);
             Controls.Add(dgvTicket);
             Name = "FrmNuevoTicket";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Nuevo Ticket";
             Load += FrmNuevoTicket_Load;
             ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();

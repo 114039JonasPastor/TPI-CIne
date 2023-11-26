@@ -386,6 +386,7 @@ from PELICULAS p
 join GENEROS g on g.id_genero = p.id_genero
 join IDIOMAS i on i.id_idioma = p.id_idioma
 join CLASIFICACIONES c on c.id_clasificacion = p.id_clasificacion
+order by titulo
 END;
 GO
 
@@ -477,10 +478,10 @@ GO
 
 
 -------------------------------------------FUNCIONES
-Create procedure SP_CONSULTAR_FUNCIONES
+create procedure SP_CONSULTAR_FUNCIONES
 as
 begin
-select * from FUNCIONES where estado = 1
+select * from FUNCIONES where estado = 1 order by id_funcion desc
 end;
 GO
 
@@ -622,8 +623,8 @@ CREATE proc [dbo].[SP_INSERTAR_FUNCION]
 @id_horario int
 as
 begin
-insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, id_horario) 
-values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@id_horario)
+insert into funciones(id_sala, estado, id_pelicula, precio, fecha_desde, fecha_hasta, id_horario, id_formato) 
+values (@id_sala,1,@id_pelicula,@precio,@fecha_desde,@fecha_hasta,@id_horario, 3)
 end;
 GO
 

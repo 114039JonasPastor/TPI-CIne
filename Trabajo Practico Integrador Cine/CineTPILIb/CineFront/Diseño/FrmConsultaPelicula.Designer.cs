@@ -103,6 +103,7 @@
             cboGenero.Name = "cboGenero";
             cboGenero.Size = new Size(199, 23);
             cboGenero.TabIndex = 21;
+            cboGenero.Click += cboGenero_Click;
             // 
             // cboIdioma
             // 
@@ -113,6 +114,7 @@
             cboIdioma.Name = "cboIdioma";
             cboIdioma.Size = new Size(199, 23);
             cboIdioma.TabIndex = 20;
+            cboIdioma.Click += cboIdioma_Click;
             // 
             // label8
             // 

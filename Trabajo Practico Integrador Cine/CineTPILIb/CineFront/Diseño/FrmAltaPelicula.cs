@@ -31,9 +31,24 @@ namespace CineFront.Diseño
             txtTitulo.Focus();
             txtDuracion.Text = "0";
             txtSinopsis.Text = "Sinopsis...";
+        }
+
+        private void cboClasif_Click(object sender, EventArgs e)
+        {
             CargarClasificacionesAsync();
-            CargarIdiomasAsync();
+
+        }
+
+        private void cboGenero_Click(object sender, EventArgs e)
+        {
             CargarGenerosAsync();
+
+        }
+
+        private void cboIdioma_Click(object sender, EventArgs e)
+        {
+            CargarIdiomasAsync();
+
         }
 
         private async void CargarClasificacionesAsync()
@@ -130,6 +145,8 @@ namespace CineFront.Diseño
                 MessageBox.Show("No se pudo agregar la pelicula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         //private async Task BorrarPresupuestoAsync(int idPelicula)
         //{

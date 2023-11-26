@@ -25,17 +25,29 @@ namespace CineFront.Diseño
             nuevaDTO = new FuncionDTO();
         }
 
-        private void lblSala_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmAltaFuncion_Load(object sender, EventArgs e)
         {
-            CargarPeliculasAsync();
-            CargarSalasAscync();
-            CargarHorariosAsync();
+            dtpHasta.Value = dtpHasta.Value.AddDays(14);
         }
+
+        private void cboSala_Click(object sender, EventArgs e)
+        {
+            CargarSalasAscync();
+
+        }
+
+        private void cboPelicula_Click(object sender, EventArgs e)
+        {
+            CargarPeliculasAsync();
+
+        }
+
+        private void cboHorarios_Click(object sender, EventArgs e)
+        {
+            CargarHorariosAsync();
+
+        }
+
         private async void CargarHorariosAsync()
         {
             string url = "https://localhost:7074/Combo Horarios";
@@ -91,6 +103,13 @@ namespace CineFront.Diseño
                 MessageBox.Show("Debe de ingresar un precio", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (dgvFunciones.Rows.Count == 1)
+            {
+                MessageBox.Show("Solo puede cargar una funcion", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             nuevaDTO.Pelicula = cboPelicula.Text;
             nuevaDTO.Sala = Convert.ToInt32(cboSala.Text);
             nuevaDTO.Horario = cboHorarios.Text;
@@ -143,9 +162,6 @@ namespace CineFront.Diseño
             this.Dispose();
         }
 
-        private void cboPelicula_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

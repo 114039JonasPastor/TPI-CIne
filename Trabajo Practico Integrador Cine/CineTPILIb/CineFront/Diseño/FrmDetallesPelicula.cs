@@ -224,14 +224,14 @@ namespace CineFront.Diseño
         {
             if (chkBaja.Checked)
             {
-                Activar(false);
+                Activar(true);
                 btnCancelar.Enabled = true;
                 btnGuardar.Enabled = true;
                 btnModificar.Enabled = false;
             }
             else
             {
-                Activar(true);
+                Activar(false);
                 btnCancelar.Enabled = false;
                 btnGuardar.Enabled = false;
                 btnModificar.Enabled = true;
@@ -239,7 +239,6 @@ namespace CineFront.Diseño
 
         }
 
-        
     }
 }
 

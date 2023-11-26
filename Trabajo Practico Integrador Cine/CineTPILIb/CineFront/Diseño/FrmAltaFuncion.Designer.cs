@@ -167,7 +167,7 @@
             cboPelicula.Name = "cboPelicula";
             cboPelicula.Size = new Size(774, 23);
             cboPelicula.TabIndex = 2;
-            cboPelicula.SelectedIndexChanged += cboPelicula_SelectedIndexChanged;
+            cboPelicula.Click += cboPelicula_Click;
             // 
             // lblPelicula
             // 
@@ -201,6 +201,7 @@
             cboSala.Name = "cboSala";
             cboSala.Size = new Size(149, 23);
             cboSala.TabIndex = 0;
+            cboSala.Click += cboSala_Click;
             // 
             // dtpHasta
             // 
@@ -217,7 +218,6 @@
             lblSala.Size = new Size(28, 15);
             lblSala.TabIndex = 1;
             lblSala.Text = "Sala";
-            lblSala.Click += lblSala_Click;
             // 
             // lblHorario
             // 
@@ -235,6 +235,7 @@
             cboHorarios.Name = "cboHorarios";
             cboHorarios.Size = new Size(137, 23);
             cboHorarios.TabIndex = 17;
+            cboHorarios.Click += cboHorarios_Click;
             // 
             // lblPrecio
             // 

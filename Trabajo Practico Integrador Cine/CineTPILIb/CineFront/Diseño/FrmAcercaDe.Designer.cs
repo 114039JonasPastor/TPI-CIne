@@ -139,6 +139,7 @@
             label7.Size = new Size(183, 27);
             label7.TabIndex = 6;
             label7.Text = "Franco Domínguez";
+            lm.SetToolTip(label7, "LinkedIn");
             label7.Click += label7_Click;
             // 
             // btnVolver
