@@ -28,241 +28,241 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            txtSinopsis = new TextBox();
-            txtTitulo = new TextBox();
-            label2 = new Label();
-            lblID = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            cboClasificacion = new ComboBox();
-            cboGenero = new ComboBox();
-            label6 = new Label();
-            cboIdioma = new ComboBox();
-            label7 = new Label();
-            btnVolver = new Button();
-            btnModificar = new Button();
-            btnGuardar = new Button();
-            lblDuracion = new Label();
-            txtDuracion = new TextBox();
-            label8 = new Label();
-            btnCancelar = new Button();
-            chkBaja = new CheckBox();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSinopsis = new System.Windows.Forms.TextBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboClasificacion = new System.Windows.Forms.ComboBox();
+            this.cboGenero = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboIdioma = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblDuracion = new System.Windows.Forms.Label();
+            this.txtDuracion = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.chkBaja = new System.Windows.Forms.CheckBox();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(120, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(21, 15);
-            label1.TabIndex = 0;
-            label1.Text = "ID:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(120, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID:";
             // 
             // txtSinopsis
             // 
-            txtSinopsis.Location = new Point(165, 144);
-            txtSinopsis.Multiline = true;
-            txtSinopsis.Name = "txtSinopsis";
-            txtSinopsis.Size = new Size(299, 80);
-            txtSinopsis.TabIndex = 1;
+            this.txtSinopsis.Location = new System.Drawing.Point(165, 144);
+            this.txtSinopsis.Multiline = true;
+            this.txtSinopsis.Name = "txtSinopsis";
+            this.txtSinopsis.Size = new System.Drawing.Size(299, 80);
+            this.txtSinopsis.TabIndex = 5;
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(165, 100);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(299, 23);
-            txtTitulo.TabIndex = 3;
+            this.txtTitulo.Location = new System.Drawing.Point(165, 100);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(299, 23);
+            this.txtTitulo.TabIndex = 3;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(101, 103);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Título:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(101, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Título:";
             // 
             // lblID
             // 
-            lblID.AutoSize = true;
-            lblID.Location = new Point(165, 62);
-            lblID.Name = "lblID";
-            lblID.Size = new Size(0, 15);
-            lblID.TabIndex = 4;
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(165, 62);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 15);
+            this.lblID.TabIndex = 1;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(88, 147);
-            label4.Name = "label4";
-            label4.Size = new Size(53, 15);
-            label4.TabIndex = 5;
-            label4.Text = "Sinopsis:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(88, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Sinopsis:";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(64, 286);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 15);
-            label5.TabIndex = 6;
-            label5.Text = "Clasificación:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(64, 286);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 15);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Clasificación:";
             // 
             // cboClasificacion
             // 
-            cboClasificacion.FormattingEnabled = true;
-            cboClasificacion.Location = new Point(165, 283);
-            cboClasificacion.Name = "cboClasificacion";
-            cboClasificacion.Size = new Size(213, 23);
-            cboClasificacion.TabIndex = 7;
-            cboClasificacion.Click += cboClasificacion_Click;
+            this.cboClasificacion.FormattingEnabled = true;
+            this.cboClasificacion.Location = new System.Drawing.Point(165, 283);
+            this.cboClasificacion.Name = "cboClasificacion";
+            this.cboClasificacion.Size = new System.Drawing.Size(213, 23);
+            this.cboClasificacion.TabIndex = 10;
+            this.cboClasificacion.Click += new System.EventHandler(this.cboClasificacion_Click);
             // 
             // cboGenero
             // 
-            cboGenero.FormattingEnabled = true;
-            cboGenero.Location = new Point(165, 327);
-            cboGenero.Name = "cboGenero";
-            cboGenero.Size = new Size(213, 23);
-            cboGenero.TabIndex = 9;
-            cboGenero.Click += cboGenero_Click;
+            this.cboGenero.FormattingEnabled = true;
+            this.cboGenero.Location = new System.Drawing.Point(165, 327);
+            this.cboGenero.Name = "cboGenero";
+            this.cboGenero.Size = new System.Drawing.Size(213, 23);
+            this.cboGenero.TabIndex = 12;
+            this.cboGenero.Click += new System.EventHandler(this.cboGenero_Click);
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(93, 330);
-            label6.Name = "label6";
-            label6.Size = new Size(48, 15);
-            label6.TabIndex = 8;
-            label6.Text = "Género:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(93, 330);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Género:";
             // 
             // cboIdioma
             // 
-            cboIdioma.FormattingEnabled = true;
-            cboIdioma.Location = new Point(165, 371);
-            cboIdioma.Name = "cboIdioma";
-            cboIdioma.Size = new Size(213, 23);
-            cboIdioma.TabIndex = 11;
-            cboIdioma.Click += cboIdioma_Click;
+            this.cboIdioma.FormattingEnabled = true;
+            this.cboIdioma.Location = new System.Drawing.Point(165, 371);
+            this.cboIdioma.Name = "cboIdioma";
+            this.cboIdioma.Size = new System.Drawing.Size(213, 23);
+            this.cboIdioma.TabIndex = 14;
+            this.cboIdioma.Click += new System.EventHandler(this.cboIdioma_Click);
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(94, 374);
-            label7.Name = "label7";
-            label7.Size = new Size(47, 15);
-            label7.TabIndex = 10;
-            label7.Text = "Idioma:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(94, 374);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 15);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Idioma:";
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(429, 478);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(86, 41);
-            btnVolver.TabIndex = 12;
-            btnVolver.Text = "Volver";
-            btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Click += btnVolver_Click;
+            this.btnVolver.Location = new System.Drawing.Point(429, 478);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(86, 41);
+            this.btnVolver.TabIndex = 19;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(22, 478);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(86, 41);
-            btnModificar.TabIndex = 13;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click;
+            this.btnModificar.Location = new System.Drawing.Point(22, 478);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(86, 41);
+            this.btnModificar.TabIndex = 16;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(260, 478);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(86, 41);
-            btnGuardar.TabIndex = 14;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            this.btnGuardar.Location = new System.Drawing.Point(260, 478);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(86, 41);
+            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblDuracion
             // 
-            lblDuracion.AutoSize = true;
-            lblDuracion.Location = new Point(83, 245);
-            lblDuracion.Name = "lblDuracion";
-            lblDuracion.Size = new Size(58, 15);
-            lblDuracion.TabIndex = 15;
-            lblDuracion.Text = "Duración:";
+            this.lblDuracion.AutoSize = true;
+            this.lblDuracion.Location = new System.Drawing.Point(83, 245);
+            this.lblDuracion.Name = "lblDuracion";
+            this.lblDuracion.Size = new System.Drawing.Size(58, 15);
+            this.lblDuracion.TabIndex = 6;
+            this.lblDuracion.Text = "Duración:";
             // 
             // txtDuracion
             // 
-            txtDuracion.Location = new Point(165, 242);
-            txtDuracion.Name = "txtDuracion";
-            txtDuracion.Size = new Size(86, 23);
-            txtDuracion.TabIndex = 16;
+            this.txtDuracion.Location = new System.Drawing.Point(165, 242);
+            this.txtDuracion.Name = "txtDuracion";
+            this.txtDuracion.Size = new System.Drawing.Size(86, 23);
+            this.txtDuracion.TabIndex = 7;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(266, 245);
-            label8.Name = "label8";
-            label8.Size = new Size(54, 15);
-            label8.TabIndex = 17;
-            label8.Text = "minutos.";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(266, 245);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 15);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "minutos.";
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(141, 478);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(86, 41);
-            btnCancelar.TabIndex = 18;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            this.btnCancelar.Location = new System.Drawing.Point(141, 478);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(86, 41);
+            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // chkBaja
             // 
-            chkBaja.AutoSize = true;
-            chkBaja.Location = new Point(223, 420);
-            chkBaja.Name = "chkBaja";
-            chkBaja.Size = new Size(97, 19);
-            chkBaja.TabIndex = 19;
-            chkBaja.Text = "DAR DE BAJA";
-            chkBaja.UseVisualStyleBackColor = true;
-            chkBaja.Click += chkBaja_CheckedChanged;
+            this.chkBaja.AutoSize = true;
+            this.chkBaja.Location = new System.Drawing.Point(223, 420);
+            this.chkBaja.Name = "chkBaja";
+            this.chkBaja.Size = new System.Drawing.Size(97, 19);
+            this.chkBaja.TabIndex = 15;
+            this.chkBaja.Text = "DAR DE BAJA";
+            this.chkBaja.UseVisualStyleBackColor = true;
+            this.chkBaja.Click += new System.EventHandler(this.chkBaja_CheckedChanged);
             // 
             // FrmDetallesPelicula
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.fondoB;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(535, 549);
-            Controls.Add(chkBaja);
-            Controls.Add(btnCancelar);
-            Controls.Add(label8);
-            Controls.Add(txtDuracion);
-            Controls.Add(lblDuracion);
-            Controls.Add(btnGuardar);
-            Controls.Add(btnModificar);
-            Controls.Add(btnVolver);
-            Controls.Add(cboIdioma);
-            Controls.Add(label7);
-            Controls.Add(cboGenero);
-            Controls.Add(label6);
-            Controls.Add(cboClasificacion);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(lblID);
-            Controls.Add(txtTitulo);
-            Controls.Add(label2);
-            Controls.Add(txtSinopsis);
-            Controls.Add(label1);
-            Name = "FrmDetallesPelicula";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Detalles de la Pelicula";
-            Load += FrmDetallesPelicula_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CineFront.Properties.Resources.fondoB;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(535, 549);
+            this.Controls.Add(this.chkBaja);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtDuracion);
+            this.Controls.Add(this.lblDuracion);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.cboIdioma);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cboGenero);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cboClasificacion);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.txtTitulo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtSinopsis);
+            this.Controls.Add(this.label1);
+            this.Name = "FrmDetallesPelicula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Detalles de la Pelicula";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

@@ -29,214 +29,223 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarFunciones));
-            dgvFunciones = new DataGridView();
-            ColID = new DataGridViewTextBoxColumn();
-            ColPelicula = new DataGridViewTextBoxColumn();
-            ColSala = new DataGridViewTextBoxColumn();
-            ColTipoDeSala = new DataGridViewTextBoxColumn();
-            ColHorario = new DataGridViewTextBoxColumn();
-            ColFecDesde = new DataGridViewTextBoxColumn();
-            ColFecHasta = new DataGridViewTextBoxColumn();
-            ColPrecio = new DataGridViewTextBoxColumn();
-            ColAccion = new DataGridViewButtonColumn();
-            btnSalir = new Button();
-            groupBox1 = new GroupBox();
-            txtNumero = new TextBox();
-            lblNumeroDeFuncion = new Label();
-            lblFecHasta = new Label();
-            lblFecDesde = new Label();
-            dtpHasta = new DateTimePicker();
-            dtpDesde = new DateTimePicker();
-            btnConsultar = new Button();
-            btnModificar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dgvFunciones).BeginInit();
-            groupBox1.SuspendLayout();
-            SuspendLayout();
+            this.dgvFunciones = new System.Windows.Forms.DataGridView();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTipoDeSala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAccion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.lblNumeroDeFuncion = new System.Windows.Forms.Label();
+            this.lblFecHasta = new System.Windows.Forms.Label();
+            this.lblFecDesde = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // dgvFunciones
             // 
-            dgvFunciones.AllowUserToAddRows = false;
-            dgvFunciones.AllowUserToDeleteRows = false;
-            dgvFunciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvFunciones.Columns.AddRange(new DataGridViewColumn[] { ColID, ColPelicula, ColSala, ColTipoDeSala, ColHorario, ColFecDesde, ColFecHasta, ColPrecio, ColAccion });
-            dgvFunciones.Location = new Point(12, 147);
-            dgvFunciones.Name = "dgvFunciones";
-            dgvFunciones.ReadOnly = true;
-            dgvFunciones.RowTemplate.Height = 25;
-            dgvFunciones.Size = new Size(860, 263);
-            dgvFunciones.TabIndex = 16;
-            dgvFunciones.CellContentClick += dgvFunciones_CellContentClick_1;
+            this.dgvFunciones.AllowUserToAddRows = false;
+            this.dgvFunciones.AllowUserToDeleteRows = false;
+            this.dgvFunciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFunciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColID,
+            this.ColPelicula,
+            this.ColSala,
+            this.ColTipoDeSala,
+            this.ColHorario,
+            this.ColFecDesde,
+            this.ColFecHasta,
+            this.ColPrecio,
+            this.ColAccion});
+            this.dgvFunciones.Location = new System.Drawing.Point(12, 147);
+            this.dgvFunciones.Name = "dgvFunciones";
+            this.dgvFunciones.ReadOnly = true;
+            this.dgvFunciones.RowTemplate.Height = 25;
+            this.dgvFunciones.Size = new System.Drawing.Size(931, 263);
+            this.dgvFunciones.TabIndex = 1;
+            this.dgvFunciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFunciones_CellContentClick_1);
             // 
             // ColID
             // 
-            ColID.HeaderText = "ID";
-            ColID.Name = "ColID";
-            ColID.ReadOnly = true;
-            ColID.Visible = false;
+            this.ColID.HeaderText = "ID";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
             // 
             // ColPelicula
             // 
-            ColPelicula.HeaderText = "Pelicula";
-            ColPelicula.Name = "ColPelicula";
-            ColPelicula.ReadOnly = true;
+            this.ColPelicula.HeaderText = "Pelicula";
+            this.ColPelicula.Name = "ColPelicula";
+            this.ColPelicula.ReadOnly = true;
             // 
             // ColSala
             // 
-            ColSala.HeaderText = "Sala";
-            ColSala.Name = "ColSala";
-            ColSala.ReadOnly = true;
+            this.ColSala.HeaderText = "Sala";
+            this.ColSala.Name = "ColSala";
+            this.ColSala.ReadOnly = true;
             // 
             // ColTipoDeSala
             // 
-            ColTipoDeSala.HeaderText = "Tipo de sala";
-            ColTipoDeSala.Name = "ColTipoDeSala";
-            ColTipoDeSala.ReadOnly = true;
+            this.ColTipoDeSala.HeaderText = "Tipo de sala";
+            this.ColTipoDeSala.Name = "ColTipoDeSala";
+            this.ColTipoDeSala.ReadOnly = true;
             // 
             // ColHorario
             // 
-            ColHorario.HeaderText = "Horario";
-            ColHorario.Name = "ColHorario";
-            ColHorario.ReadOnly = true;
+            this.ColHorario.HeaderText = "Horario";
+            this.ColHorario.Name = "ColHorario";
+            this.ColHorario.ReadOnly = true;
             // 
             // ColFecDesde
             // 
-            ColFecDesde.HeaderText = "Fecha desde";
-            ColFecDesde.Name = "ColFecDesde";
-            ColFecDesde.ReadOnly = true;
+            this.ColFecDesde.HeaderText = "Fecha desde";
+            this.ColFecDesde.Name = "ColFecDesde";
+            this.ColFecDesde.ReadOnly = true;
             // 
             // ColFecHasta
             // 
-            ColFecHasta.HeaderText = "Fecha hasta";
-            ColFecHasta.Name = "ColFecHasta";
-            ColFecHasta.ReadOnly = true;
+            this.ColFecHasta.HeaderText = "Fecha hasta";
+            this.ColFecHasta.Name = "ColFecHasta";
+            this.ColFecHasta.ReadOnly = true;
             // 
             // ColPrecio
             // 
-            ColPrecio.HeaderText = "Precio";
-            ColPrecio.Name = "ColPrecio";
-            ColPrecio.ReadOnly = true;
+            this.ColPrecio.HeaderText = "Precio";
+            this.ColPrecio.Name = "ColPrecio";
+            this.ColPrecio.ReadOnly = true;
             // 
             // ColAccion
             // 
-            ColAccion.HeaderText = "Accion";
-            ColAccion.Name = "ColAccion";
-            ColAccion.ReadOnly = true;
-            ColAccion.Text = "Dar de baja";
-            ColAccion.UseColumnTextForButtonValue = true;
+            this.ColAccion.HeaderText = "Accion";
+            this.ColAccion.Name = "ColAccion";
+            this.ColAccion.ReadOnly = true;
+            this.ColAccion.Text = "Dar de baja";
+            this.ColAccion.UseColumnTextForButtonValue = true;
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(777, 416);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(95, 23);
-            btnSalir.TabIndex = 20;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            this.btnSalir.Location = new System.Drawing.Point(848, 416);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(95, 23);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = SystemColors.GradientActiveCaption;
-            groupBox1.Controls.Add(txtNumero);
-            groupBox1.Controls.Add(lblNumeroDeFuncion);
-            groupBox1.Controls.Add(lblFecHasta);
-            groupBox1.Controls.Add(lblFecDesde);
-            groupBox1.Controls.Add(dtpHasta);
-            groupBox1.Controls.Add(dtpDesde);
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(860, 100);
-            groupBox1.TabIndex = 21;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Filtros";
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.txtNumero);
+            this.groupBox1.Controls.Add(this.lblNumeroDeFuncion);
+            this.groupBox1.Controls.Add(this.lblFecHasta);
+            this.groupBox1.Controls.Add(this.lblFecDesde);
+            this.groupBox1.Controls.Add(this.dtpHasta);
+            this.groupBox1.Controls.Add(this.dtpDesde);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(931, 100);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros";
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(141, 22);
-            txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(220, 23);
-            txtNumero.TabIndex = 5;
+            this.txtNumero.Location = new System.Drawing.Point(141, 22);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(220, 23);
+            this.txtNumero.TabIndex = 1;
             // 
             // lblNumeroDeFuncion
             // 
-            lblNumeroDeFuncion.AutoSize = true;
-            lblNumeroDeFuncion.Location = new Point(6, 25);
-            lblNumeroDeFuncion.Name = "lblNumeroDeFuncion";
-            lblNumeroDeFuncion.Size = new Size(113, 15);
-            lblNumeroDeFuncion.TabIndex = 4;
-            lblNumeroDeFuncion.Text = "Numero de Función";
+            this.lblNumeroDeFuncion.AutoSize = true;
+            this.lblNumeroDeFuncion.Location = new System.Drawing.Point(6, 25);
+            this.lblNumeroDeFuncion.Name = "lblNumeroDeFuncion";
+            this.lblNumeroDeFuncion.Size = new System.Drawing.Size(113, 15);
+            this.lblNumeroDeFuncion.TabIndex = 0;
+            this.lblNumeroDeFuncion.Text = "Numero de Función";
             // 
             // lblFecHasta
             // 
-            lblFecHasta.AutoSize = true;
-            lblFecHasta.Location = new Point(444, 54);
-            lblFecHasta.Name = "lblFecHasta";
-            lblFecHasta.Size = new Size(37, 15);
-            lblFecHasta.TabIndex = 3;
-            lblFecHasta.Text = "Hasta";
+            this.lblFecHasta.AutoSize = true;
+            this.lblFecHasta.Location = new System.Drawing.Point(444, 54);
+            this.lblFecHasta.Name = "lblFecHasta";
+            this.lblFecHasta.Size = new System.Drawing.Size(37, 15);
+            this.lblFecHasta.TabIndex = 4;
+            this.lblFecHasta.Text = "Hasta";
             // 
             // lblFecDesde
             // 
-            lblFecDesde.AutoSize = true;
-            lblFecDesde.Location = new Point(444, 25);
-            lblFecDesde.Name = "lblFecDesde";
-            lblFecDesde.Size = new Size(39, 15);
-            lblFecDesde.TabIndex = 2;
-            lblFecDesde.Text = "Desde";
+            this.lblFecDesde.AutoSize = true;
+            this.lblFecDesde.Location = new System.Drawing.Point(444, 25);
+            this.lblFecDesde.Name = "lblFecDesde";
+            this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
+            this.lblFecDesde.TabIndex = 2;
+            this.lblFecDesde.Text = "Desde";
             // 
             // dtpHasta
             // 
-            dtpHasta.Location = new Point(508, 48);
-            dtpHasta.Name = "dtpHasta";
-            dtpHasta.Size = new Size(266, 23);
-            dtpHasta.TabIndex = 1;
+            this.dtpHasta.Location = new System.Drawing.Point(508, 48);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(266, 23);
+            this.dtpHasta.TabIndex = 5;
             // 
             // dtpDesde
             // 
-            dtpDesde.Location = new Point(508, 19);
-            dtpDesde.Name = "dtpDesde";
-            dtpDesde.Size = new Size(266, 23);
-            dtpDesde.TabIndex = 0;
+            this.dtpDesde.Location = new System.Drawing.Point(508, 19);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(266, 23);
+            this.dtpDesde.TabIndex = 3;
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(777, 118);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(95, 23);
-            btnConsultar.TabIndex = 22;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = true;
-            btnConsultar.Click += btnConsultar_Click_1;
+            this.btnConsultar.Location = new System.Drawing.Point(848, 118);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(95, 23);
+            this.btnConsultar.TabIndex = 0;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click_1);
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(12, 416);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(104, 23);
-            btnModificar.TabIndex = 23;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
-            btnModificar.Click += btnModificar_Click_1;
+            this.btnModificar.Location = new System.Drawing.Point(12, 416);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(104, 23);
+            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // FrmConsultarFunciones
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(889, 451);
-            Controls.Add(btnModificar);
-            Controls.Add(btnConsultar);
-            Controls.Add(groupBox1);
-            Controls.Add(btnSalir);
-            Controls.Add(dgvFunciones);
-            Name = "FrmConsultarFunciones";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Consultar funciones";
-            Load += FrmConsultarFunciones_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvFunciones).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(955, 451);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.dgvFunciones);
+            this.Name = "FrmConsultarFunciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consultar funciones";
+            this.Load += new System.EventHandler(this.FrmConsultarFunciones_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFunciones)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -251,6 +260,7 @@
         private DateTimePicker dtpHasta;
         private DateTimePicker dtpDesde;
         private Button btnConsultar;
+        private Button btnModificar;
         private DataGridViewTextBoxColumn ColID;
         private DataGridViewTextBoxColumn ColPelicula;
         private DataGridViewTextBoxColumn ColSala;
@@ -260,6 +270,5 @@
         private DataGridViewTextBoxColumn ColFecHasta;
         private DataGridViewTextBoxColumn ColPrecio;
         private DataGridViewButtonColumn ColAccion;
-        private Button btnModificar;
     }
 }

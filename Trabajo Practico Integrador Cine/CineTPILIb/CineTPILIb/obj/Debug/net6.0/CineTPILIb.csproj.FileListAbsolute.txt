@@ -106,3 +106,51 @@ C:\Users\usuario\Desktop\TPCine\TpCineFinal\TPI-CIne-mainFinal\Trabajo Practico 
 C:\Users\usuario\Desktop\TPCine\TpCineFinal\TPI-CIne-mainFinal\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
 C:\Users\usuario\Desktop\TPCine\TpCineFinal\TPI-CIne-mainFinal\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
 C:\Users\usuario\Desktop\TPCine\TpCineFinal\TPI-CIne-mainFinal\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.deps.json
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.dll
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.pdb
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfo.cs
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.dll
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
+C:\Users\usuario\Desktop\TPCine\TPI-CIne-main\Trabajo Practico Integrador Cine\CineTPILIb\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.deps.json
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\bin\Debug\net6.0\CineTPILIb.pdb
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.AssemblyReference.cache
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfoInputs.cache
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfo.cs
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
+C:\Users\Usuario\Downloads\CineTPILIb\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\bin\Debug\net6.0\CineTPILIb.deps.json
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\bin\Debug\net6.0\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\bin\Debug\net6.0\CineTPILIb.pdb
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.AssemblyReference.cache
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfoInputs.cache
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfo.cs
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
+C:\Users\Usuario\Downloads\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\bin\Debug\net6.0\CineTPILIb.deps.json
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\bin\Debug\net6.0\CineTPILIb.dll
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\bin\Debug\net6.0\CineTPILIb.pdb
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.AssemblyReference.cache
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.AssemblyInfo.cs
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.dll
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\refint\CineTPILIb.dll
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\CineTPILIb.pdb
+C:\Users\usuario\Desktop\CineTPILIb Jonas final\CineTPILIb\obj\Debug\net6.0\ref\CineTPILIb.dll

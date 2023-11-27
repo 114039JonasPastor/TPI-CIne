@@ -1,6 +1,7 @@
 ﻿using CineFront.Http;
 using CineTPILIb.Dominio;
 using CineTPILIb.Dominio.DTO;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,9 +80,13 @@ namespace CineFront.Diseño
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                MessageBox.Show("Ingrese un precio.", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             ActualizarFuncionAsync();
         }
-
         private async void ActualizarFuncionAsync()
         {
             Funcion funcionModificada = new Funcion

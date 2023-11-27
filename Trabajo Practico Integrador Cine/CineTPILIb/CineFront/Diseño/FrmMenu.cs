@@ -123,5 +123,11 @@ namespace CineFront
         {
 
         }
+
+        private void gananciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReporteGanancias form = new FrmReporteGanancias();
+            form.ShowDialog();
+        }
     }
 }

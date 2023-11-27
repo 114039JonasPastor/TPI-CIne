@@ -10,10 +10,12 @@
 
   <ItemGroup>
     <None Remove="Diseño\Report1.rdlc" />
+    <None Remove="Diseño\Report3.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Diseño\Report1.rdlc" />
+    <EmbeddedResource Include="Diseño\Report3.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +37,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>CineOKDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="CineOKDataSet3.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CineOKDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Update="Diseño\DataSet1.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -63,6 +70,10 @@
     <None Update="CineOKDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CineOKDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="CineOKDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CineOKDataSet3.Designer.cs</LastGenOutput>
     </None>
     <None Update="Diseño\DataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>

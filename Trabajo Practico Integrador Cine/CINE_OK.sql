@@ -1841,4 +1841,22 @@ VALUES
 
 update TICKETS set estado = 1 
 
+create proc SP_Reporte2
+@desde datetime,
+@hasta datetime
+as
+select dt.id_funcion 'Numerodefuncion', Titulo,fecha_desde 'Desde', fecha_hasta 'Hasta',sum(total) 'Gananciatotal'
+from FUNCIONES f 
+join DETALLES_TICKET dt on dt.id_funcion = f.id_funcion
+join TICKETS t on t.id_ticket = dt.id_ticket
+join PELICULAS p on p.id_pelicula = f.id_pelicula
+where fecha_desde >= @desde and fecha_hasta <= @hasta
+group by dt.id_funcion, titulo, fecha_desde, fecha_hasta
 
+create proc [dbo].[SP_GENEROS]
+as
+begin
+select count(*), g.genero
+from GENEROS g join PELICULAS p on g.id_genero = p.id_genero
+group by g.genero
+end

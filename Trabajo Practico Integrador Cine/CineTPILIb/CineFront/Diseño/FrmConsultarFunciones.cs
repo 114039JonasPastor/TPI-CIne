@@ -121,5 +121,10 @@ namespace CineFront.Diseño
             int nro = int.Parse(dgvFunciones.CurrentRow.Cells["ColID"].Value.ToString());
             new FrmUpdateFuncion(nro).ShowDialog();
         }
+
+        private void FrmConsultarFunciones_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

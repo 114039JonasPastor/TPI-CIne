@@ -46,6 +46,7 @@
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quienesSomosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.gananciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,14 +77,14 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem.Text = "Cerrar Sesion";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click_1);
             // 
             // salirToolStripMenuItem1
             // 
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
             this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -122,14 +123,14 @@
             // consultarPeliculasToolStripMenuItem
             // 
             this.consultarPeliculasToolStripMenuItem.Name = "consultarPeliculasToolStripMenuItem";
-            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarPeliculasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.consultarPeliculasToolStripMenuItem.Text = "Consultar Películas";
             this.consultarPeliculasToolStripMenuItem.Click += new System.EventHandler(this.consultarPeliculasToolStripMenuItem_Click_1);
             // 
             // nuevaPelículaToolStripMenuItem
             // 
             this.nuevaPelículaToolStripMenuItem.Name = "nuevaPelículaToolStripMenuItem";
-            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaPelículaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.nuevaPelículaToolStripMenuItem.Text = "Agregar Película";
             this.nuevaPelículaToolStripMenuItem.Click += new System.EventHandler(this.nuevaPelículaToolStripMenuItem_Click);
             // 
@@ -145,21 +146,22 @@
             // nuevoTicketToolStripMenuItem
             // 
             this.nuevoTicketToolStripMenuItem.Name = "nuevoTicketToolStripMenuItem";
-            this.nuevoTicketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoTicketToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.nuevoTicketToolStripMenuItem.Text = "Nuevo Ticket";
             this.nuevoTicketToolStripMenuItem.Click += new System.EventHandler(this.nuevoTicketToolStripMenuItem_Click);
             // 
             // bajaTicketToolStripMenuItem
             // 
             this.bajaTicketToolStripMenuItem.Name = "bajaTicketToolStripMenuItem";
-            this.bajaTicketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bajaTicketToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.bajaTicketToolStripMenuItem.Text = "Baja Ticket";
             this.bajaTicketToolStripMenuItem.Click += new System.EventHandler(this.bajaTicketToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.peliculasToolStripMenuItem1});
+            this.peliculasToolStripMenuItem1,
+            this.gananciasToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -167,7 +169,7 @@
             // peliculasToolStripMenuItem1
             // 
             this.peliculasToolStripMenuItem1.Name = "peliculasToolStripMenuItem1";
-            this.peliculasToolStripMenuItem1.Size = new System.Drawing.Size(120, 22);
+            this.peliculasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.peliculasToolStripMenuItem1.Text = "Peliculas";
             this.peliculasToolStripMenuItem1.Click += new System.EventHandler(this.peliculasToolStripMenuItem1_Click);
             // 
@@ -182,7 +184,7 @@
             // quienesSomosToolStripMenuItem
             // 
             this.quienesSomosToolStripMenuItem.Name = "quienesSomosToolStripMenuItem";
-            this.quienesSomosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quienesSomosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.quienesSomosToolStripMenuItem.Text = "¿Quienes somos?";
             this.quienesSomosToolStripMenuItem.Click += new System.EventHandler(this.quienesSomosToolStripMenuItem_Click);
             // 
@@ -199,6 +201,13 @@
             this.label1.Size = new System.Drawing.Size(155, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "TPI Programación II";
+            // 
+            // gananciasToolStripMenuItem
+            // 
+            this.gananciasToolStripMenuItem.Name = "gananciasToolStripMenuItem";
+            this.gananciasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gananciasToolStripMenuItem.Text = "Ganancias ";
+            this.gananciasToolStripMenuItem.Click += new System.EventHandler(this.gananciasToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -242,5 +251,6 @@
         private ToolStripMenuItem nuevaPelículaToolStripMenuItem;
         private Label label1;
         private ToolStripMenuItem peliculasToolStripMenuItem1;
+        private ToolStripMenuItem gananciasToolStripMenuItem;
     }
 }

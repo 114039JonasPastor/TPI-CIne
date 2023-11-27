@@ -64,7 +64,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(756, 163);
-            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // txtPrecio
@@ -72,7 +72,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(64, 100);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 23);
-            this.txtPrecio.TabIndex = 18;
+            this.txtPrecio.TabIndex = 5;
             // 
             // lblPrecio
             // 
@@ -80,7 +80,7 @@
             this.lblPrecio.Location = new System.Drawing.Point(0, 103);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(40, 15);
-            this.lblPrecio.TabIndex = 15;
+            this.lblPrecio.TabIndex = 4;
             this.lblPrecio.Text = "Precio";
             // 
             // cboHorarios
@@ -89,7 +89,7 @@
             this.cboHorarios.Location = new System.Drawing.Point(507, 126);
             this.cboHorarios.Name = "cboHorarios";
             this.cboHorarios.Size = new System.Drawing.Size(137, 23);
-            this.cboHorarios.TabIndex = 17;
+            this.cboHorarios.TabIndex = 11;
             this.cboHorarios.Click += new System.EventHandler(this.LoadHorarios);
             // 
             // lblHorario
@@ -98,7 +98,7 @@
             this.lblHorario.Location = new System.Drawing.Point(454, 129);
             this.lblHorario.Name = "lblHorario";
             this.lblHorario.Size = new System.Drawing.Size(47, 15);
-            this.lblHorario.TabIndex = 13;
+            this.lblHorario.TabIndex = 10;
             this.lblHorario.Text = "Horario";
             // 
             // lblSala
@@ -107,7 +107,7 @@
             this.lblSala.Location = new System.Drawing.Point(0, 70);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(28, 15);
-            this.lblSala.TabIndex = 1;
+            this.lblSala.TabIndex = 2;
             this.lblSala.Text = "Sala";
             // 
             // dtpHasta
@@ -115,7 +115,7 @@
             this.dtpHasta.Location = new System.Drawing.Point(507, 97);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(229, 23);
-            this.dtpHasta.TabIndex = 12;
+            this.dtpHasta.TabIndex = 9;
             // 
             // cboSala
             // 
@@ -123,7 +123,7 @@
             this.cboSala.Location = new System.Drawing.Point(64, 67);
             this.cboSala.Name = "cboSala";
             this.cboSala.Size = new System.Drawing.Size(100, 23);
-            this.cboSala.TabIndex = 0;
+            this.cboSala.TabIndex = 3;
             this.cboSala.Click += new System.EventHandler(this.LoadSalas);
             // 
             // lblFecHasta
@@ -140,7 +140,7 @@
             this.dtpDesde.Location = new System.Drawing.Point(507, 64);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(229, 23);
-            this.dtpDesde.TabIndex = 11;
+            this.dtpDesde.TabIndex = 7;
             // 
             // lblPelicula
             // 
@@ -148,7 +148,7 @@
             this.lblPelicula.Location = new System.Drawing.Point(0, 38);
             this.lblPelicula.Name = "lblPelicula";
             this.lblPelicula.Size = new System.Drawing.Size(48, 15);
-            this.lblPelicula.TabIndex = 5;
+            this.lblPelicula.TabIndex = 0;
             this.lblPelicula.Text = "Pelicula";
             // 
             // cboPelicula
@@ -157,7 +157,7 @@
             this.cboPelicula.Location = new System.Drawing.Point(64, 35);
             this.cboPelicula.Name = "cboPelicula";
             this.cboPelicula.Size = new System.Drawing.Size(672, 23);
-            this.cboPelicula.TabIndex = 2;
+            this.cboPelicula.TabIndex = 1;
             this.cboPelicula.Click += new System.EventHandler(this.LoadPeliculass);
             // 
             // lblFecDesde
@@ -166,7 +166,7 @@
             this.lblFecDesde.Location = new System.Drawing.Point(454, 70);
             this.lblFecDesde.Name = "lblFecDesde";
             this.lblFecDesde.Size = new System.Drawing.Size(39, 15);
-            this.lblFecDesde.TabIndex = 7;
+            this.lblFecDesde.TabIndex = 6;
             this.lblFecDesde.Text = "Desde";
             // 
             // btnCancelar
@@ -174,7 +174,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(693, 170);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -184,7 +184,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(12, 170);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 23);
-            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

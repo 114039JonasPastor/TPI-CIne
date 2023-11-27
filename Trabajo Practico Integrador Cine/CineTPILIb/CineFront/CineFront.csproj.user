@@ -34,6 +34,9 @@
     <Compile Update="Diseño\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Diseño\FrmReporteGanancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Diseño\FrmSeleccionarFuncion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +60,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Update="CineOKDataSet1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="CineOKDataSet3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Update="Diseño\DataSet1.xsd">

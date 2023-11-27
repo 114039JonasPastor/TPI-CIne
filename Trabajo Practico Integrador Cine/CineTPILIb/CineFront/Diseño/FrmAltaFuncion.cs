@@ -81,7 +81,7 @@ namespace CineFront.Diseño
             cboPelicula.ValueMember = "Titulo";
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private async void btnAgregar_Click(object sender, EventArgs e)
         {
             if (cboHorarios.SelectedIndex == -1)
             {
@@ -118,12 +118,7 @@ namespace CineFront.Diseño
             nuevaDTO.Precio = Convert.ToDouble(txtPrecio.Text);
 
             dgvFunciones.Rows.Add(new object[] { nuevaDTO.ID, nuevaDTO.Pelicula, nuevaDTO.Sala, nuevaDTO.Horario, nuevaDTO.FechaDesde, nuevaDTO.FechaHasta, nuevaDTO.Precio });
-        }
-
-        private async void btnConfirmar_Click(object sender, EventArgs e)
-        {
             await GuardarFuncionAsync();
-            dgvFunciones.Rows.Clear();
         }
 
         private async Task GuardarFuncionAsync()
@@ -162,6 +157,9 @@ namespace CineFront.Diseño
             this.Dispose();
         }
 
-        
+        private void FrmAltaFuncion_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

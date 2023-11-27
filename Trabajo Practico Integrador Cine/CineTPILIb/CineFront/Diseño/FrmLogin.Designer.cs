@@ -28,74 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtUsuario = new TextBox();
-            txtContraseña = new TextBox();
-            btnAcceder = new Button();
-            chkContraseña = new CheckBox();
-            btnSalir = new Button();
-            SuspendLayout();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.btnAcceder = new System.Windows.Forms.Button();
+            this.chkContraseña = new System.Windows.Forms.CheckBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(12, 23);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(264, 23);
-            txtUsuario.TabIndex = 0;
+            this.txtUsuario.Location = new System.Drawing.Point(12, 23);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(264, 23);
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(12, 52);
-            txtContraseña.Name = "txtContraseña";
-            txtContraseña.Size = new Size(264, 23);
-            txtContraseña.TabIndex = 1;
+            this.txtContraseña.Location = new System.Drawing.Point(12, 52);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(264, 23);
+            this.txtContraseña.TabIndex = 1;
             // 
             // btnAcceder
             // 
-            btnAcceder.Location = new Point(201, 92);
-            btnAcceder.Name = "btnAcceder";
-            btnAcceder.Size = new Size(75, 23);
-            btnAcceder.TabIndex = 2;
-            btnAcceder.Text = "Acceder";
-            btnAcceder.UseVisualStyleBackColor = true;
-            btnAcceder.Click += btnAcceder_Click;
+            this.btnAcceder.Location = new System.Drawing.Point(201, 92);
+            this.btnAcceder.Name = "btnAcceder";
+            this.btnAcceder.Size = new System.Drawing.Size(75, 23);
+            this.btnAcceder.TabIndex = 3;
+            this.btnAcceder.Text = "Acceder";
+            this.btnAcceder.UseVisualStyleBackColor = true;
             // 
             // chkContraseña
             // 
-            chkContraseña.AutoSize = true;
-            chkContraseña.Location = new Point(12, 92);
-            chkContraseña.Name = "chkContraseña";
-            chkContraseña.Size = new Size(142, 19);
-            chkContraseña.TabIndex = 3;
-            chkContraseña.Text = "Mostrar tu contraseña";
-            chkContraseña.UseVisualStyleBackColor = true;
-            chkContraseña.CheckedChanged += chkContraseña_CheckedChanged;
+            this.chkContraseña.AutoSize = true;
+            this.chkContraseña.Location = new System.Drawing.Point(12, 92);
+            this.chkContraseña.Name = "chkContraseña";
+            this.chkContraseña.Size = new System.Drawing.Size(142, 19);
+            this.chkContraseña.TabIndex = 2;
+            this.chkContraseña.Text = "Mostrar tu contraseña";
+            this.chkContraseña.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(112, 119);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 4;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            this.btnSalir.Location = new System.Drawing.Point(112, 119);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(293, 154);
-            Controls.Add(btnSalir);
-            Controls.Add(chkContraseña);
-            Controls.Add(btnAcceder);
-            Controls.Add(txtContraseña);
-            Controls.Add(txtUsuario);
-            Name = "FrmLogin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Iniciar sesión";
-            Load += Login_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(293, 154);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.chkContraseña);
+            this.Controls.Add(this.btnAcceder);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtUsuario);
+            this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Iniciar sesión";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

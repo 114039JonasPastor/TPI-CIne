@@ -30,8 +30,13 @@ namespace CineFront.Diseño
         private void FrmNuevoTicket_Load(object sender, EventArgs e)
         {
             ProximoTicket();
-            CargarClientesAsync();
 
+        }
+
+        private void LoadClientes(object sender, EventArgs e)
+        {
+            CargarClientesAsync();
+            txtPrecioVenta.Enabled = false;
         }
 
         private void LoadTxtPrecioVenta(object sender, EventArgs e)
@@ -256,5 +261,9 @@ namespace CineFront.Diseño
             }
         }
 
+        private void FrmNuevoTicket_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

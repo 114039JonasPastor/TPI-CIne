@@ -28,154 +28,158 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnConsular = new Button();
-            btnSalir = new Button();
-            dgvTicket = new DataGridView();
-            ColID = new DataGridViewTextBoxColumn();
-            ColCliente = new DataGridViewTextBoxColumn();
-            ColFecha = new DataGridViewTextBoxColumn();
-            ColAcción = new DataGridViewButtonColumn();
-            txtClientes = new TextBox();
-            lblCliente = new Label();
-            txtNumeroDeTicket = new TextBox();
-            dtpFecha = new DateTimePicker();
-            lblFechaDeEmision = new Label();
-            lblNumeroDeTicket = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvTicket).BeginInit();
-            SuspendLayout();
+            this.btnConsular = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.dgvTicket = new System.Windows.Forms.DataGridView();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAcción = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtClientes = new System.Windows.Forms.TextBox();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.txtNumeroDeTicket = new System.Windows.Forms.TextBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaDeEmision = new System.Windows.Forms.Label();
+            this.lblNumeroDeTicket = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnConsular
             // 
-            btnConsular.Location = new Point(426, 68);
-            btnConsular.Name = "btnConsular";
-            btnConsular.Size = new Size(127, 23);
-            btnConsular.TabIndex = 0;
-            btnConsular.Text = "Consultar";
-            btnConsular.UseVisualStyleBackColor = true;
-            btnConsular.Click += btnConsular_Click;
+            this.btnConsular.Location = new System.Drawing.Point(426, 68);
+            this.btnConsular.Name = "btnConsular";
+            this.btnConsular.Size = new System.Drawing.Size(127, 23);
+            this.btnConsular.TabIndex = 6;
+            this.btnConsular.Text = "Consultar";
+            this.btnConsular.UseVisualStyleBackColor = true;
+            this.btnConsular.Click += new System.EventHandler(this.btnConsular_Click);
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(478, 253);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 1;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            this.btnSalir.Location = new System.Drawing.Point(478, 253);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dgvTicket
             // 
-            dgvTicket.AllowUserToAddRows = false;
-            dgvTicket.AllowUserToDeleteRows = false;
-            dgvTicket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTicket.Columns.AddRange(new DataGridViewColumn[] { ColID, ColCliente, ColFecha, ColAcción });
-            dgvTicket.Location = new Point(6, 97);
-            dgvTicket.Name = "dgvTicket";
-            dgvTicket.ReadOnly = true;
-            dgvTicket.RowTemplate.Height = 25;
-            dgvTicket.Size = new Size(547, 150);
-            dgvTicket.TabIndex = 2;
-            dgvTicket.CellContentClick += dgvTicket_CellContentClick;
+            this.dgvTicket.AllowUserToAddRows = false;
+            this.dgvTicket.AllowUserToDeleteRows = false;
+            this.dgvTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTicket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColID,
+            this.ColCliente,
+            this.ColFecha,
+            this.ColAcción});
+            this.dgvTicket.Location = new System.Drawing.Point(6, 97);
+            this.dgvTicket.Name = "dgvTicket";
+            this.dgvTicket.ReadOnly = true;
+            this.dgvTicket.RowTemplate.Height = 25;
+            this.dgvTicket.Size = new System.Drawing.Size(547, 150);
+            this.dgvTicket.TabIndex = 7;
+            this.dgvTicket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTicket_CellContentClick);
             // 
             // ColID
             // 
-            ColID.HeaderText = "Numero de Ticket";
-            ColID.Name = "ColID";
-            ColID.ReadOnly = true;
+            this.ColID.HeaderText = "Numero de Ticket";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
             // 
             // ColCliente
             // 
-            ColCliente.HeaderText = "Cliente";
-            ColCliente.Name = "ColCliente";
-            ColCliente.ReadOnly = true;
-            ColCliente.Width = 202;
+            this.ColCliente.HeaderText = "Cliente";
+            this.ColCliente.Name = "ColCliente";
+            this.ColCliente.ReadOnly = true;
+            this.ColCliente.Width = 202;
             // 
             // ColFecha
             // 
-            ColFecha.HeaderText = "Fecha de emision";
-            ColFecha.Name = "ColFecha";
-            ColFecha.ReadOnly = true;
+            this.ColFecha.HeaderText = "Fecha de emision";
+            this.ColFecha.Name = "ColFecha";
+            this.ColFecha.ReadOnly = true;
             // 
             // ColAcción
             // 
-            ColAcción.HeaderText = "Acción";
-            ColAcción.Name = "ColAcción";
-            ColAcción.ReadOnly = true;
-            ColAcción.Text = "Dar de baja";
-            ColAcción.UseColumnTextForButtonValue = true;
+            this.ColAcción.HeaderText = "Acción";
+            this.ColAcción.Name = "ColAcción";
+            this.ColAcción.ReadOnly = true;
+            this.ColAcción.Text = "Dar de baja";
+            this.ColAcción.UseColumnTextForButtonValue = true;
             // 
             // txtClientes
             // 
-            txtClientes.Location = new Point(137, 39);
-            txtClientes.Name = "txtClientes";
-            txtClientes.Size = new Size(410, 23);
-            txtClientes.TabIndex = 5;
+            this.txtClientes.Location = new System.Drawing.Point(137, 39);
+            this.txtClientes.Name = "txtClientes";
+            this.txtClientes.Size = new System.Drawing.Size(410, 23);
+            this.txtClientes.TabIndex = 5;
             // 
             // lblCliente
             // 
-            lblCliente.AutoSize = true;
-            lblCliente.Location = new Point(12, 42);
-            lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(44, 15);
-            lblCliente.TabIndex = 4;
-            lblCliente.Text = "Cliente";
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Location = new System.Drawing.Point(12, 42);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(44, 15);
+            this.lblCliente.TabIndex = 4;
+            this.lblCliente.Text = "Cliente";
             // 
             // txtNumeroDeTicket
             // 
-            txtNumeroDeTicket.Location = new Point(137, 6);
-            txtNumeroDeTicket.Name = "txtNumeroDeTicket";
-            txtNumeroDeTicket.Size = new Size(100, 23);
-            txtNumeroDeTicket.TabIndex = 3;
+            this.txtNumeroDeTicket.Location = new System.Drawing.Point(137, 6);
+            this.txtNumeroDeTicket.Name = "txtNumeroDeTicket";
+            this.txtNumeroDeTicket.Size = new System.Drawing.Size(100, 23);
+            this.txtNumeroDeTicket.TabIndex = 1;
             // 
             // dtpFecha
             // 
-            dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(384, 6);
-            dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(163, 23);
-            dtpFecha.TabIndex = 2;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(384, 6);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(163, 23);
+            this.dtpFecha.TabIndex = 3;
             // 
             // lblFechaDeEmision
             // 
-            lblFechaDeEmision.AutoSize = true;
-            lblFechaDeEmision.Location = new Point(279, 9);
-            lblFechaDeEmision.Name = "lblFechaDeEmision";
-            lblFechaDeEmision.Size = new Size(99, 15);
-            lblFechaDeEmision.TabIndex = 1;
-            lblFechaDeEmision.Text = "Fecha de emisión";
+            this.lblFechaDeEmision.AutoSize = true;
+            this.lblFechaDeEmision.Location = new System.Drawing.Point(279, 9);
+            this.lblFechaDeEmision.Name = "lblFechaDeEmision";
+            this.lblFechaDeEmision.Size = new System.Drawing.Size(99, 15);
+            this.lblFechaDeEmision.TabIndex = 2;
+            this.lblFechaDeEmision.Text = "Fecha de emisión";
             // 
             // lblNumeroDeTicket
             // 
-            lblNumeroDeTicket.AutoSize = true;
-            lblNumeroDeTicket.Location = new Point(12, 9);
-            lblNumeroDeTicket.Name = "lblNumeroDeTicket";
-            lblNumeroDeTicket.Size = new Size(101, 15);
-            lblNumeroDeTicket.TabIndex = 0;
-            lblNumeroDeTicket.Text = "Numero de Ticket";
+            this.lblNumeroDeTicket.AutoSize = true;
+            this.lblNumeroDeTicket.Location = new System.Drawing.Point(12, 9);
+            this.lblNumeroDeTicket.Name = "lblNumeroDeTicket";
+            this.lblNumeroDeTicket.Size = new System.Drawing.Size(101, 15);
+            this.lblNumeroDeTicket.TabIndex = 0;
+            this.lblNumeroDeTicket.Text = "Numero de Ticket";
             // 
             // FrmBajaTicket
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.pngtree_big_screen_movie_background_picture_image_809169;
-            ClientSize = new Size(571, 291);
-            Controls.Add(txtClientes);
-            Controls.Add(lblCliente);
-            Controls.Add(dgvTicket);
-            Controls.Add(txtNumeroDeTicket);
-            Controls.Add(btnSalir);
-            Controls.Add(dtpFecha);
-            Controls.Add(btnConsular);
-            Controls.Add(lblFechaDeEmision);
-            Controls.Add(lblNumeroDeTicket);
-            Name = "FrmBajaTicket";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Baja ticket";
-            Load += FrmBajaTicket_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvTicket).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CineFront.Properties.Resources.pngtree_big_screen_movie_background_picture_image_809169;
+            this.ClientSize = new System.Drawing.Size(571, 291);
+            this.Controls.Add(this.txtClientes);
+            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.dgvTicket);
+            this.Controls.Add(this.txtNumeroDeTicket);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.dtpFecha);
+            this.Controls.Add(this.btnConsular);
+            this.Controls.Add(this.lblFechaDeEmision);
+            this.Controls.Add(this.lblNumeroDeTicket);
+            this.Name = "FrmBajaTicket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Baja ticket";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTicket)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
